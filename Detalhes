@@ -64,4 +64,4 @@ rm -r /etc/tempo /etc/usuarios
 
 \033[40;1;37m(Telegram Grupo: @NerdologiaVps)\033[0m"
 
-\033[40;1;37m(Telegram Canal: @VpsNerdologia)\033[0m"
+echo -e "\033[1;31m \033[01;37m(Telegram Canal: @VpsNerdologia)  \033[0m"
