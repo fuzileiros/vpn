@@ -63,3 +63,7 @@ Ou retire o limite de todos
 rm -r /etc/tempo /etc/usuarios
 
 \033[40;1;37m(Telegram canal: NerdologiaVps)\033[0m"
+
+
+
+echo -e "\033[1;31m-----> \033[01;37mCanal: @VpsNerdologia Grupo: @NerdologiaVps \033[0m"
