@@ -1,4 +1,4 @@
-!/bin/bashs
+!/bin/bash
 echo $$ > /tmp/kids
 while true
 do
