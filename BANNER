@@ -1,0 +1,32 @@
+#!/bin/bash
+
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "BANNER SSH" ; tput sgr0
+echo ""
+echo "        Edited @ColtSeals"
+echo "        NERDOLOGIA VPS"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
+echo ""
+read -p "De enter para continuar..."
+clear
+sshd_config_bak=$(cat /etc/ssh/sshd_config |grep -v "Banner")
+echo "$sshd_config_bak" > /etc/ssh/sshd_config
+echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
+service ssh restart 1>/dev/null 2>/dev/null
+service sshd restart 1>/dev/null 2>/dev/null
+if [ -f /etc/bannerssh ]
+then
+banner=$(cat /etc/bannerssh)
+else
+banner="Não há um banner no momento"
+fi
+echo -e "\033[1;32mBanner atual\n\n\033[1;37m$banner\n\033[0m"
+echo "Qual banner deseja adicionar (ctrl + c para sair )"
+read -p ": " bannerssh
+echo "$bannerssh" > /etc/bannerssh
+service ssh restart 1> /dev/null 2>/dev/null
+service sshd restart 1>/dev/null 2>/dev/null
+
+echo -e "\033[1;31m \033[01;37m"BANNER SSH aplicado com sucesso!"\033[0m"
+echo ""
+echo -e "\033[1;31m \033[01;37m"NÃO DEIXE DE ENTRAR NO NOSSO GRUPO NERDs OFICIAL & CANAIS OFICIAIS TELEGRAM"\033[0m"
