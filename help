@@ -1,8 +1,5 @@
 #!/bin/bash
 echo -e "\033[40;1;37m MenuVPS HELP \033[0m
-\033[1;33mSempre execute com o usuario root
-Vc pode virar root com \033[1;31msu \033[1;33mou \033[1;31msudo su"
-echo -e "\033[40;1;37m Recomendadoo uso das ferramentas pelo MenuVPN. \033[0m
 
 Ferramenta \033[1;30mConfigurar Squid:\033[1;33m
 
