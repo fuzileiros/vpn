@@ -4,202 +4,167 @@ echo -e "\033[40;1;37m MenuVPS HELP \033[0m
 Vc pode virar root com \033[1;31msu \033[1;33mou \033[1;31msudo su"
 echo -e "\033[40;1;37m Recomendadoo uso das ferramentas pelo MenuVPN. \033[0m
 
-echo -e "\033[1;32m
-Ferramenta Configurar Squid:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33mFerramenta Configurar Squid: \033[0m
 
 Essa ferramenta irá instalar o squid fundamental para o funcionamento e conexão.
-Tbm pode a usar com apenas um comando \033[1;33mConfSquid \033[0m
-Para executar digite o comando: ConfSquid
+Para executar digite o comando: \033[1;33mConfSquid \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Limite:\033[1;36m
-echo -e "\033[1;32m
+\033[1;33mFerramenta Limite:\033[1;36m
 
 Essa ferramenta irá LIMITAR o numero de conexões de usuarios que teve seu limite aplicado.
 Ao exceder o limite as conexões excedentes serao desconectados !!
-Para executar digite o comando: Limite
+Para executar digite o comando: \033[1;33mLimite \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Criar Usuario:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Criar Usuario: \033[0m
 
 Essa ferramenta tem objetivo criar usuarios com senha e número limite de forma rápida e aplicando uma validade em dias.
-Para executar digite o comando: Criar
+Para executar digite o comando: \033[1;33mCriar \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Remover Expirados:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Remover Expirados: \033[0m
 
 Essa ferramenta tem objetivo de remover de forma automatica todos os usuarios expirados trazendo praticidade ao Script.
-Para executar digite o comando: ExpiradosDel
+Para executar digite o comando: \033[1;33mExpiradosDel\033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Criar Teste:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Criar Teste: \033[0m
 
 Essa ferramenta tem objetivo criar usuarios de teste aplicando uma validade em segundos, minutos, horas & dias.
-Para executar digite o comando: Teste
+Para executar digite o comando: \033[1;33mTeste \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta BadVpn:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta BadVpn: \033[0m
 
 Essa ferramenta instala o BadVpn permitindo a utilização de Chamadas de audio e videos e Jogos online entre outras funções.
-Para executar digite o comando: BadVpn
+Para executar digite o comando: \033[1;33mBadVPN \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta BadVpn Start:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta BadVpn Start: \033[0m
 
 Essa ferramenta Ativa o BadVpn permitindo a utilização de Chamadas de audio e videos e Jogos online entre outras funções.
-Para executar digite o comando: BadStart
+Para executar digite o comando: \033[1;33mBadStart \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta BadVpn Stop:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta BadVpn Stop: \033[0m
 
 Essa ferramenta Para o BadVpn bloqueando a utilização de Chamadas de audio e videos e Jogos online entre outras funções.
-Para executar digite o comando: BadStop
+Para executar digite o comando: \033[1;33mBadStop \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Remover Limite:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Remover Limite: \033[0m
 
 Essa ferramenta Remove o limite de conexões de um usuario desejado.
-Para executar digite o comando: LimiteDel
+Para executar digite o comando: \033[1;33mLimiteDel \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Mudar Nome:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Mudar Nome: \033[0m
 
 Essa ferramenta tem o objetivo de mudar nome de um usuario.
-Para executar digite o comando: MudarNome
+Para executar digite o comando: \033[1;33mMudarNome \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Redefinir Usuario:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Redefinir Usuario: \033[0m
 
 Essa ferramenta redefine o limite de logins de um usuario ou redefinir a data de expiração de um usuario.
-Para executar digite o comando: Redefinir
+Para executar digite o comando: \033[1;33mRedefinir \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Deletar Usuario:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Deletar Usuario: \033[0m
 
 Essa ferramenta tem função de deletar usuarios Forçar o deletamento e tambem desconectar todos de um usuario.
-Para executar digite o comando: Redefinir
+Para executar digite o comando: \033[1;33mUsuarioDel \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Firewall-block:\033[1;36m [\033[1;31mRISCOS\033[1;30m])\033[1;33m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Firewall-block: \033[0m \033[1;36m [\033[1;31mRISCOS\033[1;30m])\033[1;33m
 
 Essa ferramenta firewall-block faz o bloqueio torrent e protocolo icmp.
-Para executar digite o comando: FiBlock
+Para executar digite o comando: \033[1;33mFiBlock \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Firewall-Reset:\033[1;36m [\033[1;31mRISCOS\033[1;30m])\033[1;33m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Firewall-Reset: \033[0m \033[1;36m [\033[1;31mRISCOS\033[1;30m])\033[1;33m
 
 Essa ferramenta Firewall-reset desfaz todas as regras iptables desabilitando qualquer bloqueio no firewall.
-Para executar digite o comando: FiReset
+Para executar digite o comando: \033[1;33mFiReset \033[0m
 Ou execute pelo MenuVPS
-echo -e "\033[1;30m----------------------------------------------------------------------\033[0m"
+
 ATENÇAO ESSAS DUAS FERRAMENTAS PODEM CAUSAR PROBLEMAS EXECUTE POR SUA CONTA
 MUITAS EMPRESAS USAM O IPTABLES EM SUAS MAQUINAS VIRTUAIS E ESSE NÃO PODE SER ALTERADO.
-echo -e "\033[1;30m----------------------------------------------------------------------\033[0m"
 
-echo -e "\033[1;32m
-Ferramenta Adicionar Host:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Adicionar Host:\033[0m
 
 Essa ferramenta add-hosts ela adiciona novos dominios (hosts payloads) em qualquer tipo de squid.conf.
-Para executar digite o comando: AddHost
+Para executar digite o comando: \033[1;33mAddHost \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Backup Usuários:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Backup Usuários: \033[0m
 
 Essa ferramenta Backup Usuarios realiza backup de todos os Usuarios criados e Senhas.
-Para executar digite o comando: Backup
+Para executar digite o comando: \033[1;33mBackup \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Backup Usuários:\033[1;36m
-echo -e "\033[1;32m
 
-Essa ferramenta Backup Usuarios realiza backup de todos os Usuarios criados.
-Para executar digite o comando: Backup
-Ou execute pelo MenuVPS
-
-echo -e "\033[1;32m
-Ferramenta Restaurar Usuarios:\033[1;36m
-echo -e "\033[1;32m
+\033[1;33Ferramenta Restaurar Usuarios: \033[0m
 
 Essa ferramenta Restaura todos os Usuarios e Senhas de todos usuarios que foram feitos Backup.
-Para executar digite o comando: Restaurar
+Para executar digite o comando: \033[1;33mRestaurarBack \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Detalhes Usuarios:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Detalhes Usuarios: \033[0m
 
 Essa ferramenta de Informações de usuarios como usuario, senha, limite e data de expiração.
-Para executar digite o comando: Detalhes
+Para executar digite o comando: \033[1;33mDetalhes \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Banner SSH:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Banner SSH: \033[0m
 
 Essa ferramenta Para adicionar um Banner de Boas Vindas no servidor SSH.
-Para executar digite o comando: Banner
+Para executar digite o comando: \033[1;33mBanner \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Speed Teste:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Speed Teste: \033[0m
 
 Essa ferramenta realiza um teste de Velocidade interno do Servidor Ping, Download & Upload.
-Para executar digite o comando: Banner
+Para executar digite o comando: \033[1;33mSpeed \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta MenuVPS Help:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta MenuVPS Help: \033[0m 
 
 Essa ferramenta com Informações detalhadas sobre as funções do MenuVPS.
-Para executar digite o comando: Ajuda
+Para executar digite o comando: \033[1;33mAjuda \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Deletar Todos:\033[1;36m
-echo -e "\033[1;32m
+
+\033[1;33Ferramenta Deletar Todos: \033[0m
 
 Essa ferramenta irá deletar todos os usuarios criados no Servidor.
-Para executar digite o comando: DeletarTodos
+Para executar digite o comando: \033[1;33mDeletarTodos \033[0m
 Ou execute pelo MenuVPS
 
-echo -e "\033[1;32m
-Ferramenta Open VPN:\033[1;36m
-echo -e "\033[1;32m
+\033[1;33Ferramenta Open VPN: \033[0m
 
 Essa ferramenta Instala, cria usuarios .ovpn  e gerenciar Usuarios .ovpn
-Para executar digite o comando: Open
+Para executar digite o comando: \033[1;33mOpenVPN \033[0m
 Ou execute pelo MenuVPS
 
 OUTROS:
