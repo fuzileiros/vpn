@@ -4,12 +4,17 @@ echo -e "\033[40;1;37m MenuVPS HELP \033[0m
 Vc pode virar root com \033[1;31msu \033[1;33mou \033[1;31msudo su"
 echo -e "\033[40;1;37m Recomendadoo uso das ferramentas pelo MenuVPN. \033[0m
 
+Ferramenta \033[1;30mConfigurar Squid:\033[1;33m
+
 
 \033[1;33mFerramenta Configurar Squid: \033[0m
 
 Essa ferramenta irá instalar o squid fundamental para o funcionamento e conexão.
 Para executar digite o comando: \033[1;33mConfSquid \033[0m
 Ou execute pelo MenuVPS
+
+Ferramenta \033[1;30mLimite:\033[1;33m
+
 
 \033[1;33mFerramenta Limite:\033[1;36m
 
@@ -18,6 +23,9 @@ Ao exceder o limite as conexões excedentes serao desconectados !!
 Para executar digite o comando: \033[1;33mLimite \033[0m
 Ou execute pelo MenuVPS
 
+Ferramenta \033[1;30mCriar Usuario:\033[1;33m
+
+
 
 \033[1;33Ferramenta Criar Usuario: \033[0m
 
@@ -25,6 +33,7 @@ Essa ferramenta tem objetivo criar usuarios com senha e número limite de forma 
 Para executar digite o comando: \033[1;33mCriar \033[0m
 Ou execute pelo MenuVPS
 
+Ferramenta \033[1;30mRemover Expirados:\033[1;33m
 
 \033[1;33Ferramenta Remover Expirados: \033[0m
 
@@ -32,6 +41,7 @@ Essa ferramenta tem objetivo de remover de forma automatica todos os usuarios ex
 Para executar digite o comando: \033[1;33mExpiradosDel\033[0m
 Ou execute pelo MenuVPS
 
+Ferramenta \033[1;30mCriar Teste:\033[1;33m
 
 \033[1;33Ferramenta Criar Teste: \033[0m
 
@@ -40,6 +50,8 @@ Para executar digite o comando: \033[1;33mTeste \033[0m
 Ou execute pelo MenuVPS
 
 
+Ferramenta \033[1;30mBadVpn:\033[1;33m
+
 \033[1;33Ferramenta BadVpn: \033[0m
 
 Essa ferramenta instala o BadVpn permitindo a utilização de Chamadas de audio e videos e Jogos online entre outras funções.
@@ -47,12 +59,16 @@ Para executar digite o comando: \033[1;33mBadVPN \033[0m
 Ou execute pelo MenuVPS
 
 
+Ferramenta \033[1;30mBadVpn Start:\033[1;33m
+
 \033[1;33Ferramenta BadVpn Start: \033[0m
 
 Essa ferramenta Ativa o BadVpn permitindo a utilização de Chamadas de audio e videos e Jogos online entre outras funções.
 Para executar digite o comando: \033[1;33mBadStart \033[0m
 Ou execute pelo MenuVPS
 
+
+Ferramenta \033[1;30mBadVpn Stop:\033[1;33m
 
 \033[1;33Ferramenta BadVpn Stop: \033[0m
 
