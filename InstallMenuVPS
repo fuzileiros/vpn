@@ -65,6 +65,16 @@ chmod +x /bin/OpenVPN
 sed -i -e 's/\r$//' /bin/OpenVPN
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/ConfSquid > /bin/ConfSquid
 chmod +x /bin/ConfSquid
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverExpirados > /bin/RemoverExpirados
+chmod +x /bin/ConfSquid
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/ConfSquid > /bin/ConfSquid
+chmod +x /bin/RemoverExpirados
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Teste > /bin/Teste
+chmod +x /bin/Teste
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/BadVpn.sh > /bin/BadVpn.sh
+chmod +x /bin/BadVpn.sh
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Monitorar > /bin/Monitorar
+chmod +x /bin/Monitorar
 
 clear
 echo -e "\033[1;31m•••••> \033[01;37mScript Edited ••ColtSeals TecnologY•• \033[0m"
