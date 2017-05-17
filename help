@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-echo -e "\033[40;1;37m MenuVPS HELP \033[0m
+echo -e "MenuVPS HELP"
 
 echo "Ferramenta Configurar Squid:"
 
