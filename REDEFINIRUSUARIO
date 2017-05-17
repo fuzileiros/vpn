@@ -1,5 +1,4 @@
 #!/bin/bash
-
 read -p "Qual o nome do usuario a redefinir: " namer
  if cat /etc/passwd |grep $namer: > /dev/null
  then
@@ -10,16 +9,14 @@ read -p "Qual o nome do usuario a redefinir: " namer
  exit
  fi
 clear
-echo -e "\033[1;26mO que vc deseja redefinir ?
+echo -e "\033[1;33mO que vc deseja redefinir ?\033[1;30m
 1) Numero de logins
 2) Data de expiraçao
 3) Mudar senha do usuario"
 read -p "opção: " option
 if [ $option -eq 1 ]; then
 read -p "Qual o novo limite de logins: " liml
-rm /etc/usuarios/$namer.sh
-rm /etc/tempo/$namer.sh
-limit $namer $liml
+limite $namer $liml
 exit 0
 fi
 
@@ -38,4 +35,3 @@ echo "$senha" > /etc/VpsPackdir/senha/$namer
 echo "Nova senha aplicada"
 exit
 fi
-echo -e "essa opçao não existe\033[0m"
