@@ -1,14 +1,54 @@
 #!/bin/bash
-losquid=$(ls /etc |grep squid)
-if [ $(ls /etc |grep squid |wc -l) -eq 0 ]; then
-echo -e "\033[1;31mNão foi possivel achar o diretorio squid
-Talves ele não esteja instalado\033[0m"
-exit
+clear
+echo -e "         \033[1;33mRemover Usuarios Expirados\033[0m"
+datahoje=$(date +%s)
+for user in $(cat /etc/passwd |grep -v "nobody" |awk -F : '$3 > 900 {print $1}')
+do
+dataexp=$(chage -l $user |grep "Account expires" |awk -F : '{print $2}')
+if [[ $dataexp == ' never' ]]; then
+id > /dev/null 2>/dev/null
+else
+dataexpn=$(date -d"$dataexp" '+%d/%m/%Y')
+dataexpnum=$(date '+%s' -d"$dataexp")
 fi
-squid=$(cat /etc/$losquid/squid.conf)
-echo 'acl vpspacketaccept dstdomain "/etc/payloads"' > /etc/$losquid/squid.conf
-echo "http_access allow vpspacketaccept" >> /etc/$losquid/squid.conf
-echo "$squid" >> /etc/$losquid/squid.conf
-service squid restart 1> /dev/null 2> /dev/null
-service squid3 restart 1> /dev/null 2> /dev/null
-echo -e "\033[1;32mTudo terminado. Basta usar o add-host e adicionar novos dominios\033[0m"
+if [[ $dataexpnum < $datahoje ]]; then
+printf "\033[1;31m"
+printf '%-41s' $user
+printf "\033[0m"
+echo "Expired Deleted"
+kill $(ps -u $user |awk '{print $1}') >/dev/null 2>/dev/null ; userdel $user
+else
+printf "\033[1;32m"
+printf '%-41s' $user
+printf "\033[0m"
+echo $dataexpn
+fi
+done
+}
+function criarusuarioteste(){
+mkdir /etc/usuariosteste 1>/dev/null 2>/dev/null
+echo -e "   Usuarios teste"
+for testus in $(ls /etc/usuariosteste |sort |sed 's/.sh//g')
+do
+echo "$testus"
+done
+printf "\n"
+printf "Nome do novo usuario: "; read nome
+printf "Senha do usuario: "; read pass
+echo -e "\nUse s = segundos, m = minutos, h = horas e d = dias EX: 14s ."
+printf "Quanto tempo usuario $nome deve durar: ";read tempoin
+tempo=$(echo "$tempoin" |sed 's/ //g')
+useradd -M -s /bin/false $nome
+(echo $pass;echo $pass) |passwd $nome 1>/dev/null 2>/dev/null
+echo "#!/bin/bash
+sleep $tempo
+kill"' $(ps -u '"$nome |awk '{print"' $1'"}') 1>/dev/null 2>/dev/null
+userdel --force $nome
+rm -rf /etc/usuariosteste/$nome.sh
+exit" > /etc/usuariosteste/$nome.sh
+echo -e "Usuario: $nome
+Senha: $pass
+Validade: $tempo\n
+Apos o tempo expirar o usuario sera deletado e todos serão desconectados."
+bash /etc/usuariosteste/$nome.sh &
+exit
