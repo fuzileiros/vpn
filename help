@@ -4,20 +4,20 @@
 echo -e "MenuVPS HELP"
 
 echo -e "\033[01;37mFerramenta \033[1;31mConfigurar Script:"
-
+echo ""
 echo "Essa ferramenta irá instalar o squid fundamental para o funcionamento e conexão."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mConfSquid"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
-
+echo ""
 echo -e "\033[01;37mFerramenta \033[1;31mLimite:"
-
+echo ""
 echo "Essa ferramenta irá limitar o numero de conexões de usuarios que teve seu limite aplicado."
 echo "Ao exceder o limite as conexões excedentes serao desconectados !!"
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mLimite"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
-
-
-echo "Ferramenta Criar Usuario:"
+echo ""
+echo -e "\033[01;37mFerramenta \033[1;31mCriar Usuario:"
+echo ""
 
 echo "Essa ferramenta tem objetivo criar usuarios com senha e número limite de forma rápida e aplicando uma validade em dias."
 Para executar digite o comando: \033[1;33mCriar \033[0m
