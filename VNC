@@ -125,6 +125,6 @@ fi
 
 
 if [[ "$resposta" = '3' ]]; then
-vpspack
+PackVPS
 clear
 fi
