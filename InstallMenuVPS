@@ -5,7 +5,31 @@ then
 echo "Execute o script como root"
 exit
 fi
-echo -e "\033[01;34;47mM\033[01;31me\033[01;33mn\033[01;34mu\033[01;32mV\033[01;34;47mP\033[01;31mS"
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "Menu VPS" ; tput sgr0
+echo -e "\033[1;30m------------------------------------------------------------------\033[0m"
+echo -e "\033[1;37m                           .                                      \033[0m"
+echo -e "\033[1;37m                    .XG@B@@1                                      \033[0m"  
+echo -e "\033[1;37m                    @B@@@B@                                       \033[0m"
+echo -e "\033[1;37m                    B@B@B@M          ,,::i.                       \033[0m"
+echo -e "\033[1;37m                    @B@BOO@qi       iLPSF5X:                      \033[0m"
+echo -e "\033[1;37m                    B@Bri2B@B@:    PB@Bkri7v,                     \033[0m"    
+echo -e "\033[1;37m                    @B@     7@Z   :BN                             \033[0m"
+echo -e "\033[1;37m                    B@B@ii:  :B0  .7 .i77i.P:                     \033[0m"
+echo -e "\033[1;37m                    @B:7GB@M7B@@,    k@B@XrBS                     \033[0m"
+echo -e "\033[1;37m                    B0       @B@r                                 \033[0m"
+echo -e "\033[1;37m                    @L      8B@B:                                 \033[0m" 
+echo -e "\033[1;37m                    XO     @B@B@      ,.                          \033[0m"
+echo -e "\033[1;37m                    :B.j0Pii7G@B  .;   :7FSX.                     \033[0m"
+echo -e "\033[1;37m                     @:LB@:   .@B@@r   .BMB.                      \033[0m"
+echo -e "\033[1;37m                     .@.jiBB@B@@:.@B@B@B:L7                       \033[0m" 
+echo -e "\033[1;37m                      :@v5   .:.   .:.  uX                        \033[0m"
+echo -e "\033[1;37m                       .@2F    :Jij    EL                         \033[0m"
+echo -e "\033[1;37m                         MNL    @@J  ,k.                          \033[0m"
+echo -e "\033[1;37m                          UBv   @BE .U                            \033[0m"
+echo -e "\033[1;37m                           :E7 .B@B .                             \033[0m"
+echo -e "\033[1;37m                             i  @Br                               \033[0m"
+echo -e "\033[1;37m                                @                                 \033[0m"  
+echo -e "\033[1;30m------------------------------------------------------------------\033[0m"
 echo ""
 echo "        Edited @ColtSeals"
 echo "        NERDOLOGIA VPS"
@@ -19,26 +43,29 @@ mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
 rm -rf /bin/limite 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VPSMenu/master/limite > /bin/limite
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/limite > /bin/limite
 chmod +x /bin/limite
 rm -rf /bin/criarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VPSMenu/master/criarusuario > /bin/criarusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/criarusuario > /bin/criarusuario
 chmod +x /bin/criarusuario
 rm -rf /bin/deletarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VPSMenu/master/deletarusuario > /bin/deletarusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/deletarusuario > /bin/deletarusuario
 chmod +x /bin/deletarusuario
 rm -rf /bin/redefinirusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VPSMenu/master/redefinirusuario > /bin/redefinirusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/redefinirusuario > /bin/redefinirusuario
 chmod +x /bin/redefinirusuario
 rm -rf /bin/vpspack 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VPSMenu/master/vpspack > /bin/vpspack
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VPSMenu/master/speedtest.py > /bin/speedtest.py
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
-wget https://raw.githubusercontent.com/ColtSeals/VPSMenu/master/OpenVPN -O /bin/OpenVPN
+wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/OpenVPN -O /bin/OpenVPN
 chmod +x /bin/OpenVPN
 sed -i -e 's/\r$//' /bin/OpenVPN
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/ConfSquid > /bin/ConfSquid
+chmod +x /bin/ConfSquid
+
 clear
 echo -e "\033[1;31m•••••> \033[01;37mScript Edited ••ColtSeals TecnologY•• \033[0m"
 echo -e "\033[1;32m•••••> A Internet aproxima quem está longe e afasta quem está perto!"
