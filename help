@@ -20,162 +20,158 @@ echo -e "\033[01;37mFerramenta \033[1;31mCriar Usuario:"
 echo ""
 
 echo "Essa ferramenta tem objetivo criar usuarios com senha e número limite de forma rápida e aplicando uma validade em dias."
-Para executar digite o comando: \033[1;33mCriar \033[0m
+echo -e "\033[01;37mPara executar digite o comando: \033[1;31mCriar"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-
-echo "Ferramenta Remover Expirados:"
+echo -e "\033[01;37mFerramenta \033[1;31mRemover Expirados:"
 
 echo "Essa ferramenta tem objetivo de remover de forma automatica todos os usuarios expirados trazendo praticidade ao Script."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mExpiradosDel"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-echo "Ferramenta Criar Teste:"
 
-\033[1;33Ferramenta Criar Teste: \033[0m
+echo -e "\033[01;37mFerramenta \033[1;31mFerramenta Criar Teste:"
 
 echo "Essa ferramenta tem objetivo criar usuarios de teste aplicando uma validade em segundos, minutos, horas & dias."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mTeste"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta BadVpn:"
+echo -e "\033[01;37mFerramenta \033[1;31mFerramenta BadVpn:"
 
 echo "Essa ferramenta instala o BadVpn permitindo a utilização de Chamadas de audio e videos e Jogos online entre outras funções."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mBadVpn"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta BadVpn Start:"
+echo -e "\033[01;37mFerramenta \033[1;31mFerramenta BadVpn Start:"
 
 echo "Essa ferramenta Ativa o BadVpn permitindo a utilização de Chamadas de audio e videos e Jogos online entre outras funções."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mBadStart"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta BadVpn Stop:"
+echo -e "\033[01;37mFerramenta \033[1;31mFerramenta BadVpn Stop:"
 
 echo "Essa ferramenta Para o BadVpn bloqueando a utilização de Chamadas de audio e videos e Jogos online entre outras funções."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mBadStop"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-
-echo "Ferramenta Remover Limite:"
+echo -e "\033[01;37mFerramenta \033[1;31mFerramenta Remover Limite:"
 
 echo "Essa ferramenta Remove o limite de conexões de um usuario desejado."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mLimiteDel"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-
-echo "Ferramenta Mudar Nome:"
+echo -e "\033[01;37mFerramenta \033[1;31mFerramenta Mudar Nome:"
 
 echo "Essa ferramenta tem o objetivo de mudar nome de um usuario."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mMudarNome"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Redefinir Usuario:"
+echo -e "\033[01;37mFerramenta \033[1;31mRedefinir Usuario:"
 
 echo "Essa ferramenta redefine o limite de logins de um usuario ou redefinir a data de expiração de um usuario."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mRedefinir"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-
-echo "Ferramenta Deletar Usuario:"
+echo -e "\033[01;37mFerramenta \033[1;31mDeletar Usuario:"
 
 echo "Essa ferramenta tem função de deletar usuarios Forçar o deletamento e tambem desconectar todos de um usuario."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mUsuariosDel"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Firewall-block: \033[0m \033[1;36m [\033[1;31mRISCOS\033[1;30m])\033[1;33m"
+echo -e "\033[01;37mFerramenta \033[1;31mFirewall-Block: \033[1;31mRISCOS\033[1;30m])\033[1;33m""
 
 echo "Essa ferramenta firewall-block faz o bloqueio torrent e protocolo icmp."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mFiBlock"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Firewall-Reset: \033[0m \033[1;36m [\033[1;31mRISCOS\033[1;30m])\033[1;33m"
+echo -e "\033[01;37mFerramenta \033[1;31mFirewall-Reset: \033[1;31mRISCOS\033[1;30m])\033[1;33m""
 
 echo "Essa ferramenta Firewall-reset desfaz todas as regras iptables desabilitando qualquer bloqueio no firewall."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mFiReset"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-ATENÇAO ESSAS DUAS FERRAMENTAS PODEM CAUSAR PROBLEMAS EXECUTE POR SUA CONTA
-MUITAS EMPRESAS USAM O IPTABLES EM SUAS MAQUINAS VIRTUAIS E ESSE NÃO PODE SER ALTERADO.
+echo "ATENÇAO ESSAS DUAS FERRAMENTAS PODEM CAUSAR PROBLEMAS EXECUTE POR SUA CONTA"
+echo "MUITAS EMPRESAS USAM O IPTABLES EM SUAS MAQUINAS VIRTUAIS E ESSE NÃO PODE SER ALTERADO."
 
 
-echo "Ferramenta Adicionar Host:"
+echo -e "\033[01;37mFerramenta \033[1;31mAdicionar Host:"
 
 echo "Essa ferramenta add-hosts ela adiciona novos dominios (hosts payloads) em qualquer tipo de squid.conf."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mAddHost"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Backup Usuários:"
+echo -e "\033[01;37mFerramenta \033[1;31mBackup Usuários:"
 
 echo "Essa ferramenta Backup Usuarios realiza backup de todos os Usuarios criados e Senhas."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mBackup"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Restaurar Usuarios:"
+echo -e "\033[01;37mFerramenta \033[1;31mRestaurar Usuarios:"
 
 echo "Essa ferramenta Restaura todos os Usuarios e Senhas de todos usuarios que foram feitos Backup."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mRestaurarBack"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Detalhes Usuarios:"
+echo -e "\033[01;37mFerramenta \033[1;31mDetalhes Usuarios:"
 
 echo "Essa ferramenta de Informações de usuarios como usuario, senha, limite e data de expiração."
-Para executar digite o comando: \033[1;33mDetalhes \033[0m
+echo -e "\033[01;37mPara executar digite o comando: \033[1;31mDetalhes"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Banner SSH:"
+echo -e "\033[01;37mFerramenta \033[1;31mBanner SSH:"
 
 echo "Essa ferramenta Para adicionar um Banner de Boas Vindas no servidor SSH."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mBanner"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Speed Teste:"
+echo -e "\033[01;37mFerramenta \033[1;31mSpeed Teste:"
 
 echo "Essa ferramenta realiza um teste de Velocidade interno do Servidor Ping, Download & Upload."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mSpeed"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-
-echo "Ferramenta MenuVPS Help:"
+echo -e "\033[01;37mFerramenta \033[1;31mMenuVPS Help:"
 
 echo "Essa ferramenta com Informações detalhadas sobre as funções do MenuVPS."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mAjuda"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 
-echo "Ferramenta Deletar Todos:"
+echo -e "\033[01;37mFerramenta \033[1;31mDeletar Todos:"
 
 echo "Essa ferramenta irá deletar todos os usuarios criados no Servidor."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mDeletarTodos"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
-echo "Ferramenta Open VPN:"
+
+echo -e "\033[01;37mFerramenta \033[1;31mOpen VPN:"
 
 echo "Essa ferramenta Instala, cria usuarios .ovpn  e gerenciar Usuarios .ovpn"
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mOpenVPN"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 
 echo "OUTROS:
-PARA RETIRAR O LIMITE DE CONEXOES DE UM USUARIO OU DE TODOS APAGUE
+echo "PARA RETIRAR O LIMITE DE CONEXOES DE UM USUARIO OU DE TODOS APAGUE"
 
-rm /etc/usuarios/usuario.sh
-rm /etc/tempo/usuario.sh
+echo "rm /etc/usuarios/usuario.sh"
+echo "rm /etc/tempo/usuario.sh"
 
-Ou retire o limite de todos
+echo "Ou retire o limite de todos"
 
-rm -r /etc/tempo /etc/usuarios
+echo "rm -r /etc/tempo /etc/usuarios"
 
-echo -e "\033[1;31m \033[01;37m(Telegram Canal: @VpsNerdologia)  \033[0m"
-echo -e "\033[1;31m \033[01;37m(Telegram Canal: @ColtChannel)  \033[0m"
-echo -e "\033[1;31m \033[01;37m(Telegram Grupo: @NerdologiaVps)  \033[0m"
+
+echo -e "\033[01;37m(Telegram Canal: \033[1;31m@VpsNerdologia)"
+echo -e "\033[01;37m(Telegram Canal: \033[1;31m@ColtChannel)"
+echo -e "\033[01;37m(Telegram Canal: \033[1;31m@NerdologiaVps)"
