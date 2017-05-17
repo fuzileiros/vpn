@@ -25,8 +25,8 @@ branco="\033[1;37m"
 
 
 
-echo -e "\033[01;36m ╠\033[1;37m01\033[1;36m╣\033[01;37m Configurar_Squid_SSH \033[01;32m(Squid e openssh configuração)\033[0m"
-echo -e "\033[01;36m ╠\033[1;37m02\033[1;36m╣\033[01;37m Limite \033[01;32m(limite de conexões simultaneas)\033[0m"
+echo -e "\033[01;36m ╠ \033[1;37m01\033[1;36m╣\033[01;37m Configurar_Squid_SSH \033[01;32m(Squid e openssh configuração)\033[0m"
+echo -e "\033[01;36m ╠\033[1;37m 02\033[1;36m╣\033[01;37m Limite \033[01;32m(limite de conexões simultaneas)\033[0m"
 echo -e "\033[01;36m ╠\033[1;37m03\033[1;36m╣\033[01;37m Criar_Usuario \033[01;32m(Criar usuarios)\033[0m"
 echo -e "\033[01;36m ╠\033[1;37m04\033[1;36m╣\033[01;37m OpenVPN \033[01;32m(Configurar e Gerenciar Usuarios .ovpn)\033[0m"
 echo -e "\033[01;36m ╠\033[1;37m05\033[1;36m╣\033[01;37m Remover_expirados \033[01;32m(Remover usuarios já expirados)\033[0m"
