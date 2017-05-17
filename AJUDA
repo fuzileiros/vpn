@@ -32,7 +32,7 @@ echo -e "\033[1;37m-------------------------------------------------------------
 echo -e "\033[01;37mFerramenta \033[1;31mRemover Expirados:"
 echo ""
 echo -e "\033[01;37mEssa ferramenta tem objetivo de remover de forma automatica todos os usuarios expirados trazendo praticidade ao Script."
-echo -e "\033[01;37mPara executar digite o comando: \033[1;31mExpiradosDel"
+echo -e "\033[01;37mPara executar digite o comando: \033[1;31mRemoverExpirados"
 echo -e "\033[1;37mOu execute pelo \033[1;32mMenuVPS"
 echo -e "\033[1;37m--------------------------------------------------------------------------\033[0m"
 echo -e "\033[01;37mFerramenta \033[1;31mFerramenta Criar Teste:"
