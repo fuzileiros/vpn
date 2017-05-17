@@ -56,4 +56,4 @@ echo -e "\033[01;36m ╠\033[1;37m28\033[1;36m╣\033[01;37m Deletar_Todos \033[
 echo -e "\033[01;36m ╠\033[1;37m29\033[1;36m╣\033[01;37m Ajuda \033[01;32m(Informações sobre cada opção do MenuVPS)\033[0m"
 echo -e "\033[01;36m ╠\033[1;37m30\033[1;36m╣\033[01;37m Créditos \033[01;32m(Informações sobre o Editor)\033[0m"
 echo -e "\033[01;36m ╠\033[1;37m31\033[1;36m╣\033[01;37m Telegram \033[01;32m(Canais & Grupo Oficial ENTREM!)\033[0m"
-echo -e "\033[01;36m ╠\033[1;37m32\033[1;36m╣\033[01;37m Desinstalar \033[01;32m(Remover VpsPack)\033[0m"
+echo -e "\033[01;36m ╠\033[1;37m32\033[1;36m╣\033[01;37m Desinstalar \033[01;32m(Remover MenuVPS)\033[0m"
