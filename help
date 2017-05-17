@@ -3,7 +3,7 @@
 
 echo -e "MenuVPS HELP"
 echo -e '\033[05;31m-------------------------------------------------------\033[00;37m'
-echo -e "\033[01;37mFerramenta \033[1;31mConfigurar Script:"
+echo -e "\033[01;37mFerramenta \033[1;31mConfigurar Squid:"
 echo ""
 echo -e "\033[01;37mEssa ferramenta irá instalar o squid fundamental para o funcionamento e conexão."
 echo -e "\033[01;37mPara executar digite o comando: \033[1;31mConfSquid"
