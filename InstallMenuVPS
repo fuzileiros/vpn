@@ -75,6 +75,48 @@ wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master
 chmod +x /bin/BadVpn.sh
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Monitorar > /bin/Monitorar
 chmod +x /bin/Monitorar
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverLimite > /bin/RemoverLimite
+chmod +x /bin/RemoverLimite
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/MudarNome > /bin/MudarNome
+chmod +x /bin/MudarNome
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RedefinirUsuario > /bin/RedefinirUsuario
+chmod +x /bin/RedefinirUsuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DeletarUsuario > /bin/DeletarUsuario
+chmod +x /bin/DeletarUsuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/FirewallBlock > /bin/FirewallBlock
+chmod +x /bin/FirewallBlock
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/FirewallReset > /bin/FirewallReset
+chmod +x /bin/FirewallReset
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/AddHost > /bin/AddHost
+chmod +x /bin/AddHost
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverHost > /bin/RemoverHost
+chmod +x /bin/RemoverHost
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Backup > /bin/Backup
+chmod +x /bin/Backup
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Restaurar > /bin/Restaurar
+chmod +x /bin/Restaurar
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DetalhesUsuarios > /bin/DetalhesUsuarios
+chmod +x /bin/DetalhesUsuarios
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Banner > /bin/Banner
+chmod +x /bin/Banner
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/speedtest.py > /bin/speedtest.py
+chmod +x /bin/speedtest.py
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/LimpadorCache > /bin/LimpadorCache
+chmod +x /bin/LimpadorCache
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/VNC > /bin/VNC
+chmod +x /bin/VNC
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/tcptweaker > /bin/tcptweaker
+chmod +x /bin/tcptweaker
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DeletarTodos > /bin/DeletarTodos
+chmod +x /bin/DeletarTodos
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Ajuda > /bin/Ajuda
+chmod +x /bin/Ajuda
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Telegram > /bin/Telegram
+chmod +x /bin/Telegram
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Desinstalar > /bin/Desinstalar
+chmod +x /bin/Desinstalar
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/SistemaDetalhes > /bin/SistemaDetalhes
+chmod +x /bin/SistemaDetalhes
 
 clear
 echo -e "\033[1;31m•••••> \033[01;37mScript Edited ••ColtSeals TecnologY•• \033[0m"
