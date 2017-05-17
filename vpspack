@@ -40,9 +40,7 @@ mkdir /etc/VpsPackdir/limite
 fi
 
 clear
-echo -e "\033[1;37m A INTERNET APROXIMA QUEM ESTÁ LONGE E AFASTA QUEM ESTA PERTO. \033[0m"
-echo -e "\033[1;37m VpsPacket © @ColtSeals TecnologY (@NerdologiaVps) \033[0m"
-echo -e "\033[1;37mEscolha uma das opçoẽs:    \033[1;37mPara Sair Ctrl + C\033[1;33m
+
 echo -e "\033[01;36m╠ \033[1;37m01\033[1;36m╣\033[01;37m Configurar_Squid_SSH \033[01;32m(Squid e openssh configuração)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m02\033[1;36m╣\033[01;37m Limite \033[01;32m(Limite de conexões simultaneas)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m03\033[1;36m╣\033[01;37m Criar_Usuario \033[01;32m(Criar usuarios)\033[0m"
