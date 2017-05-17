@@ -1,6 +1,6 @@
 #!/bin/bash
 ##NERDOLOGIA VPS 
-##MenuVPS 1.0
+##MenuVPS 1.0.0
 ##By: @ColtSeals
 
 corPadrao="\033[0m"
