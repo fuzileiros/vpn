@@ -1,33 +1,45 @@
 #!/bin/bash
+
 if [ $(id -u) -eq 0 ]
 then
-clear
+	clear
 else
-echo -e "Execute o script como usuario \033[1;32mroot\033[0m"
-exit
+	if echo $(id) |grep sudo > /dev/null
+	then
+	clear
+	echo "Voce não é root"
+	echo "Seu usuario esta no grupo sudo"
+	echo -e "Para virar root execute \033[1;31msudo su\033[0m"
+	exit
+	else
+	clear
+	echo -e "Vc nao esta como usuario root, nem com seus direitos (sudo)\nPara virar root execute \033[1;31msu\033[0m e digite sua senha root"
+	exit
+	fi
 fi
+
 if [ -d /etc/VpsPackdir ]
 then
-true
+echo ""
 else
 mkdir /etc/VpsPackdir
 fi
+
 if [ -d /etc/VpsPackdir/senha ]
 then
-true
+echo ""
 else
 mkdir /etc/VpsPackdir/senha
 fi
+
 if [ -d /etc/VpsPackdir/limite ]
 then
-true
+echo ""
 else
 mkdir /etc/VpsPackdir/limite
 fi
 
 clear
-if [[ $1 == "" ]]
-then
 echo -e "\033[1;37m•••••> © Edited @ColtSeals & TecnologY \033[0m"
 echo -e "\033[1;32m•••••> TELEGRAM GRUPO: @NerdologiaVps"
 echo -e "\033[1;32m•••••> TELEGRAM CANAL: @VpsNerdologia"
