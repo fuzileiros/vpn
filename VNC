@@ -7,7 +7,7 @@ echo -e 'Digite: \033[01;32m1\033[00;37m Para Instalar o VNC.'
 echo " "
 echo -e 'Digite: \033[01;32m2\033[00;37m Iniciar o VNC.'
 echo " "
-echo -e 'Digite: \033[01;32m3\033[00;37m Sair e Voltar Para o PackVPS.'
+echo -e 'Digite: \033[01;32m3\033[00;37m Sair e Voltar Para o MenuVPS.'
 echo " "
 echo -e '\033[05;31m-------------------------------------------------------\033[00;37m'
 echo " "
@@ -35,7 +35,7 @@ sleep 7
 fi
 
 if [[ "$resposta" = '3' ]]; then
-PackVPS
+vpspack
 clear
 fi
 
@@ -80,7 +80,7 @@ fi
 
 
 if [[ "$resposta" = '3' ]]; then
-PackVPS
+vpspack
 clear
 fi
 
@@ -125,6 +125,6 @@ fi
 
 
 if [[ "$resposta" = '3' ]]; then
-PackVPS
+vpspack
 clear
 fi
