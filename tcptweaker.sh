@@ -1,11 +1,11 @@
 #!/bin/bash
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker 1.0" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker MenuVps" ; tput sgr0
 if [[ `grep -c "^#PH56" /etc/sysctl.conf` -eq 1 ]]
 then
 	echo ""
 	echo "As configurações de rede TCP Tweaker já foram adicionadas no sistema!"
 	echo ""
-	read -p "Deseja remover as configurações do TCP Tweaker? [s/n]: " -e -i n resposta0
+	read -p "Deseja remover as configurações do TCP Tweaker? [s/n]: " -e -i s resposta0
 	if [[ "$resposta0" = 's' ]]; then
 		grep -v "^#PH56
 net.ipv4.tcp_window_scaling = 1
