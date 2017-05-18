@@ -108,7 +108,7 @@ chmod +x /bin/MudarNome
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RedefinirUsuario -O /bin/RedefinirUsuario
 chmod +x /bin/RedefinirUsuario
 
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DeletarUsuario -O /bin/DeletarUsuario
+wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DeletarUsuario -O /bin/deletarusuario
 chmod +x /bin/DeletarUsuario
 
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/FirewallBlock -O /bin/FirewallBlock
@@ -194,8 +194,8 @@ cp /bin/RemoverLimite /bin/limitedel
 cp /bin/MudarNome /bin/mudarnome
 cp /bin/RedefinirUsuario /bin/redefinirusuario
 cp /bin/RedefinirUsuario /bin/redefiniruser
-cp /bin/DeletarUsuario /bin/deletarusuario
-cp /bin/DeletarUsuario /bin/deletaruser
+cp /bin/deletarusuario /bin/DeletarUsuario
+cp /bin/deletarusuario /bin/deletaruser
 cp /bin/FirewallBlock /bin/firewallblock
 cp /bin/FirewallBlock /bin/fiblock
 cp /bin/FirewallReset /bin/firewallreset
@@ -277,7 +277,7 @@ case $opcao in
    read -p "Limite: " limite
    limite $user $limite;;
   3 | 03 )
-   CriarUsuario;;
+   criarusuario;;
   4 | 04 )
    OpenVPN;;
   5 | 05 )
@@ -299,7 +299,7 @@ case $opcao in
   13)
    RedefinirUsuario;;
   14)
-   DeletarUsuario;;
+   deletarusuario;;
   15)
    FirewallBlock;;
   16)
