@@ -68,7 +68,7 @@ case $opcao in
    read -p "Limite: " limite
    limite $user $limite;;
   3 | 03 )
-   CriarUsuario;;
+   criarusuario;;
   4 | 04 )
    OpenVPN;;
   5 | 05 )
@@ -90,7 +90,7 @@ case $opcao in
   13)
    RedefinirUsuario;;
   14)
-   DeletarUsuario;;
+   deletarusuario;;
   15)
    FirewallBlock;;
   16)
