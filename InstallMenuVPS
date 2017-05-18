@@ -220,6 +220,9 @@ cp /bin/Ajuda /bin/ajuda
 cp /bin/Desinstalar /bin/desinstalar
 cp /bin/SistemaDetalhes /bin/sistemadetalhes
 cp /bin/SistemaDetalhes /bin/detalhessistem
+cp /bin/MenuVPS /bin/menu
+cp /bin/MenuVPS /bin/menuvps
+cp /bin/MenuVPS /bin/vps
 
 clear
 echo -e "\033[1;30m•••••> Script Edited ColtSeals TecnologY (NERD's)\033[0m"
