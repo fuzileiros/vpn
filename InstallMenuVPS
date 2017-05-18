@@ -273,7 +273,9 @@ case $opcao in
   1 | 01 )
    ConfSquid;;
   2 | 02 )
-   limite;;
+   read -p "Usuario: " user
+   read -p "Limite: " limite
+   limite $user $limite;;
   3 | 03 )
    CriarUsuario;;
   4 | 04 )
