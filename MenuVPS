@@ -63,104 +63,58 @@ read -p " Selecione a opção [01-31]: " opcao
 case $opcao in
   1 | 01 )
    ConfSquid;;
-   sleep 4
-   MenuVPS;;
   2 | 02 )
    limite;;
-   sleep 5
-   MenuVPS;;
   3 | 03 )
-   criarusuario;;
-   sleep 5
-   MenuVPS;;
+   CriarUsuario;;
   4 | 04 )
    OpenVPN;;
-   sleep 5
-   OpenVPS;;
   5 | 05 )
    RemoverExpirados;;
-   sleep 10
-   MenuVPS;;
   6 | 06 )
    Teste;;
-   sleep 5
-   MenuVPS;;
   7 | 07 )
    BadVpn.sh;;
-   sleep 5
-   MenuVPS;;
   8 | 08 )
    badvpn start;;
-   sleep 5
-   MenuVPS;;
   9 | 09 )
    badvpn stop;;
-   sleep 5
-   MenuVPS;;
   10)
    Monitorar;; 
   11)
    RemoverLimite;;
-   sleep 8
-   MenuVPS;;
   12)
    MudarNome;;
-   sleep 8
-   MenuVPS;;
   13)
    RedefinirUsuario;;
-   sleep 8
-   MenuVPS;;
   14)
    DeletarUsuario;;
-   sleep 5
-   MenuVPS;;
   15)
    FirewallBlock;;
-   sleep 5
-   MenuVPS;;
   16)
    FirewallReset;;
-   sleep 5
-   MenuVPS;;
   17)
    AddHost;;
-   sleep 20
-   MenuVPS;;
   18)
    RemoverHost;;
-   sleep 6
-   MenuVPS;;
   19)
    Backup;;
-   sleep 5
-   MenuVPS;;
   20)
-   RedefinirUsuario;;
-   sleep 8
-   MenuVPS;;
+   Restaurar;;
   21)
    DetalhesUsuarios;;
   22)
    Banner;;
-   sleep 5
-   MenuVPS;;
   23)
    speedtest.py;;
-   sleep 10
-   MenuVPS;;
   24)
    LimpadorCache;;
-   sleep 15
-   MenuVPS;;
   25)
    VNC;;
   26)
    tcptweaker;;
   27)
    DeletarTodos;;
-   sleep 5
-   MenuVPS;;
   28)
    Ajuda;;
   29)
@@ -169,10 +123,6 @@ case $opcao in
   Telegram;;
   31)
    Desinstalar;;
-   sleep 5
-   MenuVPS;;
   32)
    SistemaDetalhes;;
-  sleep 5
-  MenuVPS;;
 esac
