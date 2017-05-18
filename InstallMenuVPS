@@ -150,6 +150,9 @@ chmod +x /bin/tcptweaker
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DeletarTodos -O /bin/DeletarTodos
 chmod +x /bin/DeletarTodos
 
+wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Ajuda -O /bin/Ajuda
+chmod +x /bin/Ajuda
+
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Creditos -O /bin/Creditos
 chmod +x /bin/Creditos
 
