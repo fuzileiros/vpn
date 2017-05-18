@@ -25,37 +25,37 @@ echo -e "\033[1;30m•••••> TELEGRAM CANAL: @VpsNerdologia\033[0m"
 echo -e "\033[1;30m•••••> TELEGRAM CANAL: @ColtChannel\033[0m"
 echo -e "\033[1;30m•••••> TELEGRAM GRUPO: @NerdologiaVps\033[0m"
 echo -e "\033[1;37mEscolha uma opção:    Para Sair Ctrl + C\033[1;33m"
-echo -e "\033[01;36m[\033[1;37m01\033[1;36m]\033[01;37m Configurar_Squid_SSH \033[01;32m(Squid e openssh configuração)\033[0m"
-echo -e "\033[01;36m[\033[1;37m02\033[1;36m]\033[01;37m Limite \033[01;32m(Limite de conexões simultaneas)\033[0m"
-echo -e "\033[01;36m[\033[1;37m03\033[1;36m]\033[01;37m Criar_Usuario \033[01;32m(Criar usuarios)\033[0m"
-echo -e "\033[01;36m[\033[1;37m04\033[1;36m]\033[01;37m OpenVPN \033[01;32m(Configurar e Gerenciar Usuarios .ovpn)\033[0m"
-echo -e "\033[01;36m[\033[1;37m05\033[1;36m]\033[01;37m Remover_expirados \033[01;32m(Remover usuarios já expirados)\033[0m"
-echo -e "\033[01;36m[\033[1;37m06\033[1;36m]\033[01;37m Criar_Teste \033[01;32m(Criar usuarios de curta duração)\033[0m"
-echo -e "\033[01;36m[\033[1;37m07\033[1;36m]\033[01;37m BadVpn \033[01;32m(Instala badvpn para tunnel udp)\033[0m"
-echo -e "\033[01;36m[\033[1;37m08\033[1;36m]\033[01;37m BadVpn_Start \033[01;32m(Ativa chamadas voip, jogos online, etc)\033[0m"
-echo -e "\033[01;36m[\033[1;37m09\033[1;36m]\033[01;37m BadVpn_Stop \033[01;32m(Parar serviço do badvpn)\033[0m"
-echo -e "\033[01;36m[\033[1;37m10\033[1;36m]\033[01;37m Monitorar \033[01;32m(Monitorar conexões atuais)\033[0m"
-echo -e "\033[01;36m[\033[1;37m11\033[1;36m]\033[01;37m Remover_Limite \033[01;32m(Remover limite de conexoes de um usuario)\033[0m"
-echo -e "\033[01;36m[\033[1;37m12\033[1;36m]\033[01;37m Mudar_Nome \033[01;32m(Mudar nome de um usuario)\033[0m"
-echo -e "\033[01;36m[\033[1;37m13\033[1;36m]\033[01;37m Redefinir_Usuario \033[01;32m(Redefinir Data, senha, etc)\033[0m"
-echo -e "\033[01;36m[\033[1;37m14\033[1;36m]\033[01;37m Deletar_Usuario \033[01;32m(Menu Deletar, Desconectar, etc)\033[0m"
-echo -e "\033[01;36m[\033[1;37m15\033[1;36m]\033[01;37m Firewall_block \033[01;32m(bloquear torrent, icmp)\033[1;31m[RISCOS]"
-echo -e "\033[01;36m[\033[1;37m15\033[1;36m]\033[01;37m Reset_Firewall \033[01;32m(Resetar regras iptables)\033[1;31m[RISCOS]"
-echo -e "\033[01;36m[\033[1;37m17\033[1;36m]\033[01;37m Addhost \033[01;32m(Adicionar Hosts aceitos pelo squid)\033[0m"
-echo -e "\033[01;36m[\033[1;37m18\033[1;36m]\033[01;37m Remover_Host \033[01;32m(Remover Hosts aceitos pelo squid)\033[0m"
-echo -e "\033[01;36m[\033[1;37m19\033[1;36m]\033[01;37m Backup-Users \033[01;32m(Backup dos usuarios)\033[0m"
-echo -e "\033[01;36m[\033[1;37m20\033[1;36m]\033[01;37m Rest-Users \033[01;32m(Restaurar usuarios feito backup)\033[0m"
-echo -e "\033[01;36m[\033[1;37m21\033[1;36m]\033[01;37m Usuarios_Detalhes \033[01;32m(Informações sobre os usuarios)\033[0m"
-echo -e "\033[01;36m[\033[1;37m22\033[1;36m]\033[01;37m Banner \033[01;32m(Adicionar um banner)\033[0m"
-echo -e "\033[01;36m[\033[1;37m23\033[1;36m]\033[01;37m Speedtest \033[01;32m(Teste de conexão [velocidade de banda])\033[0m"
-echo -e "\033[01;36m[\033[1;37m24\033[1;36m]\033[01;37m ClearCache \033[01;32m(Limpa Cache e Swap do servidor)\033[0m"
-echo -e "\033[01;36m[\033[1;37m25\033[1;36m]\033[01;37m VNC \033[01;32m(Ativa a Interface Gráfica no Servidor)\033[0m"
-echo -e "\033[01;36m[\033[1;37m26\033[1;36m]\033[01;37m TCPTweaker \033[01;32m(Melhora a velocidade e desempenho da VPS)\033[0m"
-echo -e "\033[01;36m[\033[1;37m27\033[1;36m]\033[01;37m Deletar_Todos \033[01;32m(Todos os usuarios serão deletados)\033[0m"
-echo -e "\033[01;36m[\033[1;37m28\033[1;36m]\033[01;37m Ajuda \033[01;32m(Informações sobre cada opção do MenuVPS)\033[0m"
-echo -e "\033[01;36m[\033[1;37m29\033[1;36m]\033[01;37m Créditos \033[01;32m(Informações sobre o Editor)\033[0m"
-echo -e "\033[01;36m[\033[1;37m30\033[1;36m]\033[01;37m Telegram \033[01;32m(Canais & Grupo Oficial ENTREM!)\033[0m"
-echo -e "\033[01;36m[\033[1;37m31\033[1;36m]\033[01;37m Desinstalar \033[01;32m(Remover MenuVPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m01\033[1;36m╣\033[01;37m Configurar_Squid_SSH \033[01;32m(Squid e openssh configuração)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m02\033[1;36m╣\033[01;37m Limite \033[01;32m(Limite de conexões simultaneas)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m03\033[1;36m╣\033[01;37m Criar_Usuario \033[01;32m(Criar usuarios)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m04\033[1;36m╣\033[01;37m OpenVPN \033[01;32m(Configurar e Gerenciar Usuarios .ovpn)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m05\033[1;36m╣\033[01;37m Remover_expirados \033[01;32m(Remover usuarios já expirados)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m06\033[1;36m╣\033[01;37m Criar_Teste \033[01;32m(Criar usuarios de curta duração)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m07\033[1;36m╣\033[01;37m BadVpn \033[01;32m(Instala badvpn para tunnel udp)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m08\033[1;36m╣\033[01;37m BadVpn_Start \033[01;32m(Ativa chamadas voip, jogos online, etc)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m09\033[1;36m╣\033[01;37m BadVpn_Stop \033[01;32m(Parar serviço do badvpn)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m10\033[1;36m╣\033[01;37m Monitorar \033[01;32m(Monitorar conexões atuais)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m11\033[1;36m╣\033[01;37m Remover_Limite \033[01;32m(Remover limite de conexoes de um usuario)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m12\033[1;36m╣\033[01;37m Mudar_Nome \033[01;32m(Mudar nome de um usuario)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m13\033[1;36m╣\033[01;37m Redefinir_Usuario \033[01;32m(Redefinir Data, senha, etc)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m14\033[1;36m╣\033[01;37m Deletar_Usuario \033[01;32m(Menu Deletar, Desconectar, etc)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m15\033[1;36m╣\033[01;37m Firewall_block \033[01;32m(bloquear torrent, icmp)\033[1;31m[RISCOS]"
+echo -e "\033[01;36m╠ \033[1;37m15\033[1;36m╣\033[01;37m Reset_Firewall \033[01;32m(Resetar regras iptables)\033[1;31m[RISCOS]"
+echo -e "\033[01;36m╠ \033[1;37m17\033[1;36m╣\033[01;37m Addhost \033[01;32m(Adicionar Hosts aceitos pelo squid)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m18\033[1;36m╣\033[01;37m Remover_Host \033[01;32m(Remover Hosts aceitos pelo squid)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m19\033[1;36m╣\033[01;37m Backup-Users \033[01;32m(Backup dos usuarios)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m20\033[1;36m╣\033[01;37m Rest-Users \033[01;32m(Restaurar usuarios feito backup)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m21\033[1;36m╣\033[01;37m Usuarios_Detalhes \033[01;32m(Informações sobre os usuarios)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m22\033[1;36m╣\033[01;37m Banner \033[01;32m(Adicionar um banner)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m23\033[1;36m╣\033[01;37m Speedtest \033[01;32m(Teste de conexão [velocidade de banda])\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m24\033[1;36m╣\033[01;37m ClearCache \033[01;32m(Limpa Cache e Swap do servidor)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m25\033[1;36m╣\033[01;37m VNC \033[01;32m(Ativa a Interface Gráfica no Servidor)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m26\033[1;36m╣\033[01;37m TCPTweaker \033[01;32m(Melhora a velocidade e desempenho da VPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m27\033[1;36m╣\033[01;37m Deletar_Todos \033[01;32m(Todos os usuarios serão deletados)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m28\033[1;36m╣\033[01;37m Ajuda \033[01;32m(Informações sobre cada opção do MenuVPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m29\033[1;36m╣\033[01;37m Créditos \033[01;32m(Informações sobre o Editor)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m30\033[1;36m╣\033[01;37m Telegram \033[01;32m(Canais & Grupo Oficial ENTREM!)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m31\033[1;36m╣\033[01;37m Desinstalar \033[01;32m(Remover MenuVPS)\033[0m"
 echo""
 echo""
 read -p " Selecione a opção [01-31]: " opcao
@@ -63,58 +63,104 @@ read -p " Selecione a opção [01-31]: " opcao
 case $opcao in
   1 | 01 )
    ConfSquid;;
+   sleep 4
+   MenuVPS;;
   2 | 02 )
    limite;;
+   sleep 5
+   MenuVPS;;
   3 | 03 )
    criarusuario;;
+   sleep 5
+   MenuVPS;;
   4 | 04 )
    OpenVPN;;
+   sleep 5
+   OpenVPS;;
   5 | 05 )
    RemoverExpirados;;
+   sleep 10
+   MenuVPS;;
   6 | 06 )
    Teste;;
+   sleep 5
+   MenuVPS;;
   7 | 07 )
    BadVpn.sh;;
+   sleep 5
+   MenuVPS;;
   8 | 08 )
    badvpn start;;
+   sleep 5
+   MenuVPS;;
   9 | 09 )
    badvpn stop;;
+   sleep 5
+   MenuVPS;;
   10)
    Monitorar;; 
   11)
    RemoverLimite;;
+   sleep 8
+   MenuVPS;;
   12)
    MudarNome;;
+   sleep 8
+   MenuVPS;;
   13)
    RedefinirUsuario;;
+   sleep 8
+   MenuVPS;;
   14)
    DeletarUsuario;;
+   sleep 5
+   MenuVPS;;
   15)
    FirewallBlock;;
+   sleep 5
+   MenuVPS;;
   16)
    FirewallReset;;
+   sleep 5
+   MenuVPS;;
   17)
    AddHost;;
+   sleep 20
+   MenuVPS;;
   18)
    RemoverHost;;
+   sleep 6
+   MenuVPS;;
   19)
    Backup;;
+   sleep 5
+   MenuVPS;;
   20)
    RedefinirUsuario;;
+   sleep 8
+   MenuVPS;;
   21)
    DetalhesUsuarios;;
   22)
    Banner;;
+   sleep 5
+   MenuVPS;;
   23)
    speedtest.py;;
+   sleep 10
+   MenuVPS;;
   24)
    LimpadorCache;;
+   sleep 15
+   MenuVPS;;
   25)
    VNC;;
   26)
    tcptweaker;;
   27)
    DeletarTodos;;
+   sleep 5
+   MenuVPS;;
   28)
    Ajuda;;
   29)
@@ -123,7 +169,10 @@ case $opcao in
   Telegram;;
   31)
    Desinstalar;;
+   sleep 5
+   MenuVPS;;
   32)
    SistemaDetalhes;;
-  
+  sleep 5
+  MenuVPS;;
 esac
