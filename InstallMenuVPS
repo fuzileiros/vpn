@@ -81,8 +81,9 @@ chmod +x /bin/ConfSquid
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/limite -O /bin/limite
 chmod +x /bin/limite
 
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/criarusuario -O /bin/criarusuario
-chmod +x /bin/criarusuario
+rm -rf /bin/criarusuario 2>/dev/nullwget -o /dev/null -O- 
+wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/criarusuario > /bin/criarusuariochmod 
++x /bin/criarusuario
 
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/OpenVPN -O /bin/OpenVPN
 chmod +x /bin/OpenVPN
