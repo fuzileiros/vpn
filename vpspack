@@ -1,120 +1,44 @@
 #!/bin/bash
+
 if [ $(id -u) -eq 0 ]
 then
-clear
+	clear
 else
-echo -e "Execute o script como usuario \033[1;32mroot\033[0m"
-exit
+	if echo $(id) |grep sudo > /dev/null
+	then
+	clear
+	echo "Voce não é root"
+	echo "Seu usuario esta no grupo sudo"
+	echo -e "Para virar root execute \033[1;31msudo su\033[0m"
+	exit
+	else
+	clear
+	echo -e "Vc nao esta como usuario root, nem com seus direitos (sudo)\nPara virar root execute \033[1;31msu\033[0m e digite sua senha root"
+	exit
+	fi
 fi
+
 if [ -d /etc/VpsPackdir ]
 then
-true
+echo ""
 else
 mkdir /etc/VpsPackdir
 fi
+
 if [ -d /etc/VpsPackdir/senha ]
 then
-true
+echo ""
 else
 mkdir /etc/VpsPackdir/senha
 fi
+
 if [ -d /etc/VpsPackdir/limite ]
 then
-true
+echo ""
 else
 mkdir /etc/VpsPackdir/limite
 fi
 
-function ConfSquid(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/ConfSquid && bash ConfSquid
-}
-function limite(){
-wget https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/limite && bash limite
-}
-function criarusuario(){
-wget https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/criarusuario && bash criarusuario
-}
-function deletarusuario(){
-wget https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/deletarusuario && bash deletarusuario
-}
-function redefinirusuario(){
-wget https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/redefinirusuario && bash redefinirusuario
-}
-function speedtest.py(){
-wget https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/speedtest.py && bash speedtest.py
-}
-function OpenVPN(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/OpenVPN && bash OpenVPN
-}
-function RemoverExpirados(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverExpirados && bash RemoverExpirados
-}
-function Teste(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Teste && bash Teste
-}
-function BadVpn.sh(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/BadVpn.sh && bash BadVpn.sh
-}
-function Monitorar(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Monitorar && bash Monitorar
-}
-function RemoverLimite(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverLimite && bash RemoverLimite
-}
-function MudarNome(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/MudarNome && bash MudarNome
-}
-function FirewallBlock(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/FirewallBlock && bash FirewallBlock
-}
-function FirewallReset(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/FirewallReset && bash FirewallReset
-}
-function AddHost(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/AddHost && bash AddHost
-}
-function RemoverHost(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverHost && bash RemoverHost
-}
-function Backup(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Backup && bash Backup
-}
-function Restaurar(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Restaurar && bash Restaurar
-}
-function DetalhesUsuarios(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DetalhesUsuarios && bash DetalhesUsuarios
-}
-function Banner(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Banner && bash Banner
-}
-function LimpadorCache(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/LimpadorCache && bash LimpadorCache
-}
-function VNC(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/VNC && bash VNC
-}
-function tcptweaker(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/tcptweaker && bash tcptweaker
-}
-function DeletarTodos(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DeletarTodos && bash DeletarTodos
-}
-function Ajuda(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Ajuda && bash Ajuda
-}
-function Creditos(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Creditos && bash Creditos
-}
-function Telegram(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Telegram && bash Telegram
-}
-function Desinstalar(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Desinstalar && bash Desinstalar
-}
-function SistemaDetalhes(){
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/SistemaDetalhes && bash SistemaDetalhes 
-}
 clear
 if [[ $1 == "" ]]
 then
