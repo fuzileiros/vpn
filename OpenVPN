@@ -110,7 +110,7 @@ echo -e "\033[01;36m╠ \033[1;37m3\033[1;36m╣\033[01;37m Deletar um usuário 
 echo -e "\033[01;36m╠ \033[1;37m4\033[1;36m╣\033[01;37m Desinstalar o OpenVPN \033[01;32m(Para desinstalar o OpenVPN.)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m5\033[1;36m╣\033[01;37m Renovar um usuário \033[01;32m(Para renovar um usuário OpenVPN.)\033[0m"
 echo " "
-echo -e '\033[05;31m-------------------------------------------------------\033[00;37m'
+echo -e '\033[05;31m------------------------------------------------------------------------\033[00;37m'
 echo " "
 echo " "
 read -p "Responda: " -e -i 2 resposta
