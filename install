@@ -22,7 +22,7 @@ rm -rf /bin/redefinirusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/redefinirusuario > /bin/redefinirusuario
 chmod +x /bin/redefinirusuario
 rm -rf /bin/vpspack 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpsmenu1/master/vpspack > /bin/vpspack
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/speedtest.py > /bin/speedtest.py
@@ -132,9 +132,10 @@ cp /bin/Ajuda /bin/ajuda
 cp /bin/Desinstalar /bin/desinstalar
 cp /bin/SistemaDetalhes /bin/sistemadetalhes
 cp /bin/SistemaDetalhes /bin/detalhessistem
-cp /bin/MenuVPS /bin/menu
-cp /bin/MenuVPS /bin/menuvps
-cp /bin/MenuVPS /bin/vps
+cp /bin/vpspack /bin/menu
+cp /bin/vpspack /bin/MenuVPS
+cp /bin/vpspack /bin/vps
+cp /bin/vpspack /bin/menuvps
 clear
 echo -e "\033[1;31m•••••> \033[01;37mScript Edited ••ColtSeals TecnologY•• \033[0m"
 echo -e "\033[1;32m•••••> A Internet aproxima quem está longe e afasta quem está perto!"
