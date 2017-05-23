@@ -29,7 +29,7 @@ wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/mas
 chmod +x /bin/speedtest.py
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/ConfSquid -O /bin/ConfSquid
 chmod +x /bin/ConfSquid
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/OpenVPN -O /bin/OpenVPN
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/OpenVPN -O /bin/OpenVPN
 chmod +x /bin/OpenVPN
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverExpirados -O /bin/RemoverExpirados
 chmod +x /bin/RemoverExpirados
