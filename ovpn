@@ -84,7 +84,7 @@ else
 fi
 
 clear
-echo -e "\033[36;37m PAINEL DE GERENCIAMENTO DA VPS, OS ARQUIVOS SERAO SALVOS NA PASTA ROOT\033[0m"
+echo -e "\033[36;37m PAINEL DE GERENCIAMENTO DA VPS\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
 echo -e "\033[1;36m[\033[1;31m1\033[1;36m] CRIAR USUARIO \033[1;30m(CRIA USUARIOS)\033[1;36m
 [\033[1;31m2\033[1;36m] REMOVER USUARIO \033[1;30m(REMOVE USUARIO OpenVPN)\033[1;36m
