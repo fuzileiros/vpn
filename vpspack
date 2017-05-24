@@ -93,7 +93,7 @@ case $opcao in
   3 | 03 )
    criarusuario;;
   4 | 04 )
-   OpenVPN;;
+   ovpn;;
   5 | 05 )
    RemoverExpirados;;
   6 | 06 )
