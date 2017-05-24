@@ -953,7 +953,7 @@ case $opcao in
   22)
    Banner;;
   23)
-   speedtest.py;;
+   speedtest;;
   24)
    LimpadorCache;;
   25)
