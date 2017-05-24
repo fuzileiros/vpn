@@ -94,7 +94,7 @@ echo -e "\033[1;36m[\033[1;31m1\033[1;36m] CRIAR USUARIO \033[1;30m(CRIA USUARIO
 [\033[1;31m6\033[1;36m] MUDAR DATA USUARIOS \033[1;30m(Muda data de usuarios OpenVPN)\033[1;36m
 [\033[1;31m7\033[1;36m] EDITAR CLIENTE GENERICO \033[1;30m(mudar config do cliente gerado)\033[1;36m
 [\033[1;31m8\033[1;36m] MONITOR DE USUARIOS OPENVPN \033[1;30m(Monitora usuarios Online)\033[1;36m
-[\033[1;31m9\033[1;36m] RECARREGAR SERVIÇOS OVPN\033[1;30m(Reinicia serviços)\033[1;36m
+[\033[1;31m9\033[1;36m] RECARREGAR SERVIÇOS OpenVPN\033[1;30m(Reinicia serviços)\033[1;36m
 [\033[1;31m0\033[1;36m] VOLTAR \033[1;30m(MenuVPS)\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
 echo -e "\033[1;36mQUAL E A SUA OPÇAO?\033[0m"
