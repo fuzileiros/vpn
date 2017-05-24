@@ -29,8 +29,8 @@ wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/mas
 chmod +x /bin/speedtest.py
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/ConfSquid -O /bin/ConfSquid
 chmod +x /bin/ConfSquid
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/OpenVPN -O /bin/OpenVPN
-chmod +x /bin/OpenVPN
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ovpn -O /bin/ovpn
+chmod +x /bin/ovpn
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverExpirados -O /bin/RemoverExpirados
 chmod +x /bin/RemoverExpirados
 wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Teste -O /bin/Teste
@@ -85,8 +85,9 @@ cp /bin/criarusuario /bin/CriarUsuario
 cp /bin/criarusuario /bin/criar
 cp /bin/ConfSquid /bin/confsquid
 cp /bin/ConfSquid /bin/squid
-cp /bin/OpenVPN /bin/open
-cp /bin/OpenVPN /bin/openvpn
+cp /bin/ovpn /bin/open
+cp /bin/ovpn /bin/openvpn
+cp /bin/ovpn /bin/OpenVPN
 cp /bin/RemoverExpirados /bin/removerexpirados
 cp /bin/RemoverExpirados /bin/expiradosdel
 cp /bin/BadVpn /bin/badvpn
