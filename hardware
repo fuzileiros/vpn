@@ -13,7 +13,7 @@ echo -e "\033[01;36m╠ \033[1;37m01\033[1;36m╣\033[01;37m CPU \033[01;32m(Det
 echo -e "\033[01;36m╠ \033[1;37m02\033[1;36m╣\033[01;37m HD \033[01;32m(Detalhes sobre o HD desse servidor)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m03\033[1;36m╣\033[01;37m Consumo RAM \033[01;32m(Detalhes do consumo RAM no servidor)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m04\033[1;36m╣\033[01;37m Geral \033[01;32m(Todas as informações básicas gerais do servidor)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m05\033[1;36m╣\033[01;37m Voltar \033[01;32m(Voltar para o MenuVPS)"
+echo -e "\033[01;36m╠ \033[1;37m05\033[1;36m╣\033[01;37m Voltar \033[01;32m(Voltar para o MenuVPS)\033[0m"
 
 read -p "Opção:" opcao
 
