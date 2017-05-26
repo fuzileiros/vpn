@@ -1,0 +1,8 @@
+#!/bin/bash
+
+clear
+echo -e "\033[1;31mATENÇÃO: \033[1;36mPrecione CTRL + C para sair da próxima tela que irá aparecer. Pressione \033[1;31mENTER \033[1;36mpara continuar.\033[0m"
+read  #enter
+echo -e "\033[1;35mAguarde, coletando informações....\033[0m"
+sleep 5
+top

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+clear
+echo -e "\033[1;31mRemovendo pacotes antigos, aguarde.\033[0m"
+sleep 2
+apt-get autoremove -y
+clear
+echo -e "\033[1;36mTerminado, limpeza concluída.\033[0m"
+sleep 1
+2

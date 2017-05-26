@@ -1,0 +1,60 @@
+ #!/bin/bash -e
+
+if [ ! /proc/cpuinfo ]
+then
+echo -e "\033[1;31m Oops, ouve um erro ao tentar obter informações. \033[0m"
+exit 0
+fi
+if [ ! /etc/issue.net ]
+then
+echo -e "\033[1;31m Oops, ouve um erro ao tentar obter as informações. \033[0m"
+exit 0
+fi
+if [ ! /proc/meminfo ]
+then
+echo -e "\033[1;31m  Oops, ouve um erro ao tentar obter as informações.\033[0m"
+exit 0
+fi
+
+system=$(cat /etc/issue.net)
+based=$(cat /etc/*release | grep ID_LIKE | awk -F "=" '{print $2}')
+processor=$(cat /proc/cpuinfo | grep "model name" | uniq | awk -F ":" '{print $2}')
+cpus=$(cat /proc/cpuinfo | grep processor | wc -l)
+
+if [ "$system" ]
+then
+
+echo -e "\033[1;36m Versão SO: \033[1;31m $system \033[0m"
+else
+echo -e "\033[1;36m System: \033[1;31m Não foi possível identificar sua VS dw SO \033[0m"
+fi
+if [ "$based" ]
+then
+echo "Its a $based-like"
+else
+echo "Based system not Available"
+fi
+if [ "$processor" ]
+then
+echo -e "\033[1;36m Processador: \033[1;31m $processor x$cpus \033[0m"
+else
+echo -e "\033[1;36m Processor: \033[1;31m Sem informação \033[0m"
+fi
+clock=$(lscpu | grep "CPU MHz" | awk '{print $3}')
+if [ "$clock" ]
+then
+echo -e "\033[1;36m Clock: \033[1;31m $clock MHz \033[0m"
+else
+echo -e "\033[1;36m Clock: \033[1;31m Sem informações \033[0m"
+fi
+echo "$(ps aux  | awk 'BEGIN { sum = 0 }  { sum += sprintf("%f",$3) }; END { printf " \033[1;36mCPU Usage:\033[0m" " \033[1;31m %.2f \033[0m" "\033[1;31m%% \033[0m", sum}')"
+totalram=$(free | grep Mem | awk '{print $2}')
+usedram=$(free | grep Mem | awk '{print $3}')
+freeram=$(free | grep Mem | awk '{print $4}')
+swapram=$( cat /proc/meminfo | grep SwapTotal | awk '{print $2}')
+echo -e "\033[1;36m RAM TOTAL: \033[1;31m $(($totalram / 1024))MB \033[1;36m USADA: \033[1;31m $(($usedram / 1024))MB \033[1;36m FREE: \033[1;31m $(($freeram / 1024))MB \033[1;36m SWAP: \033[1;31m $(($swapram / 1024))MB \033[0m" 
+echo -e "\033[1;36m Uptime: \033[1;31m$(uptime)\033[0m"
+echo -e "\033[1;36m Nome Host: \033[1;31m $(hostname)\033[0m"
+echo -e "\033[1;36m Endereço de IP: \033[1;31m $(ip addr | grep inet | grep -v inet6 | grep -v "host lo" | awk '{print $2}' | awk -F "/" '{print $1}')"
+echo -e "\033[1;36m Kernel Version: \033[1;31m $(uname -r)"
+echo -e "\033[1;36m Arctetura: \033[1;31m $(uname -m)\033[0m"

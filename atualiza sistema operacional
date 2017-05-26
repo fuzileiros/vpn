@@ -1,0 +1,8 @@
+#!/bin/bash
+
+clear
+echo -e "\033[1;36m Isso irá atualizar seu SO para a versão mais recente, \033[1;31mse tiver nova versão. \033[1;36mNão prossiga se não souber o que está fazendo. A atualização pode demorar muito, seja paciente. Para continuar aperte \033[1;31mENTER \033[1;36mpara cancelar \033[1;31mCTRL + C \033[0m"
+read  #enter
+do-release-upgrade
+clear
+2

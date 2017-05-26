@@ -1,0 +1,23 @@
+#!/bin/bash
+
+clear
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "Limpador e Swap" ; tput sgr0
+echo ""
+
+cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/      //' > /etc/so
+echo -e "\033[1;36mPara continuar pressione \033[1;31mENTER.\033[0m"
+read -p "" ip
+
+clear
+echo -e "\033[1;31mLimpando o Cache e Swap."
+echo 3 > /proc/sys/vm/drop_caches
+sysctl -w vm.drop_caches=3
+swapoff -a && swapon -a
+clear
+
+service ssh restart & service squid3 restart
+clear
+sleep 5
+echo -e "\033[01;36mLimpeza do Cache e Swap concluída.\033[0m"
+sleep 2 
+2

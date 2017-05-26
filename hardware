@@ -1,0 +1,33 @@
+#!/bin/bash
+
+clear
+echo " "
+echo -e "\033[1;37mPara executar um comando escolha uma das opçoẽs abaixo.\033[0m" 
+
+echo -e "\033[1;31mPara sair precione Ctrl + C\033
+\033[1;36m1 | CPU
+  \033[0;37m|Detalhes sobre a CPU desse servidor. 
+\033[1;36m2 | HD
+  \033[0;37m|Detalhes sobre o HD desse servidor. 
+\033[1;36m3 | Consumo RAM
+  \033[0;37m|Processos que mais consomem memória RAM nesse servidor. 
+\033[1;36m4 | Geral
+  \033[0;37m|Todas as informações básicas gerais desse servidor.
+\033[1;36m5| Voltar
+  \033[0;37m|Voltar para o menu anterior.\033[0m"
+read -p "Opção:" opcao
+
+case $opcao in
+ 1)
+  101;;
+ 2) 
+  102;;
+ 3)
+  103;;
+ 4)
+  104;;
+ 5)
+  adm;;
+  *)
+  id > /dev/null 2> /dev/null
+esac

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+clear
+echo -e "\033[1;36m O nome atual de seu servidor é: \033[1;37m$(hostname)\033[0m"
+sleep 5
+2

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+clear
+echo -e "\033[1;36m A velocidade do servidor pode ou não ser aumentada, tenha em mente que o aumento de velocidade não é 100% garantido.\033[0m"
+echo -n -e "\033[1;31m Deseja continuar? (s/n):\033[0m"
+read resp
+if [ "$resp" == "s" ]; then
+    echo -e "\033[1;31m Iniciando aguarde.\033[0m"
+    sleep 3
+    echo "Compression yes" >> /etc/ssh/sshd_config
+    sleep 1
+    clear
+    echo -e "\033[1;36m Concluído.\033[0m" 
+    sleep 1
+    2
+elif [ "$resp" == "n" ]; then
+    2
