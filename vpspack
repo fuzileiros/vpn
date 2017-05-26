@@ -896,11 +896,15 @@ echo -e "\033[01;36m╠ \033[1;37m23\033[1;36m╣\033[01;37m Speedtest \033[01;3
 echo -e "\033[01;36m╠ \033[1;37m24\033[1;36m╣\033[01;37m ClearCache \033[01;32m(Limpa Cache e Swap do servidor)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m25\033[1;36m╣\033[01;37m VNC \033[01;32m(Ativa a Interface Gráfica no Servidor)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m26\033[1;36m╣\033[01;37m TCPTweaker \033[01;32m(Melhora a velocidade e desempenho da VPS)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m27\033[1;36m╣\033[01;37m Deletar_Todos \033[01;32m(Todos os usuarios serão deletados)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m28\033[1;36m╣\033[01;37m Ajuda \033[01;32m(Informações sobre cada opção do MenuVPS)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m29\033[1;36m╣\033[01;37m Créditos \033[01;32m(Informações sobre o Editor)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m30\033[1;36m╣\033[01;37m Telegram \033[01;32m(Canais & Grupo Oficial ENTREM!)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m31\033[1;36m╣\033[01;37m Desinstalar \033[01;32m(Remover MenuVPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m27\033[1;36m╣\033[01;37m +Velocidade \033[01;32m(Aumentar velocidade de conexão do servidor)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m28\033[1;36m╣\033[01;37m Deletar_Todos \033[01;32m(Todos os usuarios serão deletados)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m29\033[1;36m╣\033[01;37m Ajuda \033[01;32m(Informações sobre cada opção do MenuVPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m30\033[1;36m╣\033[01;37m Hardware \033[01;32m(Informações sobre CPU, HD, RAM & Gerais)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m31\033[1;36m╣\033[01;37m senha Root \033[01;32m(Alterar Senha Root da VPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m32\033[1;36m╣\033[01;37m Atualizar VPS \033[01;32m(Atualiza o Sistema Operacional da VPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m33\033[1;36m╣\033[01;37m Créditos \033[01;32m(Informações sobre o Editor)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m34\033[1;36m╣\033[01;37m Telegram \033[01;32m(Canais & Grupo Oficial ENTREM!)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m35\033[1;36m╣\033[01;37m Desinstalar \033[01;32m(Remover MenuVPS)\033[0m"
 read -p ": " opcao
 else
 opcao=$1
@@ -961,15 +965,23 @@ case $opcao in
   26)
    tcptweaker;;
   27)
-   DeletarTodos;;
+   MelhorarVelocidade;;
   28)
-   Ajuda;;
+   DeletarTodos;;
   29)
-   Creditos;;
+   Ajuda;;
   30)
-  Telegram;;
+   hardware;;
   31)
-   Desinstalar;;
+   PasswordRoot;;
   32)
+   UpdateVPS;;
+  33)
+   Creditos;;
+  34)
+  Telegram;;
+  35)
+   Desinstalar;;
+  36)
    SistemaDetalhes;;
 esac
