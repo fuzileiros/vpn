@@ -1,11 +1,9 @@
 #!/bin/bash
-echo -e "\033[1;31mHosts atualmente permitidos
-echo -e "\n\n\033[1;32m$(cat /etc/payloads)\n\033[0m"
-echo -e "\033[1;37mContinuar Aperte enter \033[0m"
-echo -e "\033[0;31mCancelar Ctrl+c \033[0m"
-echo -e "\033[1;37mDeseja Remover Todas Hosts?: \033[0m"
+echo -e "\033[1;31mHosts atualmente permitidos\n\n\033[1;32m$(cat /etc/payloads)\n\033[0m"
+echo -ne "\033[1;37mQual host deseja remover: \033[0m"
 read host
+hosts = $(cat /etc/payloads |grep -v $host)
 echo "$hosts" > /etc/payloads
 squid -k reconfigure >/dev/null 2>/dev/null
 squid3 -k reconfigure >/dev/null 2>/dev/null
-echo -e "\033[1;31mSucesso! \033[01;37mTodos hosts removidos com SUCESSO!\033[0m"
+echo -e "\n\033[1;32mHost Removido\033[0m"
