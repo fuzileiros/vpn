@@ -968,7 +968,7 @@ case $opcao in
   17)
    addhost;;
   18)
-   removerhost;;
+   removerhostf;;
   19)
    Backup;;
   20)
