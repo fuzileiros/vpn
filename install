@@ -27,58 +27,73 @@ chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/ConfSquid -O /bin/ConfSquid
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ConfSquid -O /bin/ConfSquid
 chmod +x /bin/ConfSquid
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/OpenVPN -O /bin/OpenVPN
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/OpenVPN -O /bin/OpenVPN
 chmod +x /bin/OpenVPN
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverExpirados -O /bin/RemoverExpirados
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverExpirados -O /bin/RemoverExpirados
 chmod +x /bin/RemoverExpirados
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Teste -O /bin/Teste
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Teste -O /bin/Teste
 chmod +x /bin/Teste
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/BadVpn.sh -O /bin/BadVpn.sh
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/BadVpn.sh -O /bin/BadVpn.sh
 chmod +x /bin/BadVpn.sh
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Monitorar -O /bin/Monitorar
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Monitorar -O /bin/Monitorar
 chmod +x /bin/Monitorar
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverLimite -O /bin/RemoverLimite
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverLimite -O /bin/RemoverLimite
 chmod +x /bin/RemoverLimite
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/MudarNome -O /bin/MudarNome
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/MudarNome -O /bin/MudarNome
 chmod +x /bin/MudarNome
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/FirewallBlock -O /bin/FirewallBlock
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallBlock -O /bin/FirewallBlock
 chmod +x /bin/FirewallBlock
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/FirewallReset -O /bin/FirewallReset
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallReset -O /bin/FirewallReset
 chmod +x /bin/FirewallReset
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/AddHost -O /bin/AddHost
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/AddHost -O /bin/AddHost
 chmod +x /bin/AddHost
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/RemoverHost -O /bin/RemoverHost
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverHost -O /bin/RemoverHost
 chmod +x /bin/RemoverHost
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Backup -O /bin/Backup
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Backup -O /bin/Backup
 chmod +x /bin/Backup
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Restaurar -O /bin/Restaurar
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Restaurar -O /bin/Restaurar
 chmod +x /bin/Restaurar
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DetalhesUsuarios -O /bin/DetalhesUsuarios
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/DetalhesUsuarios -O /bin/DetalhesUsuarios
 chmod +x /bin/DetalhesUsuarios
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Banner -O /bin/Banner
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Banner -O /bin/Banner
 chmod +x /bin/Banner
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/LimpadorCache -O /bin/LimpadorCache 
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/LimpadorCache -O /bin/LimpadorCache 
 chmod +x /bin/LimpadorCache 
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/VNC -O /bin/VNC
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/VNC -O /bin/VNC
 chmod +x /bin/VNC
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/tcptweaker -O /bin/tcptweaker
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/tcptweaker -O /bin/tcptweaker
 chmod +x /bin/tcptweaker
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/DeletarTodos -O /bin/DeletarTodos
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/DeletarTodos -O /bin/DeletarTodos
 chmod +x /bin/DeletarTodos
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Ajuda -O /bin/Ajuda
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Ajuda -O /bin/Ajuda
 chmod +x /bin/Ajuda
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Creditos -O /bin/Creditos
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Creditos -O /bin/Creditos
 chmod +x /bin/Creditos
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Telegram -O /bin/Telegram
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Telegram -O /bin/Telegram
 chmod +x /bin/Telegram
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Telegram -O /bin/Telegram
-chmod +x /bin/Telegram
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/Desinstalar -O /bin/Desinstalar
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/UpdateVPS -O /bin/UpdateVPS
+chmod +x /bin/UpdateVPS
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Desinstalar -O /bin/Desinstalar
 chmod +x /bin/Desinstalar
-wget https://raw.githubusercontent.com/ColtSeals/MenuVPS/master/SistemaDetalhes -O /bin/SistemaDetalhes
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/SistemaDetalhes -O /bin/SistemaDetalhes
 chmod +x /bin/SistemaDetalhes
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/hardware -O /bin/hardware
+chmod +x /bin/hardware
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/HardwareGeral -O /bin/HardwareGeral 
+chmod +x /bin/Desinstalar
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RAM -O /bin/RAM
+chmod +x /bin/RAM
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/cpu -O /bin/cpu
+chmod +x /bin/cpu
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/HD -O /bin/HD
+chmod +x /bin/HD
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/MelhorarVelocidade -O /bin/MelhorarVelocidade
+chmod +x /bin/MelhorarVelocidade
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /bin/PasswordRoot
+chmod +x /bin/PasswordRoot
+
 
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
