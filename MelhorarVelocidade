@@ -1,17 +1,82 @@
 #!/bin/bash
 
+function acelerar(){
+if [[ `grep -c "^#PH5" /etc/sysctl.conf` -eq 1 ]]
+then
+	echo ""
+	echo -e "\033[1;31mRemovendo configurações...\033[0m"
+	grep -v "^#PH56
+net.ipv4.tcp_window_scaling = 1
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 16384 16777216
+net.ipv4.tcp_low_latency = 1
+net.ipv4.tcp_slow_start_after_idle = 0" /etc/sysctl.conf > /tmp/syscl && mv /tmp/syscl /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf > /dev/null
+grep -v "Compression yes" /etc/ssh/sshd_config > /tmp/sshd_config && mv /tmp/sshd_config /etc/ssh/sshd_config
+service sshd stop >> /dev/null
+service sshd start >> /dev/null
+sleep 5s
+	echo "" 
+	echo -e "\033[1;36mConcluído! todas as alterações feitas foram removidas.\033[0m"
+	echo " "
+	tput setaf 5 ; tput bold ; read -n 1 -s -p "Pressione qualquer tecla para finalizar..." ; echo "" ; echo "" ; tput sgr0
+	vpspack
+else
+	echo ""
+	echo -e "\033[1;31mA velocidade do servidor pode ou não ser aumentada, tenha em mente que o aumento de velocidade não é 100% garantido.\033[0m"
+	echo " "
+	echo -e "\033[1;36mCaso ocorra algum erro depois de usar essa opção reverta as alterações usando a opção reverter no menu anterior.\033[0m"
+	echo " "
+	tput setaf 5 ; tput bold ; printf "Deseja ontinuar com a operação?(s/n): " ; tput setaf 7 ; tput bold ; read resposta ; tput sgr0
+	if [[ "$resposta" = 's' ]]; then
+	echo ""
+	echo -e "\033[1;31mTentando acelerar o servidor, aguarde...\033[0m"
+	sleep 5
+	grep -v "^Compression yes" /etc/ssh/sshd_config > /tmp/sshcp && mv /tmp/sshcp /etc/ssh/sshd_config
+	echo "Compression yes" >> /etc/ssh/sshd_config
+	service sshd restart >> /dev/null
+	echo " " >> /etc/sysctl.conf
+	echo "#PH56" >> /etc/sysctl.conf 
+	echo "net.ipv4.tcp_window_scaling = 1" >> /etc/sysctl.conf >> /dev/null
+	echo "net.core.rmem_max = 16777216" >> /etc/sysctl.conf >> /dev/null
+	echo "net.core.wmem_max = 16777216" >> /etc/sysctl.conf >> /dev/null
+	echo "net.ipv4.tcp_rmem = 4096 87380 16777216" >> /etc/sysctl.conf >> /dev/null
+	echo "net.ipv4.tcp_wmem = 4096 16384 16777216" >> /etc/sysctl.conf >> /dev/null
+	echo "net.ipv4.tcp_low_latency = 1" >> /etc/sysctl.conf >> /dev/null
+	echo "net.ipv4.tcp_slow_start_after_idle = 0" >> /etc/sysctl.conf >> /dev/null
+echo ""
+sysctl -p /etc/sysctl.conf  >> /dev/null
+		echo ""
+		echo -e "\033[1;36mTentativa de aceleração concluída.\033[0m"
+		echo " "
+	   tput setaf 5 ; tput bold ; read -n 1 -s -p "Pressione qualquer tecla para finalizar..." ; echo "" ; echo "" ; tput sgr0
+	   vpspack
+	else
+		vpspack
+	fi
+fi
+}
 clear
-echo -e "\033[1;36m A velocidade do servidor pode ou não ser aumentada, tenha em mente que o aumento de velocidade não é 100% garantido.\033[0m"
-echo -n -e "\033[1;31m Deseja continuar? (s/n):\033[0m"
-read resp
-if [ "$resp" == "s" ]; then
-    echo -e "\033[1;31m Iniciando aguarde.\033[0m"
-    sleep 3
-    echo "Compression yes" >> /etc/ssh/sshd_config
-    sleep 1
-    clear
-    echo -e "\033[1;36m Concluído.\033[0m" 
-    sleep 1
-    vpspack
-elif [ "$resp" == "n" ]; then
-exit
+if [[ `grep -c "^#PH5" /etc/sysctl.conf` -eq 1 ]]
+then
+echo -e "\033[1;36m1|\033[1;36mReverter
+ \033[0;37m|Reverter operação.\033[0m"
+true
+else
+echo -e "\033[1;36m1|\033[1;36mAcelerar
+ \033[0;37m|Tentar acelerar seu servidor.\033[0m"
+fi
+echo -e "\033[1;36m2|\033[1;36mVoltar
+ \033[0;37m|Voltar paro o menu anterior.\033[0m"
+tput setaf 6 ; tput bold ; printf "Opção:"; tput setaf 7 ; tput bold ; read opcao ; tput sgr0
+
+case $opcao in
+ 1)
+  acelerar;;
+ 2) 
+  vpspack;;
+  *) 
+  id > /dev/null 2> /dev/null
+esac
