@@ -11,3 +11,7 @@ if [ "$resp" == "s" ]; then
     sleep 1
     clear
     echo -e "\033[1;36m Concluído.\033[0m" 
+    sleep 1
+    MenuVPS
+elif [ "$resp" == "n" ]; then
+    MenuVPS
