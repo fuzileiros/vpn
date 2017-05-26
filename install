@@ -120,9 +120,6 @@ cp /bin/FirewallBlock /bin/firewallblock
 cp /bin/FirewallBlock /bin/fiblock
 cp /bin/FirewallReset /bin/firewallreset
 cp /bin/FirewallReset /bin/fireset
-cp /bin/AddHost /bin/addhost
-cp /bin/RemoverHost /bin/removerhost
-cp /bin/RemoverHost /bin/hostdel
 cp /bin/Backup /bin/backup
 cp /bin/Restaurar /bin/restaurar
 cp /bin/DetalhesUsuarios /bin/detalhesusuarios
