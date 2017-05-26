@@ -1,0 +1,121 @@
+#!/bin/bash
+
+cd
+
+if [ $(id -u) -eq 0 ]
+then
+        clear
+else
+        if echo $(id) |grep sudo > /dev/null
+        then
+        clear
+        echo "Voce não é root"
+        echo "Seu usuario esta no grupo sudo"
+        echo -e "Para virar root e fazer a instalação execute \033[1;31msudo su\033[0m"
+        exit
+        else
+        clear
+        echo -e "Você pecisa esta como root para poder fazer a instalção, Para virar root execute \033[1;31msu\033[0m e digite sua senha root"
+        exit
+        fi
+fi
+
+if [ -f /bin/adm ]
+  then
+  echo -e "\033[1;36mAdmScript já está instalado, será necessário a desinstalação da versão atual para a instalar novamente.\033[0m"
+  echo " "
+  echo -e "\033[1;31mDeseja desinstalar o AdmScript instalado atualmente? (S/n)"
+  
+  read resp
+  if [ "$resp" == "S" ];then
+      echo ""
+      echo -e "\033[1;36mDesinstalando o AdmScript, aguarde...\033[0m"
+        rm /bin/adm
+        rm /bin/1
+        rm /bin/2
+        rm /bin/3
+        rm /bin/4
+        rm /bin/101
+        rm /bin/102
+        rm /bin/103
+        rm /bin/104
+        rm /bin/201
+        rm /bin/202
+        rm /bin/203
+        rm /bin/2031
+        rm /bin/2032
+        rm /bin/2033
+        rm /bin/204
+        rm /bin/2041
+        rm /bin/2042
+        rm /bin/2043
+        rm /bin/205
+        rm /bin/206
+        rm /bin/207
+        rm /bin/207.py
+        rm /bin/208
+        rm /bin/209
+        rm /bin/210
+        rm /bin/211
+        rm /bin/212
+        rm /bin/213
+        rm /bin/214
+        rm /bin/215
+        rm /bin/216
+        rm /bin/217
+        rm /bin/218
+   sleep 3
+   rm /bin/5
+   clear
+   echo -e "\033[1;31m               Desinstalação concluída.\033[0m"
+   elif [ "$resp" == "n" ]; then
+    clear
+    echo -e "\033[1;31m              Desinstalação cancelada.\033[0m"
+  fi
+  true
+  else
+   echo -e "\033[1;36mAdmScript, script baseado no VpsPack que tem o objetivo de lhe ajudar, sem a necessidade de guardar scripts ou comandos.\033[0m"
+   echo -e "\033[1;31mPara prosseguir pressione ENTER, para cancelar CTRL + C.\033[0m"
+   read  #enter
+   clear
+   echo -e "\033[1;36mIniciando instalação, aguarde...\033[0m"
+   sleep 3
+   if yum -y update
+   then
+   yum -y update
+   yum -y install git
+   git clone https://github.com/Devimla/AdmScript.git
+   clear
+   cd AdmScript
+   rm -rf README.md
+   rm -rf install
+   for arqs in `ls`
+   do
+   rm /bin/$arqs 2>/dev/null
+   mv $arqs /bin
+   chmod +x /bin/$arqs
+   done
+   echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm\033[1;36m como usuário root ou usuário com permissões sudo.\033[0m"
+   else
+   apt-get update
+   apt-get install -y git
+   git clone https://github.com/Devimla/AdmScript.git
+   clear
+   cd AdmScript
+   rm -rf README.md
+   rm -rf install
+   for arqs in `ls`
+   do
+   rm /bin/$arqs 2>/dev/null
+   mv $arqs /bin
+   chmod +x /bin/$arqs
+   done
+   echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm \033[1;36mcomo usuário root ou usuário com permissões sudo.\033[0m"
+   echo -e "\033[1;31mPressione ENTER para concluir."
+   read #enter
+   adm
+  fi
+fi
+cd
+rm -rf install 2> /dev/null
+rm -rf AdmScript 2> /dev/null
