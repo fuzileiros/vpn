@@ -5,5 +5,4 @@ read -p ": " host
 echo "$host" >> /etc/payloads
 squid -k reconfigure > /dev/null 2> /dev/null
 squid3 -k reconfigure > /dev/null 2> /dev/null
-echo "$host Adicionado" ' > /bin/addhost
-chmod a+x /bin/addhost
+echo "$host Adicionado com SUCESSO!"
