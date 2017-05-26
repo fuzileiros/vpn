@@ -7,4 +7,4 @@ clear
 cat /proc/cpuinfo
 echo -e "\033[1;36mPressione \033[1;31mENTER \033[1;36mpara voltar ao menu anterior.\033[0m"
 read  #enter
-1
+hardware
