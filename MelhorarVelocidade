@@ -14,4 +14,4 @@ if [ "$resp" == "s" ]; then
     sleep 1
     vpspack
 elif [ "$resp" == "n" ]; then
-vpspack
+exit
