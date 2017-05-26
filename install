@@ -47,10 +47,6 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallBlock -O 
 chmod +x /bin/FirewallBlock
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallReset -O /bin/FirewallReset
 chmod +x /bin/FirewallReset
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/AddHost -O /bin/AddHost
-chmod +x /bin/AddHost
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverHost -O /bin/RemoverHost
-chmod +x /bin/RemoverHost
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Backup -O /bin/Backup
 chmod +x /bin/Backup
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Restaurar -O /bin/Restaurar
