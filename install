@@ -47,6 +47,10 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallBlock -O 
 chmod +x /bin/FirewallBlock
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallReset -O /bin/FirewallReset
 chmod +x /bin/FirewallReset
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/addhost -O /bin/addhost
+chmod +x /bin/addhost
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/removerhost -O /bin/removerhost
+chmod +x /bin/removerhost
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Backup -O /bin/Backup
 chmod +x /bin/Backup
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Restaurar -O /bin/Restaurar
@@ -120,6 +124,9 @@ cp /bin/FirewallBlock /bin/firewallblock
 cp /bin/FirewallBlock /bin/fiblock
 cp /bin/FirewallReset /bin/firewallreset
 cp /bin/FirewallReset /bin/fireset
+cp /bin/addhost /bin/AddHost
+cp /bin/removerhost /bin/RemoverHost
+cp /bin/removerhost /bin/hostdel
 cp /bin/Backup /bin/backup
 cp /bin/Restaurar /bin/restaurar
 cp /bin/DetalhesUsuarios /bin/detalhesusuarios
