@@ -860,6 +860,16 @@ ovpn
 exit
 fi
 }
+function addihost(){ echo '#!/bin/bash
+echo -e "\033[1;31mHosts atualmente permitidos\n\n\033[1;32m$(cat /etc/payloads)\n\033[0m"
+echo "Qual host deseja adicionar ?"
+read -p ": " host
+echo "$host" >> /etc/payloads
+squid -k reconfigure > /dev/null 2> /dev/null
+squid3 -k reconfigure > /dev/null 2> /dev/null
+echo "$host Adicionado" ' > /bin/addhost
+chmod a+x /bin/addhost
+}
 function removerhostf(){ echo '#!/bin/bash
 echo -e "\033[1;31mHosts atualmente permitidos\n\n\033[1;32m$(cat /etc/payloads)\n\033[0m"
 echo -ne "\033[1;37mQual host deseja remover: \033[0m"
@@ -956,7 +966,7 @@ case $opcao in
   16)
    FirewallReset;;
   17)
-   AddHost;;
+   addhost;;
   18)
    removerhost;;
   19)
