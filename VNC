@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 
 echo -e '\033[05;31m-------------------------------------------------------\033[00;37m'
 echo -e '\033[01;32m              O que deseja fazer ?\033[00;37m'
@@ -7,7 +8,7 @@ echo -e 'Digite: \033[01;32m1\033[00;37m Para Instalar o VNC.'
 echo " "
 echo -e 'Digite: \033[01;32m2\033[00;37m Iniciar o VNC.'
 echo " "
-echo -e 'Digite: \033[01;32m3\033[00;37m Sair e Voltar Para o PackSSH.'
+echo -e 'Digite: \033[01;32m3\033[00;37m Sair e Voltar Para o MenuVPS.'
 echo " "
 echo -e '\033[05;31m-------------------------------------------------------\033[00;37m'
 echo " "
