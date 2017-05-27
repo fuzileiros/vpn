@@ -23,6 +23,9 @@ chmod +x /bin/redefinirusuario
 rm -rf /bin/vpspack 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
+rm -rf /bin/speedtest.py 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest.py > /bin/speedtest.py
+chmod +x /bin/speedtest.py
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ConfSquid -O /bin/ConfSquid
 chmod +x /bin/ConfSquid
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/OpenVPN -O /bin/OpenVPN
@@ -89,8 +92,6 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/MelhorarVelocidad
 chmod +x /bin/MelhorarVelocidade
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /bin/PasswordRoot
 chmod +x /bin/PasswordRoot
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest.py -O /bin/speedtest.py
-chmod +x /bin/speedtest.py
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
 
