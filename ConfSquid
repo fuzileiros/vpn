@@ -1,4 +1,13 @@
 #!/bin/bash
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "cONFIGURAR SQUID3" ; tput sgr0
+echo ""
+echo "        Edited @ColtSeals"
+echo "        NERDOLOGIA VPS"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
+echo ""
+read -p "De enter para continuar..."
+clear
 if [ ! "$BASH" ]
 then
 echo "Este script foi feito para funcionar com o bash
