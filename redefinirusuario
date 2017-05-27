@@ -166,10 +166,10 @@ clear
 echo -e "\033[36;37m PAINEL DE REDEFINIR USUARIO SSH\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
 echo -e "\033[1;33mO que vc deseja redefinir ?\033[1;30m
-1) Numero de logins
-2) Data de expiraçao
-3) Mudar senha do usuario
-4) Voltar para o MenuVPS"
+echo -e "\033[01;36m╠ \033[1;37m01\033[1;36m╣\033[01;37m LOGINS \033[01;32m(Altera o Limite de Conexões de um Usuario)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m02\033[1;36m╣\033[01;37m DATA \033[01;32m(Altera a Data de Expiração de um Usuario)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m03\033[1;36m╣\033[01;37m SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m04\033[1;36m╣\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
 read -p ": " opcao
 else
 opcao=$1
