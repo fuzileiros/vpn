@@ -98,8 +98,6 @@ cp /bin/criarusuario /bin/CriarUsuario
 cp /bin/criarusuario /bin/criar
 cp /bin/ConfSquid /bin/confsquid
 cp /bin/ConfSquid /bin/squid
-cp /bin/OpenVPN /bin/open
-cp /bin/OpenVPN /bin/openvpn
 cp /bin/RemoverExpirados /bin/removerexpirados
 cp /bin/RemoverExpirados /bin/expiradosdel
 cp /bin/BadVpn /bin/badvpn
