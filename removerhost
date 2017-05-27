@@ -6,7 +6,7 @@ ama="\033[1;33m"
 azu="\033[1;34m"
 fi="\033[0m"
 ###cores
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "ADICIONAR HOST AO SQUID" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "REMOVER HOST DO SQUID" ; tput sgr0
 echo ""
 echo "        Edited @ColtSeals"
 echo "        NERDOLOGIA VPS"
