@@ -19,7 +19,7 @@ rm -rf /bin/deletarusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/deletarusuario > /bin/deletarusuario
 chmod +x /bin/deletarusuario
 rm -rf /bin/redefinirusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/redefinirusuario > /bin/redefinirusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/redefinirusuario > /bin/redefinirusuario
 chmod +x /bin/redefinirusuario
 rm -rf /bin/vpspack 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/vpspack > /bin/vpspack
@@ -116,8 +116,9 @@ cp /bin/Monitorar /bin/monitorar
 cp /bin/RemoverLimite /bin/removerlimite
 cp /bin/RemoverLimite /bin/limitedel
 cp /bin/MudarNome /bin/mudarnome
-cp /bin/RedefinirUsuario /bin/redefinirusuario
-cp /bin/RedefinirUsuario /bin/redefiniruser
+cp /bin/redefinirusuario /bin/RedefinirUsuario
+cp /bin/redefinirusuario /bin/redefiniruser
+cp /bin/redefinirusuario /bin/redefinir
 cp /bin/deletarusuario /bin/DeletarUsuario
 cp /bin/deletarusuario /bin/deletaruser
 cp /bin/FirewallBlock /bin/firewallblock
