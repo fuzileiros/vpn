@@ -10,6 +10,7 @@ read -p "Qual o nome do usuario a redefinir: " namer
  exit
  fi
 clear
+
 function logins(){ echo '#!/bin/bash 
 read -p "Qual o novo limite de logins: " liml
 limite $namer $liml
