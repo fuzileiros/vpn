@@ -28,8 +28,6 @@ wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/
 chmod +x /bin/speedtest.py
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ConfSquid -O /bin/ConfSquid
 chmod +x /bin/ConfSquid
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/OpenVPN -O /bin/OpenVPN
-chmod +x /bin/OpenVPN
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverExpirados -O /bin/RemoverExpirados
 chmod +x /bin/RemoverExpirados
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Teste -O /bin/Teste
