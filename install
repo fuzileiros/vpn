@@ -25,8 +25,8 @@ rm -rf /bin/vpspack 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/speedtest.py > /bin/speedtest.py
-chmod +x /bin/speedtest.py
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest > /bin/speedtest
+chmod +x /bin/speedtest
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ConfSquid -O /bin/ConfSquid
 chmod +x /bin/ConfSquid
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/OpenVPN -O /bin/OpenVPN
@@ -134,9 +134,9 @@ cp /bin/DetalhesUsuarios /bin/detalhesusuarios
 cp /bin/DetalhesUsuarios /bin/detalhesuser
 cp /bin/DetalhesUsuarios /bin/Detalhes
 cp /bin/Banner /bin/banner
-cp /bin/speedtest.py /bin/speedtest
-cp /bin/speedtest.py /bin/speed
-cp /bin/speedtest.py /bin/Speed
+cp /bin/speedtest /bin/SpeedTest
+cp /bin/speedtest /bin/speed
+cp /bin/speedtest /bin/Speed
 cp /bin/LimpadorCache /bin/limpadorcache
 cp /bin/VNC /bin/vnc
 cp /bin/tcptweaker /bin/TCPTweaker
