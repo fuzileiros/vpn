@@ -11,7 +11,6 @@ read -p "Qual o nome do usuario a redefinir: " namer
  fi
 clear
 function logins(){ echo '#!/bin/bash 
-then
 read -p "Qual o novo limite de logins: " liml
 limite $namer $liml
 exit 0
@@ -19,7 +18,6 @@ fi
 }
 
 function expiracao(){ echo '#!/bin/bash
-then
 echo "Qual a nova data : formato AAAA/MM/DD"
 read -p ": " date
 chage -E $date $namer 2> /dev/null
@@ -29,7 +27,6 @@ fi
 }
 
 function nova(){ echo '#!/bin/bash
-then
 read -p "Qual a nova senha para $namer: " senha
 (echo "$senha" ; echo "$senha" ) |passwd $namer > /dev/null 2>/dev/null
 echo "$senha" > /etc/VpsPackdir/senha/$namer
@@ -40,7 +37,7 @@ fi
 
 clear
 if [[ $1 == "" ]]
-then
+
 echo -e "\033[1;33mO que vc deseja redefinir ?\033[1;30m
 1) Numero de logins
 2) Data de expiraçao
