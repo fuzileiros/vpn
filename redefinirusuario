@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 read -p "Qual o nome do usuario a redefinir: " namer
  if cat /etc/passwd |grep $namer: > /dev/null
  then
