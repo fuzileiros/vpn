@@ -39,4 +39,4 @@ exit
 fi
 
 if [ $option -eq 4 ]
-vpspack
+vpspack;;
