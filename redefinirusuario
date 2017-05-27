@@ -25,7 +25,7 @@ echo -e "\033[1;31mUsuario $namer Date: $date\033[0m"
 exit
 }
 
-function nova(){ echo '#!/bin/bash
+function nova(){ echo #!/bin/bash
 read -p "Qual a nova senha para $namer: " senha
 (echo "$senha" ; echo "$senha" ) |passwd $namer > /dev/null 2>/dev/null
 echo "$senha" > /etc/VpsPackdir/senha/$namer
