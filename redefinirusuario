@@ -12,7 +12,8 @@ clear
 echo -e "\033[1;33mO que vc deseja redefinir ?\033[1;30m
 1) Numero de logins
 2) Data de expiraçao
-3) Mudar senha do usuario"
+3) Mudar senha do usuario
+4) Voltar para o MenuVPS"
 read -p "opção: " option
 if [ $option -eq 1 ]; then
 read -p "Qual o novo limite de logins: " liml
@@ -35,3 +36,6 @@ echo "$senha" > /etc/VpsPackdir/senha/$namer
 echo "Nova senha aplicada"
 exit
 fi
+
+if [ $option -eq 4 ]
+MenuVPS
