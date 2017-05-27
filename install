@@ -12,7 +12,6 @@ mkdir /etc/VpsPackdir/senha 2>/dev/null
 rm -rf /bin/limite 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/limite > /bin/limite
 chmod +x /bin/limite
-
 rm -rf /bin/criarusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/VpsPacket2/master/criarusuario > /bin/criarusuario
 chmod +x /bin/criarusuario
