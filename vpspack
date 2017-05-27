@@ -887,7 +887,7 @@ echo -e "\033[01;36m╠ \033[1;37m14\033[1;36m╣\033[01;37m Deletar Usuario \03
 echo -e "\033[01;36m╠ \033[1;37m15\033[1;36m╣\033[01;37m Firewall block \033[01;32m(bloquear torrent, icmp)\033[1;31m[RISCOS]"
 echo -e "\033[01;36m╠ \033[1;37m15\033[1;36m╣\033[01;37m Reset Firewall \033[01;32m(Resetar regras iptables)\033[1;31m[RISCOS]"
 echo -e "\033[01;36m╠ \033[1;37m17\033[1;36m╣\033[01;37m Addhost \033[01;32m(Adicionar Hosts aceitos pelo squid)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m18\033[1;36m╣\033[01;37m Remover Hosts \033[01;32m(Remove todos Hosts do squid)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m18\033[1;36m╣\033[01;37m Remover Host \033[01;32m(Remover Hosts aceitos pelo squid)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m19\033[1;36m╣\033[01;37m Backup-Users \033[01;32m(Backup dos usuarios)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m20\033[1;36m╣\033[01;37m Rest Users \033[01;32m(Restaurar usuarios feito backup)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m21\033[1;36m╣\033[01;37m Usuarios_Detalhes \033[01;32m(Informações sobre os usuarios)\033[0m"
