@@ -1,0 +1,56 @@
+#!/bin/bash
+clear
+read -p "Qual o nome do usuario a redefinir: " namer
+ if cat /etc/passwd |grep $namer: > /dev/null
+ then
+ echo " "
+ else
+ clear
+ echo "Usuario $namer não existe"
+ exit
+ fi
+clear
+
+function logins(){
+read -p "Qual o novo limite de logins: " liml
+limite $namer $liml
+exit 0
+}
+function expiracao(){
+echo "Qual a nova data : formato AAAA/MM/DD"
+read -p ": " date
+chage -E $date $namer 2> /dev/null
+echo -e "\033[1;31mUsuario $namer Date: $date\033[0m"
+exit
+}
+function nova(){
+read -p "Qual a nova senha para $namer: " senha
+(echo "$senha" ; echo "$senha" ) |passwd $namer > /dev/null 2>/dev/null
+echo "$senha" > /etc/VpsPackdir/senha/$namer
+echo "Nova senha aplicada"
+exit
+}
+
+clear
+if [[ $1 == "" ]]
+then
+echo -e "\033[36;37m PAINEL DE REDEFINIR USUARIO SSH\033[0m"
+echo -e "\033[0;35m------------------------------------------------------------\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m01\033[1;36m╣\033[01;37m LOGINS \033[01;32m(Altera o Limite de Conexões de um Usuario)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m02\033[1;36m╣\033[01;37m DATA \033[01;32m(Altera a Data de Expiração de um Usuario)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m03\033[1;36m╣\033[01;37m SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m04\033[1;36m╣\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
+read -p ": " opcao
+else
+opcao=$1
+fi
+case $opcao in
+  1 | 01 )
+   logins;;
+  2 | 02 )
+   expiracao;;
+  3 | 03 )
+   nova;;
+  4 | 04 )
+   vpspack;;
+   esac
