@@ -6,6 +6,15 @@ ama="\033[1;33m"
 azu="\033[1;34m"
 fi="\033[0m"
 ###cores
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "ADICIONAR HOST AO SQUID" ; tput sgr0
+echo ""
+echo "        Edited @ColtSeals"
+echo "        NERDOLOGIA VPS"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
+echo ""
+read -p "De enter para continuar..."
+clear
 payload="/etc/payloads"
 echo -e "$verm"
 echo "Remover Host do Squid3"
