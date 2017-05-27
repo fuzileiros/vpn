@@ -170,7 +170,6 @@ echo -e "\033[01;36m╠ \033[1;37m02\033[1;36m╣\033[01;37m DATA \033[01;32m(Al
 echo -e "\033[01;36m╠ \033[1;37m03\033[1;36m╣\033[01;37m SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m04\033[1;36m╣\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
 read -p ": " opcao
-else
 opcao=$1
 fi
 case $opcao in
