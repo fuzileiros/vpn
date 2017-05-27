@@ -1,5 +1,5 @@
 #!/bin/bash
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "cONFIGURAR SQUID3" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "CONFIGURAR SQUID3" ; tput sgr0
 echo ""
 echo "        Edited @ColtSeals"
 echo "        NERDOLOGIA VPS"
