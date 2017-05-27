@@ -38,5 +38,5 @@ echo "Nova senha aplicada"
 exit
 fi
 
-if [ $option -eq 4 ]
+4)
 vpspack;;
