@@ -937,7 +937,7 @@ case $opcao in
   12)
    MudarNome;;
   13)
-   RedefinirUsuario;;
+   redefinirusuario;;
   14)
    deletarusuario;;
   15)
