@@ -52,11 +52,12 @@ opcao=$1
 fi
 case $opcao in
 
-1)
-logins;;
-2)
-expiracao;;
-3)
-nova;;
-4)
-vpspack;;
+ 1)
+ logins;;
+ 2)
+ expiracao;;
+ 3)
+ nova;;
+ 4)
+ vpspack;;
+esac
