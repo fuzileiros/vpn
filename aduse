@@ -59,15 +59,3 @@ if [[ "$AIP" = "" ]]; then
   echo "   Porta           : 80,8080,8799,443,22,3128"
   echo "--------------------------------------"
   echo " "
-  echo "$pass" > /etc/VpsPackdir/senha/$name
-	fi
-else
-	if echo $(id) |grep sudo > /dev/null
-	then
-	echo "Seu usuario esta no grupo sudo"
-	echo -e "Para virar root execute \033[1;31msudo su\033[0m"
-	echo -e "Ou execute o criarusuario como sudo. \033[1;31msudo criarusuario\033[0m"
-	else
-	echo -e "Vc nao esta como usuario root, nem com seus direitos (sudo)\nPara virar root execute \033[1;31msu\033[0m e digite sua senha root"
-	fi
-fi
