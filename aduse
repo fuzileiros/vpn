@@ -1,0 +1,73 @@
+#!/bin/bash
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 2
+echo "Checando Permissão..."
+sleep 3
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 2
+clear
+
+if [ $(id -u) -eq 0 ]
+then
+	echo -e "\033[1;32mNome do novo usuario:\033[0;37m"; read -p " " name
+	echo -e "\033[1;32mSenha para o usuario $name:\033[0;37m"; read -p " " pass
+	echo -e "\033[1;32mQuantos dias usuario $name deve durar:\033[0;37m"; read -p " " daysrnf
+	echo -e "\033[1;32mLimite de logins simultaneos:\033[0;37m"; read -p " " limiteuser
+	echo -e "\033[0m"
+	if cat /etc/passwd |grep $name: |grep -vi [a-z]$name |grep -v [0-9]$name > /dev/null
+	then
+		echo -e "\033[1;31mUsuario $name ja existe\033[0m"
+	else
+		valid=$(date '+%C%y-%m-%d' -d " +$daysrnf days")
+		datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
+		useradd -M -s /bin/false $name -e $valid
+		(echo $pass; echo $pass)|passwd $name 2>/dev/null
+		limite $name $limiteuser
+		clear
+echo "Connectando ao @NerdologiaVPS..."
+sleep 0.4
+echo "Criando Conta..."
+sleep 0.3
+echo "Gerando Host..."
+sleep 0.2
+echo "Criando seu novo nome de usuário: $username"
+sleep 0.2
+echo "Criando senha para $username"
+sleep 1
+
+#identificacao automatica do ip
+AIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+if [[ "$AIP" = "" ]]; then
+		AIP=$(wget -4qO- "http://whatismyip.akamai.com/")
+
+  clear
+  echo "Script Edited @ColtSeals"
+  echo "Informações @NerdologiaVPS"
+  echo " "
+  echo "   Detalhes da nova conta criada"
+  echo "---------------------------------------"
+  echo "   Host            : $AIP"
+  echo "   Nome            : $name"
+  echo "   Senha           : $pass"
+  echo "   Limite          : $limiteuser"
+  echo "   Data Expiração  : $datexp"
+  echo "   Porta           : 80,8080,8799,443,22,3128"
+  echo "--------------------------------------"
+  echo " "
+  echo "$pass" > /etc/VpsPackdir/senha/$name
+	fi
+else
+	if echo $(id) |grep sudo > /dev/null
+	then
+	echo "Seu usuario esta no grupo sudo"
+	echo -e "Para virar root execute \033[1;31msudo su\033[0m"
+	echo -e "Ou execute o criarusuario como sudo. \033[1;31msudo criarusuario\033[0m"
+	else
+	echo -e "Vc nao esta como usuario root, nem com seus direitos (sudo)\nPara virar root execute \033[1;31msu\033[0m e digite sua senha root"
+	fi
+fi
