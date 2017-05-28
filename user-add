@@ -60,7 +60,6 @@ if [[ "$AIP" = "" ]]; then
   echo "--------------------------------------"
   echo " "
 fi
-else
 	if echo $(id) |grep sudo > /dev/null
 	then
 	echo "Seu usuario esta no grupo sudo"
