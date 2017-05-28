@@ -1,13 +1,14 @@
 #!/bin/bash
+clear
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "Firewall Block" ; tput sgr0
 echo ""
-echo "        BY: @ColtSeals"
+echo "        Edited @ColtSeals"
 echo "        NERDOLOGIA VPS"
-echo "        FIREWALL-BLOCK"
-echo "        TEM CERTEZA QUE QUER CONTINUAR?"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
 echo ""
 read -p "De enter para continuar..."
 clear
-
 read -p "Digite o ip do vps: " ip
 echo Configurando...
 sleep 1
