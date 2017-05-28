@@ -985,4 +985,6 @@ case $opcao in
    Desinstalar;;
   36)
    SistemaDetalhes;;
+  37)
+   user-add;;
 esac
