@@ -89,6 +89,8 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /
 chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
+wget https://raw.githubusercontent.com/ColtSeals/projectX/master/user-add -O /bin/user-add
+chmod +x /bin/user-add
 
 
 cp /bin/limite /bin/Limite
