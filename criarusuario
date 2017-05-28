@@ -5,11 +5,11 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 echo "Conectando ao NerdologiaVPS..."
-sleep 2
+sleep 0.4
 echo "Checando Permissão..."
-sleep 3
+sleep 0.2
 echo -e "${green}Permissão Aceita...${NC}"
-sleep 2
+sleep 0.4
 clear
 
 if [ $(id -u) -eq 0 ]
@@ -39,9 +39,9 @@ sleep 0.2
 echo "Criando seu novo nome de usuário: $username"
 sleep 0.2
 echo "Criando senha para $username"
-sleep 1
+sleep 0.5
 echo "Criando limite para $username"
-sleep 1
+sleep 0.5
 
   clear
   echo "Script Edited @ColtSeals"
