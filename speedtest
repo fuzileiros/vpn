@@ -1363,7 +1363,7 @@ def shell():
     else:
         callback = print_dots
 
-    printer('Retrieving speedtest.net configuration...', quiet)
+    printer('Iniciando Conexão speedtest.net Aguarde...', quiet)
     try:
         speedtest = Speedtest()
     except (ConfigRetrievalError, HTTP_ERRORS):
@@ -1394,11 +1394,11 @@ def shell():
     if args.server:
         servers.append(args.server)
 
-    printer('Testing from %(isp)s (%(ip)s)...' % speedtest.config['client'],
+    printer('Testando Servidor %(isp)s (%(ip)s)...' % speedtest.config['client'],
             quiet)
 
     if not args.mini:
-        printer('Retrieving speedtest.net server list...', quiet)
+        printer('Não deixe de entrar no Grupo @NerdologiaVPS...', quiet)
         try:
             speedtest.get_servers(servers)
         except NoMatchedServers:
@@ -1410,21 +1410,21 @@ def shell():
             raise SpeedtestCLIError('%s is an invalid server type, must '
                                     'be an int' % args.server)
 
-        printer('Selecting best server based on ping...', quiet)
+        printer('Selecionando o melhor servidor baseado no ping...', quiet)
         speedtest.get_best_server()
     elif args.mini:
         speedtest.get_best_server(speedtest.set_mini_server(args.mini))
 
     results = speedtest.results
 
-    printer('Hosted by %(sponsor)s (%(name)s) [%(d)0.2f km]: '
+    printer('Hospedado por %(sponsor)s (%(name)s) [%(d)0.2f km]: '
             '%(latency)s ms' % results.server, quiet)
 
     if args.download:
-        printer('Testing download speed', quiet,
+        printer('Testando Download Speed NERDs', quiet,
                 end=('', '\n')[bool(debug)])
         speedtest.download(callback=callback)
-        printer('Download: %0.2f M%s/s' %
+        printer('Resultado Download: %0.2f M%s/s' %
                 ((results.download / 1000.0 / 1000.0) / args.units[1],
                  args.units[0]),
                 quiet)
@@ -1432,10 +1432,10 @@ def shell():
         printer('Skipping download test')
 
     if args.upload:
-        printer('Testing upload speed', quiet,
+        printer('Testando Upload Speed NERDs', quiet,
                 end=('', '\n')[bool(debug)])
         speedtest.upload(callback=callback)
-        printer('Upload: %0.2f M%s/s' %
+        printer('Resutado Upload: %0.2f M%s/s' %
                 ((results.upload / 1000.0 / 1000.0) / args.units[1],
                  args.units[0]),
                 quiet)
