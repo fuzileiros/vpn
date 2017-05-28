@@ -36,7 +36,7 @@ except ImportError:
     gzip = None
     GZIP_BASE = object
 
-__version__ = '1.0.0'
+__version__ = '1.0.4'
 
 
 class FakeShutdownEvent(object):
@@ -131,25 +131,48 @@ except ImportError:
     PARSER_TYPE_STR = 'string'
 
 try:
-    from cStringIO import StringIO
-    BytesIO = None
+    from io import StringIO, BytesIO, TextIOWrapper, FileIO
 except ImportError:
     try:
-        from io import StringIO, BytesIO
+        from cStringIO import StringIO
+        BytesIO = None
     except ImportError:
         from StringIO import StringIO
         BytesIO = None
 
 try:
-    import builtins
+    import __builtin__
 except ImportError:
+    import builtins
+
+    class _Py3Utf8Stdout(TextIOWrapper):
+        def __init__(self, **kwargs):
+            buf = FileIO(sys.stdout.fileno(), 'w')
+            super(_Py3Utf8Stdout, self).__init__(
+                buf,
+                encoding='utf8',
+                errors='strict'
+            )
+
+        def write(self, s):
+            super(_Py3Utf8Stdout, self).write(s)
+            self.flush()
+
+    _py3_print = getattr(builtins, 'print')
+    _py3_utf8_stdout = _Py3Utf8Stdout()
+
+    def print_(*args, **kwargs):
+        kwargs['file'] = _py3_utf8_stdout
+        _py3_print(*args, **kwargs)
+else:
+    del __builtin__
+
     def print_(*args, **kwargs):
         """The new-style print function for Python 2.4 and 2.5.
 
         Taken from https://pypi.python.org/pypi/six/
 
-        Modified to set encoding to UTF-8 if not set when stdout may not be
-        a tty such as when piping to head
+        Modified to set encoding to UTF-8 always
         """
         fp = kwargs.pop("file", sys.stdout)
         if fp is None:
@@ -159,7 +182,7 @@ except ImportError:
             if not isinstance(data, basestring):
                 data = str(data)
             # If the file has an encoding, encode unicode with it.
-            encoding = fp.encoding or 'UTF-8'  # Diverges for notty
+            encoding = 'utf8'  # Always trust UTF-8 for output
             if (isinstance(fp, file) and
                     isinstance(data, unicode) and
                     encoding is not None):
@@ -203,9 +226,7 @@ except ImportError:
                 write(sep)
             write(arg)
         write(end)
-else:
-    print_ = getattr(builtins, 'print')
-    del builtins
+
 
 # Exception "constants" to support Python 2 through Python 3
 try:
@@ -223,6 +244,10 @@ except ImportError:
 
 class SpeedtestException(Exception):
     """Base exception for this module"""
+
+
+class SpeedtestCLIError(SpeedtestException):
+    """Generic exception for raising errors during CLI operation"""
 
 
 class SpeedtestHTTPError(SpeedtestException):
@@ -293,7 +318,13 @@ class GzipDecodedResponse(GZIP_BASE):
             raise SpeedtestHTTPError('HTTP response body is gzip encoded, '
                                      'but gzip support is not available')
         IO = BytesIO or StringIO
-        self.io = IO(response.read())
+        self.io = IO()
+        while 1:
+            chunk = response.read(1024)
+            if len(chunk) == 0:
+                break
+            self.io.write(chunk)
+        self.io.seek(0)
         gzip.GzipFile.__init__(self, mode='rb', fileobj=self.io)
 
     def close(self):
@@ -301,6 +332,13 @@ class GzipDecodedResponse(GZIP_BASE):
             gzip.GzipFile.close(self)
         finally:
             self.io.close()
+
+
+def get_exception():
+    """Helper function to work with py2.4-py3 for getting the current
+    exception in a try/except block
+    """
+    return sys.exc_info()[1]
 
 
 def bound_socket(*args, **kwargs):
@@ -398,7 +436,7 @@ def catch_request(request):
         uh = urlopen(request)
         return uh, False
     except HTTP_ERRORS:
-        e = sys.exc_info()[1]
+        e = get_exception()
         return None, e
 
 
@@ -650,7 +688,10 @@ class SpeedtestResults(object):
             'upload': self.upload,
             'ping': self.ping,
             'server': self.server,
-            'timestamp': self.timestamp
+            'timestamp': self.timestamp,
+            'bytes_sent': self.bytes_sent,
+            'bytes_received': self.bytes_received,
+            'share': self._share,
         }
 
     def csv(self, delimiter=','):
@@ -710,7 +751,7 @@ class Speedtest(object):
         stream = get_response_stream(uh)
 
         while 1:
-            configxml.append(stream.read(10240))
+            configxml.append(stream.read(1024))
             if len(configxml[-1]) == 0:
                 break
         stream.close()
@@ -822,7 +863,7 @@ class Speedtest(object):
 
                 serversxml = []
                 while 1:
-                    serversxml.append(stream.read(10240))
+                    serversxml.append(stream.read(1024))
                     if len(serversxml[-1]) == 0:
                         break
 
@@ -982,7 +1023,7 @@ class Speedtest(object):
                     r = h.getresponse()
                     total = (timeit.default_timer() - start)
                 except HTTP_ERRORS:
-                    e = sys.exc_info()[1]
+                    e = get_exception()
                     printer('%r' % e, debug=True)
                     cum.append(3600)
                     continue
@@ -1082,11 +1123,13 @@ class Speedtest(object):
         for i, size in enumerate(sizes):
             # We set ``0`` for ``start`` and handle setting the actual
             # ``start`` in ``HTTPUploader`` to get better measurements
-            data = HTTPUploaderData(size, 0, self.config['length']['upload'])
-            data._create_data()
             requests.append(
                 (
-                    build_request(self.best['url'], data),
+                    build_request(
+                        self.best['url'],
+                        HTTPUploaderData(size, 0,
+                                         self.config['length']['upload'])
+                    ),
                     size
                 )
             )
@@ -1171,6 +1214,12 @@ def parse_args():
         parser.add_argument = parser.add_option
     except AttributeError:
         pass
+    parser.add_argument('--no-download', dest='download', default=True,
+                        action='store_const', const=False,
+                        help='Do not perform download test')
+    parser.add_argument('--no-upload', dest='upload', default=True,
+                        action='store_const', const=False,
+                        help='Do not perform upload test')
     parser.add_argument('--bytes', dest='units', action='store_const',
                         const=('byte', 8), default=('bit', 1),
                         help='Display values in bytes instead of bits. Does '
@@ -1178,7 +1227,7 @@ def parse_args():
                              'output from --json or --csv')
     parser.add_argument('--share', action='store_true',
                         help='Generate and provide a URL to the speedtest.net '
-                             'share results image')
+                             'share results image, not displayed with --csv')
     parser.add_argument('--simple', action='store_true', default=False,
                         help='Suppress verbose output, only show basic '
                              'information')
@@ -1267,11 +1316,15 @@ def shell():
     if args.version:
         version()
 
+    if not args.download and not args.upload:
+        raise SpeedtestCLIError('Cannot supply both --no-download and '
+                                '--no-upload')
+
     if args.csv_header:
         csv_header()
 
     if len(args.csv_delimiter) != 1:
-        raise SystemExit('--csv-delimiter must be a single character')
+        raise SpeedtestCLIError('--csv-delimiter must be a single character')
 
     validate_optional_args(args)
 
@@ -1299,6 +1352,11 @@ def shell():
     else:
         quiet = False
 
+    if args.csv or args.json:
+        machine_format = True
+    else:
+        machine_format = False
+
     # Don't set a callback if we are running quietly
     if quiet or debug:
         callback = do_nothing
@@ -1308,16 +1366,16 @@ def shell():
     printer('Retrieving speedtest.net configuration...', quiet)
     try:
         speedtest = Speedtest()
-    except ConfigRetrievalError:
+    except (ConfigRetrievalError, HTTP_ERRORS):
         printer('Cannot retrieve speedtest configuration')
-        sys.exit(1)
+        raise SpeedtestCLIError(get_exception())
 
     if args.list:
         try:
             speedtest.get_servers()
-        except ServersRetrievalError:
+        except (ServersRetrievalError, HTTP_ERRORS):
             print_('Cannot retrieve speedtest server list')
-            sys.exit(1)
+            raise SpeedtestCLIError(get_exception())
 
         for _, servers in sorted(speedtest.servers.items()):
             for server in servers:
@@ -1326,7 +1384,7 @@ def shell():
                 try:
                     print_(line)
                 except IOError:
-                    e = sys.exc_info()[1]
+                    e = get_exception()
                     if e.errno != errno.EPIPE:
                         raise
         sys.exit(0)
@@ -1344,14 +1402,13 @@ def shell():
         try:
             speedtest.get_servers(servers)
         except NoMatchedServers:
-            print_('No matched servers: %s' % args.server)
-            sys.exit(1)
-        except ServersRetrievalError:
+            raise SpeedtestCLIError('No matched servers: %s' % args.server)
+        except (ServersRetrievalError, HTTP_ERRORS):
             print_('Cannot retrieve speedtest server list')
-            sys.exit(1)
+            raise SpeedtestCLIError(get_exception())
         except InvalidServerIDType:
-            print_('%s is an invalid server type, must be int' % args.server)
-            sys.exit(1)
+            raise SpeedtestCLIError('%s is an invalid server type, must '
+                                    'be an int' % args.server)
 
         printer('Selecting best server based on ping...', quiet)
         speedtest.get_best_server()
@@ -1363,21 +1420,27 @@ def shell():
     printer('Hosted by %(sponsor)s (%(name)s) [%(d)0.2f km]: '
             '%(latency)s ms' % results.server, quiet)
 
-    printer('Testing download speed', quiet,
-            end=('', '\n')[bool(debug)])
-    speedtest.download(callback=callback)
-    printer('Download: %0.2f M%s/s' %
-            ((results.download / 1000.0 / 1000.0) / args.units[1],
-             args.units[0]),
-            quiet)
+    if args.download:
+        printer('Testing download speed', quiet,
+                end=('', '\n')[bool(debug)])
+        speedtest.download(callback=callback)
+        printer('Download: %0.2f M%s/s' %
+                ((results.download / 1000.0 / 1000.0) / args.units[1],
+                 args.units[0]),
+                quiet)
+    else:
+        printer('Skipping download test')
 
-    printer('Testing upload speed', quiet,
-            end=('', '\n')[bool(debug)])
-    speedtest.upload(callback=callback)
-    printer('Upload: %0.2f M%s/s' %
-            ((results.upload / 1000.0 / 1000.0) / args.units[1],
-             args.units[0]),
-            quiet)
+    if args.upload:
+        printer('Testing upload speed', quiet,
+                end=('', '\n')[bool(debug)])
+        speedtest.upload(callback=callback)
+        printer('Upload: %0.2f M%s/s' %
+                ((results.upload / 1000.0 / 1000.0) / args.units[1],
+                 args.units[0]),
+                quiet)
+    else:
+        printer('Skipping upload test')
 
     if args.simple:
         print_('Ping: %s ms\nDownload: %0.2f M%s/s\nUpload: %0.2f M%s/s' %
@@ -1389,10 +1452,12 @@ def shell():
     elif args.csv:
         print_(results.csv(delimiter=args.csv_delimiter))
     elif args.json:
+        if args.share:
+            results.share()
         print_(results.json())
 
-    if args.share:
-        printer('Share results: %s' % results.share(), quiet)
+    if args.share and not machine_format:
+        printer('Share results: %s' % results.share())
 
 
 def main():
@@ -1401,7 +1466,7 @@ def main():
     except KeyboardInterrupt:
         print_('\nCancelling...')
     except (SpeedtestException, SystemExit):
-        e = sys.exc_info()[1]
+        e = get_exception()
         if getattr(e, 'code', 1) != 0:
             raise SystemExit('ERROR: %s' % e)
 
