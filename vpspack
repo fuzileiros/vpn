@@ -957,7 +957,7 @@ case $opcao in
   22)
    Banner;;
   23)
-   clear;;
+   clear
    speedtest --share;;
   24)
    LimpadorCache;;
