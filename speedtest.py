@@ -15,17 +15,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-clear
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TESTE CONEXÃO" ; tput sgr0
-echo ""
-echo "        Edited @ColtSeals"
-echo "        NERDOLOGIA VPS"
-echo "        NETFREE: FOREVER"
-echo "        Nome: MenuVPS 1.0"
-echo ""
-read -p "De enter para continuar..."
-clear
-
 import os
 import re
 import csv
