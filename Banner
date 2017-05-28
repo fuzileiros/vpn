@@ -3,12 +3,16 @@
 clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "BANNER SSH" ; tput sgr0
 echo ""
+sleep 0.2
 echo "        Edited @ColtSeals"
+sleep 0.3
 echo "        NERDOLOGIA VPS"
+sleep 0.4
 echo "        NETFREE: FOREVER"
+sleep 0.2
 echo "        Nome: MenuVPS 1.0"
 echo ""
-read -p "De enter para continuar..."
+sleep 0.3
 clear
 sshd_config_bak=$(cat /etc/ssh/sshd_config |grep -v "Banner")
 echo "$sshd_config_bak" > /etc/ssh/sshd_config
