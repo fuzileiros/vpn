@@ -87,9 +87,9 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/MelhorarVelocidad
 chmod +x /bin/MelhorarVelocidade
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /bin/PasswordRoot
 chmod +x /bin/PasswordRoot
-rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest.py > /bin/speedtest.py
-chmod +x /bin/speedtest.py
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
+chmod +x /bin/speedtest
+
 
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
@@ -98,13 +98,6 @@ cp /bin/ConfSquid /bin/confsquid
 cp /bin/ConfSquid /bin/squid
 cp /bin/RemoverExpirados /bin/removerexpirados
 cp /bin/RemoverExpirados /bin/expiradosdel
-cp /bin/BadVpn /bin/badvpn
-cp /bin/BadVpn /bin/bad
-cp /bin/BadVpn /bin/badinstall
-cp /bin/badvpn start /bin/BadStart
-cp /bin/badvpn start /bin/badstart
-cp /bin/badvpn stop /bin/badstop
-cp /bin/badvpn stop /bin/BadStop
 cp /bin/Monitorar /bin/monitor
 cp /bin/Monitorar /bin/monitorar
 cp /bin/RemoverLimite /bin/removerlimite
