@@ -958,6 +958,7 @@ case $opcao in
    Banner;;
   23)
    clear
+   ping
    speedtest --share;;
   24)
    LimpadorCache;;
