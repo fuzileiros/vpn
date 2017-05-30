@@ -89,8 +89,8 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /
 chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speed -O /bin/speed
-chmod +x /bin/speed
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ping -O /bin/ping
+chmod +x /bin/ping
 
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
