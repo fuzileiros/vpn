@@ -17,6 +17,18 @@ azulClaro="\033[1;34m"
 purpleClaro="\033[1;35m"
 cyanClaro="\033[1;36m"
 branco="\033[1;37m"
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
+clear
 echo -e "\033[1;30m------------------------------------ENTREM--------------------------------\033[0m"
 echo -e "\033[1;30m--------------------------------------------------------------------------\033[0m"
 echo -e "\033[1;37m     _/      _/       _/_/_/_/       _/_/_/        _/_/_/          _/_/_/ \033[0m"
