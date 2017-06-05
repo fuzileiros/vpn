@@ -1,4 +1,14 @@
 #!/bin/bash
+clear
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "Resetar Firewall" ; tput sgr0
+echo ""
+echo "        Edited @ColtSeals"
+echo "        NERDOLOGIA VPS"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
+echo ""
+read -p "De enter para continuar..."
+clear
 iptables -F
 iptables -X
 iptables -t mangle -F
