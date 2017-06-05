@@ -1,4 +1,16 @@
 #!/bin/bash
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
+clear
 mkdir /etc/usuariosteste 1>/dev/null 2>/dev/null
 echo -e "   Usuarios teste"
 for testus in $(ls /etc/usuariosteste |sort |sed 's/.sh//g')
