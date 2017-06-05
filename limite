@@ -1,4 +1,16 @@
 #!/bin/bash
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
+clear
 mkdir /etc/usuarios 1>/dev/null 2>/dev/null
 userrc=$(echo $1 |sed 's/-/k/g' |sed 's/0/a/g' |sed 's/1/b/g' |sed 's/2/c/g' |sed 's/3/d/g' |sed 's/4/e/g' |sed 's/5/f/g' |sed 's/6/g/g' |sed 's/7/h/g' |sed 's/8/i/g' |sed 's/9/j/g')
 sustenido=$
