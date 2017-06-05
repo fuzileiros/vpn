@@ -1,5 +1,16 @@
 #!/bin/bash
 clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
+clear
 
 echo -e '\033[05;31m-------------------------------------------------------\033[00;37m'
 echo -e '\033[01;32m              O que deseja fazer ?\033[00;37m'
