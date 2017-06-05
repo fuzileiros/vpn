@@ -1,49 +1,60 @@
-  #!/bin/bash -e
+#!/bin/bash -e
 
-if [ -f /proc/cpuinfo ]
+if [ ! /proc/cpuinfo ]
 then
-echo -e "\n\033[1;30mProcessador\033[0m"
-modelo=$(cat /proc/cpuinfo |grep "model name" |uniq |awk -F : {'print $2'})
-cpucores=$(cat /proc/cpuinfo |grep "cpu cores" |uniq |awk -F : {'print $2'})
-cache=$(cat /proc/cpuinfo |grep "cache size" |uniq |awk -F : {'print $2'})
-echo -e "\033[1;32mModelo:\033[0m$modelo"
-echo -e "\033[1;32mNucleos:\033[0m$cpucores"
-echo -e "\033[1;32mMemoria Cache:\033[0m$cache"
-echo -e "\033[1;32mArquitetura: \033[0m$(uname -p)"
+echo "Error Getting System Information."
+exit 0
+fi
+if [ ! /etc/issue.net ]
+then
+echo "Error Getting System Information."
+exit 0
+fi
+if [ ! /proc/meminfo ]
+then
+echo "Error Getting System Information."
+exit 0
+fi
+
+system=$(cat /etc/issue.net)
+based=$(cat /etc/*release | grep ID_LIKE | awk -F "=" '{print $2}')
+processor=$(cat /proc/cpuinfo | grep "model name" | uniq | awk -F ":" '{print $2}')
+cpus=$(cat /proc/cpuinfo | grep processor | wc -l)
+
+if [ "$system" ]
+then
+
+echo "System: $system"
 else
-echo -e "\033[1;30mProcessador\033[0m"
-echo "Não foi possivel encontrar /proc/cpuinfo"
+echo "System: Not Available"
 fi
-if [ -f /etc/lsb-release ]
+if [ "$based" ]
 then
-echo -e "\n\033[1;30mSistema Operacional\033[0m"
-name=$(cat /etc/lsb-release |grep DESCRIPTION |awk -F = {'print $2'})
-codename=$(cat /etc/lsb-release |grep CODENAME |awk -F = {'print $2'})
-echo -e "\033[1;32mNome: \033[0m$name"
-echo -e "\033[1;32mCodeName: \033[0m$codename"
-echo -e "\033[1;32mKernel: \033[0m$(uname -s)"
-echo -e "\033[1;32mKernel Release: \033[0m$(uname -r)"
-if [ -f /etc/os-release ]
-then
-devlike=$(cat /etc/os-release |grep LIKE |awk -F = {'print $2'})
-echo -e "\033[1;32mDerivado do Antecedente OS: \033[0m$devlike"
-fi
+echo "Its a $based-like"
 else
-echo -e "\n\033[1;30mSistema Operacional\033[0m"
-echo "Não foi possivel encontrar /etc/lsb-release"
+echo "Based system not Available"
 fi
-if free 1>/dev/null 2>/dev/null
+if [ "$processor" ]
 then
-echo -e "\n\033[1;30mMemoria RAM\033[0m"
-echo -e "\033[1;32mTotal: \033[0m$(free -m |grep -i mem |awk {'print $2'}) MB | $(( $(free -m |grep -i mem |awk {'print $2'}) / 1024 )) GB"
-echo -e "\033[1;32mEm Uso: \033[0m$(free -m |grep -i mem |awk {'print $3'}) MB | $(( $(free -m |grep -i mem |awk {'print $3'}) / 1024 )) GB"
-echo -e "\033[1;32mLivre: \033[0m$(free -m |grep -i mem |awk {'print $4'}) MB | $(( $(free -m |grep -i mem |awk {'print $4'}) / 1024 )) GB"
-echo -e "\n\033[1;30mSwap\033[0m"
-echo -e "\033[1;32mTotal: \033[0m$(free -m |grep -i swap |awk {'print $2'}) MB | $(( $(free -m |grep -i swap |awk {'print $2'}) / 1024 )) GB"
-echo -e "\033[1;32mEm Uso: \033[0m$(free -m |grep -i swap |awk {'print $3'}) MB | $(( $(free -m |grep -i swap |awk {'print $3'}) / 1024 )) GB"
-echo -e "\033[1;32mLivre: \033[0m$(free -m |grep -i swap |awk {'print $4'}) MB | $(( $(free -m |grep -i swap |awk {'print $4'}) / 1024 )) GB"
+echo "Processor: $processor x$cpus"
 else
-echo -e "\n\033[1;30mMemoria RAM\033[0m"
-echo "Não foi possivel obter informações sobre a memoria RAM"
+echo "Processor: Not Available"
 fi
-}
+clock=$(lscpu | grep "CPU MHz" | awk '{print $3}')
+if [ "$clock" ]
+then
+echo "Clock: $clock MHz"
+else
+echo "Clock: Not Available"
+fi
+echo "$(ps aux  | awk 'BEGIN { sum = 0 }  { sum += sprintf("%f",$3) }; END { printf "CPU Usage: " "%.2f" "%%", sum}')"
+totalram=$(free | grep Mem | awk '{print $2}')
+usedram=$(free | grep Mem | awk '{print $3}')
+freeram=$(free | grep Mem | awk '{print $4}')
+swapram=$( cat /proc/meminfo | grep SwapTotal | awk '{print $2}')
+echo "RAM TOTAL: $(($totalram / 1024))MB USED: $(($usedram / 1024))MB FREE: $(($freeram / 1024))MB SWAP: $(($swapram / 1024))MB "
+echo "Uptime: $(uptime)"
+echo "Hostname: $(hostname)"
+echo "IP: $(ip addr | grep inet | grep -v inet6 | grep -v "host lo" | awk '{print $2}' | awk -F "/" '{print $1}')"
+echo "Kernel Version: $(uname -r)"
+echo "Architecture: $(uname -m)"
