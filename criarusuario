@@ -39,7 +39,7 @@ sleep 0.2
 echo "Criando seu novo nome de usuário: $username"
 sleep 0.2
 echo "Criando senha para $username"
-sleep 0.3
+sleep 0.2
 echo "Criando limite para $username"
 sleep 0.3
 
