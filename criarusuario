@@ -9,7 +9,7 @@ sleep 0.4
 echo "Checando Permissão..."
 sleep 0.2
 echo -e "${green}Permissão Aceita...${NC}"
-sleep 0.4
+sleep 0.2
 clear
 
 if [ $(id -u) -eq 0 ]
@@ -39,9 +39,9 @@ sleep 0.2
 echo "Criando seu novo nome de usuário: $username"
 sleep 0.2
 echo "Criando senha para $username"
-sleep 0.5
+sleep 0.3
 echo "Criando limite para $username"
-sleep 0.5
+sleep 0.3
 
   clear
   echo "Script Edited @ColtSeals"
