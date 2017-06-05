@@ -1,5 +1,15 @@
 #!/bin/bash
-
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
 clear
 echo -e "\033[1;37mFazendo Backup de Usuarios...\033[0m"
 for user in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |grep -v "nobody" |grep -vi polkitd |grep -vi systemd-[a-z] |grep -vi systemd-[0-9]`
