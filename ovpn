@@ -792,14 +792,14 @@ xyz="80"
 fi
 ;;
 esac
-echo -e "\033[1;31mO HOST DO ARQUIVO PADRAO E \033[1;33msdp.vivo.com.br\033[1;31m DESEJA ALTERAR?\033[0m"
+echo -e "\033[1;31mO HOST DO ARQUIVO PADRAO E \033[1;33mhttp://www.netshoes.com.br\033[1;31m DESEJA ALTERAR?\033[0m"
 read -p "[s/n]
 " sinounot
 if [ "$sinounot" = "s" ]; then
 echo -e "\033[1;31mDIGITE O NOVO HOST\033[0m"
 read -p "Digite o Host: " hostx
  else
-hostx="sdp.vivo.com.br"
+hostx="http://www.netshoes.com.br"
 sleep 2s
 fi
 echo "client
