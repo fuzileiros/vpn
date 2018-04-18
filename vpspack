@@ -822,14 +822,14 @@ xyz="80"
 fi
 ;;
 esac
-echo -e "\033[1;31mO HOST DO ARQUIVO PADRAO E \033[1;33msdp.vivo.com.br\033[1;31m DESEJA ALTERAR?\033[0m"
+echo -e "\033[1;31mO HOST DO ARQUIVO PADRAO E \033[1;33mportalrecarga.vivo.com.br\033[1;31m DESEJA ALTERAR?\033[0m"
 read -p "[s/n]
 " sinounot
 if [ "$sinounot" = "s" ]; then
 echo -e "\033[1;31mDIGITE O NOVO HOST\033[0m"
 read -p "Digite o Host: " hostx
  else
-hostx="sdp.vivo.com.br"
+hostx="portalrecarga.vivo.com.br"
 sleep 2s
 fi
 echo "client
@@ -837,16 +837,17 @@ dev tun
 proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
-remote $IP $PORT
-http-proxy-option CUSTOM-HEADER X-Online-Host  $hostx
+setenv opt method GET
+remote $hostx $PORT
 http-proxy $proxxy $xyz
 resolv-retry infinite
 nobind
 persist-key
 persist-tun
+auth-user-pass
 remote-cert-tls server
 cipher AES-256-CBC
-comp-lzo
+comp-lzo yes
 setenv opt block-outside-dns
 key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
