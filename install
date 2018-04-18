@@ -90,6 +90,10 @@ chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
 
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/portalvivo -O /bin/portalvivo
+chmod +x /bin/portalvivo
+
+
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
 cp /bin/criarusuario /bin/criar
