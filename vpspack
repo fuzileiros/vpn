@@ -838,7 +838,11 @@ proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 setenv opt method GET
+remote SERVIDOR 9999 udp
+</connection>
+<connection>
 remote $hostx $PORT
+</connection>
 http-proxy $proxxy $xyz
 resolv-retry infinite
 nobind
