@@ -863,7 +863,6 @@ echo -e "\033[0m"
 ovpn
 exit
 fi
-}
 
 clear
 if [[ $1 == "" ]]
