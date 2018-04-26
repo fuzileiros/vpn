@@ -140,6 +140,7 @@ cp /bin/vpspack /bin/vps
 cp /bin/vpspack /bin/menuvps
 
 
+
 echo -e "\033[1;31m•••••> \033[01;37mScript Edited ••ColtSeals TecnologY•• \033[0m"
 echo -e "\033[1;32m•••••> A Internet aproxima quem está longe e afasta quem está perto!"
 echo -e "\033[1;32m•••••> TELEGRAM GRUPO: @NerdologiaVps"
