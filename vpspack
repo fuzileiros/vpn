@@ -858,7 +858,6 @@ fi
 done
 sleep 5
 clear
-done
 }
 
 clear
