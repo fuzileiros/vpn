@@ -917,7 +917,7 @@ echo -e "\033[01;36m╠ \033[1;37m31\033[1;36m╣\033[01;37m senha Root \033[01;
 echo -e "\033[01;36m╠ \033[1;37m32\033[1;36m╣\033[01;37m Atualizar VPS \033[01;32m(Atualiza o Sistema Operacional da VPS)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m33\033[1;36m╣\033[01;37m Créditos \033[01;32m(Informações sobre o Editor)\033[0m"
 echo -e "\033[01;36m╠ \033[1;37m34\033[1;36m╣\033[01;37m Telegram \033[01;32m(Canais & Grupo Oficial ENTREM!)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m35\033[1;36m╣\033[01;37m Desinstalar \033[01;32m(Remover MenuVPS)\033[0m"
+echo -e "\033[01;36m╠ \033[1;37m35\033[1;36m╣\033[01;37m Monitorar OpenVPN \033[01;32m(Monitorar conexões atuais OpenVPN)\033[0m"
 read -p ": " opcao
 else
 opcao=$1
@@ -995,9 +995,7 @@ case $opcao in
   34)
   Telegram;;
   35)
-   Desinstalar;;
+   monitoropen;;
   36)
    SistemaDetalhes;;
-  37)
-   monitoropen;;
 esac
