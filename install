@@ -89,6 +89,8 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /
 chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/monitorOpen -O /bin/monitorOpen
+chmod +x /bin/monitorOpen
 
 sed -i '3i\127.0.0.1 portalrecarga.vivo.com.br\' /etc/hosts
 
