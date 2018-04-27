@@ -842,7 +842,7 @@ proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 setenv opt method GET
-remote NerdologiaVPN 9999 udp
+remote Nerdologia 9999 udp
 </connection>
 <connection>
 remote $hostx $PORT
