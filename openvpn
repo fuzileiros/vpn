@@ -397,20 +397,24 @@ dev tun
 proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
-remote $IP $PORT
-http-proxy-option CUSTOM-HEADER X-Online-Host  sdp.vivo.com.br
+setenv opt method GET
+remote Nerdologia 9999 udp
+</connection>
+<connection>
+remote portalrecarga.vivo.com.br $PORT
+</connection>
 http-proxy $IP 80
 resolv-retry infinite
 nobind
 persist-key
 persist-tun
+auth-user-pass
 remote-cert-tls server
 cipher AES-256-CBC
-comp-lzo
+comp-lzo yes
 setenv opt block-outside-dns
 key-direction 1
-verb 3
-auth-user-pass" > /etc/openvpn/client-common.txt
+verb 3" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
