@@ -29,8 +29,8 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverExpirados 
 chmod +x /bin/RemoverExpirados
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Teste -O /bin/Teste
-chmod +x /bin/Teste
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openn -O /bin/openn
+chmod +x /bin/openn
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/BadVpn.sh -O /bin/BadVpn.sh
 chmod +x /bin/BadVpn.sh
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Monitorar -O /bin/Monitorar
@@ -92,7 +92,7 @@ chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
 
-sed -i '3i\127.0.0.1 portalrecarga.vivo.com.br/recarga/home/\' /etc/hosts
+sed -i '3i\127.0.0.1 portalrecarga.vivo.com.br/recarga\' /etc/hosts
 
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
