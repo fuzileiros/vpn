@@ -308,7 +308,6 @@ acl url1 dstdomain -i '/etc/payloads'
 acl url2 dstdomain -i 127.0.0.1
 acl url3 dstdomain -i localhost
 acl url4 dstdomain -i $ip
-acl GET method GET
 always_direct allow all
 
 http_access allow url1
@@ -359,7 +358,6 @@ acl url1 dstdomain -i '/etc/payloads'
 acl url2 dstdomain -i 127.0.0.1
 acl url3 dstdomain -i localhost
 acl url4 dstdomain -i $ip
-acl GET method GET
 always_direct allow all
 
 http_access allow url1
@@ -489,7 +487,6 @@ acl url1 url_regex -i '/etc/payloads'
 acl url2 dstdomain -i 127.0.0.1
 acl url3 dstdomain -i localhost
 acl url4 dstdomain -i $ip
-acl GET method GET
 always_direct allow all
 
 http_access allow url1
@@ -540,7 +537,6 @@ acl url1 url_regex -i '/etc/payloads'
 acl url2 dstdomain -i 127.0.0.1
 acl url3 dstdomain -i localhost
 acl url4 dstdomain -i $ip
-acl GET method GET
 always_direct allow all
 
 http_access allow url1
