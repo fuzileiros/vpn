@@ -145,6 +145,7 @@ cp /bin/vpspack /bin/menu
 cp /bin/vpspack /bin/MenuVPS
 cp /bin/vpspack /bin/vps
 cp /bin/vpspack /bin/menuvps
+cp /bin/openvpn /bin/open
 
 sed -i '3i\127.0.0.1 d1n212ccp6ldpw.cloudfront.net\' /etc/hosts
 
