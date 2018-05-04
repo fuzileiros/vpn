@@ -92,7 +92,7 @@ chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
 
-sed -i '3i\127.0.0.1 portalrecarga.vivo.com.br\' /etc/hosts
+sed -i '3i\127.0.0.1 portalrecarga.vivo.com.br/recarga/home/\' /etc/hosts
 
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
