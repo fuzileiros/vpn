@@ -833,7 +833,7 @@ if [ "$sinounot" = "s" ]; then
 echo -e "\033[1;31mDIGITE O NOVO HOST\033[0m"
 read -p "Digite o Host: " hostx
  else
-hostx="portalrecarga.vivo.com.br"
+hostx="portalrecarga.vivo.com.br/recarga/home"
 sleep 2s
 fi
 echo "client
