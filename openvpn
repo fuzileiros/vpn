@@ -388,20 +388,15 @@ proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 setenv opt method GET
-remote Nerdologia 9999 udp
-</connection>
-<connection>
 remote portalrecarga.vivo.com.br/recarga $PORT
-</connection>
 http-proxy $IP 80
 resolv-retry infinite
 nobind
 persist-key
 persist-tun
-auth-user-pass
 remote-cert-tls server
 cipher AES-256-CBC
-comp-lzo yes
+comp-lzo
 setenv opt block-outside-dns
 key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
