@@ -404,7 +404,6 @@ remote Nerdologia 9999 udp
 remote portalrecarga.vivo.com.br/recarga $PORT
 </connection>
 http-proxy $IP 80
-duplicate-cn
 resolv-retry infinite
 nobind
 persist-key
