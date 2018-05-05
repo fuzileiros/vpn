@@ -27,8 +27,6 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ConfSquid -O /bin
 chmod +x /bin/ConfSquid
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverExpirados -O /bin/RemoverExpirados
 chmod +x /bin/RemoverExpirados
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn -O /bin/openvpn
-chmod +x /bin/openvpn
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openn -O /bin/openn
 chmod +x /bin/openn
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/BadVpn.sh -O /bin/BadVpn.sh
@@ -91,6 +89,7 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /
 chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn chmod +x openbr.sh ./openbr.sh
 
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
