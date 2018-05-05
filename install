@@ -89,7 +89,8 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/PasswordRoot -O /
 chmod +x /bin/PasswordRoot
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin/speedtest
 chmod +x /bin/speedtest
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn chmod +x openvpn ./openvpn
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn -O /bin/openvpn
+chmod +x /bin/openvpn
 
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
