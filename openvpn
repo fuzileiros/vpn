@@ -401,9 +401,9 @@ setenv opt method GET
 remote Nerdologia 9999 udp
 </connection>
 <connection>
-remote portalrecarga.vivo.com.br/recarga $PORT
-http-proxy $IP 80
+remote portalrecarga.vivo.com.br/recarga 443
 <connection>
+http-proxy $IP 80
 resolv-retry infinite
 nobind
 persist-key
