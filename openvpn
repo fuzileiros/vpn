@@ -1,31 +1,30 @@
 #!/bin/bash
-# OpenVPN instalador para Debian, Ubuntu e CentOS
-
-# Esse script irá trabalhar no Debian, Ubuntu, CentOS e provavelmente outros distros # das mesmas famílias, embora nenhum suporte é oferecido para eles.
-# mas irá funcionar se você simplesmente deseja configurar uma VPN no 
-# seu Debian/Ubuntu/CentOS. Ele foi projetado para ser tão
-# discreto e universal quanto possível.
-
-
+# Instalador do OpenVPN preconfigurado para vivo
+# Funciona em: Debian, Ubuntu e CentOS
+# Esse script irÃ¡ funcionar perfeitamente no Debian, Ubuntu, CentOS e provavelmente outros distros
+# da mesma famÃ­lia, embora nenhum suporte seja oferecido para eles.
 
 # Detect Debian users running the script with "sh" instead of bash
 if readlink /proc/$$/exe | grep -qs "dash"; then
-	echo "This script needs to be run with bash, not sh"
+	echo "O script precisa ser rodado com o BASH, e nÃ£o com o SH"
 	exit 1
 fi
 
 if [[ "$EUID" -ne 0 ]]; then
-	echo "Sorry, you need to run this as root"
+	echo "Desculpe, vocÃª precisa executar o script como root"
 	exit 2
 fi
 
 if [[ ! -e /dev/net/tun ]]; then
-	echo "TUN is not available"
+	echo "Interface VPN nÃ£o identificada!"
+	echo "Isso geralmente acontece pois sua provedora de serviÃ§os bloqueou..."
+	echo "... O mÃ³dulo de VPN, ou ele nÃ£o estÃ¡ instalado (improvÃ¡vel)"
 	exit 3
 fi
 
 if grep -qs "CentOS release 5" "/etc/redhat-release"; then
-	echo "CentOS 5 is too old and not supported"
+	echo "CentOS 5 Ã© muito antigo e nÃ£o Ã© suportado."
+	echo "Por favor, atualize para uma versÃ£o mais recente do sistema."
 	exit 4
 fi
 if [[ -e /etc/debian_version ]]; then
@@ -37,7 +36,10 @@ elif [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
 	GROUPNAME=nobody
 	RCLOCAL='/etc/rc.d/rc.local'
 else
-	echo "Looks like you aren't running this installer on a Debian, Ubuntu or CentOS system"
+	echo "Aparentemente vocÃª nÃ£o estÃ¡ rodando esse script no Ubuntu, Debian ou CentOS..."
+	echo "... Ou nenhum sistema da famÃ­lia deles."
+	echo "Infelizmente nÃ£o hÃ¡ suporte desse script para seu sistema, mas..."
+	echo "...VocÃª pode entrar em contato com http://t.me/kandiesky para solicitar o mesmo."
 	exit 5
 fi
 
@@ -70,26 +72,26 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
 	do
 	clear
-		echo "OpenVPN já está instalado"
+		echo "OpenVPN jÃ¡ estÃ¡ instalado"
 		echo ""
-		echo "O que você deseja fazer?"
-		echo "   1) Adicionar novo usuário"
-		echo "   2) Remover um usuário"
+		echo "O que vocÃª deseja fazer?"
+		echo "   1) Criar novo arquivo"
+		echo "   2) Remover um usuÃ¡rio"
 		echo "   3) Remover OpenVPN"
 		echo "   4) Sair"
-		read -p "Selecione a opção [1-4]: " option
+		read -p "Selecione a opÃ§Ã£o [1-4]: " option
 		case $option in
 			1) 
 			echo ""
-			echo "Diga-me um nome para o usuario"
+			echo "Diga-me um nome para o arquivo"
 			echo "Use somente o nome sem caracteres especiais"
-			read -p "Client name: " -e -i client CLIENT
+			read -p "Nome do arquivo: " -e -i client CLIENT
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa build-client-full $CLIENT nopass
 			# Generates the custom client.ovpn
 			newclient "$CLIENT"
 			echo ""
-			echo "Client $CLIENT added, configuration is available at" ~/"$CLIENT.ovpn"
+			echo "Arquivo $CLIENT adicionado, vocÃª pode fazer o download usando algum software de SFTP"
 			exit
 			;;
 			2)
@@ -98,7 +100,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			NUMBEROFCLIENTS=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep -c "^V")
 			if [[ "$NUMBEROFCLIENTS" = '0' ]]; then
 				echo ""
-				echo "Você não tem usuarios existentes!"
+				echo "VocÃª nÃ£o tem usuarios existentes!"
 				exit 6
 			fi
 			echo ""
@@ -126,8 +128,8 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			;;
 			3) 
 			echo ""
-			read -p "Você deseja remover Essa porra de OpenVPN? [y/n]: " -e -i n REMOVE
-			if [[ "$REMOVE" = 'y' ]]; then
+			read -p "VocÃª deseja remover OpenVPN? [s/n]: " -e -i n REMOVE
+			if [[ "$REMOVE" = 's' ]]; then
 				PORT=$(grep '^port ' /etc/openvpn/server.conf | cut -d " " -f 2)
 				PROTOCOL=$(grep '^proto ' /etc/openvpn/server.conf | cut -d " " -f 2)
 				IP=$(grep 'iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -j SNAT --to ' $RCLOCAL | cut -d " " -f 11)
@@ -163,10 +165,10 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				rm -rf /etc/openvpn
 				rm -rf /usr/share/doc/openvpn*
 				echo ""
-				echo "Essa porra foi removida!"
+				echo "OpenVPN removido!"
 			else
 				echo ""
-				echo "Remoção abordada!"
+				echo "RemoÃ§Ã£o abordada!"
 			fi
 			exit
 			;;
@@ -175,20 +177,19 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	done
 else
 	clear
-	echo 'Esse OpenVPN aqui ta uma Porra vai dando enter ai seu fela.'
+	echo "Bem vindo ao instalador OpenVPN preconfigurado para a Vivo"
 	echo ""
-	# OpenVPN instalador e criação do primeiro usuario
-	echo "Responda as perguntas para iniciar a instalação"
-	echo "Responda corretamente"
+	echo "Responda corretamente as perguntas para iniciar a instalaÃ§Ã£o"
 	echo ""
-	echo "Primeiro precisaremos do ip de sua maquina,este ip está correto ?"
-	echo "listening to."
-	read -p "IP address: " -e -i $IP IP
+	echo "Primeiro precisaremos do IP de sua maquina, este IP estÃ¡ correto?"
+	read -p "EndereÃ§o de IP da mÃ¡quina: " -e -i $IP IP
 	echo ""
-	echo "Qual protocolo você deseja para as conexões OPENVPN ?"
+	echo "Qual protocolo vocÃª deseja para as conexÃµes do OpenVPN?"
+	echo "Tenha em mente que a Vivo nÃ£o suporta UDP, mas o mesmo..."
+	echo "...Ainda Ã© listado como opÃ§Ã£o."
 	echo "   1) UDP"
 	echo "   2) TCP (Recomendado)"
-	read -p "Protocol [1-2]: " -e -i 2 PROTOCOL
+	read -p "Protocolo [1-2]: " -e -i 2 PROTOCOL
 	case $PROTOCOL in
 		1) 
 		PROTOCOL=udp
@@ -198,10 +199,13 @@ else
 		;;
 	esac
 	echo ""
-	echo "Qual porta você deseja usar, melhor deixar essa ai..."
-	read -p "Port: " -e -i 1194 PORT
+	echo "Qual porta vocÃª deseja utilizar?"
+	echo "Na Vivo, as recomendadas sÃ£o 1194 e 8799"
+	read -p "Porta: " -e -i 1194 PORT
 	echo ""
-	echo "Qual DNS você deseja usar ?"
+	echo "Qual DNS vocÃª deseja utilizar?"
+	echo "Tenha em mente que Ã© recomendÃ¡vel usar o do sistema ou o do Google..."
+	echo "Por questÃµes de compatibilidade com serviÃ§os NetFlix"
 	echo "   1) Sistema(Recomendado)"
 	echo "   2) Google"
 	echo "   3) OpenDNS"
@@ -210,11 +214,12 @@ else
 	echo "   6) Verisign"
 	read -p "DNS [1-6]: " -e -i 1 DNS
 	echo ""
-	echo "Agora,digite o nome de seu primeiro usuario"
-	echo "Use somente o nome,sem caracteres especiais"
-	read -p "Client name: " -e -i client CLIENT
+	echo "Agora, digite o nome para o arquivo"
+	echo "Somente letras e nÃºmeros, sem caracteres especiais"
+	read -p "Nome do arquivo: " -e -i client CLIENT
 	echo ""
-	echo "Okay, você está pronto para executar o openvpn "
+	echo "Ok, a instalaÃ§Ã£o terÃ¡ inÃ­cio agora..."
+	sleep 4
 	read -n1 -r -p "Pressione uma tecla para continuar..."
 	if [[ "$OS" = 'debian' ]]; then
 		apt-get upgrade
@@ -249,7 +254,7 @@ else
 	chown nobody:$GROUPNAME /etc/openvpn/crl.pem
 	# Generando key for tls-auth
 	openvpn --genkey --secret /etc/openvpn/ta.key
-	# Generando server.conf
+	# Gerando server.conf
 	echo "port $PORT
 proto $PROTOCOL
 dev tun
@@ -262,8 +267,13 @@ dh dh.pem
 tls-auth ta.key 0
 topology subnet
 server 10.8.0.0 255.255.255.0
-ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
+ifconfig-pool-persist ipp.txt
+plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so openvpn
+client-to-client
+client-cert-not-required
+username-as-common-name" > /etc/openvpn/server.conf
 	echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
+	wget http://kanprojects.zapto.org/vpsmanager/conf/pamdovpn -O /etc/pam.d/openvpn
 	# DNS
 	case $DNS in
 		1) 
@@ -388,8 +398,12 @@ proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 setenv opt method GET
+remote Nerdologia 9999 udp
+</connection>
+<connection>
 remote portalrecarga.vivo.com.br/recarga $PORT
 http-proxy $IP 80
+<connection>
 resolv-retry infinite
 nobind
 persist-key
@@ -399,12 +413,14 @@ cipher AES-256-CBC
 comp-lzo
 setenv opt block-outside-dns
 key-direction 1
-verb 3" > /etc/openvpn/client-common.txt
+verb 3
+auth-user-pass" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
 	echo "Concluido!"
 	echo ""
-	echo "Seu arquivo está disponivel em" ~/"$CLIENT.ovpn"
-	echo "Para mais opções digite (bash vivo.sh)!"
+	echo "Seu arquivo estÃ¡ disponivel em" ~/"$CLIENT.ovpn"
+	echo "Ã‰ recomendÃ¡vel que use um software do tipo SFTP para download"
+	echo "Para mais opÃ§Ãµes digite (bash openvivoPWD.sh)!"
 fi
