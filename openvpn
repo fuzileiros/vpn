@@ -420,7 +420,7 @@ auth-user-pass" > /etc/openvpn/client-common.txt
 	echo ""
 	echo "Concluido!"
 	echo ""
-	echo "Seu arquivo estÃ¡ disponivel em" ~/"$CLIENT.ovpn"
-	echo "Ã‰ recomendÃ¡vel que use um software do tipo SFTP para download"
-	echo "Para mais opÃ§Ãµes digite (bash openvivoPWD.sh)!"
+	echo "Seu arquivo esta disponivel em" ~/"$CLIENT.ovpn"
+	echo "É recomendavel que use um software do tipo SFTP para download"
+	echo "Para ACESSAR O MENU digite (vps)!"
 fi
