@@ -27,8 +27,6 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/ConfSquid -O /bin
 chmod +x /bin/ConfSquid
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverExpirados -O /bin/RemoverExpirados
 chmod +x /bin/RemoverExpirados
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openn -O /bin/openn
-chmod +x /bin/openn
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/BadVpn.sh -O /bin/BadVpn.sh
 chmod +x /bin/BadVpn.sh
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Monitorar -O /bin/Monitorar
