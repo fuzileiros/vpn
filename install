@@ -90,6 +90,8 @@ chmod +x /bin/speedtest
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
 
+sed -i '10i\127.0.0.1 portalrecarga.vivo.com.br/recarga\' /etc/hosts
+
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
 cp /bin/criarusuario /bin/criar
