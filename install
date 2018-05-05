@@ -139,8 +139,6 @@ cp /bin/vpspack /bin/vps
 cp /bin/vpspack /bin/menuvps
 cp /bin/openvpn /bin/open
 
-sed -i '10i\127.0.0.1 portalrecarga.vivo.com.br/recarga\' /etc/hosts
-
 echo -e "\033[1;31m•••••> \033[01;37mScript Edited ••ColtSeals TecnologY•• \033[0m"
 echo -e "\033[1;32m•••••> A Internet aproxima quem está longe e afasta quem está perto!"
 echo -e "\033[1;32m•••••> TELEGRAM GRUPO: @NerdologiaVps"
