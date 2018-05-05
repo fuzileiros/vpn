@@ -144,9 +144,5 @@ echo -e "\033[1;32m•••••> A Internet aproxima quem está longe e afast
 echo -e "\033[1;32m•••••> TELEGRAM GRUPO: @NerdologiaVps"
 echo -e "\033[1;32m•••••> TELEGRAM CANAL: @VpsNerdologia"
 echo -e "\033[1;32mInstalacao concluida\n\033[1;30mExecute:"
-echo -e "\n\033[1;32mvps \033[1;30mMenu com opcoes"
-echo -e "\033[1;32mcriarusuario \033[1;30mCriar usuario com data e limite"
-echo -e "\033[1;32mdeletarusuario \033[1;30mDeletar usuario ou apenas desconectar"
-echo -e "\033[1;32mredefinirusuario \033[1;30mAlterar data, senha, etc, de um usuario"
-echo -e "\033[1;32mlimite \033[1;30mLimite de logins simultaneos\033[0m"
+echo -e "\n\033[1;32mopenvpn \033[1;30mPara instalar o openVPN"
 rm -rf install
