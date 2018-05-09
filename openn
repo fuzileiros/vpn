@@ -1,4 +1,128 @@
-t
+#!/bin/bash
+# OpenVPN instalador para Debian, Ubuntu e CentOS
+
+# Esse script irá trabalhar no Debian, Ubuntu, CentOS e provavelmente outros distros # das mesmas famílias, embora nenhum suporte é oferecido para eles.
+# mas irá funcionar se você simplesmente deseja configurar uma VPN no 
+# seu Debian/Ubuntu/CentOS. Ele foi projetado para ser tão
+# discreto e universal quanto possível.
+
+
+
+# Detect Debian users running the script with "sh" instead of bash
+if readlink /proc/$$/exe | grep -qs "dash"; then
+	echo "This script needs to be run with bash, not sh"
+	exit 1
+fi
+
+if [[ "$EUID" -ne 0 ]]; then
+	echo "Sorry, you need to run this as root"
+	exit 2
+fi
+
+if [[ ! -e /dev/net/tun ]]; then
+	echo "TUN is not available"
+	exit 3
+fi
+
+if grep -qs "CentOS release 5" "/etc/redhat-release"; then
+	echo "CentOS 5 is too old and not supported"
+	exit 4
+fi
+if [[ -e /etc/debian_version ]]; then
+	OS=debian
+	GROUPNAME=nogroup
+	RCLOCAL='/etc/rc.local'
+elif [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
+	OS=centos
+	GROUPNAME=nobody
+	RCLOCAL='/etc/rc.d/rc.local'
+else
+	echo "Looks like you aren't running this installer on a Debian, Ubuntu or CentOS system"
+	exit 5
+fi
+
+newclient () {
+	# Generates the custom client.ovpn
+	cp /etc/openvpn/client-common.txt ~/$1.ovpn
+	echo "<ca>" >> ~/$1.ovpn
+	cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/$1.ovpn
+	echo "</ca>" >> ~/$1.ovpn
+	echo "<cert>" >> ~/$1.ovpn
+	cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/$1.ovpn
+	echo "</cert>" >> ~/$1.ovpn
+	echo "<key>" >> ~/$1.ovpn
+	cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$1.ovpn
+	echo "</key>" >> ~/$1.ovpn
+	echo "<tls-auth>" >> ~/$1.ovpn
+	cat /etc/openvpn/ta.key >> ~/$1.ovpn
+	echo "</tls-auth>" >> ~/$1.ovpn
+}
+
+# Try to get our IP from the system and fallback to the Internet.
+# I do this to make the script compatible with NATed servers (lowendspirit.com)
+# and to avoid getting an IPv6.
+IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+if [[ "$IP" = "" ]]; then
+		IP=$(wget -4qO- "http://whatismyip.akamai.com/")
+fi
+
+if [[ -e /etc/openvpn/server.conf ]]; then
+	while :
+	do
+	clear
+		echo "OpenVPN já está instalado"
+		echo ""
+		echo "O que você deseja fazer?"
+		echo "   1) Adicionar novo usuário"
+		echo "   2) Remover um usuário"
+		echo "   3) Remover OpenVPN"
+		echo "   4) Sair"
+		read -p "Selecione a opção [1-4]: " option
+		case $option in
+			1) 
+			echo ""
+			echo "Diga-me um nome para o usuario"
+			echo "Use somente o nome sem caracteres especiais"
+			read -p "Client name: " -e -i client CLIENT
+			cd /etc/openvpn/easy-rsa/
+			./easyrsa build-client-full $CLIENT nopass
+			# Generates the custom client.ovpn
+			newclient "$CLIENT"
+			echo ""
+			echo "Client $CLIENT added, configuration is available at" ~/"$CLIENT.ovpn"
+			exit
+			;;
+			2)
+			# This option could be documented a bit better and maybe even be simplimplified
+			# ...but what can I say, I want some sleep too
+			NUMBEROFCLIENTS=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep -c "^V")
+			if [[ "$NUMBEROFCLIENTS" = '0' ]]; then
+				echo ""
+				echo "Você não tem usuarios existentes!"
+				exit 6
+			fi
+			echo ""
+			echo "Selecione um usuario para remover"
+			tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
+			if [[ "$NUMBEROFCLIENTS" = '1' ]]; then
+				read -p "Selecione um usuario [1]: " CLIENTNUMBER
+			else
+				read -p "Selecione um usuario [1-$NUMBEROFCLIENTS]: " CLIENTNUMBER
+			fi
+			CLIENT=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$CLIENTNUMBER"p)
+			cd /etc/openvpn/easy-rsa/
+			./easyrsa --batch revoke $CLIENT
+			./easyrsa gen-crl
+			rm -rf pki/reqs/$CLIENT.req
+			rm -rf pki/private/$CLIENT.key
+			rm -rf pki/issued/$CLIENT.crt
+			rm -rf /etc/openvpn/crl.pem
+			cp /etc/openvpn/easy-rsa/pki/crl.pem /etc/openvpn/crl.pem
+			# CRL is read with each client connection, when OpenVPN is dropped to nobody
+			chown nobody:$GROUPNAME /etc/openvpn/crl.pem
+			echo ""
+			echo "Usuario removido"
+			exit
 			;;
 			3) 
 			echo ""
@@ -263,8 +387,8 @@ dev tun
 proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
-setenv opt method GET
-remote portalrecarga.vivo.com.br/recarga $PORT
+remote $IP $PORT
+http-proxy-option CUSTOM-HEADER X-Online-Host portalrecarga.vivo.com.br/recarga
 http-proxy $IP 80
 resolv-retry infinite
 nobind
