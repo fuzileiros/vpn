@@ -90,8 +90,11 @@ chmod +x /bin/speedtest
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
 sed -i '10i\127.0.0.1 portalrecarga.vivo.com.br/recarga\' /etc/hosts
+sed -i '10i\127.0.0.1 d1n212ccp6ldpw.cloudfront.net\' /etc/hosts
+sed -i '10i\127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/index.html\' /etc/hosts
+sed -i '10i\127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/cd/index.html\' /etc/hosts
 
-
+cp /bin/openvpn /bin/vpn
 cp /bin/limite /bin/Limite
 cp /bin/criarusuario /bin/CriarUsuario
 cp /bin/criarusuario /bin/criar
