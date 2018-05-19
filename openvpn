@@ -257,11 +257,8 @@ fi
 PORT="$pt"
 echo -e "\033[1;33m
 echo ""
-echo "        Edited @ColtSeals"
-echo ""
-read -p "De enter para continuar..."
+read -p "Qual DNS você deseja utilizar ?"
 clear
-Qual DNS você deseja utilizar ?
 Tenha em mente que é recomendável usar o do sistema ou o do Google...
 Por questões de compatibilidade com serviçoos NetFlix
 \033[1;31m  1)\033[1;33m Sistema (Recomendado)
