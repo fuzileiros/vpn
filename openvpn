@@ -493,6 +493,6 @@ auth-user-pass" > /etc/openvpn/client-common.txt
 echo -e "\033[1;31mOPENVPN INSTALADO COM SUCESSO! Aguarde..."
 sleep 3s
 echo -e "\033[0m"
-vps
+vpspack
 exit
 fi
