@@ -100,7 +100,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			NUMBEROFCLIENTS=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep -c "^V")
 			if [[ "$NUMBEROFCLIENTS" = '0' ]]; then
 				echo ""
-				echo "VocÃª nÃ£o tem usuarios existentes!"
+				echo "Você não tem usuarios existentes!"
 				exit 6
 			fi
 			echo ""
@@ -128,7 +128,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			;;
 			3) 
 			echo ""
-			read -p "VocÃª deseja remover OpenVPN? [s/n]: " -e -i n REMOVE
+			read -p "Você deseja remover OpenVPN? [s/n]: " -e -i n REMOVE
 			if [[ "$REMOVE" = 's' ]]; then
 				PORT=$(grep '^port ' /etc/openvpn/server.conf | cut -d " " -f 2)
 				PROTOCOL=$(grep '^proto ' /etc/openvpn/server.conf | cut -d " " -f 2)
@@ -168,7 +168,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				echo "OpenVPN removido!"
 			else
 				echo ""
-				echo "RemoÃ§Ã£o abordada!"
+				echo "Remoção Cancelada!"
 			fi
 			exit
 			;;
@@ -179,7 +179,7 @@ else
 	clear
 	echo "Bem vindo ao instalador OpenVPN preconfigurado para a Vivo"
 	echo ""
-	echo "Responda corretamente as perguntas para iniciar a instalaÃ§Ã£o"
+	echo "Responda corretamente as perguntas para iniciar a instalação"
 	echo ""
 echo -e "\033[1;33mPrimeiro precisaremos do ip de sua maquina,este ip está correto ?\033[0m"
 	read -p "Endereço de IP da Maquina: " -e -i $IP IP
