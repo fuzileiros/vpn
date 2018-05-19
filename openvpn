@@ -490,10 +490,9 @@ auth-user-pass" > /etc/openvpn/client-common.txt
 	echo "Para ACESSAR O MENU Principal digite (vps)!"
   echo -e "\033[0m"
 	echo ""
-chmod 777 /etc/init.d/openvpn
-echo -e "\033[1;31mOPENVPN INSTALADO COM SUCESSO!"
+echo -e "\033[1;31mOPENVPN INSTALADO COM SUCESSO! Aguarde..."
 sleep 3s
 echo -e "\033[0m"
-ovpn
+vps
 exit
 fi
