@@ -11,7 +11,7 @@ if readlink /proc/$$/exe | grep -qs "dash"; then
 fi
 
 if [[ "$EUID" -ne 0 ]]; then
-	echo "Desculpe, vocÃª precisa executar o script como root"
+	echo "Desculpe, você precisa executar o script como root"
 	exit 2
 fi
 
@@ -72,14 +72,14 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
 	do
 	clear
-		echo "OpenVPN jÃ¡ estÃ¡ instalado"
+		echo "OpenVPN já está instalado"
 		echo ""
 		echo "O que vocÃª deseja fazer?"
 		echo "   1) Criar novo arquivo"
-		echo "   2) Remover um usuÃ¡rio"
+		echo "   2) Remover um usuário"
 		echo "   3) Remover OpenVPN"
 		echo "   4) Sair"
-		read -p "Selecione a opÃ§Ã£o [1-4]: " option
+		read -p "Selecione a opção [1-4]: " option
 		case $option in
 			1) 
 			echo ""
@@ -91,7 +91,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			# Generates the custom client.ovpn
 			newclient "$CLIENT"
 			echo ""
-			echo "Arquivo $CLIENT adicionado, vocÃª pode fazer o download usando algum software de SFTP"
+			echo "Arquivo $CLIENT adicionado, você pode fazer o download usando algum software de SFTP"
 			exit
 			;;
 			2)
@@ -185,7 +185,7 @@ echo -e "\033[1;33mPrimeiro precisaremos do ip de sua maquina,este ip está corr
 	read -p "Endereço de IP da Maquina: " -e -i $IP IP
 	echo ""
 echo -e "\033[1;31mQual protocolo você deseja para as conexões OPENVPN ?"
-	echo "Tenha em mente que a Vivo nÃ£o suporta UDP, mas o mesmo..."
+	echo "Tenha em mente que a Vivo não suporta UDP, mas o mesmo..."
 	echo "...Ainda não listado como opção."
 	echo "   1) UDP"
 	echo "   2) TCP (Recomendado)"
