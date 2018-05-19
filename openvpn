@@ -255,7 +255,6 @@ exit
  fi
 fi
 PORT="$pt"
-echo ""
 clear
 Qual DNS você deseja utilizar ?
 Tenha em mente que é recomendável usar o do sistema ou o do Google...
