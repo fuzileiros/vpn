@@ -1,8 +1,8 @@
 #!/bin/bash
 # Instalador do OpenVPN preconfigurado para vivo
 # Funciona em: Debian, Ubuntu e CentOS
-# Esse script irÃ¡ funcionar perfeitamente no Debian, Ubuntu, CentOS e provavelmente outros distros
-# da mesma famÃ­lia, embora nenhum suporte seja oferecido para eles.
+# Esse script irá funcionar perfeitamente no Debian, Ubuntu, CentOS e provavelmente outros distros
+# da mesma família, embora nenhum suporte seja oferecido para eles.
 
 # Detect Debian users running the script with "sh" instead of bash
 if readlink /proc/$$/exe | grep -qs "dash"; then
@@ -16,15 +16,15 @@ if [[ "$EUID" -ne 0 ]]; then
 fi
 
 if [[ ! -e /dev/net/tun ]]; then
-	echo "Interface VPN nÃ£o identificada!"
-	echo "Isso geralmente acontece pois sua provedora de serviÃ§os bloqueou..."
-	echo "... O mÃ³dulo de VPN, ou ele nÃ£o estÃ¡ instalado (improvÃ¡vel)"
+	echo "Interface VPN não identificada!"
+	echo "Isso geralmente acontece pois sua provedora de serviços bloqueou..."
+	echo "... O módulo de VPN, ou ele não está instalado (improvavel)"
 	exit 3
 fi
 
 if grep -qs "CentOS release 5" "/etc/redhat-release"; then
-	echo "CentOS 5 Ã© muito antigo e nÃ£o Ã© suportado."
-	echo "Por favor, atualize para uma versÃ£o mais recente do sistema."
+	echo "CentOS 5 é muito antigo e não é suportado."
+	echo "Por favor, atualize para uma versão mais recente do sistema."
 	exit 4
 fi
 if [[ -e /etc/debian_version ]]; then
@@ -36,10 +36,10 @@ elif [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
 	GROUPNAME=nobody
 	RCLOCAL='/etc/rc.d/rc.local'
 else
-	echo "Aparentemente vocÃª nÃ£o estÃ¡ rodando esse script no Ubuntu, Debian ou CentOS..."
-	echo "... Ou nenhum sistema da famÃ­lia deles."
-	echo "Infelizmente nÃ£o hÃ¡ suporte desse script para seu sistema, mas..."
-	echo "...VocÃª pode entrar em contato com http://t.me/kandiesky para solicitar o mesmo."
+	echo "Aparentemente você não está rodando esse script no Ubuntu, Debian ou CentOS..."
+	echo "... Ou nenhum sistema da família deles."
+	echo "Infelizmente não há suporte desse script para seu sistema, mas..."
+	echo "...Você pode entrar em contato com http://t.me/ColtSeals para solicitar o mesmo."
 	exit 5
 fi
 
