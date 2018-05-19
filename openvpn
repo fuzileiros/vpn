@@ -255,6 +255,11 @@ exit
  fi
 fi
 PORT="$pt"
+echo -e "\033[1;33m
+echo ""
+echo "        Edited @ColtSeals"
+echo ""
+read -p "De enter para continuar..."
 clear
 Qual DNS você deseja utilizar ?
 Tenha em mente que é recomendável usar o do sistema ou o do Google...
