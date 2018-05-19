@@ -146,6 +146,7 @@ echo -e "\033[1;32m•••••> TELEGRAM CANAL: @VpsNerdologia"
 echo -e "\033[1;32mInstalacao concluida\n\033[1;30mExecute:"
 echo -e "\n\033[1;32mopenvpn \033[1;30mPara instalar o openVPN"
 rm -rf install
+clear
 	echo ""
 echo -e "\033[1;31m INSTALANDO OPEN VPN! AGUARDE..."
 sleep 3s
