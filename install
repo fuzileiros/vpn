@@ -55,8 +55,6 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/LimpadorCache -O 
 chmod +x /bin/LimpadorCache 
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/VNC -O /bin/VNC
 chmod +x /bin/VNC
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/nano -O /bin/nano
-chmod +x /bin/VNC
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/tcptweaker -O /bin/tcptweaker
 chmod +x /bin/nano
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/DeletarTodos -O /bin/DeletarTodos
@@ -91,6 +89,7 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin
 chmod +x /bin/speedtest
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/nano && bash nano
 
 cp /bin/openvpn /bin/vpn
 cp /bin/limite /bin/Limite
