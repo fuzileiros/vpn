@@ -904,7 +904,6 @@ clear
 done
 }
 
-
 clear
 if [[ $1 == "" ]]
 then
