@@ -6,7 +6,7 @@
 
 # Detect Debian users running the script with "sh" instead of bash
 if readlink /proc/$$/exe | grep -qs "dash"; then
-	echo "O script precisa ser rodado com o BASH, e nÃ£o com o SH"
+	echo "O script precisa ser rodado com o BASH, e não com o SH"
 	exit 1
 fi
 
