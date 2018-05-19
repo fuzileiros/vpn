@@ -254,6 +254,7 @@ exit
 fi
 PORT="$pt"
 echo -e "\033[1;33m
+	echo ""
 	echo "Qual DNS você deseja utilizar?"
 	echo "Tenha em mente que é recomendavel usar o do sistema ou o do Google..."
 	echo "Por questões de compatibilidade com serviçoos NetFlix"
