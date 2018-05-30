@@ -89,6 +89,8 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/speedtest -O /bin
 chmod +x /bin/speedtest
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Teste -O /bin/Teste
+chmod +x /bin/Teste
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/hosts && bash hosts
 
 cp /bin/openvpn /bin/vpn
