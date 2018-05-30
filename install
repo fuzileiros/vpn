@@ -147,6 +147,27 @@ echo -e "\033[1;32mInstalacao concluida\n\033[1;30mExecute:"
 echo -e "\n\033[1;32mopenvpn \033[1;30mPara instalar o openVPN"
 rm -rf install
 clear
+sed -i '10i\127.0.0.1 portalrecarga.vivo.com.br/recarga\' /etc/hosts
+sed -i '10i\127.0.0.1 portalrecarga.vivo.com.br/recarga/home\' /etc/hosts
+sed -i '10i\127.0.0.1 d1n212ccp6ldpw.cloudfront.net\' /etc/hosts
+sed -i '10i\127.0.0.1 www.portalrecarga.vivo.com.br/dadospos/home/\' /etc/hosts
+sed -i '10i\127.0.0.1 portalrecarga.vivo.com.br/noCredit/vitrine/controle/\' /etc/hosts
+sed -i '10i\127.0.0.1 www.portalrecarga.vivo.com.br/noCredit/vitrine/controle/\' /etc/hosts
+sed -i '10i\127.0.0.1 187.8.166.33\' /etc/hosts
+sed -i '10i\127.0.0.1 200.220.254.31\' /etc/hosts
+sed -i '10i\127.0.0.1 navegue.vivo.ddivulga.com/pacote\' /etc/hosts
+sed -i '10i\127.0.0.1 sdp.vivo.com.br/\' /etc/hosts
+sed -i '10i\127.0.0.1 i.vivo-hom.ddivulga.com/i/gp\' /etc/hosts
+sed -i '10i\127.0.0.1 i.vivo.ddivulga.com/i/gp\' /etc/hosts
+sed -i '10i\127.0.0.1 interatividade.vivo.ddivulga.com/produto\' /etc/hosts
+sed -i '10i\127.0.0.1 clients1.google.com\' /etc/hosts
+sed -i '10i\127.0.0.1 veek.com.br\' /etc/hosts
+sed -i '10i\127.0.0.1 gitlab.veek.com.br\' /etc/hosts
+sed -i '10i\127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/index.html\' /etc/hosts
+sed -i '10i\127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/cd/index.html\' /etc/hosts
+service squid restart 1> /dev/null 2> /dev/null
+service squid3 restart 1> /dev/null 2> /dev/null
+
 	echo ""
 echo -e "\033[1;31m INSTALANDO OPEN VPN! AGUARDE..."
 sleep 3s
