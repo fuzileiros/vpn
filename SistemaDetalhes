@@ -58,4 +58,8 @@ else
 echo -e "\n\033[1;30mMemoria RAM\033[0m"
 echo "Não foi possivel obter informações sobre a memoria RAM"
 fi
-}
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
