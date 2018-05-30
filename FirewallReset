@@ -18,3 +18,8 @@ iptables -t nat -X
 iptables -t filter -F
 iptables -t filter -X
 echo "Regras resetadas com sucesso!"
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
