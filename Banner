@@ -35,3 +35,8 @@ service sshd restart 1>/dev/null 2>/dev/null
 echo -e "\033[1;30m  BANNER SSH aplicado com sucesso!\033[0m"
 echo ""
 echo -e "\033[1;30m  NÃO DEIXE DE ENTRAR NO NOSSO GRUPO & NO CANAL NERDs\033[0m"
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
