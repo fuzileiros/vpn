@@ -219,3 +219,8 @@ echo ""
 echo -e "\033[01;37m(Telegram Canal: \033[1;31m@VpsNerdologia)"
 echo -e "\033[01;37m(Telegram Canal: \033[1;31m@ColtChannel)"
 echo -e "\033[01;37m(Telegram Canal: \033[1;31m@NerdologiaVps)"
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
