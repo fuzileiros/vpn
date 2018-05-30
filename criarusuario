@@ -1,4 +1,17 @@
 #!/bin/bash
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
+clear
+
 if [ $(id -u) -eq 0 ]
 then
 	echo -e "\033[1;32mNome do novo usuario:\033[0;37m"; read -p " " name
@@ -13,12 +26,38 @@ then
 		valid=$(date '+%C%y-%m-%d' -d " +$daysrnf days")
 		datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
 		useradd -M -s /bin/false $name -e $valid
-		( echo "$pass";echo "$pass" ) | passwd $name 2> /dev/null
+		(echo $pass; echo $pass)|passwd $name 2>/dev/null
 		limite $name $limiteuser
-		echo -e "\033[1;36mUsuario: \033[0m$name"
-		echo -e "\033[1;36mSenha: \033[0m$pass"
-		echo -e "\033[1;36mExpira:\033[0m $datexp"
-	    echo "$pass" > /etc/VpsPackdir/senha/$name
+		MYIP=$(wget -qO- ipv4.icanhazip.com)
+		clear
+echo "Connectando ao @NerdologiaVPS..."
+sleep 0.4
+echo "Criando Conta..."
+sleep 0.3
+echo "Gerando Host..."
+sleep 0.2
+echo "Criando seu novo nome de usuário: $username"
+sleep 0.2
+echo "Criando senha para $username"
+sleep 0.2
+echo "Criando limite para $username"
+sleep 0.3
+
+  clear
+  echo "Script Edited @ColtSeals"
+  echo "Informações @NerdologiaVPS"
+  echo " "
+  echo "   Detalhes da nova conta criada"
+  echo "-----------------------------------------------"
+  echo "   Host            : $MYIP"
+  echo "   Nome            : $name"
+  echo "   Senha           : $pass"
+  echo "   Limite          : $limiteuser"
+  echo "   Data Expiração  : $datexp"
+  echo "   Porta           : 80,8080,8799,443,22,3128"
+  echo "----------------------------------------------"
+  echo " "
+	 echo "$pass" > /etc/VpsPackdir/senha/$name
 	fi
 else
 	if echo $(id) |grep sudo > /dev/null
@@ -30,3 +69,8 @@ else
 	echo -e "Vc nao esta como usuario root, nem com seus direitos (sudo)\nPara virar root execute \033[1;31msu\033[0m e digite sua senha root"
 	fi
 fi
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
