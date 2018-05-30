@@ -17,3 +17,8 @@ read  #enter
 echo -e "\033[1;35mAguarde, coletando informações....\033[0m"
 sleep 5
 top
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
