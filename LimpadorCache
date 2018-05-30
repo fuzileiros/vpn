@@ -23,3 +23,8 @@ service ssh restart & service squid3 restart
 clear
 sleep 5
 echo -e "\033[01;36mLimpeza do Cache e Swap concluída.\033[0m"
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
