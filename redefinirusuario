@@ -15,6 +15,11 @@ function logins(){
 read -p "Qual o novo limite de logins: " liml
 limite $namer $liml
 exit 0
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
+exit
 }
 function expiracao(){
 echo "Qual a nova data : formato AAAA/MM/DD"
@@ -28,6 +33,10 @@ read -p "Qual a nova senha para $namer: " senha
 (echo "$senha" ; echo "$senha" ) |passwd $namer > /dev/null 2>/dev/null
 echo "$senha" > /etc/VpsPackdir/senha/$namer
 echo "Nova senha aplicada"
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
 exit
 }
 
