@@ -31,9 +31,36 @@ kill"' $(ps -u '"$nome |awk '{print"' $1'"}') 1>/dev/null 2>/dev/null
 userdel --force $nome
 rm -rf /etc/usuariosteste/$nome.sh
 exit" > /etc/usuariosteste/$nome.sh
-echo -e "Usuario: $nome
-Senha: $pass
-Validade: $tempo\n
-Apos o tempo expirar o usuario sera deletado e todos serão desconectados."
+		MYIP=$(wget -qO- ipv4.icanhazip.com)
+		clear
+echo "Connectando ao @NerdologiaVPS..."
+sleep 0.4
+echo "Criando Conta..."
+sleep 0.3
+echo "Gerando Host..."
+sleep 0.2
+echo "Criando seu usuario TESTE: $username"
+sleep 0.2
+echo "Criando senha para $username"
+sleep 0.2
+
+  clear
+  echo "Script Edited @ColtSeals"
+  echo "Informações @NerdologiaVPS"
+  echo " "
+  echo "   Detalhes do Usuario teste"
+  echo "-----------------------------------------------"
+  echo "   Host            : $MYIP"
+  echo "   Nome            : $nome"
+  echo "   Senha           : $pass"
+  echo "   Validae         : $tempo\n"
+  echo "   Porta           : 80,8080,8799,443,22,3128"
+  echo "----------------------------------------------"
+  echo " "
+echo -e "Apos o tempo expirar o usuario sera deletado e todos serão desconectados."
 bash /etc/usuariosteste/$nome.sh &
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpspack
 exit
