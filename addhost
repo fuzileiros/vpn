@@ -59,8 +59,6 @@ echo -e "$ama"
 echo -e "$azu"
 echo "O Proxy Squid foi recarregado com sucesso!"
 echo -e "$fi"
-          sleep 1s
-				exit 1
 		fi
 	fi
 fi
