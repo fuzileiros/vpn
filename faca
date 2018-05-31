@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ip=127.0.0.1
+
+echo "Qual host deseja adicionar ?"
+read -p ": " -e -i $ip
+echo "Qual host deseja adicionar ?"
+read -p ": " host
+echo "$ip $host" >> /etc/hosts
+echo "$ip $host Adicionado" ' > /etc/hosts
+chmod a+x /etc/hosts
