@@ -26,6 +26,7 @@ echo "$ip $host" >> /etc/hosts
 echo "$host" >> /etc/payloads
 
 chmod a+x /etc/hosts
+clear
 				if [ ! -f "/etc/init.d/squid" ]
 				then
 					service squid3 reload
@@ -37,9 +38,6 @@ chmod a+x /etc/hosts
 echo -e "$azu"
 echo "O Proxy Squid foi recarregado com sucesso!"
 echo -e "$fi"
-		fi
-	fi
-fi
  echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
 read ENTER
