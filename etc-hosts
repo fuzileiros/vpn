@@ -18,10 +18,7 @@ read -p "De enter para continuar..."
 clear
 
 ip=127.0.0.1
-
-echo "  Qual IP deseja adicionar ?"
-echo -e "\033[1;37m •=============================•\033[0m"
-read -p ": " -e -i $ip
+echo ""
 echo "  Qual host deseja adicionar ?"
 echo -e "\033[1;37m •=============================•\033[0m"
 read -p ": " host
