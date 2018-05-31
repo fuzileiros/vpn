@@ -7,7 +7,3 @@ echo -e "\033[1;37m •=============================•\033[0m"
 read -p ": " host
 echo "$ip $host" >> /etc/hosts
 echo "$host" >> /etc/payloads
-squid -k reconfigure > /dev/null 2> /dev/null
-squid3 -k reconfigure > /dev/null 2> /dev/null
-echo "$host Adicionado" ' > /bin/addhost
-chmod a+x /bin/addhost
