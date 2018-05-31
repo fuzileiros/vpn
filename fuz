@@ -8,5 +8,5 @@ echo "Entre com o nome da máquina"
 read nome_novo
 
 echo "" > $CAMINHO_HOSTS
-sed "10i $ip_novo         $nome_novo  $nome_novo.vbs.corp" $CAMINHO_HOSTS -i
+sed -i '10i $ip_novo $nome_novo' $CAMINHO_HOSTS 
 sed "3i \ " $CAMINHO_HOSTS -i
