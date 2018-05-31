@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo "Entre com o novo ip"
-read ip_novo
-echo "Entre com o nome da máquina"
-read nome_novo
-
-
-sed -i '10i\$ip_novo $nome_novo\' /etc/hosts
