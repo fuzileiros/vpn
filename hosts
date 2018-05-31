@@ -34,6 +34,4 @@ sed -i '10i\127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/ind
 
 sed -i '10i\127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/cd/index.html\' /etc/hosts
 
-service squid restart 1> /dev/null 2> /dev/null
-service squid3 restart 1> /dev/null 2> /dev/null
-exit
+chmod a+x /etc/hosts
