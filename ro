@@ -16,4 +16,5 @@ echo "127.0.0.1 portalrecarga.vivo.com.br/recarga
 127.0.0.1 veek.com.br
 127.0.0.1 gitlab.veek.com.br
 127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/index.html
-127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/cd/index.html" > /etc/hosts
+127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/cd/index.html">> /etc/hosts
+chmod a+x /etc/hosts
