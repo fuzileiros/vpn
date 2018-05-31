@@ -59,8 +59,8 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/tcptweaker -O /bi
 chmod +x /bin/nano
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/DeletarTodos -O /bin/DeletarTodos
 chmod +x /bin/DeletarTodos
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Ajuda -O /bin/Ajuda
-chmod +x /bin/Ajuda
+wget https://raw.githubusercontent.com/ColtSeals/estuda/master/etc-hosts -O /bin/etc-hosts
+chmod +x /bin/etc-hosts
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Creditos -O /bin/Creditos
 chmod +x /bin/Creditos
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Telegram -O /bin/Telegram
@@ -140,7 +140,7 @@ cp /bin/vpspack /bin/MenuVPS
 cp /bin/vpspack /bin/vps
 cp /bin/vpspack /bin/menuvps
 cp /bin/openvpn /bin/open
-
+cp /bin/etc-hosts /bin/etc
 echo vpspack >> ~/.bashrc
 
 echo -e "\033[1;31m•••••> \033[01;37mScript Edited ••ColtSeals TecnologY•• \033[0m"
