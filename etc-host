@@ -7,7 +7,7 @@ azu="\033[1;34m"
 fi="\033[0m"
 ###cores
 clear
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "ADICIONAR HOSTS EM (etc/hosts)" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "ADICIONAR HOSTS EM (etc/hosts) (etc/payloads)" ; tput sgr0
 echo ""
 echo "        Edited @ColtSeals"
 echo "        NERDOLOGIA VPS"
@@ -23,6 +23,7 @@ echo "  Qual host deseja adicionar ?"
 echo -e "\033[1;37m •=============================•\033[0m"
 read -p ": " host
 echo "$ip $host" >> /etc/hosts
+echo "$host" >> /etc/payloads
 chmod a+x /etc/hosts
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
