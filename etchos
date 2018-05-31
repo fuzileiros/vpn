@@ -36,7 +36,7 @@ clear
             service squid restart
 				fi	
 echo -e "$azu"
-echo "O Proxy Squid foi recarregado com sucesso!"
+echo "O Proxy Squid foi recarregado com sucesso e as hosts adicionadas!"
 echo -e "$fi"
  echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
