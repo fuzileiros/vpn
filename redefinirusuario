@@ -43,15 +43,17 @@ exit
 clear
 if [[ $1 == "" ]]
 then
+echo -e "\033[1;30m•••••> Script Edited ColtSeals TecnologY (NERD's)\033[0m"
+echo -e "\033[0;35m------------------------------------------------------------\033[0m"
 echo -e "\033[36;37m PAINEL DE REDEFINIR USUARIO SSH\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
-echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
-echo -e "\033[01;36m║\033[1;37m12\033[1;36m║\033[01;37m Mudar Nome \033[01;32m(Mudar nome de um usuario)\033[0m"
-echo -e "\033[01;36m║\033[1;37m01\033[1;36m║\033[01;37m LOGINS \033[01;32m(Altera o Limite de um Usuario)\033[0m"
-echo -e "\033[01;36m║\033[1;37m02\033[1;36m║\033[01;37m DATA \033[01;32m(Altera a validade de um Usuario)\033[0m"
-echo -e "\033[01;36m║\033[1;37m03\033[1;36m║\033[01;37m SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
-echo -e "\033[01;36m║\033[1;37m11\033[1;36m║\033[01;37m Remover Limite \033[01;32m(Remover limite de conexoes de um usuario)\033[0m"
-echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
+echo -e "\033[01;36m║\033[1;37m0\033[1;36m║•\033[01;37m VOLTAR \033[01;32m(Volta ao Menu VPN)\033[0m"
+echo -e "\033[01;36m║\033[1;37m1\033[1;36m║•\033[01;37m MUDAR NOME \033[01;32m(Mudar nome de um usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m2\033[1;36m║•\033[01;37m ALTERAR LIMITE \033[01;32m(Altera o Limite de um Usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m3\033[1;36m║•\033[01;37m ALTERAR DATA \033[01;32m(Altera a validade de um Usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m4\033[1;36m║•\033[01;37m ALTERAR SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
+echo -e "\033[01;36m║\033[1;37m5\033[1;36m║•\033[01;37m REMOVER LIMITE \033[01;32m(Remover limite de conexoes de um usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m6\033[1;36m║•\033[01;37m VOLTAR \033[01;32m(Volta ao Menu anterior)\033[0m"
 read -p ": " opcao
 else
 opcao=$1
