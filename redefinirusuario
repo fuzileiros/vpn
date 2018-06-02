@@ -45,15 +45,21 @@ if [[ $1 == "" ]]
 then
 echo -e "\033[36;37m PAINEL DE REDEFINIR USUARIO SSH\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m01\033[1;36m╣\033[01;37m LOGINS \033[01;32m(Altera o Limite de um Usuario)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m02\033[1;36m╣\033[01;37m DATA \033[01;32m(Altera a validade de um Usuario)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m03\033[1;36m╣\033[01;37m SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
-echo -e "\033[01;36m╠ \033[1;37m04\033[1;36m╣\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
+echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
+echo -e "\033[01;36m║\033[1;37m12\033[1;36m║\033[01;37m Mudar Nome \033[01;32m(Mudar nome de um usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m01\033[1;36m║\033[01;37m LOGINS \033[01;32m(Altera o Limite de um Usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m02\033[1;36m║\033[01;37m DATA \033[01;32m(Altera a validade de um Usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m03\033[1;36m║\033[01;37m SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
+echo -e "\033[01;36m║\033[1;37m11\033[1;36m║\033[01;37m Remover Limite \033[01;32m(Remover limite de conexoes de um usuario)\033[0m"
+echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[01;37m VOLTAR \033[01;32m(Volta ao MenuVPS)\033[0m"
 read -p ": " opcao
 else
 opcao=$1
 fi
 case $opcao in
+  0 | 00 )
+   vpspack;;
+   esac
   1 | 01 )
    logins;;
   2 | 02 )
@@ -62,4 +68,7 @@ case $opcao in
    nova;;
   4 | 04 )
    vpspack;;
-   esac
+  5 | 05 )
+   expiracao;;
+  6 | 06 )
+   nova;;
