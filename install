@@ -33,8 +33,6 @@ wget https://raw.githubusercontent.com/ColtSeals/estuda/master/Monitorar -O /bin
 chmod +x /bin/Monitorar
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/RemoverLimite -O /bin/RemoverLimite
 chmod +x /bin/RemoverLimite
-wget https://raw.githubusercontent.com/ColtSeals/estuda/master/MudarNome -O /bin/MudarNome
-chmod +x /bin/MudarNome
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallBlock -O /bin/FirewallBlock
 chmod +x /bin/FirewallBlock
 wget https://raw.githubusercontent.com/ColtSeals/estuda/master/FirewallReset -O /bin/FirewallReset
