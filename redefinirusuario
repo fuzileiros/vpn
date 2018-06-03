@@ -89,3 +89,4 @@ case $opcao in
    expiracao;;
   6 | 06 )
    nova;;
+   esac
