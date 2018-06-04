@@ -74,15 +74,15 @@ mes=11
 elif [[ "$mes" = "Dec" || "$mes" = "Dez" ]]; then
 mes=12
 fi
-
-echo -e "\033[7;30;47m  DATA:\033[0m \033[7;30;41m $dia/$mes/$ano\033[0m"
-echo -e "\033[7;30;47m  IP da VPS:\033[0m \033[7;30;41m $ip\033[0m"
+echo -e "\033[5;36;40m ==========================================================\033[0m"
+echo -e "\033[7;30;47m  DATA:\033[0m\033[7;30;41m $dia/$mes/$ano\033[0m"
+echo -e "\033[7;30;47m  IP da VPS:\033[0m\033[7;30;41m $ip\033[0m"
 system=$(cat /etc/issue.net)
 if [ "$system" ]
 then
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m \033[7;30;41m $system\033[0m"
+echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41m $system\033[0m"
 else
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m \033[7;30;41mNot Available\033[0m"
+echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41mNot Available\033[0m"
 fi
 echo -e "\033[5;36;40m ==========================================================\033[0m"
 echo -e "\033[7;30;47m  ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
