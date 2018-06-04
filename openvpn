@@ -260,7 +260,7 @@ echo -e "\033[1;33m
 Tenha em mente que é recomendável usar o do sistema ou o do Google...
 Por questões de compatibilidade com serviçoos NetFlix
 \033[1;31m  1)\033[1;33m Sistema (Recomendado)
-\033[1;31m  2)\033[1;33m echo -e '\033[01;34;47mG\033[01;31mo\033[01;33mo\033[01;34mg\033[01;32ml \033[01;31me\033[00;37;40m' (Recomendado)
+\033[1;31m  2)\033[1;33m \033[01;34;47mG\033[01;31mo\033[01;33mo\033[01;34mg\033[01;32ml \033[01;31me\033[00;37;40m \033[1;33m(Recomendado)
 \033[1;31m  3)\033[1;33m OpenDNS
 \033[1;31m  4)\033[1;33m NTT
 \033[1;31m  5)\033[1;33m Hurricane Electric
