@@ -24,8 +24,10 @@ vpspack
 exit
 }
 function limite(){
-read -p "Qual o novo limite de logins: " liml
-limite $namer $liml
+read -p "Qual a novo limite para $namer: " liml
+(echo "$liml" ; echo "$liml" ) |limiteuser $namer > /dev/null 2>/dev/null
+echo "$liml" > /etc/VpsPackdir/limite/$namer
+echo "Nova limite aplicado"
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU PRINCIPAL..."
 read ENTER
