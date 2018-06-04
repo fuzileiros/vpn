@@ -77,7 +77,7 @@ mes=12
 fi
 
   echo -e " 
-  echo -e "\033[01;35m  •\033[01;32m DATA: da VPS:\033[1;33m $dia"$b"/$mes/$ano "
+  echo -e "\033[01;35m  •\033[01;32m DATA: da VPS:\033[1;33m $dia/$mes/$ano "
 else
   echo -e "\033[01;35m  •\033[01;32m DATA: da VPS:\033[1;33m $dia/$mes/$ano "
 fi
