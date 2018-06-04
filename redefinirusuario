@@ -82,7 +82,7 @@ echo -e "\033[1;30m•••••> Script Edited ColtSeals TecnologY (NERD's)\0
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
 echo -e "\033[36;37m PAINEL DE REDEFINIR USUARIO SSH\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
-echo -e "\033[01;36m║\033[1;37m0\033[1;36m║•$azul VOLTAR \033[01;32m(Volta ao Menu VPN)\033[0m"
+echo -e "\033[01;36m║\033[1;37m0\033[1;36m║•\033[0;34m VOLTAR \033[01;32m(Volta ao Menu VPN)\033[0m"
 echo -e "\033[01;36m║\033[1;37m1\033[1;36m║•\033[01;37m MUDAR NOME \033[01;32m(Mudar nome de um usuario)\033[0m"
 echo -e "\033[01;36m║\033[1;37m2\033[1;36m║•\033[01;37m ALTERAR LIMITE \033[01;32m(Altera o Limite de um Usuario)\033[0m"
 echo -e "\033[01;36m║\033[1;37m3\033[1;36m║•\033[01;37m ALTERAR DATA \033[01;32m(Altera a validade de um Usuario)\033[0m"
