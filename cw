@@ -11,5 +11,5 @@ down_load=$(echo "$starts_test" | grep "Download" | awk '{print $2,$3}')
 up_load=$(echo "$starts_test" | grep "Upload" | awk '{print $2,$3}')
 
 echo -e "\033[8;37;40mTempo de Resposta Ping:\033[5;32;40m $ping \033[0m"
-echo -e "\033[8;37;40mVelocidade de Upload:\033[5;32;40m $$up_load \033[0m"
+echo -e "\033[8;37;40mVelocidade de Upload:\033[5;32;40m $up_load \033[0m"
 echo -e "\033[8;37;40mVelocidade de Download:\033[5;32;40m $down_load \033[0m"
