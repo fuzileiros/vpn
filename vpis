@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ip=$(wget -qO- ipv4.icanhazip.com)
+
 if [ $(id -u) -eq 0 ]
 then
 	clear
@@ -44,10 +46,6 @@ clear
 if [[ $1 == "" ]]
 then
 clear
-echo -e "\033[01;35m -------------------------------------------------"
-echo -e "\033[01;35m|                  \033[01;33m    ADM VPS\033[01;35m                   |"
-echo -e "\033[01;35m -------------------------------------------------"
-
 
 NUMBER1=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | wc -l)
 
@@ -70,8 +68,6 @@ NUMBER2=$(awk 'END{print NR}' number2.txt)
 
 NUMBER3=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
 
-NUMBER4=$(ls /home/DATABASE/Backups | wc -l)
-IP=$(cat /home/DATABASE/IPMENU.txt)
 dia=$(date | awk {'print $3'})
 mes=$(date | awk {'print $2'})
 ano=$(date | awk {'print $6'})
@@ -123,7 +119,7 @@ else
 fi
 
 echo -e "\033[01;35m -------------------------------------------------"
-echo -e "\033[01;35m  •\033[01;32m IP:\033[1;33m $IP"
+echo -e "\033[01;35m  •\033[01;32m IP:\033[1;33m $ip"
 system=$(cat /etc/issue.net)
 if [ "$system" ]
 then
