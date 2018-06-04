@@ -72,7 +72,12 @@ case $opcao in
    restaurarusuarios;;
   3 | 03 )
    clear
-   speedtest --share;;
+   speedtest --share
+   echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpn
+exit;;
   4 | 04 )
    firewalblock;;
   5 | 05 )
