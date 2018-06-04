@@ -43,6 +43,95 @@ fi
 clear
 if [[ $1 == "" ]]
 then
+clear
+echo -e "\033[01;35m -------------------------------------------------"
+echo -e "\033[01;35m|                  \033[01;33m    ADM VPS\033[01;35m                   |"
+echo -e "\033[01;35m -------------------------------------------------"
+
+
+NUMBER1=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | wc -l)
+
+touch number2.txt
+for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
+  EXPIRE=$(chage -l $USERS | grep -E "Account expires" | cut -d " " -f3-)
+  if [[ $EXPIRE = "never" ]]; then
+    echo "" > /dev/null
+  else
+    DATEBR=$(date -d "$EXPIRE" '+%Y%m%d')
+    TODAY=$(date -d today '+%Y%m%d')
+  if [ $TODAY -ge $DATEBR ]; then
+    echo "$USERS" >> number2.txt
+  else
+    echo "" > /dev/null
+  fi
+  fi
+done
+NUMBER2=$(awk 'END{print NR}' number2.txt)
+
+NUMBER3=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
+
+NUMBER4=$(ls /home/DATABASE/Backups | wc -l)
+IP=$(cat /home/DATABASE/IPMENU.txt)
+dia=$(date | awk {'print $3'})
+mes=$(date | awk {'print $2'})
+ano=$(date | awk {'print $6'})
+if [[ "$mes" = "Jan" || "$mes" = "Jan" ]]; then
+mes=01
+elif [[ "$mes" = "Feb" || "$mes" = "Fev" ]]; then
+mes=02
+elif [[ "$mes" = "Mar" || "$mes" = "Mar" ]]; then
+mes=03
+elif [[ "$mes" = "Apr" || "$mes" = "Abr" ]]; then
+mes=04
+elif [[ "$mes" = "May" || "$mes" = "Mai" ]]; then
+mes=05
+elif [[ "$mes" = "Jun" || "$mes" = "Jun" ]]; then
+mes=06
+elif [[ "$mes" = "Jul" || "$mes" = "Jul" ]]; then
+mes=07
+elif [[ "$mes" = "Ago" || "$mes" = "Ago" ]]; then
+mes=08
+elif [[ "$mes" = "Set" || "$mes" = "Sep" ]]; then
+mes=09
+elif [[ "$mes" = "Out" || "$mes" = "Oct" ]]; then
+mes=10
+elif [[ "$mes" = "Nov" || "$mes" = "Nov" ]]; then
+mes=11
+elif [[ "$mes" = "Dec" || "$mes" = "Dez" ]]; then
+mes=12
+fi
+
+ama="\033[01;33m"
+b="\033[01;37m"
+v="\033[01;32m"
+Ver="\033[01;31m"
+
+if [ $NUMBER1 = "0" ]; then
+  echo -e "\033[01;35m  •\033[01;32m USU:\033[01;33m 0"
+else
+  echo -e "\033[01;35m  •\033[01;32m USU:\033[01;33m $NUMBER1"
+fi
+if [ $NUMBER2 = "0" ]; then
+  echo -e "\033[01;35m  •\033[01;32m EXP:\033[01;33m 0"
+else
+  echo -e "\033[01;35m  •\033[01;32m EXP:\033[01;33m $NUMBER2"                      
+fi
+if [ $NUMBER3 = "0" ]; then
+  echo -e "\033[01;35m  •\033[01;32m ONL:\033[01;33m 0                       "$v"DATA: "$ama"$dia"$b"/"$ama"$mes"$b"/"$ama"$ano "
+else
+  echo -e "\033[01;35m  •\033[01;32m ONL:\033[01;33m $NUMBER3                       "$v"DATA: "$ama"$dia"$b"/"$ama"$mes"$b"/"$ama"$ano "
+fi
+
+echo -e "\033[01;35m -------------------------------------------------"
+echo -e "\033[01;35m  •\033[01;32m IP:\033[1;33m $IP"
+system=$(cat /etc/issue.net)
+if [ "$system" ]
+then
+echo -e "\033[01;35m  •\033[01;32m OS:\033[1;33m $system"
+else
+echo "OS: Not Available"
+fi
+
 echo -e "\033[5;36;40m ===========================================================\033[0m"
 echo -e "\033[7;30;47m ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
 echo -e "\033[7;30;47m ®TELEGRAM\033[0m \033[7;30;41mCANAL:\033[0m \033[0m \033[0;36;40m@Vps\033[5;37;40mNerdologia\033[0m"
