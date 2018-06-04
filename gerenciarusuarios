@@ -1,3 +1,6 @@
+#!/bin/bash
+
+ip=$(wget -qO- ipv4.icanhazip.com)
 clear
 if [[ $1 == "" ]]
 then
