@@ -26,11 +26,6 @@ exit
 function limite(){
 read -p "Qual o novo limite de logins: " liml
 limite $namer $liml
-}
-function limite(){
-clear
-read -p "Qual o novo limite de logins: " liml
-limite $namer $liml
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU PRINCIPAL..."
 read ENTER
@@ -54,7 +49,7 @@ read -p "Qual a nova senha para $namer: " senha
 echo "$senha" > /etc/VpsPackdir/senha/$namer
 echo "Nova senha aplicada"
 echo ""
-echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU PRINCIPAL..."
 read ENTER
 vpspack
 exit
@@ -85,9 +80,9 @@ case $opcao in
   2 | 02 )
    limite;;
   3 | 03 )
-   nova;;
+   expiracao;;
   4 | 04 )
-   vpspack;;
+   nova;;
   5 | 05 )
    redefinirusuario;;
    esac
