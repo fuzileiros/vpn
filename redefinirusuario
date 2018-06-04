@@ -27,7 +27,7 @@ function limite(){
 read -p "Qual o novo limite de logins: " liml
 limite $namer $liml
 }
-function logins(){
+function limite(){
 clear
 read -p "Qual o novo limite de logins: " liml
 limite $namer $liml
@@ -72,8 +72,7 @@ echo -e "\033[01;36m║\033[1;37m1\033[1;36m║•\033[01;37m MUDAR NOME \033[01
 echo -e "\033[01;36m║\033[1;37m2\033[1;36m║•\033[01;37m ALTERAR LIMITE \033[01;32m(Altera o Limite de um Usuario)\033[0m"
 echo -e "\033[01;36m║\033[1;37m3\033[1;36m║•\033[01;37m ALTERAR DATA \033[01;32m(Altera a validade de um Usuario)\033[0m"
 echo -e "\033[01;36m║\033[1;37m4\033[1;36m║•\033[01;37m ALTERAR SENHA \033[01;32m(Altera a senha de um Usuario SSH)\033[0m"
-echo -e "\033[01;36m║\033[1;37m5\033[1;36m║•\033[01;37m REMOVER LIMITE \033[01;32m(Remover limite de conexoes de um usuario)\033[0m"
-echo -e "\033[01;36m║\033[1;37m6\033[1;36m║•\033[01;37m VOLTAR \033[01;32m(Volta ao Menu anterior)\033[0m"
+echo -e "\033[01;36m║\033[1;37m5\033[1;36m║•\033[01;37m VOLTAR \033[01;32m(Volta ao Menu anterior)\033[0m"
 read -p ": " opcao
 else
 opcao=$1
@@ -90,7 +89,5 @@ case $opcao in
   4 | 04 )
    vpspack;;
   5 | 05 )
-   expiracao;;
-  6 | 06 )
-   nova;;
+   redefinirusuario;;
    esac
