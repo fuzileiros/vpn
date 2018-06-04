@@ -76,16 +76,10 @@ elif [[ "$mes" = "Dec" || "$mes" = "Dez" ]]; then
 mes=12
 fi
 
-ama="\033[01;33m"
-b="\033[01;37m"
-v="\033[01;32m"
-Ver="\033[01;31m"
-
-
   echo -e " 
-  echo -e "\033[01;35m  •\033[01;32m "$v"DATA: da VPS:\033[1;33m "$ama"$dia"$b"/"$ama"$mes"$b"/"$ama"$ano "
+  echo -e "\033[01;35m  •\033[01;32m DATA: da VPS:\033[1;33m $dia"$b"/$mes/$ano "
 else
-  echo -e "\033[01;35m  •\033[01;32m "$v"DATA: da VPS:\033[1;33m "$ama"$dia"$b"/"$ama"$mes"$b"/"$ama"$ano "
+  echo -e "\033[01;35m  •\033[01;32m DATA: da VPS:\033[1;33m $dia/$mes/$ano "
 fi
 
 echo -e "\033[01;35m  •\033[01;32m IP da VPS:\033[1;33m $ip"
