@@ -922,7 +922,7 @@ echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[5;31;40m•\033[0m\033[01;3
 echo -e "\033[01;36m║\033[1;37m05\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m MENU INSTALAÇÃO \033[5;31;40m=\033[0m \033[7;36;40m Instalações Opcionais \033[0m"
 echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m SOBRE \033[5;31;40m=\033[0m \033[7;36;40m Informações sobre Desenvolvedor \033[0m"
 
-read -p echo -e "\033[4;37;40m Digite uma Opção:\033[0m" opcao
+echo -e "\033[1;32mDigite uma Opção:\033[0;37m"; read -p " " opcao
 else
 opcao=$1
 fi
