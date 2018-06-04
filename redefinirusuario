@@ -137,7 +137,7 @@ case $opcao in
   1 | 01 )
    mudarnome;;
   2 | 02 )
-   expiracao;;
+   limite;;
   3 | 03 )
    nova;;
   4 | 04 )
