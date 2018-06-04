@@ -47,27 +47,6 @@ if [[ $1 == "" ]]
 then
 clear
 
-NUMBER1=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | wc -l)
-
-touch number2.txt
-for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
-  EXPIRE=$(chage -l $USERS | grep -E "Account expires" | cut -d " " -f3-)
-  if [[ $EXPIRE = "never" ]]; then
-    echo "" > /dev/null
-  else
-    DATEBR=$(date -d "$EXPIRE" '+%Y%m%d')
-    TODAY=$(date -d today '+%Y%m%d')
-  if [ $TODAY -ge $DATEBR ]; then
-    echo "$USERS" >> number2.txt
-  else
-    echo "" > /dev/null
-  fi
-  fi
-done
-NUMBER2=$(awk 'END{print NR}' number2.txt)
-
-NUMBER3=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
-
 dia=$(date | awk {'print $3'})
 mes=$(date | awk {'print $2'})
 ano=$(date | awk {'print $6'})
