@@ -61,7 +61,6 @@ exit
 clear
 if [[ $1 == "" ]]
 then
-echo -e "\033[1;30m•••••> Script Edited ColtSeals TecnologY (NERD's)\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
 echo -e "\033[36;37m PAINEL DE REDEFINIR USUARIO SSH\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
