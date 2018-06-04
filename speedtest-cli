@@ -2,6 +2,9 @@ ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed
 starts_test=$(python ./speedtest.py)
 down_load=$(echo "$starts_test" | grep "Download" | awk '{print $2,$3}')
 up_load=$(echo "$starts_test" | grep "Upload" | awk '{print $2,$3}')
+share=$(echo "$starts_test" | grep "--share" | awk '{print $2,$3}')
+
 echo -e ": $ping"
 echo -e ": $up_load"
 echo -e ": $down_load"
+echo -e ": $share"
