@@ -6,7 +6,7 @@ sleep 0.6
 clear
 echo -e "\033[5;36;40m ==========================================================\033[0m"
 ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed ':a;N;s/\n//g;ta')
-starts_test=$(python ./speedtest.py)
+starts_test=$(python ./speedtest)
 down_load=$(echo "$starts_test" | grep "Download" | awk '{print $2,$3}')
 up_load=$(echo "$starts_test" | grep "Upload" | awk '{print $2,$3}')
 
