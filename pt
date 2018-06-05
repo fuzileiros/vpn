@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -e "\033[1;31mCarregando...\033[0m"
+ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed ':a;N;s/\n//g;ta')
+dow=$(speedtest.py |grep Download:)
+up=$(speedtest.py |grep Upload:)
+echo "Download: $dow"
+echo ""
+echo "Upload: $up"

@@ -1,7 +1,0 @@
-ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed ':a;N;s/\n//g;ta')
-starts_test=$(speedtest.py)
-dow=$(echo "$starts_test" | grep "Download" | awk '{print $2,$3}')
-up=$(echo "$starts_test" | grep "Upload" | awk '{print $2,$3}')
-echo "Download: $dow"
-echo ""
-echo "Upload: $up"
