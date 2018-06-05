@@ -9,51 +9,94 @@ echo -e "\033[1;30mInstalando...\033[0m"
 mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
+
+#Menu Principal
+
 rm -rf /bin/vpspack 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
-rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/speedtest.py > /bin/speedtest.py
-chmod +x /bin/speedtest.py
-rm -rf /bin/gerenciarusuarios 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarusuarios > /bin/gerenciarusuarios
+#Fim do Menu Principal
+
+rm -rf /bin/limite 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/limite > /bin/limite
+chmod +x /bin/limite
+#Fim Menu
+
+#Menus Gerenciadores
+#01
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarusuarios -O /bin/gerenciarusuarios
 chmod +x /bin/gerenciarusuarios
-rm -rf /bin/gerenciarferramentas 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarferramentas > /bin/gerenciarferramentas
+#02
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarferramentas -O /bin/gerenciarferramentas
 chmod +x /bin/gerenciarferramentas
-rm -rf /bin/gerenciarsquid 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsquid > /bin/gerenciarsquid
+#03
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciaropen -O /bin/gerenciaropen
+chmod +x /bin/gerenciaopen
+#04
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
 chmod +x /bin/gerenciarsquid
-rm -rf /bin/gerenciarsistema 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsistema > /bin/gerenciarsistema
+#05
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsistema -O /bin/gerenciarsistema
 chmod +x /bin/gerenciarsistema
-rm -rf /bin/connectiontest.sh 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/connectiontest.sh > /bin/connectiontest.sh
-chmod +x /bin/connectiontest.sh
+#06
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/menuinstalacao -O /bin/menuinstalacao
+chmod +x /bin/menuinstalacao
+
+#Fim de submenus
+
+#Menu Gerenciar Usuarios
+#01
 rm -rf /bin/criarusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuario > /bin/criarusuario
 chmod +x /bin/criarusuario
-rm -rf /bin/criarteste 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/criarteste > /bin/criarteste
+#02
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/criarteste -O /bin/criarteste
 chmod +x /bin/criarteste
+#03
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/detalhesusuarios -O /bin/detalhesusuarios
+chmod +x /bin/detalhesusuarios
+#04
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoramento -O /bin/monitoramento
+chmod +x /bin/monitoramento
+#05
 rm -rf /bin/redefinirusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/redefinirusuario > /bin/redefinirusuario
 chmod +x /bin/redefinirusuario
+#06
 rm -rf /bin/deletarusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarusuario > /bin/deletarusuario
 chmod +x /bin/deletarusuario
-rm -rf /bin/deletartodos 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/backupusuarios > /bin/backupusuarios
-chmod +x /bin/backupusuarios
-rm -rf /bin/restaurarusuarios 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/restaurarusuarios > /bin/restaurarusuarios
-chmod +x /bin/restaurarusuarios
-rm -rf /bin/firewalblock 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/firewalblock > /bin/firewalblock
-chmod +x /bin/firewalblock
-rm -rf /bin/resetfirewal 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/resetfirewal > /bin/resetfirewal
-chmod +x /bin/resetfirewal
+#07
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarexpirados -O /bin/deletarexpirados
+chmod +x /bin/deletarexpirados
+#08
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletartodos -O /bin/deletartodos
+chmod +x /bin/deletartodos
+
+#FIM MENU GERENCIAR USUARIOS
+
+# MENU GERENCIAR OPENVPN
+
+
+
+#FIM MENU GERENCIAR OPENVPN
+
+#MENU GERENCIAR FERRAMENTAS
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/ConfSquid -O /bin/ConfSquid
+chmod +x /bin/ConfSquid
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/ConfSquid -O /bin/ConfSquid
+chmod +x /bin/ConfSquid
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/ConfSquid -O /bin/ConfSquid
+chmod +x /bin/ConfSquid
+
+
+
+
+
+
 
 cp /bin/vpspack /bin/vpn
 clear
