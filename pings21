@@ -3,10 +3,10 @@ echo -e "\033[1;31mCarregando...\033[0m"
 ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed ':a;N;s/\n//g;ta')
 dow=$(speedtest.py | grep "Download" | awk '{print $2,$3}')
 up=$(speedtest.py | grep "Upload" | awk '{print $2,$3}')
-com=$(speedtest.py | grep "results:" | awk '{print $2,$3}')
+com=$(speedtest.py | grep "Share" | awk '{print $2,$3}')
 echo "Download: $dow"
 echo ""
 echo "Upload: $up"
 echo ""
-echo "results: $com"
+echo "Share: $com"
 echo ""
