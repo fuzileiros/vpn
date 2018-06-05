@@ -71,7 +71,7 @@ case $opcao in
   2 | 02 )
    restaurarusuarios;;
   3 | 03 )
- speedtest;;
+ speedtest.py;;
   4 | 04 )
    firewalblock;;
   5 | 05 )
