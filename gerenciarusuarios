@@ -85,6 +85,6 @@ case $opcao in
    deletarexpirados;;
   8 | 08 )
    deletartodos;;
-  8 | 08 )
+  9 | 09 )
    vpn;;
 esac
