@@ -41,7 +41,7 @@ wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/red
 chmod +x /bin/redefinirusuario
 rm -rf /bin/deletarusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarusuario > /bin/deletarusuario
-chmod +x /bin/backupusuarios
+chmod +x /bin/deletarusuario
 rm -rf /bin/deletartodos 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/backupusuarios > /bin/backupusuarios
 chmod +x /bin/backupusuarios
