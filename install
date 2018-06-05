@@ -9,9 +9,9 @@ echo -e "\033[1;30mInstalando...\033[0m"
 mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
-rm -rf /bin/vpn 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/vpn > /bin/vpn
-chmod +x /bin/vpn
+rm -rf /bin/vpspack 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/vpn > /bin/vpspack
+chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
@@ -54,6 +54,8 @@ chmod +x /bin/firewalblock
 rm -rf /bin/resetfirewal 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/resetfirewal > /bin/resetfirewal
 chmod +x /bin/resetfirewal
+
+cp /bin/vpspack /bin/vpn
 clear
 echo -e "\033[1;32mInstalacao concluida\n\033[1;30mExecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu com opcoes"
@@ -62,3 +64,5 @@ echo -e "\033[1;32mdeletarusuario \033[1;30mDeletar usuario ou apenas desconecta
 echo -e "\033[1;32mredefinirusuario \033[1;30mAlterar data, senha, etc, de um usuario"
 echo -e "\033[1;32mlimite \033[1;30mLimite de logins simultaneos\033[0m"
 rm -rf install
+
+
