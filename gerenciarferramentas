@@ -78,8 +78,4 @@ case $opcao in
    resetfirewal;;
   6 | 06 )
    vpn;;
-  7 | 07 )
-   ping;;
-  8 | 08 )
-   speedtest.py;;
 esac
