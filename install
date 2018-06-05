@@ -1,0 +1,64 @@
+#!/bin/bash
+cd
+if [ $(id -u) != 0 ]
+then
+echo "Execute o script como root"
+exit
+fi
+echo -e "\033[1;30mInstalando...\033[0m"
+mkdir /etc/VpsPackdir 2>/dev/null
+mkdir /etc/VpsPackdir/limite 2>/dev/null
+mkdir /etc/VpsPackdir/senha 2>/dev/null
+rm -rf /bin/vpn 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/vpn > /bin/vpn
+chmod +x /bin/vpn
+rm -rf /bin/speedtest.py 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/speedtest.py > /bin/speedtest.py
+chmod +x /bin/speedtest.py
+rm -rf /bin/gerenciarusuarios 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarusuarios > /bin/gerenciarusuarios
+chmod +x /bin/gerenciarusuarios
+rm -rf /bin/gerenciarferramentas 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarferramentas > /bin/gerenciarferramentas
+chmod +x /bin/gerenciarferramentas
+rm -rf /bin/gerenciarsquid 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsquid > /bin/gerenciarsquid
+chmod +x /bin/gerenciarsquid
+rm -rf /bin/gerenciarsistema 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsistema > /bin/gerenciarsistema
+chmod +x /bin/gerenciarsistema
+rm -rf /bin/connectiontest.sh 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/connectiontest.sh > /bin/connectiontest.sh
+chmod +x /bin/connectiontest.sh
+rm -rf /bin/criarusuario 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuario > /bin/criarusuario
+chmod +x /bin/criarusuario
+rm -rf /bin/criarteste 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/criarteste > /bin/criarteste
+chmod +x /bin/criarteste
+rm -rf /bin/redefinirusuario 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/redefinirusuario > /bin/redefinirusuario
+chmod +x /bin/redefinirusuario
+rm -rf /bin/deletarusuario 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarusuario > /bin/deletarusuario
+chmod +x /bin/backupusuarios
+rm -rf /bin/deletartodos 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/backupusuarios > /bin/backupusuarios
+chmod +x /bin/backupusuarios
+rm -rf /bin/restaurarusuarios 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/restaurarusuarios > /bin/restaurarusuarios
+chmod +x /bin/restaurarusuarios
+rm -rf /bin/firewalblock 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/firewalblock > /bin/firewalblock
+chmod +x /bin/firewalblock
+rm -rf /bin/resetfirewal 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/resetfirewal > /bin/resetfirewal
+chmod +x /bin/resetfirewal
+clear
+echo -e "\033[1;32mInstalacao concluida\n\033[1;30mExecute:"
+echo -e "\n\033[1;32mvpspack \033[1;30mMenu com opcoes"
+echo -e "\033[1;32mcriarusuario \033[1;30mCriar usuario com data e limite"
+echo -e "\033[1;32mdeletarusuario \033[1;30mDeletar usuario ou apenas desconectar"
+echo -e "\033[1;32mredefinirusuario \033[1;30mAlterar data, senha, etc, de um usuario"
+echo -e "\033[1;32mlimite \033[1;30mLimite de logins simultaneos\033[0m"
+rm -rf install
