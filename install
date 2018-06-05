@@ -10,7 +10,7 @@ mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
 rm -rf /bin/vpspack 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/vpn > /bin/vpspack
+wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/speedtest.py > /bin/speedtest.py
