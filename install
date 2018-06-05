@@ -82,23 +82,48 @@ chmod +x /bin/deletartodos
 #FIM MENU GERENCIAR OPENVPN
 
 #MENU GERENCIAR FERRAMENTAS
+#01
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/backupusuarios -O /bin/backupusuarios
+chmod +x /bin/backupusuarios
+#02
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/restaurarusuarios -O /bin/restaurarusuarios
+chmod +x /bin/restaurarusuarios
+#03
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/speedtest -O /bin/speedtest
+chmod +x /bin/speedtest
+#04
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/firewalblock -O /bin/firewalblock
+chmod +x /bin/firewalblock
+#05
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/resetfirewal -O /bin/resetfirewal
+chmod +x /bin/resetfirewal
 
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/ConfSquid -O /bin/ConfSquid
-chmod +x /bin/ConfSquid
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/ConfSquid -O /bin/ConfSquid
-chmod +x /bin/ConfSquid
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/ConfSquid -O /bin/ConfSquid
-chmod +x /bin/ConfSquid
+#FIM DO MENU FERRAMENTAS
 
 
 
 
 
 
+
+cp /bin/vpspack /bin/VPN
+cp /bin/gerenciarusuarios /bin/Usuarios
+cp /bin/gerenciarferramentas /bin/Ferramentas
+cp /bin/gerenciaropen /bin/Open
+cp /bin/gerenciarsquid /bin/Squid
+cp /bin/gerenciarsistema /bin/Sistema
+cp /bin/menuinstalacao /bin/Instalação
 
 cp /bin/vpspack /bin/vpn
+cp /bin/gerenciarusuarios /bin/usuarios
+cp /bin/gerenciarferramentas /bin/ferramentas
+cp /bin/gerenciaropen /bin/open
+cp /bin/gerenciarsquid /bin/squid
+cp /bin/gerenciarsistema /bin/sistema
+cp /bin/menuinstalacao /bin/instalação
+
+
+
 clear
 echo -e "\033[1;32mInstalacao concluida\n\033[1;30mExecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu com opcoes"
