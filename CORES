@@ -1,0 +1,24 @@
+# Wait while instance count less than $3, run additional instance and exit
+function runParallel () {
+    cmd=$1
+    args=$2
+    number=$3
+    currNumber="1024"
+    while true ; do
+        currNumber=`ps -e | grep -v "grep" | grep " $1$" | wc -l`
+        if [ $currNumber -lt $number ] ; then
+            break
+        fi
+        sleep 1
+    done
+    echo "run: $cmd $args"
+    $cmd $args &
+}
+
+loop=0
+# We will run 12 sleep commands for 10 seconds each 
+# and only five of them will work simultaneously
+while [ $loop -ne 12 ] ; do
+    runParallel "sleep" 10 5
+    loop=`expr $loop + 1`
+done
