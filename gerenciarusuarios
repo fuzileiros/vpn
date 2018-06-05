@@ -56,8 +56,9 @@ echo -e "\033[01;36m║\033[1;37m03\033[1;36m║\033[5;31;40m•\033[0m\033[01;3
 echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m MONITORAMENTO  \033[5;31;40m=\033[0m \033[7;36;40m Monitorar conexões atuais \033[0m"
 echo -e "\033[01;36m║\033[1;37m05\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m REDEFINIR \033[5;31;40m=\033[0m \033[7;36;40m Redefinir Data, senha, etc \033[0m"
 echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR USUARIO \033[5;31;40m=\033[0m \033[7;36;40m Menu Deletar, Desconectar, etc \033[0m"
-echo -e "\033[01;36m║\033[1;37m05\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR TODOS \033[5;31;40m=\033[0m \033[7;36;40m Todos os usuarios serão deletados \033[0m"
-echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m VOLTAR \033[5;31;40m=\033[0m \033[7;36;40m Voltar ao Menu Principal \033[0m"
+echo -e "\033[01;36m║\033[1;37m07\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR EXPIRADOS \033[5;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios expirados \033[0m"
+echo -e "\033[01;36m║\033[1;37m08\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR TODOS \033[5;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios \033[5;31m CUIDADO \033[0m"
+echo -e "\033[01;36m║\033[1;37m09\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m VOLTAR \033[5;31;40m=\033[0m \033[7;36;40m Voltar ao Menu Principal \033[0m"
 echo -e "\033[5;36;40m ===========================================================\033[0m"
 echo -e "\033[5;31;40m    •\033[0m\033[01;37m Digite uma Opção:\033[0;37m"; read -p " " opcao
 else
@@ -68,14 +69,20 @@ case $opcao in
    exit;;
   1 | 01 )
    criarusuario;;
-  3 | 03 )
+  2 | 02 )
    criarteste;;
+  3 | 03 )
+   detalhesusuarios;;   
   4 | 04 )
-   redefinirusuario;;
+   monitoramento;;
   5 | 05 )
-   deletarusuario;;
+   redefinirusuario;;
   6 | 06 )
-   deletartodos;;
+   deletarusuario;;
   7 | 07 )
+   deletarexpirados;;
+  8 | 08 )
+   deletartodos;;
+  8 | 08 )
    vpn;;
 esac
