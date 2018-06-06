@@ -201,7 +201,8 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			;;
 			4) exit;;
 		esac
-	 else
+	done
+else
 	clear
 	clear
 	echo ""
