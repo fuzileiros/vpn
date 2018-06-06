@@ -3,13 +3,13 @@
 checkdatabase
 
 clear
-echo -e "\033[01;35m -------------------------------------------------"
-echo -e "\033[01;35m|                  \033[01;33m    ADM VPS\033[01;35m                   |"
-echo -e "\033[01;35m -------------------------------------------------"
+echo -e "\033[5;36;40m ==========================================================\033[0m"
+echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Ferramentas \033[0m"
+echo -e "\033[5;36;40m ==========================================================\033[0m"
 echo ""
 NUMBER=$(ps -x | grep -c "sleep")
 if [ $NUMBER = "2" ]; then
-  echo -e "\033[01;35m   •\033[01;33m ESTADO:\033[01;32m ATIVO"
+  echo -e "\033[01;35m   •\033[01;33m NerdologiaVPS\033[01;32m ColtSeals"
   NUMBER2=$(awk 'END{print NR}' /home/DATABASE/messages.txt)
   if [ "$NUMBER2" -gt "0" ]; then
     echo -e "\033[01;35m   •\033[01;33m NOTIFICAÇÕES:\033[01;32m ● "
@@ -35,7 +35,7 @@ if [ $NUMBER = "2" ]; then
       *) limiter-menu;;
   esac
 else
-  echo -e "\033[01;35m   •\033[01;33m ESTADO:\033[01;31m DESATIVADO"
+  echo -e "\033[01;35m   •\033[01;33m NerdologiaVPS\033[01;31m ColtSeals "
   NUMBER2=$(awk 'END{print NR}' /home/DATABASE/messages.txt)
   if [ "$NUMBER2" -gt "0" ]; then
     echo -e "\033[01;35m   •\033[01;33m NOTIFICAÇÕES:\033[01;32m ●"
