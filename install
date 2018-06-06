@@ -198,5 +198,11 @@ echo -e "\033[1;32mdeletarusuario \033[1;30mDeletar usuario ou apenas desconecta
 echo -e "\033[1;32mredefinirusuario \033[1;30mAlterar data, senha, etc, de um usuario"
 echo -e "\033[1;32mlimite \033[1;30mLimite de logins simultaneos\033[0m"
 rm -rf install
-
-
+clear
+	echo ""
+echo -e "\033[1;31m INSTALANDO OPEN VPN! AGUARDE..."
+sleep 3s
+echo -e "\033[0m"
+openvpn
+exit
+fi
