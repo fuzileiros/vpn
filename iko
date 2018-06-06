@@ -292,17 +292,9 @@ clear
 	echo "Qual protocolo você deseja para as conexões do OpenVPN?"
 	echo "Tenha em mente que a Vivo não suporta UDP, mas o mesmo..."
 	echo "...Ainda é listado como opção."
-	echo -e "   1)\033[5;31;40m •\033[0m UDP"
-	echo -e "   2)\033[5;31;40m •\033[0m TCP \033[5;36;40m(Recomendado)\033[0m"
-	read -p "Protocolo [1-2]: " -e -i 2 PROTOCOL
-	case $PROTOCOL in
-		1) 
-		PROTOCOL=udp
-		;;
-		2) 
-		PROTOCOL=tcp
-		;;
-	esac
+	while [[ $PROTOCOL != "UDP" && $PROTOCOL != "TCP" ]]; do
+		read -p "Protocol [UDP/TCP]: " -e -i TCP PROTOCOL
+	done
 	echo ""
 	clear
 	echo -e "\033[5;31;40m      •\033[0m\033[01;37m Qual DNS você deseja utilizar?\033[0m"
