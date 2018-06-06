@@ -30,22 +30,22 @@ if [ "$USER" = "root" ]; then
   echo ""
   echo -e "\033[01;37;41mUsuário inválido. Tente novamente!\033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
 if [ "$USER" = "0" ]; then
-  h
+  vpn
   exit
 else
 if [ "$USER" = "R" ]; then
-  createuser
+  criarusuario.sh
   exit
 else
 if echo $USER | grep -q '[^a-z A-Z 0-9 ._-]'; then
   echo ""
   echo -e "\033[01;37;41mVocê digitou um nome de usuário invaldoo. Use apenas letras, números\033[0m"; echo -e "\033[01;37;41mpontos e traços. Não use espaços, acentos ou caracteres especiais. T\033[0m"; echo -e "\033[01;37;41mente novamente!                                                     \033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
   awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort > /tmp/users.txt
@@ -53,7 +53,7 @@ if grep -xq "$USER" /tmp/users.txt; then
   echo ""
   echo -e "\033[01;37;41mVocê digitou um nome de usuário já existente. Digite um nome de\033[0m"; echo -e "\033[01;37;41musuário que não seja existente na lista acima. Tente novamente!\033[0m"
   sleep 7s
-  createuser
+  criarusuario.sh
   exit
 else
   CHARACTERS=$(echo $USER | wc -c)
@@ -61,7 +61,7 @@ if [ $CHARACTERS -gt 33 ]; then
   echo ""
   echo -e "\033[01;37;41mVocê digitou um nome de usuário muito grande. Use no máximo 3\033[0m"; echo -e "\033[01;37;41m2 caracteres para o usuário. Tente novamente!                \033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
   echo -ne "\033[01;32mSENHA:\033[01;33m"; read PASSWORD
@@ -69,15 +69,15 @@ if [ -z $PASSWORD ]; then
   echo ""
   echo -e "\033[01;37;41mVocê digitou uma senha vazia. Tente novamente!\033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
 if [ "$PASSWORD" = "0" ]; then
-  h
+  vpn
   exit
 else
 if [ "$PASSWORD" = "R" ]; then
-  createuser
+  criarusuario.sh
   exit
 else
   echo -ne "\033[01;32mN° DE DIAS PARA EXPIRAR:\033[01;33m"; read DAYS
@@ -85,22 +85,22 @@ if echo $DAYS | grep -q '[^0-9R]'; then
   echo ""
   echo -e "\033[01;37;41mVocê digitou um número de dias inválido. Tente novamente!\033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
 if [ -z $DAYS ]; then
   echo ""
   echo -e "\033[1;37;41mVocê digitou um número vazio. Tente novamente!\033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
 if [ "$DAYS" = "0" ]; then
-  h
+  vpn
   exit
 else
 if [ "$DAYS" = "R" ]; then
-  createuser
+  ccriarusuario.sh
   exit
 else
   echo -ne "\033[01;32mN° DE CONEXÕES PERMITIDAS:\033[01;33m"; read CONNECTIONS
@@ -108,22 +108,22 @@ if echo $CONNECTIONS | grep -q '[^0-9R]'; then
   echo ""
   echo -e "\033[01;37;41mVocê digitou um número inválido. Tente novamente!\033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
 if [ -z $CONNECTIONS ]; then
   echo ""
   echo -e "\033[1;37;41mVocê digitou um número vazio. Tente novamente!\033[0m"
   sleep 3s
-  createuser
+  criarusuario.sh
   exit
 else
 if [ "$CONNECTIONS" = "0" ]; then
-  h
+  vpn
   exit
 else
 if [ "$CONNECTIONS" = "R" ]; then
-  createuser
+  criarusuario.sh
   exit
 else
   echo -e "\033[01;35m---------------------------------------"
