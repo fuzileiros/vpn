@@ -10,8 +10,6 @@ mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
 
-
-fi
 if [ ! -d "/home/DATABASE" ]; then
   mkdir /home/DATABASE; mkdir /home/DATABASE/Backups; touch /home/DATABASE/bannerssh.txt; touch /home/DATABASE/messages.txt; touch /home/DATABASE/users.db; awk -F : '$3 >= 500 { print $1 " **** 1" }' /etc/passwd | grep -v "nobody" | sort > /home/DATABASE/users.db
 fi
