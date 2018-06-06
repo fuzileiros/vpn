@@ -484,22 +484,9 @@ auth-user-pass" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
+	echo "Concluido!"
 	echo ""
-clear
-	clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m  Obrigado por Aguardar...\033[0m"
-sleep 3
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m  o Open VPN foi instalado...\033[0m"
-sleep 3
-clear
-
-	echo -e "\033[5;32;40m  Seu arquivo está disponivel em" root/"$CLIENT.ovpn"...\033[0m"
-	fi
+	echo "Seu arquivo estÃ¡ disponivel em" ~/"$CLIENT.ovpn"
+	echo "é recomendável que use um software do tipo SFTP para download"
+	echo "Para mais opções digite (bash openvivoPWD.sh)!"
 fi
