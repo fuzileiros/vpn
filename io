@@ -299,7 +299,7 @@ clear
 	clear
 	echo -e "\033[5;31;40m      •\033[0m\033[01;37m Qual DNS você deseja utilizar?\033[0m"
 	echo -e "\033[5;36;40m ==========================================================\033[0m"
-	echo -e "   1)\033[5;31;40m •\033[0m\033[0;33;40m Current system resolvers"
+	echo -e "   1)\033[5;31;40m •\033[0m\033[0;33;40m Current system resolvers (from /etc/resolv.conf)\033[0m"
 	echo -e "   2)\033[5;31;40m •\033[0m\033[0;33;40m Cloudflare \033[5;36;40m(Mundial)\033[0m"
 	echo -e "   3)\033[5;31;40m •\033[0m\033[0;33;40m Quad9 \033[5;36;40m(Mundial)\033[0m"
 	echo -e "   4)\033[5;31;40m •\033[0m\033[0;33;40m FDN \033[5;36;40m(França)\033[0m"
