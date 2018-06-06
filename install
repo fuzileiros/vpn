@@ -9,7 +9,7 @@ echo -e "\033[1;30mInstalando...\033[0m"
 mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
-
+mkdir /home/DATABASE; mkdir /home/DATABASE/bannerssh.txt; touch /home/DATABASE/messages.txt; touch /home/DATABASE/users.db; awk -F : '$3 >= 500 { print $1 " **** 1" }' /etc/passwd | grep -v "nobody" | sort > /home/DATABASE/users.db;;
 #Menu Principal
 
 rm -rf /bin/vpspack 2>/dev/null
@@ -128,8 +128,11 @@ chmod +x /bin/deltodosopen
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/desinstalaropen -O /bin/desinstalaropen
 chmod +x /bin/desinstalaropen
 
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/createuser.sh -O /bin/createuser.sh
+chmod +x /bin/createuser.sh
 
-
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoring.sh -O /bin/monitoring.sh
+chmod +x /bin/monitoring.sh
 
 
 
