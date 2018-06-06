@@ -109,6 +109,21 @@ chmod +x /bin/resetfirewal
 #FIM DO MENU FERRAMENTAS
 
 #MENU GERENCIAR OPEN
+#01
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuarioopen -O /bin/criarusuarioopen
+chmod +x /bin/criarusuarioopen
+#02
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/dataopen -O /bin/dataopen
+chmod +x /bin/dataopen
+#03
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoropen -O /bin/monitoropen
+chmod +x /bin/monitoropen
+#04
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/genericoopen -O /bin/genericoopen
+chmod +x /bin/genericoopen
+#05
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deluseopen -O /bin/deluseopen
+chmod +x /bin/deluseopen
 
 
 
