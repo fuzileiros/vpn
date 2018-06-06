@@ -32,4 +32,3 @@ while true; do
    echo ""
    echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
    sleep 10s
-done
