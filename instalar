@@ -99,9 +99,6 @@ chmod +x /bin/backupusuarios
 #02
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/restaurarusuarios -O /bin/restaurarusuarios
 chmod +x /bin/restaurarusuarios
-#03
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/speedtest -O /bin/speedtest
-chmod +x /bin/speedtest
 #04
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/firewalblock -O /bin/firewalblock
 chmod +x /bin/firewalblock
@@ -143,11 +140,7 @@ chmod +x /bin/openvpn
 
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/hosts && bash hosts
 
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-messages && bash limiter-messages
 
-
-#LIMITE MENU
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu.sh && bash limiter-menu.sh
 
 #FIM LIMITE MENU
 
@@ -169,6 +162,10 @@ cp /bin/gerenciarsistema /bin/sistema
 cp /bin/menuinstalacao /bin/instalação
 echo vpspack >> ~/.bashrc
 
+
+
+#LIMITE MENU
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu.sh && bash limiter-menu.sh
 
 clear
 rm -rf install
