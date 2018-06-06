@@ -242,18 +242,16 @@ clear
 		read -p "Protocol [UDP/TCP]: " -e -i TCP PROTOCOL
 	done
 	echo ""
-	clear
-	echo -e "\033[5;31;40m      •\033[0m\033[01;37m Qual DNS você deseja utilizar?\033[0m"
-	echo -e "\033[5;36;40m ==========================================================\033[0m"
-	echo -e "   1)\033[5;31;40m • \033[0m\033[01;37mEstamos iniciando a instalação OPenVPN...\033[0m"
-	echo -e "   2)\033[5;31;40m •\033[0m\033[0;33;40m Cloudflare \033[5;36;40m(Mundial)\033[0m"
-	echo -e "   3)\033[5;31;40m •\033[0m\033[0;33;40m Quad9 \033[5;36;40m(Mundial)\033[0m"
-	echo -e "   4)\033[5;31;40m •\033[0m\033[0;33;40m FDN \033[5;36;40m(França)\033[0m"
-	echo -e "   5)\033[5;31;40m •\033[0m\033[0;33;40m DNS.WATCH \033[5;36;40m(Alemanha)\033[0m"
-	echo -e "   6)\033[5;31;40m •\033[0m\033[0;33;40m OpenDNS \033[5;36;40m(Mundial)\033[0m"
-	echo -e "   7)\033[5;31;40m •\033[0m\033[0;33;40m\033[01;34;40m G\033[01;31mo\033[01;33mo\033[01;34mg\033[01;32ml\033[01;31me\033[00;37;40m \033[5;33;40m(Recomendado)\033[0m"
-	echo -e "   8)\033[5;31;40m •\033[0m\033[0;33;40m Yandex Basic \033[5;36;40m(Russia)\033[0m"
-	echo -e "   9)\033[5;31;40m •\033[0m\033[0;33;40m AdGuard DNS \033[5;36;40m(Russia)\033[0m"
+	echo "What DNS do you want to use with the VPN?"
+	echo "   1) Current system resolvers (from /etc/resolv.conf)"
+	echo "   2) Cloudflare (Anycast: worldwide)"
+	echo "   3) Quad9 (Anycast: worldwide)"
+	echo "   4) FDN (France)"
+	echo "   5) DNS.WATCH (Germany)"
+	echo "   6) OpenDNS (Anycast: worldwide)"
+	echo "   7) Google (Anycast: worldwide)"
+	echo "   8) Yandex Basic (Russia)"
+	echo "   9) AdGuard DNS (Russia)"
 	while [[ $DNS != "1" && $DNS != "2" && $DNS != "3" && $DNS != "4" && $DNS != "5" && $DNS != "6" && $DNS != "7" && $DNS != "8" && $DNS != "9" ]]; do
 		read -p "DNS [1-9]: " -e -i 1 DNS
 	done
