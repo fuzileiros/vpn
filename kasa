@@ -17,7 +17,7 @@ while true; do
   cat $DATABASE | sort | while read DB; do
   	MONITORING3=$(echo $DB | cut -d " " -f3)
     MONITORING1=$(echo $DB | cut -d " " -f1)
-    MONITORING2=$(grep "$DB" /etc/openvpn/openvpn-status.log | wc -l)	
+    MONITORING2=$(grep "$MONITORING1" /etc/openvpn/openvpn-status.log | wc -l)	
     if [ "$MONITORING2" -gt "0" ]; then
     	TIME=$(ps -o etime $(ps -u $MONITORING1 |grep sshd |awk 'NR==1 {print $1}')|awk 'NR==2 {print $1}')
 		
@@ -33,5 +33,4 @@ while true; do
 done
 
 
-  
-  
+
