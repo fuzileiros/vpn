@@ -23,9 +23,15 @@ while true; do
     if [ $NUMBER1 -gt 0 -a $NUMBER2 -gt 0 ]; then
       echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OpenVPN/SSH" "Online"   "$TIME"
     elif [ $NUMBER1 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "SSH" "Online"
+      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "SSH" "Online"      "$TIME"
     elif [ $NUMBER2 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OpenVPN" "Online"
+      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OpenVPN" "Online"  "$TIME"
     else
       echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "INATIVO" "Offline"      "00:00"
-      exit
+	
+    fi
+  done
+   echo ""
+   echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
+   sleep 10s
+done
