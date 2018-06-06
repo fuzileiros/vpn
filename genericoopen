@@ -1,0 +1,31 @@
+clear
+echo -e "\033[1;33m
+1 \033[1;31mDigite o valor a ser alterado, ele tem que estar igual ao do arquivo.\033[1;33m
+2 \033[1;31mDigite o novo valor."
+sleep 6s
+echo -e "\033[1;33m__________________________________________\033[1;32m"
+cat /etc/openvpn/client-common.txt
+echo -e "\033[1;33m__________________________________________\033[0m"
+echo -e "\033[1;33mVALOR A ALTERAR!"
+read -p ": " valor1
+if [ "$valor1" = "" ]; then
+echo -e "\033[1;31mNao Digitou Nada!!!"
+ovpn
+exit
+fi
+echo -e "\033[1;33mNOVO VALOR!"
+read -p ": " valor2
+sed -i "s/$valor1/$valor2/g" /etc/openvpn/client-common.txt
+testt=$(cat /etc/openvpn/client-common.txt |egrep -o $valor2)
+if [ "$testt" = "" ]; then
+echo -e "\033[1;31mNAO ALTERADO VOCE DIGITOU ERRADO O VALOR A ALTERAR!"
+sleep 5s
+else
+echo -e "\033[1;36mSUCESSO, VALOR ALTERADO!"
+sleep 3s
+fi
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
+read ENTER
+gerenciaropen
+exit
