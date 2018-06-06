@@ -1,3 +1,4 @@
+clear
 cat /etc/passwd |grep ovpn > /tmp/ovpn
 echo -e "\033[1;33mUSUARIOS"
 SDK=$(awk -F: '{print $1}' /tmp/ovpn)
@@ -15,16 +16,20 @@ awk -F: '{print $1}' /tmp/ovpn
 echo -e "\033[1;31m_____________________________"
 echo -e "\033[1;36mNOME DO USUARIO\033[0m"
 read -p ": " namer
+clear
 echo -e "\033[1;36mDIGITE A NOVA DATA EM NUMEROS\033[0m"
 echo -e "\033[1;36mDIA?\033[0m"
 read -p ": " dia
+clear
 echo -e "\033[1;36mMES?\033[0m"
 read -p ": " mes
+clear
 echo -e "\033[1;36mANO?\033[0m"
 read -p ": " ano
 date="$dia/$mes/$ano"
+MYIP=$(wget -qO- ipv4.icanhazip.com)
 chage -E $date $namer 2> /dev/null
-
+clear
   echo "   Data alterada com Sucesso."
   echo "-----------------------------------------------"
   echo "   Host            : $MYIP"
@@ -37,5 +42,5 @@ fi
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
 read ENTER
-vpspack
+gerenciaropen
 exit
