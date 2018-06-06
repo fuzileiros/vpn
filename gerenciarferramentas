@@ -83,4 +83,5 @@ case $opcao in
    resetfirewal;;
   6 | 06 )
    exit;;
+   *) gerenciarferramentas;;
 esac
