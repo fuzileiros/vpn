@@ -41,6 +41,7 @@ date="$dia/$mes/$ano"
 MYIP=$(wget -qO- ipv4.icanhazip.com)
 chage -E $date $namer 2> /dev/null
 clear
+echo ""
 echo -e "\033[5;31;40m  •\033[0mData alterada com Sucesso."
   echo "-----------------------------------------------"
 echo -e "\033[5;31;40m  •\033[0mHost            : $MYIP"
