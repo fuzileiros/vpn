@@ -24,7 +24,15 @@ echo -e "\033[1;36mANO?\033[0m"
 read -p ": " ano
 date="$dia/$mes/$ano"
 chage -E $date $namer 2> /dev/null
-echo -e "\033[1;31mUsuario $namer Date: $date\033[0m"
+
+  echo "   Data alterada com Sucesso."
+  echo "-----------------------------------------------"
+  echo "   Host            : $MYIP"
+  echo "   Nome            : $namer"
+  echo "   Data Expiração  : $date"
+  echo "   Porta           : 80,8080,8799,443,22,3128"
+  echo "----------------------------------------------"
+  echo " "
 fi
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
