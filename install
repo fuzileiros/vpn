@@ -31,7 +31,7 @@ wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarferramentas
 chmod +x /bin/gerenciarferramentas
 #03
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciaropen -O /bin/gerenciaropen
-chmod +x /bin/gerenciaopen
+chmod +x /bin/gerenciaropen
 #04
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
 chmod +x /bin/gerenciarsquid
