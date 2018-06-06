@@ -11,7 +11,7 @@ if [ $NUMBER = "0" ]; then
   echo ""
   echo -e "\033[01;36mAPERTE A TECLA ENTER PARA VOLTAR AO MENU..."
   read ENTER
-  h
+  vpn
   exit
 else
   for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
@@ -36,7 +36,7 @@ if [ -z $USER ]; then
   exit
 else
 if [ "$USER" = "0" ]; then
-  h
+  vpn
   exit
 else
 if [ "$USER" = "*" ]; then
