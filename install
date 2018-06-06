@@ -143,9 +143,6 @@ chmod +x /bin/openvpn
 
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/hosts && bash hosts
 
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-start && bash limiter-start
-
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-messages && bash limiter-messages
 
 
