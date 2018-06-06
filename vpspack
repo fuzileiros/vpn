@@ -105,4 +105,5 @@ case $opcao in
    limiter-menu;;
   7 | 07 )
    sobre;;
+   *) vpn;;
 esac
