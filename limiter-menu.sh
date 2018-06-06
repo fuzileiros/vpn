@@ -28,7 +28,7 @@ echo -e "\033[7;30;46m =========================================================
           pkill -f limiter-start
           sleep 3s
           clear
-          limiter-menu
+          limiter-menu.sh
           exit;;
     2) limiter-messages;;
     0) h;;
