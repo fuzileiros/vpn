@@ -96,4 +96,5 @@ case $opcao in
    deletartodos;;
   12 )
    exit;;
+   *) gerenciarusuarios;;
 esac
