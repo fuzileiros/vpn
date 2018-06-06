@@ -77,10 +77,7 @@ chmod +x /bin/deletartodos
 
 #FIM MENU GERENCIAR USUARIOS
 
-# MENU GERENCIAR OPENVPN
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/ping -O /bin/ping
-chmod +x /bin/ping
+# MENU GERENCIAR speedtest
 
 rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/RicKbrL/VpsPack/master/speedtest.py > /bin/speedtest.py
