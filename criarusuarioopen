@@ -54,6 +54,7 @@ echo -e "$senha" > /etc/VpsPackdir/senha/$CLIENT
 echo -e "OPENVPN" > /etc/VpsPackdir/limite/$CLIENT
 echo -e "\033[1;36mCRIADO COM SUCESSO \033[0m"
 echo ""
+fi
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
 read ENTER
 gerenciaropen
