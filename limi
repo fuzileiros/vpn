@@ -54,10 +54,10 @@ echo -e "\033[7;30;46m =========================================================
           screen -dmS screen limiter-start
           sleep 3s
           clear
-          limiter-menu
+          limi
           exit;;
     2) limiter-messages;;
     0) h;;
-      *) limiter-menu;;
+      *) limi;;
   esac
 fi
