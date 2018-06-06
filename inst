@@ -32,9 +32,6 @@ chmod +x /bin/gerenciarusuarios
 #02
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarferramentas -O /bin/gerenciarferramentas
 chmod +x /bin/gerenciarferramentas
-#03
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciaropen -O /bin/gerenciaropen
-chmod +x /bin/gerenciaropen
 #04
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
 chmod +x /bin/gerenciarsquid
@@ -49,6 +46,14 @@ chmod +x /bin/menuinstalacao
 
 #Menu Gerenciar Usuarios
 #01
+#ADMVPS
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/createuser.sh -O /bin/criarusuario.sh
+chmod +x /bin/criarusuario.sh
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoring.sh -O /bin/monitor.sh
+chmod +x /bin/monitoring.sh
+#FIM DO ADM VPS USUARIOS
+
 rm -rf /bin/criarusuario 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuario > /bin/criarusuario
 chmod +x /bin/criarusuario
