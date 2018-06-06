@@ -1,6 +1,5 @@
-
 clear
-echo -n "Digite o diretorio do arquivo Backup: " 
+echo -n "Digite o diretorio do arquivo Backup: "
 read arq
 echo -e "\033[1;37mRestaurando Usuarios...\033[0m"
 
