@@ -81,4 +81,5 @@ case $opcao in
    removerporta;;
   7 | 07 )
    exit;;
+   *) gerenciarsquid;;
 esac
