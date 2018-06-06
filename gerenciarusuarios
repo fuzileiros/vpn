@@ -81,13 +81,13 @@ case $opcao in
   4 | 04 )
    monitoring;;
   5 | 05 )
-   changepassword;;
+   alterardata;;
   6 | 06 )
-   alterarlimite;;
+  changepassword;;
   7 | 07 )
-   userdisconnect;; 
+   alterarlimite;; 
   8 | 08 )
-   redefinirusuario;;
+   userdisconnect;;
   9 | 09 )
    deletarusuario;;
   10 )
