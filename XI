@@ -14,7 +14,8 @@ exit
 echo -e "\033[1;31m_____________________________"
 awk -F: '{print $1}' /tmp/ovpn
 echo -e "\033[1;31m_____________________________"
-echo -e "\033[1;36mNOME DO USUARIO\033[0m"
+echo ""
+echo -e "\033[5;31;40m  •\033[0m\033[01;37m NOME DO USUÁRIO:\033[0;37m"
 read -p ": " namer
 clear
 echo -e "\033[1;36mDIGITE A NOVA DATA EM NUMEROS\033[0m"
