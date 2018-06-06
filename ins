@@ -9,10 +9,12 @@ echo -e "\033[1;30mInstalando...\033[0m"
 mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
-mkdir /etc/DATABASE 2>/dev/null 2>/dev/null
-mkdir /home/DATABASE/bannerssh.txt 2>/dev/null
-mkdir /home/DATABASE/messages.txt 2>/dev/null
-mkdir /home/DATABASE/users.db; awk -F : '$3 >= 500 { print $1 " **** 1" }' /etc/passwd | grep -v "nobody" | sort > /home/DATABASE/users.db;;
+
+
+fi
+if [ ! -d "/home/DATABASE" ]; then
+  mkdir /home/DATABASE; mkdir /home/DATABASE/Backups; touch /home/DATABASE/bannerssh.txt; touch /home/DATABASE/messages.txt; touch /home/DATABASE/users.db; awk -F : '$3 >= 500 { print $1 " **** 1" }' /etc/passwd | grep -v "nobody" | sort > /home/DATABASE/users.db
+fi
 #Menu Principal
 
 rm -rf /bin/vpspack 2>/dev/null
