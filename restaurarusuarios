@@ -1,17 +1,6 @@
-#!/bin/bash
+
 clear
-echo "Edited by @ColtSeals"
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-echo "Conectando ao NerdologiaVPS..."
-sleep 0.4
-echo "Checando Permissão..."
-sleep 0.2
-echo -e "${green}Permissão Aceita...${NC}"
-sleep 0.2
-clear
-echo -n "Digite o diretorio do arquivo Backup: "
+echo -n "Digite o diretorio do arquivo Backup: " /etc/VpsPackdir/backup
 read arq
 echo -e "\033[1;37mRestaurando Usuarios...\033[0m"
 
