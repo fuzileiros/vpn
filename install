@@ -111,40 +111,6 @@ chmod +x /bin/resetfirewal
 
 #FIM DO MENU FERRAMENTAS
 
-#MENU GERENCIAR OPEN
-#01
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuarioopen -O /bin/criarusuarioopen
-chmod +x /bin/criarusuarioopen
-#02
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/dataopen -O /bin/dataopen
-chmod +x /bin/dataopen
-#03
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoropen -O /bin/monitoropen
-chmod +x /bin/monitoropen
-#04
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/genericoopen -O /bin/genericoopen
-chmod +x /bin/genericoopen
-#05
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deluseropen -O /bin/deluseropen
-chmod +x /bin/deluseropen
-#06
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deltodosopen -O /bin/deltodosopen
-chmod +x /bin/deltodosopen
-#07
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/desinstalaropen -O /bin/desinstalaropen
-chmod +x /bin/desinstalaropen
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/createuser.sh -O /bin/createuser.sh
-chmod +x /bin/createuser.sh
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoring.sh -O /bin/monitoring.sh
-chmod +x /bin/monitoring.sh
-
-
-
-
-
-#FIM DO MENU GERENCIAR OPEN
 
 #MENU GERENCIAR SQUID3
 
@@ -178,13 +144,14 @@ chmod +x /bin/openvpn
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/hosts && bash hosts
 
 
-
-#LIMITE MENU
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu && bash limiter-menu
-
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-start && bash limiter-start
 
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-messages && bash limiter-messages
+
+
+#LIMITE MENU
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu.sh && bash limiter-menu.sh
+
 #FIM LIMITE MENU
 
 
@@ -207,12 +174,6 @@ echo vpspack >> ~/.bashrc
 
 
 clear
-echo -e "\033[1;32mInstalacao concluida\n\033[1;30mExecute:"
-echo -e "\n\033[1;32mvpspack \033[1;30mMenu com opcoes"
-echo -e "\033[1;32mcriarusuario \033[1;30mCriar usuario com data e limite"
-echo -e "\033[1;32mdeletarusuario \033[1;30mDeletar usuario ou apenas desconectar"
-echo -e "\033[1;32mredefinirusuario \033[1;30mAlterar data, senha, etc, de um usuario"
-echo -e "\033[1;32mlimite \033[1;30mLimite de logins simultaneos\033[0m"
 rm -rf install
 clear
 	echo ""
