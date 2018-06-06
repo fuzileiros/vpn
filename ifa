@@ -4,7 +4,7 @@ SDK=$(awk -F: '{print $1}' /tmp/ovpn)
 if [ "$SDK" = "" ]
 then
 echo -e "\033[1;31mVOCE NAO TEM USUARIOS PARA MUDAR A DATA!\033[0m"
-ovpn
+gerenciaropen
 exit
  else
 echo -e "\033[1;31m_____________________________"
@@ -19,10 +19,10 @@ echo -e "\033[1;36mMES?\033[0m"
 read -p ": " mes
 echo -e "\033[1;36mANO?\033[0m"
 read -p ": " ano
-date="$ano/$mes/$dia"
+date="$dia/$mes/$ano"
 chage -E $date $namer 2> /dev/null
 echo -e "\033[1;31mUsuario $namer Date: $date\033[0m"
 sleep 1s
-ovpn
+gerenciaropen
 exit
 fi
