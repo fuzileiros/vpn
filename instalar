@@ -160,12 +160,17 @@ cp /bin/gerenciaropen /bin/open
 cp /bin/gerenciarsquid /bin/squid
 cp /bin/gerenciarsistema /bin/sistema
 cp /bin/menuinstalacao /bin/instalação
-echo vpspack >> ~/.bashrc
-
 
 
 #LIMITE MENU
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu.sh && bash limiter-menu.sh
+
+
+echo vpspack >> ~/.bashrc
+
+
+
+
 
 clear
 rm -rf install
