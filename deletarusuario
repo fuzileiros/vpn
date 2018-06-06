@@ -39,11 +39,11 @@ if [ -z $USER ]; then
   echo ""
   echo -e "\033[01;37;41mVocê digitou um nome de usuário vazio. Tente novamente!\033[0m"
   sleep 3s
-  eletarusuario
+  deletarusuario
   exit
 else
 if [ "$USER" = "0" ]; then
-  h
+  vpn
   exit
 else
   awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort > /tmp/users.txt
