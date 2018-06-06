@@ -256,8 +256,7 @@ echo -e "\033[5;31;40m    •\033[0m\033[01;37m Digite uma Opção:\033[0;37m"; 
 			;;
 			4) exit;;
 		esac
-	done
-else
+	 else
 	clear
 	clear
 	echo ""
