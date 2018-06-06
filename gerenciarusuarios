@@ -55,15 +55,16 @@ echo -e "\033[01;36m║\033[1;37m00\033[1;36m║\033[5;31;40m•\033[0m\033[01;3
 echo -e "\033[01;36m║\033[1;37m01\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m CRIAR USUÁRIO \033[5;31;40m=\033[0m \033[7;36;40m Criar usuários \033[0m"
 echo -e "\033[01;36m║\033[1;37m02\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m CRIAR TESTE \033[5;31;40m=\033[0m \033[7;36;40m Criar usuarios de curta duração \033[0m"
 echo -e "\033[01;36m║\033[1;37m03\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DETALHES \033[5;31;40m=\033[0m \033[7;36;40m Informações sobre os usuários \033[0m"
-echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m MONITORAMENTO  \033[5;31;40m=\033[0m \033[7;36;40m Monitorar conexões atuais \033[0m"
-echo -e "\033[01;36m║\033[1;37m05\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m REDEFINIR DATA \033[5;31;40m=\033[0m \033[7;36;40m Redefinir Data \033[0m"
-echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m REDEFINIR SENHA \033[5;31;40m=\033[0m \033[7;36;40m Redefinir senha \033[0m"
-echo -e "\033[01;36m║\033[1;37m07\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m REDEFINIR LIMITE \033[5;31;40m=\033[0m \033[7;36;40m Redefinir limite \033[0m"
-echo -e "\033[01;36m║\033[1;37m08\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DESCONECTAR USUARIO \033[5;31;40m=\033[0m \033[7;36;40m Desconectar usuario \033[0m"
-echo -e "\033[01;36m║\033[1;37m09\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR USUARIO \033[5;31;40m=\033[0m \033[7;36;40m Menu Deletar, Desconectar, etc \033[0m"
-echo -e "\033[01;36m║\033[1;37m10\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR EXPIRADOS \033[5;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios expirados \033[0m"
-echo -e "\033[01;36m║\033[1;37m11\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR TODOS \033[5;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios \033[5;31m CUIDADO \033[0m"
-echo -e "\033[01;36m║\033[1;37m12\033[1;36m║\033[5;31;40m•\033[0m\033[0;31;40m SAIR \033[5;31;40m=\033[0m \033[1;30;41m Sair do Menu VPN. \033[0m"
+echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m MONITORAMENTO SSH  \033[5;31;40m=\033[0m \033[7;36;40m Monitorar conexões SSH \033[0m"
+echo -e "\033[01;36m║\033[1;37m05\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m MONITORAMENTO OPENVPN \033[5;31;40m=\033[0m \033[7;36;40m Monitorar conexões OPEN \033[0m"
+echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m REDEFINIR DATA \033[5;31;40m=\033[0m \033[7;36;40m Redefinir Data \033[0m"
+echo -e "\033[01;36m║\033[1;37m07\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m REDEFINIR SENHA \033[5;31;40m=\033[0m \033[7;36;40m Redefinir senha \033[0m"
+echo -e "\033[01;36m║\033[1;37m08\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m REDEFINIR LIMITE \033[5;31;40m=\033[0m \033[7;36;40m Redefinir limite \033[0m"
+echo -e "\033[01;36m║\033[1;37m09\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DESCONECTAR USUARIO \033[5;31;40m=\033[0m \033[7;36;40m Desconectar usuario \033[0m"
+echo -e "\033[01;36m║\033[1;37m10\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR USUARIO \033[5;31;40m=\033[0m \033[7;36;40m Menu Deletar, Desconectar, etc \033[0m"
+echo -e "\033[01;36m║\033[1;37m11\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR EXPIRADOS \033[5;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios expirados \033[0m"
+echo -e "\033[01;36m║\033[1;37m12\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DELETAR TODOS \033[5;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios \033[5;31m CUIDADO \033[0m"
+echo -e "\033[01;36m║\033[1;37m13\033[1;36m║\033[5;31;40m•\033[0m\033[0;31;40m SAIR \033[5;31;40m=\033[0m \033[1;30;41m Sair do Menu VPN. \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[5;31;40m    •\033[0m\033[01;37m Digite uma Opção:\033[0;37m"; read -p " " opcao
 else
@@ -81,20 +82,22 @@ case $opcao in
   4 | 04 )
    monitoring;;
   5 | 05 )
-   alterardata;;
+   monitoringopen;;
   6 | 06 )
-  changepassword;;
+   alterardata;;
   7 | 07 )
-   alterarlimite;; 
+  changepassword;;
   8 | 08 )
-   userdisconnect;;
+   alterarlimite;; 
   9 | 09 )
-   deletarusuario;;
+   userdisconnect;;
   10 )
-   deletarexpirados;;
+   deletarusuario;;
   11 )
-   deletartodos;;
+   deletarexpirados;;
   12 )
+   deletartodos;;
+  13 )
    exit;;
    *) gerenciarusuarios;;
 esac
