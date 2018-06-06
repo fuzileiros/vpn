@@ -2,7 +2,7 @@
 
 function CTRL() 
 {
-h
+vpn
 exit
 }
 trap CTRL SIGINT
