@@ -12,15 +12,6 @@ echo -e "\033[5;36;40m =========================================================
 echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Limitador \033[0m"
 echo -e "\033[5;36;40m ==========================================================\033[0m"
 echo ""
-NUMBER=$(ps -x | grep -c "sleep")
-if [ $NUMBER = "2" ]; then
-  echo -e "\033[01;35m   •\033[01;33m ESTADO:\033[01;32m ATIVO"
-  NUMBER2=$(awk 'END{print NR}' /home/DATABASE/messages.txt)
-  if [ "$NUMBER2" -gt "0" ]; then
-    echo -e "\033[01;35m   •\033[01;33m NOTIFICAÇÕES:\033[01;32m ● "
-  else
-    echo -e "\033[01;35m   •\033[01;33m NOTIFICAÇÕES:\033[01;31m ● "
-  fi
   echo -e "\033[01;35m =========================================================="
 echo -e "\033[01;36m║\033[1;37m1\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DESATIVAR\033[01;33m LIMITADOR."
 echo -e "\033[01;36m║\033[1;37m2\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m VERIFICAR NOTIFICAÇÕES."
@@ -36,17 +27,9 @@ echo -e "\033[01;36m║\033[1;37m0\033[1;36m║\033[5;31;40m•\033[0m\033[01;37
           limiter-menu
           exit;;
     2) limiter-messages;;
-    0) h;;
+    0) vpn;;
       *) limiter-menu;;
   esac
-else
-  echo -e "\033[01;35m   •\033[01;33m ESTADO:\033[01;31m DESATIVADO"
-  NUMBER2=$(awk 'END{print NR}' /home/DATABASE/messages.txt)
-  if [ "$NUMBER2" -gt "0" ]; then
-    echo -e "\033[01;35m   •\033[01;33m NOTIFICAÇÕES:\033[01;32m ●"
-  else
-    echo -e "\033[01;35m   •\033[01;33m NOTIFICAÇÕES:\033[01;31m ●"
-  fi
   echo -e "\033[01;35m =========================================================="
 echo -e "\033[01;36m║\033[1;37m1\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m DESATIVAR\033[01;33m LIMITADOR."
 echo -e "\033[01;36m║\033[1;37m2\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m VERIFICAR NOTIFICAÇÕES."
@@ -62,7 +45,7 @@ echo -e "\033[01;36m║\033[1;37m0\033[1;36m║\033[5;31;40m•\033[0m\033[01;37
           limiter-menu
           exit;;
     2) limiter-messages;;
-    0) h;;
+    0) vpn;;
       *) limiter-menu;;
   esac
 fi
