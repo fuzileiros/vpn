@@ -28,9 +28,4 @@ while true; do
       echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OpenVPN" "Online"
     else
       echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "INATIVO" "Offline"      "00:00"
-done
-read -p "Enter Para Voltar "
-rm -rf /tmp/vpn
-rm -rf /tmp/vpn
-ovpn
-exit
+      exit
