@@ -14,29 +14,145 @@ echo "        Nome: MenuVPS 1.0"
 echo ""
 sleep 0.3
 clear
-sshd_config_bak=$(cat /etc/ssh/sshd_config |grep -v "Banner")
-echo "$sshd_config_bak" > /etc/ssh/sshd_config
-echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
-service ssh restart 1>/dev/null 2>/dev/null
-service sshd restart 1>/dev/null 2>/dev/null
-if [ -f /etc/bannerssh ]
-then
-banner=$(cat /etc/bannerssh)
-else
-banner="Não há um banner no momento"
-fi
-echo -e "\033[1;32mBanner atual\n\n\033[1;37m$banner\n\033[0m"
-echo "Qual banner deseja adicionar (ctrl + c para sair )"
-read -p ": " bannerssh
-echo "$bannerssh" > /etc/bannerssh
-service ssh restart 1> /dev/null 2>/dev/null
-service sshd restart 1>/dev/null 2>/dev/null
+#!/bin/bash
 
-echo -e "\033[1;30m  BANNER SSH aplicado com sucesso!\033[0m"
+FILE="/home/DATABASE/bannerssh.txt"
+
+txt_font () {
 echo ""
-echo -e "\033[1;30m  NÃO DEIXE DE ENTRAR NO NOSSO GRUPO & NO CANAL NERDs\033[0m"
+echo -ne "\033[1;32m DIGITE O TEXTO PARA O BANNER \033[1;33m:"; read ban_ner2
 echo ""
-echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+echo -e "\033[1;32m Escolha a cor para :\033[1;33m$ban_ner2"
+echo -e "\033[01;35m -------------"
+echo -e "\033[01;32m 1 \033[01;35m•\033[01;33m VERDE"
+echo -e "\033[01;32m 2 \033[01;35m•\033[01;33m VERMELHO"
+echo -e "\033[01;32m 3 \033[01;35m•\033[01;33m AZUL"
+echo -e "\033[01;32m 4 \033[01;35m•\033[01;33m AMARELO"
+echo -e "\033[01;32m 5 \033[01;35m•\033[01;33m ROXO"
+echo -e "\033[01;35m -------------"
+echo -ne "\033[1;33m OPÇÃO \033[01;32m[1-5]\033[1;37m:"; read ban_ner2_cor
+
+if [ "$ban_ner2_cor" = "1" ]; then
+echo '<h6><font color="green">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner2_cor" = "2" ]; then
+echo '<h6><font color="red">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner2_cor" = "3" ]; then
+echo '<h6><font color="blue">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner2_cor" = "4" ]; then
+echo '<h6><font color="yellow">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner2_cor" = "5" ]; then
+echo '<h6><font color="purple">' >> $FILE
+a__a="1"
+fi
+if [ "$a__a" = "" ]; then
+echo '<h6><font color="red">' >> $FILE
+fi
+unset a__a
+echo "$ban_ner2" >> $FILE
+echo "</h6></font>" >> $FILE
+}
+clear
+
+echo -e "\033[01;32m MENSAGEN ATUAL: \033[01;36m0: RETORNAR AO MENU."
+echo ""
+NUMBER=$(cat $FILE | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33mVocê não possui nenhuma mensagem no momento!"
+else
+  echo -ne "\033[01;33m"; cat $FILE
+fi
+echo ""
+echo -ne "\033[1;32m DIGITE A MENSAGEN PRINCIPAL:\033[1;33m"; read BANNER
+echo ""
+echo -e "\033[1;32m Escolha a cor para :\033[1;33m$BANNER"
+if [ "$BANNER" = "0" ]; then
+  vpn
+  exit
+else
+echo -e "\033[01;35m -------------"
+echo -e "\033[01;32m 1 \033[01;35m•\033[01;33m VERDE"
+echo -e "\033[01;32m 2 \033[01;35m•\033[01;33m VERMELHO"
+echo -e "\033[01;32m 3 \033[01;35m•\033[01;33m AZUL"
+echo -e "\033[01;32m 4 \033[01;35m•\033[01;33m AMARELO"
+echo -e "\033[01;32m 5 \033[01;35m•\033[01;33m ROXO"
+echo -e "\033[01;35m -------------"
+echo -ne "\033[1;33m OPÇÃO \033[01;32m[1-5]\033[1;37m:"; read ban_ner_cor
+echo '<h1><font>=============================</font></h1>' > $FILE
+
+if [ "$ban_ner_cor" = "1" ]; then
+echo '<h1><font color="green">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner_cor" = "2" ]; then
+echo '<h1><font color="red">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner_cor" = "3" ]; then
+echo '<h1><font color="blue">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner_cor" = "4" ]; then
+echo '<h1><font color="yellow">' >> $FILE
+a__a="1"
+fi
+if [ "$ban_ner_cor" = "5" ]; then
+echo '<h1><font color="purple">' >> $FILE
+a__a="1"
+fi
+if [ "$a__a" = "" ]; then
+echo '<h1><font color="blue">' >> $FILE
+fi
+unset a__a
+echo "$BANNER" >> $FILE
+echo '</font> </h3>' >> $FILE
+echo '<h1><font>=============================</font></h1>' >> $FILE
+while true; do
+echo ""
+echo -ne "\033[1;36m"
+echo -e " Deseja adicionar mais textos?"
+read -p " [ s | n ]: " sin_nao
+if [[ "$sin_nao" = "s" || "$sin_nao" = "S" ]]; then
+txt_font
+fi
+if [[ "$sin_nao" = "n" || "$sin_nao" = "N" ]]; then
+break
+fi
+done
+echo '<h1><font>=============================</font></h1>' >> $FILE
+echo '</h8><font color="purple">ADM-VPS ®</font></h8>' >> $FILE
+echo '<h1><font>=============================</font></h1>' >> $FILE
+if [ -e "$local2" ]; then
+rm $local2  > /dev/null 2>&1
+cp $local $local2 > /dev/null 2>&1
+fi
+echo -e "${cor[1]} =================================== ${cor[0]}"
+  service ssh reload 1> /dev/null 2> /dev/null
+  clear
+  echo -e "\033[01;36mMensagem atual:"; echo ""
+  NUMBER=$(cat $FILE | wc -l)
+  if [ $NUMBER = "0" ]; then
+    echo -e "\033[01;33mVocê não possui nenhuma mensagem no momento!"
+  else
+    echo -ne "\033[01;33m"; cat $FILE
+  fi
+  echo ""
+  echo -e "\033[01;32mMensagem alterada com sucesso!"
+fi
+echo ""
+echo -ne "\033[01;36mAPERTE ENTER PARA VOLTAR AO MENU..."
 read ENTER
-vpspack
+vpn
 exit
+  
+
+
+
+
