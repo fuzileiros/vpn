@@ -164,5 +164,5 @@ fi
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
 read ENTER
-h
+vpn
 exit
