@@ -122,8 +122,15 @@ chmod +x /bin/monitoropen
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/genericoopen -O /bin/genericoopen
 chmod +x /bin/genericoopen
 #05
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deluseopen -O /bin/deluseopen
-chmod +x /bin/deluseopen
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deluseropen -O /bin/deluseropen
+chmod +x /bin/deluseropen
+#06
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deltodosopen -O /bin/deltodosopen
+chmod +x /bin/deltodosopen
+#07
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/desinstalaropen -O /bin/desinstalaropen
+chmod +x /bin/desinstalaropen
+
 
 
 
