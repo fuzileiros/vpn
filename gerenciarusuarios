@@ -70,13 +70,13 @@ case $opcao in
   0 | 00 )
    vpn;;
   1 | 01 )
-   criarusuario;;
+   criarusuario.sh;;
   2 | 02 )
-   criarteste;;
+   criarteste.sh;;
   3 | 03 )
-   detalhesusuarios;;   
+   detalhesusuarios.sh;;   
   4 | 04 )
-   monitoramento;;
+   monitoramento.sh;;
   5 | 05 )
    redefinirusuario;;
   6 | 06 )
