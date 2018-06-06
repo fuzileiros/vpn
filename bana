@@ -16,7 +16,7 @@ sleep 0.3
 clear
 #!/bin/bash
 
-FILE="/etc/ssh/sshd_config"
+FILE="/etc/bannerssh"
 
 txt_font () {
 echo ""
