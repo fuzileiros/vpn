@@ -118,7 +118,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			NUMBEROFCLIENTS=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep -c "^V")
 			if [[ "$NUMBEROFCLIENTS" = '0' ]]; then
 				echo ""
-				echo "Você não tem usuarios existentes!"
+				echo "You have no existing clients!"
 				exit 5
 			fi
 			echo ""
@@ -127,7 +127,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			if [[ "$NUMBEROFCLIENTS" = '1' ]]; then
 				read -p "Select one client [1]: " CLIENTNUMBER
 			else
-				read -p "Selecione um cliente [1-$NUMBEROFCLIENTS]: " CLIENTNUMBER
+				read -p "Select one client [1-$NUMBEROFCLIENTS]: " CLIENTNUMBER
 			fi
 			CLIENT=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$CLIENTNUMBER"p)
 			cd /etc/openvpn/easy-rsa/
@@ -142,7 +142,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			rm -f $(find /home -maxdepth 2 | grep $CLIENT.ovpn) 2>/dev/null
 			rm -f /root/$CLIENT.ovpn 2>/dev/null
 			echo ""
-			echo "Certificate for client $CLIENT removido"
+			echo "Certificate for client $CLIENT revoked"
 			echo "Exiting..."
 			exit
 			;;
@@ -171,7 +171,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				iptables-save > $IPTABLES
 				if hash sestatus 2>/dev/null; then
 					if sestatus | grep "Current mode" | grep -qs "enforcing"; then
-						if [[ "$PORT" != '443' ]]; then
+						if [[ "$PORT" != '1194' ]]; then
 							semanage port -d -t openvpn_port_t -p udp $PORT
 						fi
 					fi
@@ -204,42 +204,32 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	done
 else
 	clear
-	clear
+	echo "Welcome to the secure OpenVPN installer (github.com/Angristan/OpenVPN-install)"
 	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;31;40m • \033[0m\033[01;37m Bem Vindo Aguarde...\033[0m"
-sleep 3
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;31;40m • \033[0m\033[01;37mEstamos iniciando a instalação do OPenVPN...\033[0m"
-sleep 3
-clear
-
 	# OpenVPN setup and first user creation
-	#ColtSeals
+	echo "I need to ask you a few questions before starting the setup"
+	echo "You can leave the default options and just press enter if you are ok with them"
+	echo ""
+	echo "I need to know the IPv4 address of the network interface you want OpenVPN listening to."
+	echo "If your server is running behind a NAT, (e.g. LowEndSpirit, Scaleway) leave the IP address as it is. (local/private IP)"
+	echo "Otherwise, it should be your public IPv4 address."
 	# Autodetect IP address and pre-fill for the user
 	IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
-	read -p "Endereço de IP da máquina: " -e -i $IP IP
+	read -p "IP address: " -e -i $IP IP
 	echo ""
-	echo -e "\033[5;31;40m•\033[0m\033[01;37m Qual porta você deseja utilizar?\033[0m"
-	echo ""
-	echo -e "\033[5;37;40mNa Vivo, as recomendadas são 443 e 1194\033[0m"" -e -i 443 PORT
+	echo "What port do you want for OpenVPN?"
+	read -p "Port: " -e -i 1194 PORT
 	# If $IP is a private IP address, the server must be behind NAT
 	if echo "$IP" | grep -qE '^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192\.168)'; then
 		echo ""
-		clear
-	echo -e "\033[5;31;40m•\033[0m\033[01;37mPrimeiro precisaremos do IP de sua maquina, este IP está correto?"
+		echo "This server is behind NAT. What is the public IPv4 address or hostname?"
 		read -p "Public IP address / hostname: " -e PUBLICIP
 	fi
-	clear
-	echo "Qual protocolo você deseja para as conexões do OpenVPN?"
-	echo "Tenha em mente que a Vivo não suporta UDP, mas o mesmo..."
-	echo "...Ainda é listado como opção."
+	echo ""
+	echo "What protocol do you want for OpenVPN?"
+	echo "Unless UDP is blocked, you should not use TCP (unnecessarily slower)"
 	while [[ $PROTOCOL != "UDP" && $PROTOCOL != "TCP" ]]; do
-		read -p "Protocol [UDP/TCP]: " -e -i TCP PROTOCOL
+		read -p "Protocol [UDP/TCP]: " -e -i UDP PROTOCOL
 	done
 	echo ""
 	echo "What DNS do you want to use with the VPN?"
@@ -255,19 +245,22 @@ clear
 	while [[ $DNS != "1" && $DNS != "2" && $DNS != "3" && $DNS != "4" && $DNS != "5" && $DNS != "6" && $DNS != "7" && $DNS != "8" && $DNS != "9" ]]; do
 		read -p "DNS [1-9]: " -e -i 1 DNS
 	done
+	echo ""
+	echo "See https://github.com/Angristan/OpenVPN-install#encryption to learn more about "
+	echo "the encryption in OpenVPN and the choices I made in this script."
+	echo "Please note that all the choices proposed are secure (to a different degree)"
+	echo "and are still viable to date, unlike some default OpenVPN options"
 	echo ''
-		echo -e "\033[5;31;40m      •\033[0m\033[01;37m Qual codificação usar para o canal de dados?\033[0m"
-	echo -e "\033[5;36;40m ==========================================================\033[0m"
-	echo -e "   1)\033[5;31;40m •\033[0m AES-128-CBC mais rápido e suficientemente seguro \033[5;33;40m(Recomendado)\033[0m"
-	echo -e "   2)\033[5;31;40m •\033[0m AES-192-CBC"
-	echo -e "   3)\033[5;31;40m •\033[0m AES-256-CBC"
-	echo "Alternativas para o AES, use-as somente se você souber o que está fazendo."
-	echo "Eles são relativamente mais lentos, mas tão seguros quanto o AES."
-	echo -e "   4)\033[5;31;40m •\033[0m CAMELLIA-128-CBC"
-	echo -e "   5)\033[5;31;40m •\033[0m CAMELLIA-192-CBC"
-	echo -e "   6)\033[5;31;40m •\033[0m CAMELLIA-256-CBC"
-	echo -e "   7)\033[5;31;40m •\033[0m SEED-CBC"
-		echo -e "\033[5;36;40m ==========================================================\033[0m"
+	echo "Choose which cipher you want to use for the data channel:"
+	echo "   1) AES-128-CBC (fastest and sufficiently secure for everyone, recommended)"
+	echo "   2) AES-192-CBC"
+	echo "   3) AES-256-CBC"
+	echo "Alternatives to AES, use them only if you know what you're doing."
+	echo "They are relatively slower but as secure as AES."
+	echo "   4) CAMELLIA-128-CBC"
+	echo "   5) CAMELLIA-192-CBC"
+	echo "   6) CAMELLIA-256-CBC"
+	echo "   7) SEED-CBC"
 	while [[ $CIPHER != "1" && $CIPHER != "2" && $CIPHER != "3" && $CIPHER != "4" && $CIPHER != "5" && $CIPHER != "6" && $CIPHER != "7" ]]; do
 		read -p "Cipher [1-7]: " -e -i 1 CIPHER
 	done
@@ -295,10 +288,10 @@ clear
 		;;
 	esac
 	echo ""
-		echo -e "\033[5;31;40m      •\033[0m\033[01;37m Tamanho da chave Diffie-Hellman que deseja usar:\033[0m"
-	echo -e "   1)\033[5;31;40m •\033[0m2048 bits (mais rápido)"
-	echo -e "   2)\033[5;31;40m •\033[0m3072 bits \033[5;33;40m(Recomendado, melhor compromisso)•\033[0m"
-	echo -e "   3)\033[5;31;40m •\033[0m4096 bits (mais seguro)"
+	echo "Choose what size of Diffie-Hellman key you want to use:"
+	echo "   1) 2048 bits (fastest)"
+	echo "   2) 3072 bits (recommended, best compromise)"
+	echo "   3) 4096 bits (most secure)"
 	while [[ $DH_KEY_SIZE != "1" && $DH_KEY_SIZE != "2" && $DH_KEY_SIZE != "3" ]]; do
 		read -p "DH key size [1-3]: " -e -i 2 DH_KEY_SIZE
 	done
@@ -314,10 +307,10 @@ clear
 		;;
 	esac
 	echo ""
-	echo "Tamanho da chave RSA que deseja usar:"
-	echo -e "   1)\033[5;31;40m •\033[0m2048 bits (mais rápido)"
-	echo -e "   2)\033[5;31;40m •\033[0m3072 bits \033[5;33;40m(Recomendado, melhor compromisso)•\033[0m"
-	echo -e "   3)\033[5;31;40m •\033[0m4096 bits (mais seguro)"
+	echo "Choose what size of RSA key you want to use:"
+	echo "   1) 2048 bits (fastest)"
+	echo "   2) 3072 bits (recommended, best compromise)"
+	echo "   3) 4096 bits (most secure)"
 	while [[ $RSA_KEY_SIZE != "1" && $RSA_KEY_SIZE != "2" && $RSA_KEY_SIZE != "3" ]]; do
 		read -p "RSA key size [1-3]: " -e -i 2 RSA_KEY_SIZE
 	done
@@ -333,14 +326,14 @@ clear
 		;;
 	esac
 	echo ""
-	echo "Finalmente, diga-me um nome para o certificado do cliente e configuração"
+	echo "Finally, tell me a name for the client certificate and configuration"
 	while [[ $CLIENT = "" ]]; do
-		echo "Por favor, use apenas uma palavra, sem caracteres especiais"
+		echo "Please, use one word only, no special characters"
 		read -p "Client name: " -e -i client CLIENT
 	done
 	echo ""
-	echo "Ok, isso era tudo que eu precisava."
-	read -n1 -r -p "pressione qualquer tecla para continuar..."
+	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now"
+	read -n1 -r -p "Press any key to continue..."
 
 	if [[ "$OS" = 'debian' ]]; then
 		apt-get install ca-certificates gnupg -y
@@ -440,10 +433,10 @@ WantedBy=multi-user.target" > /etc/systemd/system/iptables.service
 		# Else, the distro is ArchLinux
 		echo ""
 		echo ""
-		echo "Como você está usando o ArchLinux, eu preciso atualizar os pacotes em seu sistema para instalar os que eu preciso."
-		echo "Não fazer isso pode causar problemas entre dependências, ou falta de arquivos em repositórios."
+		echo "As you're using ArchLinux, I need to update the packages on your system to install those I need."
+		echo "Not doing that could cause problems between dependencies, or missing files in repositories."
 		echo ""
-		echo "Continuar atualizará os pacotes instalados e instalará os necessários."
+		echo "Continuing will update your installed packages and install needed ones."
 		while [[ $CONTINUE != "y" && $CONTINUE != "n" ]]; do
 			read -p "Continue ? [y/n]: " -e -i y CONTINUE
 		done
@@ -624,7 +617,7 @@ verb 3" >> /etc/openvpn/server.conf
 	# If SELinux is enabled and a custom port was selected, we need this
 	if hash sestatus 2>/dev/null; then
 		if sestatus | grep "Current mode" | grep -qs "enforcing"; then
-			if [[ "$PORT" != '443' ]]; then
+			if [[ "$PORT" != '1194' ]]; then
 				# semanage isn't available in CentOS 6 by default
 				if ! hash semanage 2>/dev/null; then
 					yum install policycoreutils-python -y
