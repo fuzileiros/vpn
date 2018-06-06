@@ -79,11 +79,9 @@ case $opcao in
   5 | 05 )
    deluseropen;;
   6 | 06 )
-   deletarusuario;;
+   deltodosopen;;
   7 | 07 )
-   deletarexpirados;;
+   desinstalaropen;;
   8 | 08 )
-   deletartodos;;
-  9 | 09 )
    exit;;
 esac
