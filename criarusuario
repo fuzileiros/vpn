@@ -1,4 +1,4 @@
-#!/bin/bash
+DATABASE="/home/DATABASE/users.db"
 clear
 echo "Edited by @ColtSeals"
 red='\e[1;31m'
@@ -21,6 +21,8 @@ then
 	echo -e "\033[0m"
 	if cat /etc/passwd |grep $name: |grep -vi [a-z]$name |grep -v [0-9]$name > /dev/null
 	then
+	  (echo $pass; echo $pass) | passwd $name 1> /dev/null 2> /dev/null
+  echo "$name $pass $limiteuser" >> $DATABASE
 		echo -e "\033[1;31mUsuario $name ja existe\033[0m"
 	else
 		valid=$(date '+%C%y-%m-%d' -d " +$daysrnf days")
