@@ -6,8 +6,10 @@ awk -F : ' { print $1 }' /etc/passwd > /tmp/users
 if grep -Fxq "$CLIENT" /tmp/users
 then
 echo -e "\033[1;31mUsuário ja existente em seu servidor!\033[0m"
-sleep 5s
-ovpn
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
+read ENTER
+gerenciaropen
 exit
 fi
 rm -rf /tmp/users
@@ -36,8 +38,10 @@ touch /etc/VpsPackdir/limite/$CLIENT
 echo -e "$senha" > /etc/VpsPackdir/senha/$CLIENT
 echo -e "OPENVPN" > /etc/VpsPackdir/limite/$CLIENT
 echo -e "\033[1;36mCRIADO COM SUCESSO \033[0m"
-sleep 4s
-ovpn
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
+read ENTER
+gerenciaropen
 exit
   else
 useradd -M -s /bin/false -d /home/ovpn/ $CLIENT
@@ -48,7 +52,7 @@ echo -e "$senha" > /etc/VpsPackdir/senha/$CLIENT
 echo -e "OPENVPN" > /etc/VpsPackdir/limite/$CLIENT
 echo -e "\033[1;36mCRIADO COM SUCESSO \033[0m"
 echo ""
-echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
 read ENTER
-vpspack
+gerenciaropen
 exit
