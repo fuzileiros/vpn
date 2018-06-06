@@ -1,9 +1,0 @@
-#!/bin/bash
-
-ip=127.0.0.1
-echo ""
-echo "  Qual host deseja adicionar ?"
-echo -e "\033[1;37m •=============================•\033[0m"
-read -p ": " host
-echo "$ip $host" >> /etc/hosts
-echo "$host" >> /etc/payloads
