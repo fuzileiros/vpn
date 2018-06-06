@@ -28,9 +28,8 @@ while true; do
       echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OpenVPN" "Online"
     else
       echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "INATIVO" "Offline       00:00"
-    fi
   done
-   echo ""
-   echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
-   sleep 10s
+  echo ""
+  echo -e "\033[01;36m APERTE CTRL+C PARA SAIR DO MONITOR..."
+  sleep 6s
 done
