@@ -11,43 +11,71 @@ sleep 0.2
 echo -e "${green}Permissão Aceita...${NC}"
 sleep 0.2
 clear
-echo -e "\033[1;33mUserback options:\033[1;30m
-1) Deletar usuario
-2) Deletar e desconectar todos do usuario
-3) Desconectar todos do usuario\033[0m"
-read -p ": " option
- if [ $option -eq 1 ]; then
- read -p "Qual o nome do usuario: " name
- if [ $(cat /etc/passwd |grep "^$name:" |wc -l) -eq 0 ]; then
- echo "Usuario não existe"
- exit
- fi
- userdel --force $name > /dev/null 2>/dev/null
- echo "Usuario $name foi deletado"
- exit
- fi
+#!/bin/bash
 
- if [ $option -eq 2 ]; then
- read -p "Qual o nome do usuario: " name
- if [ $(cat /etc/passwd |grep "^$name:" |wc -l) -eq 0 ]; then
- echo "Usuario não existe"
- exit
- fi
- pids=$(ps -u $name |awk {'print $1'})
- kill "$pids" >/dev/null 2>/dev/null
- userdel $name 1>/dev/null 2>/dev/null
- echo "Usuario $name foi parado e deletado"
- exit
- fi
+DATABASE="/home/DATABASE/users.db"
 
- if [ $option -eq 3 ]; then
- read -p "Qual o nome do usuario: " name
- if [ $(cat /etc/passwd |grep "^$name:" |wc -l) -eq 0 ]; then
- echo "Usuario não existe"
- exit
- fi
- pids=$(ps -u $name |awk {'print $1'})
- kill "$pids" >/dev/null 2>/dev/null
- echo "Usuario $name foi parado"
- exit
- fi
+clear
+echo -e "\033[01;36mLista de usuários criados:\033[01;32m 0: RETORNAR AO MENU."
+echo ""
+NUMBER=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33mVocê não possui nenhum usuário SSH criado no momento!"
+  echo ""
+  echo -e "\033[01;33mCrie um usuário SSH para prosseguir com esta função!"
+  echo ""
+  echo -e "\033[01;36mAPERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  vpn
+  exit
+else
+  for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
+    echo -ne "\033[01;33m"; echo $USERS
+  done
+fi
+echo ""
+echo -ne "\033[01;36mNome do usuário para remover:\033[01;37m "; read USER
+if [ -z $USER ]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de usuário vazio. Tente novamente!\033[0m"
+  sleep 3s
+  eletarusuario
+  exit
+else
+if [ "$USER" = "0" ]; then
+  h
+  exit
+else
+  awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort > /tmp/users.txt
+if [[ `grep -cx "$USER" /tmp/users.txt` -ne 1 ]]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de usuário inexistente. Digite um nome de\033[0m"; echo -e "\033[01;37;41musuário que seja existente na lista acima. Tente novamente!   \033[0m"
+  sleep 7s
+  deletarusuario
+  exit
+else
+  clear
+  pkill -f $USER
+  userdel -f $USER 1> /dev/null 2> /dev/null
+  cat $DATABASE | grep -wv "$USER" > remove.txt
+  mv remove.txt $DATABASE
+  echo -e "\033[01;36mLista de usuários criados:"; echo ""
+  NUMBER=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
+  if [ $NUMBER = "0" ]; then
+    echo -e "\033[01;33mVocê não possui nenhum usuário SSH criado no momento!"
+  else
+    for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
+      echo -ne "\033[01;33m"; echo $USERS
+    done
+  fi
+  echo ""
+  echo -e "\033[01;32mUsuário removido com sucesso!"
+  echo -e "\033[01;32mNome do usuário: $USER"
+fi
+fi
+fi
+echo ""
+echo -ne "\033[01;36mAPERTE A TECLA ENTER..."
+read ENTER
+vpn
+exit
