@@ -45,17 +45,9 @@ chmod +x /bin/menuinstalacao
 #Fim de submenus
 
 #Menu Gerenciar Usuarios
+
 #01
-#ADMVPS
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/createuser.sh -O /bin/criarusuario.sh
-chmod +x /bin/criarusuario.sh
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoring.sh -O /bin/monitor.sh
-chmod +x /bin/monitoring.sh
-#FIM DO ADM VPS USUARIOS
-
-rm -rf /bin/criarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuario > /bin/criarusuario
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuario -O /bin/criarusuario
 chmod +x /bin/criarusuario
 #02
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/criarteste -O /bin/criarteste
@@ -64,23 +56,29 @@ chmod +x /bin/criarteste
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/detalhesusuarios -O /bin/detalhesusuarios
 chmod +x /bin/detalhesusuarios
 #04
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoramento -O /bin/monitoramento
-chmod +x /bin/monitoramento
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoring -O /bin/monitoring
+chmod +x /bin/monitoring
 #05
-rm -rf /bin/redefinirusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/redefinirusuario > /bin/redefinirusuario
-chmod +x /bin/redefinirusuario
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/changepassword -O /bin/changepassword
+chmod +x /bin/changepassword
 #06
-rm -rf /bin/deletarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarusuario > /bin/deletarusuario
-chmod +x /bin/deletarusuario
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/alterardata -O /bin/alterardata
+chmod +x /bin/alterardata
 #07
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/alterarlimite -O /bin/alterarlimite
+chmod +x /bin/alterarlimite
+#08
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/userdisconnect -O /bin/userdisconnect
+chmod +x /bin/userdisconnect
+#10
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarusuario -O /bin/deletarusuario
+chmod +x /bin/deletarusuario
+#11
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarexpirados -O /bin/deletarexpirados
 chmod +x /bin/deletarexpirados
-#08
+#12
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletartodos -O /bin/deletartodos
 chmod +x /bin/deletartodos
-
 
 
 #FIM MENU GERENCIAR USUARIOS
