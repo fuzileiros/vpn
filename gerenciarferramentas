@@ -70,7 +70,13 @@ case $opcao in
   2 | 02 )
    restaurarusuarios;;
   3 | 03 )
- speedtest.py;;
+  clear
+  speedtest.py
+  echo ""
+  echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  vpspack
+  exit;;
   4 | 04 )
    firewalblock;;
   5 | 05 )
