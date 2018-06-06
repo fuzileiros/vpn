@@ -18,7 +18,7 @@ fi
 if [[ ! -e /dev/net/tun ]]; then
 	echo "Interface VPN não identificada!"
 	echo "Isso geralmente acontece pois sua provedora de serviços bloqueou..."
-	echo "... O mÃ³dulo de VPN, ou ele não está instalado (improvável)"
+	echo "... O módulo de VPN, ou ele não está instalado (improvável)"
 	exit 3
 fi
 
@@ -218,25 +218,25 @@ clear
 	echo ""
 	echo ""
 	echo ""
-	echo -e "\033[5;32;40m  3 \033[0m"
+	echo -e "\033[5;32;40m        3 \033[0m"
 sleep 1
 clear
 	echo ""
 	echo ""
 	echo ""
-	echo -e "\033[5;32;40m  2 \033[0m"
+	echo -e "\033[5;32;40m        2 \033[0m"
 sleep 1
 clear
 	echo ""
 	echo ""
 	echo ""
-	echo -e "\033[5;32;40m  1 \033[0m"
+	echo -e "\033[5;32;40m        1 \033[0m"
 sleep 1
 clear
 	echo ""
 	echo ""
 	echo ""
-	echo -e "\033[5;32;40m  0 \033[0m"
+	echo -e "\033[5;32;40m        0 \033[0m"
 sleep 1
 clear
 	echo ""
@@ -258,6 +258,8 @@ clear
 		;;
 	esac
 	echo ""
+	clear
+	echo ""
 	echo -e "\033[5;31;40m      •\033[0m\033[01;37m Qual porta você deseja utilizar?\033[0m"
 	echo ""
 	echo -e "\033[5;37;40mNa Vivo, as recomendadas são 443 e 1194\033[0m"
@@ -265,6 +267,7 @@ clear
 	read -p "Porta: " -e -i 443 PORT
 	echo ""
 	clear
+	echo ""
 	echo -e "\033[5;31;40m      •\033[0m\033[01;37m Qual DNS você deseja utilizar?\033[0m"
 	echo "Qual DNS você deseja utilizar?"
 	echo -e "\033[5;37;40mRecomendável usar o do Google ou do sistema...\033[0m"
@@ -278,9 +281,13 @@ clear
 	echo -e "\033[5;36;40m ==========================================================\033[0m"
     echo -e "\033[5;31;40m      •\033[0m\033[01;37m Digite uma Opção DNS:\033[0;37m\033[0;33;40m"; read -p " " -e -i 1 DNS
 	echo ""
+	clear
+	echo ""
 	echo "Agora, digite o nome para o arquivo"
 	echo "Somente letras e números, sem caracteres especiais"
 	read -p "Nome do arquivo: " -e -i client CLIENT
+	echo ""
+	clear
 	echo ""
 	echo "Ok, a instalação terá início agora..."
 	sleep 4
