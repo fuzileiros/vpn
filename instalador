@@ -129,6 +129,16 @@ chmod +x /bin/resetfirewal
 
 #FIM DO MENU INSTALAÇÃO
 
+#LIMITE MENU
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu.sh -O /bin/limiter-menu.sh
+chmod +x /bin/limiter-menu.sh
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-start -O /bin/limiter-start
+chmod +x /bin/limiter-start
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-messages -O /bin/limiter-messages
+chmod +x /bin/limiter-messages
+
 
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
@@ -162,8 +172,7 @@ cp /bin/gerenciarsistema /bin/sistema
 cp /bin/menuinstalacao /bin/instalação
 
 
-#LIMITE MENU
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu.sh && bash limiter-menu.sh
+
 
 
 echo vpspack >> ~/.bashrc
