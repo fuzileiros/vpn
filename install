@@ -108,7 +108,46 @@ chmod +x /bin/resetfirewal
 
 #FIM DO MENU FERRAMENTAS
 
+#MENU GERENCIAR OPEN
 
+
+
+
+
+
+
+#FIM DO MENU GERENCIAR OPEN
+
+#MENU GERENCIAR SQUID3
+
+
+
+
+#FIM DO MENU SQUID
+
+#MENU SISTEMA
+
+
+
+#FIM DO MENU SISTEMA
+
+
+#MENU INSTALAÇÃO
+
+
+
+#FIM DO MENU INSTALAÇÃO
+
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/openvpn -O /bin/openvpn
+chmod +x /bin/openvpn
+
+
+
+
+#NANO ETC HOSTS
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/hosts && bash hosts
 
 
 
@@ -117,7 +156,7 @@ chmod +x /bin/resetfirewal
 cp /bin/vpspack /bin/VPN
 cp /bin/gerenciarusuarios /bin/Usuarios
 cp /bin/gerenciarferramentas /bin/Ferramentas
-cp /bin/gerenciaropen /bin/Open
+cp /bin/gerenciaropen /bin/
 cp /bin/gerenciarsquid /bin/Squid
 cp /bin/gerenciarsistema /bin/Sistema
 cp /bin/menuinstalacao /bin/Instalação
