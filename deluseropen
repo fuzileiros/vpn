@@ -4,7 +4,10 @@ if [[ "$NUMBEROFCLIENTS" = '0' ]]; then
 echo ""
 echo "NAO HA USUARIOS AINDA"
 echo -e "\033[0m"
-ovpn
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
+read ENTER
+gerenciaropen
 exit
 	fi
 echo -e "\033[1;36m"
@@ -20,8 +23,10 @@ then
 echo -e "\033[1;31m"
 echo "NENHUM USUARIO FOI SELECIONADO"
 echo -e "\033[0m"
-sleep 4s
-ovpn
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
+read ENTER
+gerenciaropen
 exit
 fi
 CLIENT=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$CLIENTNUMBER"p)
@@ -41,6 +46,8 @@ rm -rf /etc/VpsPackdir/limite/$CLIENT
 echo -e "\033[1;31m"
 echo "REMOVIDO"
 echo -e "\033[0m"
-sleep 6s
-ovpn
-exit;;
+echo ""
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU ANTERIOR..."
+read ENTER
+gerenciaropen
+exit
