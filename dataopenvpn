@@ -1,19 +1,5 @@
 #!/bin/bash
 clear
-echo "Edited by @ColtSeals"
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-echo "Conectando ao NerdologiaVPS..."
-sleep 0.4
-echo "Checando Permissão..."
-sleep 0.2
-echo -e "${green}Permissão Aceita...${NC}"
-sleep 0.2
-clear
-
-MYIP=$(wget -qO- ipv4.icanhazip.com)
-
 cat /etc/passwd |grep ovpn > /tmp/ovpn
 echo -e "\033[1;33mUSUARIOS"
 SDK=$(awk -F: '{print $1}' /tmp/ovpn)
@@ -39,6 +25,7 @@ read -p ": " mes
 echo -e "\033[1;36mANO?\033[0m"
 read -p ": " ano
 date="$dia/$mes/$ano"
+MYIP=$(wget -qO- ipv4.icanhazip.com)
 chage -E $date $namer 2> /dev/null
 
   echo "   Data alterada com Sucesso"
