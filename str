@@ -1,5 +1,6 @@
 clear
 cat /etc/passwd |grep ovpn > /tmp/ovpn
+echo ""
 echo -e "\033[1;33mUSUARIOS"
 SDK=$(awk -F: '{print $1}' /tmp/ovpn)
 if [ "$SDK" = "" ]
@@ -16,27 +17,36 @@ awk -F: '{print $1}' /tmp/ovpn
 echo -e "\033[1;31m_____________________________"
 echo ""
 echo -e "\033[5;31;40m  •\033[0m\033[01;37m NOME DO USUÁRIO:\033[0;37m"
+echo -e "\033[1;31m_____________________________"
 read -p ": " namer
 clear
-echo -e "\033[1;36mDIGITE A NOVA DATA EM NUMEROS\033[0m"
-echo -e "\033[1;36mDIA?\033[0m"
+echo ""
+echo -e "\033[5;31;40m  •\033[0m\033[01;37m DIGITE A NOVA DATA EM NUMEROS\033[0;37m"
+clear
+echo ""
+echo -e "\033[5;31;40m  •\033[0m\033[01;37m DIA?\033[0;37m"
+echo -e "\033[1;31m_____________________________"
 read -p ": " dia
 clear
-echo -e "\033[1;36mMES?\033[0m"
+echo ""
+echo -e "\033[5;31;40m  •\033[0m\033[01;37m MÊS?\033[0;37m"
+echo -e "\033[1;31m_____________________________"
 read -p ": " mes
 clear
-echo -e "\033[1;36mANO?\033[0m"
+echo ""
+echo -e "\033[5;31;40m  •\033[0m\033[01;37m ANO?\033[0;37m"
+echo -e "\033[1;31m_____________________________"
 read -p ": " ano
 date="$dia/$mes/$ano"
 MYIP=$(wget -qO- ipv4.icanhazip.com)
 chage -E $date $namer 2> /dev/null
 clear
-  echo "   Data alterada com Sucesso."
+echo -e "\033[5;31;40m  •\033[0mData alterada com Sucesso."
   echo "-----------------------------------------------"
-  echo "   Host            : $MYIP"
-  echo "   Nome            : $namer"
-  echo "   Data Expiração  : $date"
-  echo "   Porta           : 80,8080,8799,443,22,3128"
+echo -e "\033[5;31;40m  •\033[0mHost            : $MYIP"
+echo -e "\033[5;31;40m  •\033[0mNome            : $namer"
+echo -e "\033[5;31;40m  •\033[0mData Expiração  : $date"
+echo -e "\033[5;31;40m  •\033[0mPorta           : 80,8080,8799,443,22,3128"
   echo "----------------------------------------------"
   echo " "
 fi
