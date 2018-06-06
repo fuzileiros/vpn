@@ -22,6 +22,7 @@ newclient "$CLIENT"
 echo ""
 echo "Client $CLIENT KEY DISPONÍVEL" ~/"$CLIENT.ovpn"
 #####Sistema datagem
+clear
 echo -e "\033[1;31mDefinir data? 
 [s/n]\033[0m"
 read -p ": " simounao
