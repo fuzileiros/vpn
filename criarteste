@@ -11,56 +11,198 @@ sleep 0.2
 echo -e "${green}Permissão Aceita...${NC}"
 sleep 0.2
 clear
-mkdir /etc/usuariosteste 1>/dev/null 2>/dev/null
-echo -e "   Usuarios teste"
-for testus in $(ls /etc/usuariosteste |sort |sed 's/.sh//g')
-do
-echo "$testus"
-done
-printf "\n"
-printf "Nome do novo usuario: "; read nome
-printf "Senha do usuario: "; read pass
-echo -e "\nUse s = segundos, m = minutos, h = horas e d = dias EX: 14s ."
-printf "Quanto tempo usuario $nome deve durar: ";read tempoin
-tempo=$(echo "$tempoin" |sed 's/ //g')
-useradd -M -s /bin/false $nome
-(echo $pass;echo $pass) |passwd $nome 1>/dev/null 2>/dev/null
-echo "#!/bin/bash
-sleep $tempo
-kill"' $(ps -u '"$nome |awk '{print"' $1'"}') 1>/dev/null 2>/dev/null
-userdel --force $nome
-rm -rf /etc/usuariosteste/$nome.sh
-exit" > /etc/usuariosteste/$nome.sh
-		MYIP=$(wget -qO- ipv4.icanhazip.com)
-		clear
-echo "Connectando ao @NerdologiaVPS..."
-sleep 0.4
-echo "Criando Conta..."
-sleep 0.3
-echo "Gerando Host..."
-sleep 0.2
-echo "Criando seu usuario TESTE: $username"
-sleep 0.2
-echo "Criando senha para $username"
-sleep 0.2
+#!/bin/bash
 
-  clear
-  echo "Script Edited @ColtSeals"
-  echo "Informações @NerdologiaVPS"
-  echo " "
-  echo "   Detalhes do Usuario teste"
-  echo "-----------------------------------------------"
-  echo "   Host            : $MYIP"
-  echo "   Nome            : $nome"
-  echo "   Senha           : $pass"
-  echo "   Validade        : $tempo"
-  echo "   Porta           : 80,8080,8799,443,22,3128"
-  echo "----------------------------------------------"
-  echo " "
-echo -e "Apos o tempo expirar o usuario sera deletado e todos serão desconectados."
-bash /etc/usuariosteste/$nome.sh &
+DATABASE="/home/DATABASE/users.db"
+
+tmpusr () {
+time="$1"
+timer=$(( $time * 60 ))
+timer2="'$timer's"
+echo "#!/bin/bash
+sleep $timer2
+kill"' $(ps -u '"$2 |awk '{print"' $1'"}') 1> /dev/null 2> /dev/null
+userdel -f $2
+rm -rf /tmp/$2
+rm -rf /home/DATABASE/userteste/$USER
+cat $DATABASE | grep -wv "$USER" > remove.txt
+mv remove.txt $DATABASE
+exit" > /tmp/$2
+
+	
+}
+clear
+mkdir /home/DATABASE/userteste 1>/dev/null 2>/dev/null
+echo -e "\033[01;36mLista de usuários criados:"
+echo ""
+NUMBER=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33mVocê não possui nenhum usuário criado no momento!"
+else
+  for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
+    echo -ne "\033[01;33m"; echo $USERS
+  done
+fi
+echo ""
+echo -e "\033[01;31m•\033[01;33m 0:\033[01;36m RETORNAR AO MENU."
+echo -e "\033[01;31m•\033[01;33m R:\033[01;36m RESETAR."
+echo ""
+echo -e "\033[01;35m------------------------------------------------------"
+echo -ne "\033[01;32mNOME DO USUÁRIO DE TESTE:\033[01;33m"; read USER
+if [ -z $USER ]; then
+  echo ""
+	echo -e "\033[01;37;41mVocê digitou um nome de usuário vazio. Tente novamente!\033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+if [ "$USER" = "root" ]; then
+  echo ""
+  echo -e "\033[01;37;41mUsuário inválido. Tente novamente!\033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+if [ "$USER" = "0" ]; then
+  vpn
+  exit
+else
+if [ "$USER" = "R" ]; then
+  criarteste
+  exit
+else
+if echo $USER | grep -q '[^a-z A-Z 0-9 ._-]'; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de usuário invaldoo. Use apenas letras, números\033[0m"; echo -e "\033[01;37;41mpontos e traços. Não use espaços, acentos ou caracteres especiais. T\033[0m"; echo -e "\033[01;37;41mente novamente!                                                     \033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+  awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort > /tmp/users.txt
+if grep -xq "$USER" /tmp/users.txt; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de usuário já existente. Digite um nome de\033[0m"; echo -e "\033[01;37;41musuário que não seja existente na lista acima. Tente novamente!\033[0m"
+  sleep 7s
+  criarteste
+  exit
+else
+  CHARACTERS=$(echo $USER | wc -c)
+if [ $CHARACTERS -gt 33 ]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de usuário muito grande. Use no máximo 3\033[0m"; echo -e "\033[01;37;41m2 caracteres para o usuário. Tente novamente!                \033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+					echo -ne "\033[01;32mSENHA:\033[01;33m"; read PASSWORD
+if [ -z $PASSWORD ]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou uma senha vazia. Tente novamente!\033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+if [ "$PASSWORD" = "0" ]; then
+  vpn
+  exit
+else
+if [ "$PASSWORD" = "R" ]; then
+  criarteste
+  exit
+else
+ 
+ echo -ne "\033[01;32mDURAÇÃO EM MINUTOS:\033[01;33m"; read tmp
+
+if echo $tmp | grep -q '[^0-9R]'; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um número inválido. Tente novamente!\033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+if [ -z $tmp ]; then
+  echo ""
+  echo -e "\033[1;37;41mVocê digitou um número vazio. Tente novamente!\033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+if [ "$tmp" = "0" ]; then
+  vpn
+  exit
+else
+if [ "$DAYS" = "R" ]; then
+  criarteste
+  exit
+else
+	echo -ne "\033[01;32mN° DE CONEXÕES PERMITIDAS:\033[01;33m"; read CONNECTIONS
+if echo $CONNECTIONS | grep -q '[^0-9R]'; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um número inválido. Tente novamente!\033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+if [ -z $CONNECTIONS ]; then
+  echo ""
+  echo -e "\033[1;37;41mVocê digitou um número vazio. Tente novamente!\033[0m"
+  sleep 3s
+  criarteste
+  exit
+else
+if [ "$CONNECTIONS" = "0" ]; then
+  h
+  exit
+else
+if [ "$CONNECTIONS" = "R" ]; then
+  userteste
+  exit
+else
+  tempo=$(echo "$tempoin" |sed 's/ //g')
+  useradd -M -s /bin/false $USER
+	(echo $PASSWORD; echo $PASSWORD) | passwd $USER 1> /dev/null 2> /dev/null
+  echo "$USER $PASSWORD $CONNECTIONS" >> $DATABASE
+  touch /tmp/$USER
+  tmpusr $tmp $USER
+  chmod 777 /tmp/$USER
+  touch /tmp/cmd
+  chmod 777 /tmp/cmd
+  echo "nohup /tmp/$USER & >/dev/null" > /tmp/cmd
+  /tmp/cmd 2>/dev/null 1>/dev/null
+  rm -rf /tmp/cmd
+	touch /home/DATABASE/userteste/$USER
+	echo -e "\033[01;35m------------------------------------------------------"
+	echo -e "\033[01;31m         USÚARIO DE TESTE CRIADO COM SUCESSO!"
+	echo -e "\033[01;35m------------------------------------------------------"												
+	echo -e "\033[1;32mNOME: \033[1;33m$USER\033[0m" 
+	echo -e "\033[1;32mSENHA: \033[1;33m$PASSWORD\033[0m"
+	echo -e "\033[1;32mVALIDADE: \033[1;33m$tmp min\033[0m"
+	echo -e "\033[1;32mLIMITE DE CONEXÃO: \033[1;33m$CONNECTIONS\033[0m"
+	echo -e "\033[01;35m------------------------------------------------------"
+	echo  ""
+	echo -e "\033[1;33mAPOS O TEMPO EXPIRAR O USUARIO SERA DELETADO E DESCONECTADO.\033[0m"
+	bash /home/DATABASE/userteste/$USER &
+	echo 
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+fi
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
 read ENTER
-vpspack
+vpn
 exit
