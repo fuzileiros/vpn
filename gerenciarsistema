@@ -90,5 +90,5 @@ case $opcao in
    reboot;;
    10 )
    exit;;
-
+   *) gerenciarsistema;;
 esac
