@@ -17,10 +17,9 @@ while true; do
   cat $DATABASE | sort | while read DB; do
   	MONITORING3=$(echo $DB | cut -d " " -f3)
     MONITORING1=$(echo $DB | cut -d " " -f1)
-    MONITORING2=$(cat /etc/openvpn/*.log|grep ,${_user},| wc -l)
+    MONITORING2=$(ps -u $MONITORING1 | /etc/openvpn/openvpn-status.log | wc -l)
     if [ "$MONITORING2" -gt "0" ]; then
-    	TIME=$(ps -o etime $(ps -u $MONITORING1 |grep sshd |awk 'NR==1 {print $1}')|awk 'NR==2 {print $1}')
-		
+    	TIME=$(ps -o etime $(ps -u $MONITORING1 |grep /etc/openvpn/openvpn-status.log |awk 'NR==1 {print $1}')|awk 'NR==2 {print $1}')
       echo -ne " \033[01;33m"; printf '%-21s%-16s%-7s%s' " $MONITORING1" "$MONITORING2/$MONITORING3 " "$TIME"; echo -e "          \033[01;32m ONLINE" 
     else
       echo -ne " \033[01;33m"; printf '%-21s%-16s%-7s%s' " $MONITORING1" "$MONITORING2/$MONITORING3 " "00:00"; echo -e "          \033[01;31m OFFLINE" 
@@ -29,5 +28,5 @@ while true; do
   done
   echo ""
   echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
-  sleep 10s
+  sleep 5s
 done
