@@ -2,7 +2,7 @@
 
 function CTRL () 
 {
-open
+vpn
 exit
 }
 trap CTRL SIGINT
@@ -27,9 +27,9 @@ while true; do
     else
       echo -ne " \033[01;31m"; printf '%-28s%-31s%s\n' " $USERS" "OFFLINE" "OFFLINE"
     fi
-echo -e "\033[01;30m ------------------------------------------------------------------"
+    echo -e "\033[7;30;46m ------------------------------------------------------------------\033[0m"
   done
-   echo ""
-   echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
-   sleep 10s
+  echo ""
+  echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
+  sleep 5s
 done
