@@ -25,14 +25,9 @@ while true; do
     else
       echo -ne " \033[01;33m"; printf '%-21s%-16s%-7s%s' " $MONITORING1" "$MONITORING2/$MONITORING3 " "00:00"; echo -e "          \033[01;31m OFFLINE" 
     fi
-    echo -e "\033[01;30m --------------------------------------------------------------"
+    echo -e "\033[7;30;46m --------------------------------------------------------------\033[0m"
   done
   echo ""
   echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
   sleep 5s
 done
-
-    
-
-  
-  
