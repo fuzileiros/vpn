@@ -19,13 +19,13 @@ while true; do
     NUMBER1=$(ps -u $USERS | grep sshd | wc -l)
     NUMBER2=$(grep "$USERS" /etc/openvpn/openvpn-status.log | wc -l)
     if [ $NUMBER1 -gt 0 -a $NUMBER2 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OPENVPN/SSH" "\033[01;32mONLINE\033[0m"
+      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OPENVPN/SSH" "ONLINE"
     elif [ $NUMBER1 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "SSH" "\033[01;32mONLINE\033[0m"
+      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "SSH" "ONLINE"
     elif [ $NUMBER2 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OPENVPN" "\033[01;32mONLINE\033[0m"
+      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OPENVPN" "ONLINE"
     else
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "AUSENTE" "\033[01;31mOffline"
+      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "AUSENTE" "OFFLINE"
     fi
   done
    echo ""
