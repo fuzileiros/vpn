@@ -2,7 +2,7 @@
 
 function CTRL () 
 {
-vpn
+open
 exit
 }
 trap CTRL SIGINT
@@ -10,7 +10,7 @@ trap CTRL SIGINT
 while true; do
   clear
   echo ""
-  echo -ne " \033[01;37;44m"; printf '%38s%-28s\n' "MONITORING"; echo -ne "\033[0m"
+  echo -ne " \033[0;30;46m"; printf '%38s%-28s\n' "MONITOR OPEN/SSH"; echo -ne "\033[0m"
   echo -e " \033[01;37;44m USUÁRIO                    CONEXÃO                        STATUS \033[0m"
   echo ""
   cat /etc/passwd | grep -v "nobody" | awk  -F : '$3 >= 500 {print  $1}' | sort > /tmp/users.txt
@@ -19,13 +19,13 @@ while true; do
     NUMBER1=$(ps -u $USERS | grep sshd | wc -l)
     NUMBER2=$(grep "$USERS" /etc/openvpn/openvpn-status.log | wc -l)
     if [ $NUMBER1 -gt 0 -a $NUMBER2 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OPENVPN/SSH" "ONLINE"
+      echo -ne " \033[01;32m"; printf '%-28s%-31s%s\n' " $USERS" "OpenVPN/SSH" "ONLINE"
     elif [ $NUMBER1 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "SSH" "ONLINE"
+      echo -ne " \033[01;32m"; printf '%-28s%-31s%s\n' " $USERS" "SSH" "ONLINE"
     elif [ $NUMBER2 -gt 0 ]; then
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "OPENVPN" "ONLINE"
+      echo -ne " \033[01;32m"; printf '%-28s%-31s%s\n' " $USERS" "OPENVPN" "ONLINE"
     else
-      echo -ne " \033[01;37m"; printf '%-28s%-31s%s\n' " $USERS" "AUSENTE" "OFFLINE"
+      echo -ne " \033[01;31m"; printf '%-28s%-31s%s\n' " $USERS" "OFFLINE" "OFFLINE"
     fi
   done
    echo ""
