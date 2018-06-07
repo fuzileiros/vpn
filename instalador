@@ -58,6 +58,10 @@ chmod +x /bin/detalhesusuarios
 #04
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoring -O /bin/monitoring
 chmod +x /bin/monitoring
+
+wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoringopen -O /bin/monitoringopen
+chmod +x /bin/monitoringopen
+https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoringopen
 #05
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/changepassword -O /bin/changepassword
 chmod +x /bin/changepassword
@@ -105,6 +109,8 @@ chmod +x /bin/firewalblock
 #05
 wget https://raw.githubusercontent.com/ColtSeals/vpn/master/resetfirewal -O /bin/resetfirewal
 chmod +x /bin/resetfirewal
+
+
 
 #FIM DO MENU FERRAMENTAS
 
