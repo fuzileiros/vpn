@@ -16,30 +16,30 @@ fi
 #Menu Principal
 
 rm -rf /bin/vpspack 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/vpspack > /bin/vpspack
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 #Fim do Menu Principal
 
 rm -rf /bin/limite 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/limite > /bin/limite
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/limite > /bin/limite
 chmod +x /bin/limite
 #Fim Menu
 
 #Menus Gerenciadores
 #01
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarusuarios -O /bin/gerenciarusuarios
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarusuarios -O /bin/gerenciarusuarios
 chmod +x /bin/gerenciarusuarios
 #02
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarferramentas -O /bin/gerenciarferramentas
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarferramentas -O /bin/gerenciarferramentas
 chmod +x /bin/gerenciarferramentas
 #04
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
 chmod +x /bin/gerenciarsquid
 #05
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/gerenciarsistema -O /bin/gerenciarsistema
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarsistema -O /bin/gerenciarsistema
 chmod +x /bin/gerenciarsistema
 #06
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/menuinstalacao -O /bin/menuinstalacao
+wget raw.githubusercontent.com/fuzileiros/vpn/master/menuinstalacao -O /bin/menuinstalacao
 chmod +x /bin/menuinstalacao
 
 #Fim de submenus
@@ -47,41 +47,40 @@ chmod +x /bin/menuinstalacao
 #Menu Gerenciar Usuarios
 
 #01
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/criarusuario -O /bin/criarusuario
+wget raw.githubusercontent.com/fuzileiros/vpn/master/criarusuario -O /bin/criarusuario
 chmod +x /bin/criarusuario
 #02
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/criarteste -O /bin/criarteste
+wget raw.githubusercontent.com/fuzileiros/vpn/master/criarteste -O /bin/criarteste
 chmod +x /bin/criarteste
 #03
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/detalhesusuarios -O /bin/detalhesusuarios
+wget raw.githubusercontent.com/fuzileiros/vpn/master/detalhesusuarios -O /bin/detalhesusuarios
 chmod +x /bin/detalhesusuarios
 #04
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoring -O /bin/monitoring
+wget raw.githubusercontent.com/fuzileiros/vpn/master/monitoring -O /bin/monitoring
 chmod +x /bin/monitoring
-
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoringopen -O /bin/monitoringopen
-chmod +x /bin/monitoringopen
-https://raw.githubusercontent.com/ColtSeals/vpn/master/monitoringopen
 #05
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/changepassword -O /bin/changepassword
-chmod +x /bin/changepassword
+wget raw.githubusercontent.com/fuzileiros/vpn/master/monitoringopen -O /bin/monitoringopen
+chmod +x /bin/monitoringopen
 #06
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/alterardata -O /bin/alterardata
-chmod +x /bin/alterardata
+wget raw.githubusercontent.com/fuzileiros/vpn/master/changepassword -O /bin/changepassword
+chmod +x /bin/changepassword
 #07
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/alterarlimite -O /bin/alterarlimite
-chmod +x /bin/alterarlimite
+wget raw.githubusercontent.com/fuzileiros/vpn/master/alterardata -O /bin/alterardata
+chmod +x /bin/alterardata
 #08
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/userdisconnect -O /bin/userdisconnect
+wget raw.githubusercontent.com/fuzileiros/vpn/master/alterarlimite -O /bin/alterarlimite
+chmod +x /bin/alterarlimite
+#09
+wget raw.githubusercontent.com/fuzileiros/vpn/master/userdisconnect -O /bin/userdisconnect
 chmod +x /bin/userdisconnect
 #10
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarusuario -O /bin/deletarusuario
+wget raw.githubusercontent.com/fuzileiros/vpn/master/deletarusuario -O /bin/deletarusuario
 chmod +x /bin/deletarusuario
 #11
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletarexpirados -O /bin/deletarexpirados
+wget raw.githubusercontent.com/fuzileiros/vpn/master/deletarexpirados -O /bin/deletarexpirados
 chmod +x /bin/deletarexpirados
 #12
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/deletartodos -O /bin/deletartodos
+wget raw.githubusercontent.com/fuzileiros/vpn/master/deletartodos -O /bin/deletartodos
 chmod +x /bin/deletartodos
 
 
@@ -89,25 +88,27 @@ chmod +x /bin/deletartodos
 
 # MENU GERENCIAR speedtest
 
-rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/ColtSeals/vpn/master/speedtest.py > /bin/speedtest.py
-chmod +x /bin/speedtest.py
+
 
 
 #FIM MENU GERENCIAR OPENVPN
 
 #MENU GERENCIAR FERRAMENTAS
 #01
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/backupusuarios -O /bin/backupusuarios
+wget raw.githubusercontent.com/fuzileiros/vpn/master/backupusuarios -O /bin/backupusuarios
 chmod +x /bin/backupusuarios
 #02
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/restaurarusuarios -O /bin/restaurarusuarios
+wget raw.githubusercontent.com/fuzileiros/vpn/master/restaurarusuarios -O /bin/restaurarusuarios
 chmod +x /bin/restaurarusuarios
+#03
+rm -rf /bin/speedtest.py 2>/dev/null
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/speedtest.py > /bin/speedtest.py
+chmod +x /bin/speedtest.py
 #04
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/firewalblock -O /bin/firewalblock
+wget raw.githubusercontent.com/fuzileiros/vpn/master/firewalblock -O /bin/firewalblock
 chmod +x /bin/firewalblock
 #05
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/resetfirewal -O /bin/resetfirewal
+wget raw.githubusercontent.com/fuzileiros/vpn/master/resetfirewal -O /bin/resetfirewal
 chmod +x /bin/resetfirewal
 
 
@@ -136,17 +137,17 @@ chmod +x /bin/resetfirewal
 #FIM DO MENU INSTALAÇÃO
 
 #LIMITE MENU
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-menu.sh -O /bin/limiter-menu.sh
+wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-menu.sh -O /bin/limiter-menu.sh
 chmod +x /bin/limiter-menu.sh
 
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-start -O /bin/limiter-start
+wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-start -O /bin/limiter-start
 chmod +x /bin/limiter-start
 
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/limiter-messages -O /bin/limiter-messages
+wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-messages -O /bin/limiter-messages
 chmod +x /bin/limiter-messages
 
 
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/openvpn -O /bin/openvpn
+wget raw.githubusercontent.com/fuzileiros/vpn/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
 
 
@@ -154,7 +155,7 @@ chmod +x /bin/openvpn
 
 #NANO ETC HOSTS
 
-wget https://raw.githubusercontent.com/ColtSeals/vpn/master/hosts && bash hosts
+wget raw.githubusercontent.com/fuzileiros/vpn/master/hosts && bash hosts
 
 
 
