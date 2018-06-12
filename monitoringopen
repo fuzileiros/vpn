@@ -28,10 +28,10 @@ echo $hora
 }
 clear
 while :; do
-   echo -e "\033[7;30;46m  ---------------------------------------------------------------\033[0m"
-   echo -e "  \033[0;30;46m                       MONITOR OPENVPN                         \033[0m"
-   echo -e "  \033[01;37;44m USUARIOS      RECEBIDO | ENVIADO   TEMPO CONECTADO     STATUS \033[0m"
-   echo -e "\033[7;30;46m  ---------------------------------------------------------------\033[0m"
+   echo -e "\033[7;30;46m  --------------------------------------------------------------\033[0m"
+   echo -e "  \033[0;30;46m                         MONITOR SSH                          \033[0m"
+   echo -e "  \033[01;37;44m USUARIOS      RECEBIDO | ENVIADO   TEMPO CONECTADO    STATUS \033[0m"
+   echo -e "\033[7;30;46m  --------------------------------------------------------------\033[0m"
 while read linha; do
 if [[ $linha == *,* ]]; then
 IFS=',' read -ra dados <<< "$linha"
@@ -39,14 +39,14 @@ if [[ ${dados[1]} =~ \.[0-9]{1,3}:[0-9] ]]; then
 _Recebido=$((dados[2] / 2**20))
 _Enviados=$((dados[3] / 2**20))
 _Data=$(AlterarTempo $(echo -e ${dados[4]} | awk -F' ' '{print $4}'))
-   echo -ne " \033[01;33m"; printf '%-21s%-16s%-7s%s' "  ${dados[0]}" "${_Recebido}MB | ${_Enviados}MB " " $_Data"; echo -e "  \033[01;32m      ONLINE" 
-    echo -e "\033[7;30;46m  ---------------------------------------------------------------\033[0m"
+   echo -ne " \033[01;33m"; printf '%-21s%-16s%-7s%s' "  ${dados[0]}" "${_Recebido}MB | ${_Enviados}MB " " $_Data"; echo -e "  \033[01;32m     ONLINE" 
+    echo -e "\033[7;30;46m  --------------------------------------------------------------\033[0m"
 fi
 fi
 done <<< "$(cat /etc/openvpn/ope*.log | grep -E '\.[0-9]{1,3}:[0-9]')"
   echo ""
   echo -e "\033[01;36m APERTE CTRL+C PARA VOLTAR AO MENU..."
 
-sleep 5s
+sleep 7s
 clear
 done
