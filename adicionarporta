@@ -3,18 +3,18 @@
 FILE="/etc/squid3/squid.conf"
 
 clear
-echo -e "\033[01;36mLISTA DE PORTAS PERMITIDAS:\033[01;32m 0: RETORNAR AO MENU."
+echo -e "\033[01;36m LISTA DE PORTAS PERMITIDAS:\033[01;32m 0: RETORNAR AO MENU."
 echo ""
-NUMBER=$(cat $FILE | grep "http_port" | cut -d " " -f2 | wc -l)
+ NUMBER=$(cat $FILE | grep "http_port" | cut -d " " -f2 | wc -l)
 if [ $NUMBER = "0" ]; then
   echo -e "\033[01;33mVocê não possui nenhuma porta adicionanda no momento!"; echo ""
 else
   echo -ne "\033[01;33m"; cat $FILE | grep "http_port" | cut -d " " -f2; echo ""
 fi
-echo -ne "\033[01;36mDigite uma porta para adicionar ao Proxy Squid:\033[01;37m "; read ADD
+echo -ne "\033[01;36m Digite uma porta para adicionar ao Proxy Squid:\033[01;37m "; read ADD
 if [ -z $ADD ]; then
   echo ""
-  echo -e "\033[01;37;41mVocê digitou uma porta vazia. Tente novamente!\033[0m"
+  echo -e "\033[01;37;41m Você digitou uma porta vazia. Tente novamente!\033[0m"
   sleep 3s
   adicionarporta
   exit
@@ -25,28 +25,28 @@ if [ "$ADD" = "0" ]; then
 else
 if echo "$ADD" | grep -q '[^0-9]'; then
   echo ""
-  echo -e "\033[01;37;41mPorta inválida. Tente novamente!\033[0m"
+  echo -e "\033[01;37;41m Porta inválida. Tente novamente!\033[0m"
   sleep 3s
   adicionarporta
   exit
 else
 if cat $FILE | grep "http_port" | cut -d " " -f2 | grep -xq "$ADD"; then
   echo ""
-  echo -e "\033[01;37;41mOps! Esta porta já está em uso. Tente outra porta!\033[0m"
+  echo -e "\033[01;37;41m Ops! Esta porta já está em uso. Tente outra porta!\033[0m"
   sleep 3s
   adicionarporta
   exit
 else
 if cat /etc/ssh/sshd_config | grep "Port" | cut -d " " -f2 | grep -xq "$ADD"; then
   echo ""
-  echo -e "\033[01;37;41mOps! Esta porta já está em uso. Tente outra porta!\033[0m"
+  echo -e "\033[01;37;41m Ops! Esta porta já está em uso. Tente outra porta!\033[0m"
   sleep 3s
   adicionarporta
   exit
 else
 if cat /etc/default/dropbear | grep -q "$ADD"; then
   echo ""
-  echo -e "\033[01;37;41mOps! Esta porta já está em uso. Tente outra porta!\033[0m"
+  echo -e "\033[01;37;41m Ops! Esta porta já está em uso. Tente outra porta!\033[0m"
   sleep 3s
   adicionarporta
   exit
@@ -58,18 +58,18 @@ else
   cat ports2.txt >> $FILE
   echo "http_port $ADD" >> $FILE
   echo " " >> $FILE
-  echo -e "visible_hostname Oloco\n\nforwarded_for off\npipeline_prefetch on" >> $FILE
+  echo -e "visible_hostname ColtSEALS\n\nforwarded_for off\npipeline_prefetch on" >> $FILE
   echo " " >> $FILE
   cat ports3.txt >> $FILE
   rm p*
   service squid3 restart 1> /dev/null 2> /dev/null
   clear
-  echo -e "\033[01;36mLISTA DE PORTAS PERMITIDAS:"
+  echo -e "\033[01;36m LISTA DE PORTAS PERMITIDAS:"
   echo ""
   echo -ne "\033[01;33m"; cat $FILE | grep "http_port" | cut -d " " -f2
   echo ""
-  echo -e "\033[01;32mPorta adicionanda com sucesso!"
-  echo -e "\033[01;32mPorta: $ADD"
+  echo -e "\033[01;32m Porta adicionanda com sucesso!"
+  echo -e "\033[01;32m Porta: $ADD"
 fi
 fi
 fi
@@ -77,7 +77,7 @@ fi
 fi
 fi
 echo ""
-echo -ne "\033[01;36mAPERTE A TECLA ENTER..."
+echo -ne "\033[01;36mA PERTE A TECLA ENTER..."
 read ENTER
 vpn
 exit
