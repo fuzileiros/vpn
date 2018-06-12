@@ -212,7 +212,6 @@ clear
 rm -rf install
 clear
 	echo ""
-echo -e "\033[1;31m INSTALANDO OPEN VPN! AGUARDE..."
 sleep 3s
 echo -e "\033[0m"
 openvpn
