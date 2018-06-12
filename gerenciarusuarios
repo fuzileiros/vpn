@@ -61,7 +61,7 @@ echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[0;31;40m•\033[0m\033[01;3
 echo -e "\033[01;36m║\033[1;37m07\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m REDEFINIR SENHA \033[0;31;40m=\033[0m \033[7;36;40m Redefinir senha \033[0m"
 echo -e "\033[01;36m║\033[1;37m08\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m REDEFINIR LIMITE \033[0;31;40m=\033[0m \033[7;36;40m Redefinir limite \033[0m"
 echo -e "\033[01;36m║\033[1;37m09\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m DESCONECTAR USUARIO \033[0;31;40m=\033[0m \033[7;36;40m Desconectar usuario \033[0m"
-echo -e "\033[01;36m║\033[1;37m10\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m DELETAR USUARIO \033[0;31;40m=\033[0m \033[7;36;40m Menu Deletar, Desconectar, etc \033[0m"
+echo -e "\033[01;36m║\033[1;37m10\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m DELETAR USUARIO \033[0;31;40m=\033[0m \033[7;36;40m Deletar usuario da lista \033[0m"
 echo -e "\033[01;36m║\033[1;37m11\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m DELETAR EXPIRADOS \033[0;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios expirados \033[0m"
 echo -e "\033[01;36m║\033[1;37m12\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m DELETAR TODOS \033[0;31;40m=\033[0m \033[7;36;40m Deleta todos usuarios \033[5;31m CUIDADO \033[0m"
 echo -e "\033[01;36m║\033[1;37m13\033[1;36m║\033[0;31;40m•\033[0m\033[0;31;40m SAIR \033[0;31;40m=\033[0m \033[1;30;41m Sair do Menu VPN. \033[0m"
