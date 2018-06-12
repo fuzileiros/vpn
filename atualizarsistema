@@ -25,7 +25,7 @@ echo -e ""$v"Sucesso! "$b"REPOSITORIOS ATUALIZADOS COM SUCESSO.."
 sleep 2
 fi
 echo ""
-echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU PRINCIPAL..."
 read ENTER
 vpspack
 exit
