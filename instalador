@@ -89,12 +89,6 @@ chmod +x /bin/deletartodos
 #FIM MENU GERENCIAR USUARIOS
 
 #MENU GERENCIAR FERRAMENTAS
-#01
-wget raw.githubusercontent.com/fuzileiros/vpn/master/backupusuarios -O /bin/backupusuarios
-chmod +x /bin/backupusuarios
-#02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/restaurarusuarios -O /bin/restaurarusuarios
-chmod +x /bin/restaurarusuarios
 #03
 rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/speedtest.py > /bin/speedtest.py
@@ -144,8 +138,16 @@ chmod +x /bin/alterarroot
 #05
 #06
 #07
+#MENU BACKUP
 
+wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-remove -O /bin/backupsmanager-remove
+chmod +x /bin/backupsmanager-remove
 
+wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-import -O /bin/backupsmanager-import
+chmod +x /bin/backupsmanager-import
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-export -O /bin/backupsmanager-export
+chmod +x /bin/backupsmanager-export
 
 #FIM DO MENU SISTEMA
 
