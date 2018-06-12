@@ -11,10 +11,16 @@ sleep 0.2
 echo -e "${green}Permissão Aceita...${NC}"
 sleep 0.2
 clear
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo -e "\033[7;30;47m  ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
+echo -e "\033[7;30;47m  ®TELEGRAM\033[0m \033[7;30;41mCANAL:\033[0m \033[0m \033[0;36;40m@Vps\033[5;37;40mNerdologia\033[0m"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo -e "\033[7;30;46m                     DADOS DO SERVIDOR                     \033[0m"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 
 if [ -f /proc/cpuinfo ]
 then
-echo -e "\n\033[1;30mProcessador\033[0m"
+echo -e "\n\033[5;30;47mProcessador\033[0m"
 modelo=$(cat /proc/cpuinfo |grep "model name" |uniq |awk -F : {'print $2'})
 cpucores=$(cat /proc/cpuinfo |grep "cpu cores" |uniq |awk -F : {'print $2'})
 cache=$(cat /proc/cpuinfo |grep "cache size" |uniq |awk -F : {'print $2'})
@@ -23,12 +29,12 @@ echo -e "\033[1;32mNucleos:\033[0m$cpucores"
 echo -e "\033[1;32mMemoria Cache:\033[0m$cache"
 echo -e "\033[1;32mArquitetura: \033[0m$(uname -p)"
 else
-echo -e "\033[1;30mProcessador\033[0m"
+echo -e "\033[5;30;47mProcessador\033[0m"
 echo "Não foi possivel encontrar /proc/cpuinfo"
 fi
 if [ -f /etc/lsb-release ]
 then
-echo -e "\n\033[1;30mSistema Operacional\033[0m"
+echo -e "\n\033[5;30;47mSistema Operacional\033[0m"
 name=$(cat /etc/lsb-release |grep DESCRIPTION |awk -F = {'print $2'})
 codename=$(cat /etc/lsb-release |grep CODENAME |awk -F = {'print $2'})
 echo -e "\033[1;32mNome: \033[0m$name"
@@ -41,21 +47,21 @@ devlike=$(cat /etc/os-release |grep LIKE |awk -F = {'print $2'})
 echo -e "\033[1;32mDerivado do Antecedente OS: \033[0m$devlike"
 fi
 else
-echo -e "\n\033[1;30mSistema Operacional\033[0m"
+echo -e "\n\033[5;30;47mSistema Operacional\033[0m"
 echo "Não foi possivel encontrar /etc/lsb-release"
 fi
 if free 1>/dev/null 2>/dev/null
 then
-echo -e "\n\033[1;30mMemoria RAM\033[0m"
+echo -e "\n\033[5;30;47mMemoria RAM\033[0m"
 echo -e "\033[1;32mTotal: \033[0m$(free -m |grep -i mem |awk {'print $2'}) MB | $(( $(free -m |grep -i mem |awk {'print $2'}) / 1024 )) GB"
 echo -e "\033[1;32mEm Uso: \033[0m$(free -m |grep -i mem |awk {'print $3'}) MB | $(( $(free -m |grep -i mem |awk {'print $3'}) / 1024 )) GB"
 echo -e "\033[1;32mLivre: \033[0m$(free -m |grep -i mem |awk {'print $4'}) MB | $(( $(free -m |grep -i mem |awk {'print $4'}) / 1024 )) GB"
-echo -e "\n\033[1;30mSwap\033[0m"
+echo -e "\n\033[5;30;47mSwap\033[0m"
 echo -e "\033[1;32mTotal: \033[0m$(free -m |grep -i swap |awk {'print $2'}) MB | $(( $(free -m |grep -i swap |awk {'print $2'}) / 1024 )) GB"
 echo -e "\033[1;32mEm Uso: \033[0m$(free -m |grep -i swap |awk {'print $3'}) MB | $(( $(free -m |grep -i swap |awk {'print $3'}) / 1024 )) GB"
 echo -e "\033[1;32mLivre: \033[0m$(free -m |grep -i swap |awk {'print $4'}) MB | $(( $(free -m |grep -i swap |awk {'print $4'}) / 1024 )) GB"
 else
-echo -e "\n\033[1;30mMemoria RAM\033[0m"
+echo -e "\n\033[5;30;47mMemoria RAM\033[0m"
 echo "Não foi possivel obter informações sobre a memoria RAM"
 fi
 echo ""
