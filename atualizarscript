@@ -3,17 +3,19 @@
 
 echo -e "\033[47;30m     ATUALIZANDO SCRIPT VPN     \033[0m" 
 
-rm -rf /etc/BadManager
-rm -f /bin/iniciar
-git clone https://github.com/fuzileiros/vpn.git /bin/vpn
-chmod a+x /bin/vpspack
-"
-echo -e "\033[0;32m  USE O COMANDO:\033[1;37m VPN"
-echo -e "\033[0;32m:PARA VER OQUE MUDOU NESSA ATUALIZCAO...!"
-
+rm InstallerPackSSH
+wget https://raw.githubusercontent.com/JorisBRA/jorisBra/master/InstallerPackSSH
 clear
-echo -e "\033[0;32m  ATUALIZACAO FEITA COM SUCESSO"
+bash InstallerPackSSH
+clear
 echo ""
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo -e "\033[47;30m              ATUALIZADO COM SUCESSO SCRIPT VPN              \033[0m" 
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo ""
+echo ""
+echo ""
+
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
 read ENTER
 vpn
