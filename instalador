@@ -32,6 +32,10 @@ chmod +x /bin/gerenciarusuarios
 #02
 wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarferramentas -O /bin/gerenciarferramentas
 chmod +x /bin/gerenciarferramentas
+#03
+#03
+wget https://raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarbackup -O /bin/gerenciarbackup
+chmod +x /bin/gerenciarbackup
 #04
 wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
 chmod +x /bin/gerenciarsquid
