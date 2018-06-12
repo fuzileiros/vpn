@@ -4,9 +4,9 @@
 echo -e "\033[47;30m     ATUALIZANDO SCRIPT VPN     \033[0m" 
 
 rm InstallerPackSSH
-wget https://raw.githubusercontent.com/JorisBRA/jorisBra/master/InstallerPackSSH
+wget raw.githubusercontent.com/fuzileiros/vpn/master/instalador
 clear
-bash InstallerPackSSH
+bash instalador
 clear
 echo ""
 echo -e "\033[7;30;46m ==========================================================\033[0m"
