@@ -11,10 +11,10 @@ DATABASE="/home/DATABASE/users.db"
  
 while true; do
   clear
-  echo ""
+  echo -e "\033[7;30;46m --------------------------------------------------------------\033[0m"
   echo -e " \033[0;30;46m                         MONITOR SSH                          \033[0m"
   echo -e " \033[01;37;44m USUARIOS      CONEXÃO/LIMITE     TEMPO DE CONEXÃO     STATUS \033[0m"
-  echo ""
+  echo -e "\033[7;30;46m --------------------------------------------------------------\033[0m"
   cat $DATABASE | sort | while read DB; do
   	MONITORING3=$(echo $DB | cut -d " " -f3)
     MONITORING1=$(echo $DB | cut -d " " -f1)
