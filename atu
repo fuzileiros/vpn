@@ -29,9 +29,6 @@ echo ""
 apt-get update 1>/dev/null 2>/dev/null
 apt-get install -y git 1>/dev/null 2>/dev/null
 git clone https://github.com/fuzileiros/vpn.git 1>/dev/null 2>/dev/null
-cd VPN
-rm -rf README.md
-rm -rf instalador
 for arqs in `ls`
 do
 rm /bin/$arqs 2>/dev/null
@@ -42,6 +39,3 @@ echo -e "\033[0;32m ATUALIZACAO FEITA COM SUCESSO"
 echo -e "\033[0;32m USE O COMANDO:\033[1;37m VPN"
 echo -e "\033[0;32m PARA VER OQUE MUDOU NESSA ATUALIZCAO...!"
 fi
-cd
-rm -rf README.md
-rm -rf instalador 2> /dev/null
