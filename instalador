@@ -136,8 +136,8 @@ chmod +x /bin/removerporta
 wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarsistema -O /bin/atualizarsistema
 chmod +x /bin/atualizarsistema
 #02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/atualiza -O /bin/atualiza
-chmod +x /bin/atualiza
+wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarscript -O /bin/atualizarscript
+chmod +x /bin/atualizarscript
 #04
 #05
 #06
