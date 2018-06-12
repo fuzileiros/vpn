@@ -86,16 +86,7 @@ chmod +x /bin/deletarexpirados
 #12
 wget raw.githubusercontent.com/fuzileiros/vpn/master/deletartodos -O /bin/deletartodos
 chmod +x /bin/deletartodos
-
-
 #FIM MENU GERENCIAR USUARIOS
-
-# MENU GERENCIAR speedtest
-
-
-
-
-#FIM MENU GERENCIAR OPENVPN
 
 #MENU GERENCIAR FERRAMENTAS
 #01
@@ -115,15 +106,28 @@ chmod +x /bin/firewalblock
 wget raw.githubusercontent.com/fuzileiros/vpn/master/resetfirewal -O /bin/resetfirewal
 chmod +x /bin/resetfirewal
 
-
-
 #FIM DO MENU FERRAMENTAS
 
 
 #MENU GERENCIAR SQUID3
-
-
-
+#01
+wget raw.githubusercontent.com/fuzileiros/vpn/master/adicionarhost -O /bin/adicionarhost
+chmod +x /bin/adicionarhost
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/etc-hosts -O /bin/etc-hosts
+chmod +x /bin/etc-hosts
+#03
+wget raw.githubusercontent.com/fuzileiros/vpn/master/removerhost -O /bin/removerhost
+chmod +x /bin/removerhost
+#04
+wget raw.githubusercontent.com/fuzileiros/vpn/master/editarsquid3 -O /bin/editarsquid3
+chmod +x /bin/editarsquid3
+#05
+wget raw.githubusercontent.com/fuzileiros/vpn/master/adicionarporta -O /bin/adicionarporta
+chmod +x /bin/adicionarporta
+#06
+wget raw.githubusercontent.com/fuzileiros/vpn/master/removerporta -O /bin/removerporta
+chmod +x /bin/removerporta
 
 #FIM DO MENU SQUID
 
