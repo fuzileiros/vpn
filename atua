@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+echo -e "\033[47;30m     ATUALIZANDO SCRIPT VPN     \033[0m" 
+
+atualizar="#!/bin/bash
+rm -rf /etc/BadManager
+rm -f /bin/iniciar
+git clone https://github.com/fuzileiros/vpn.git /etc/vpn
+mv /etc/vpspack/vpspack /bin/vpspack
+chmod a+x /bin/vpspack
+"
+echo -e "\033[0;32m  ATUALIZACAO FEITA COM SUCESSO"
+echo -e "\033[0;32m  USE O COMANDO:\033[1;37m VPN"
+echo -e "\033[0;32m:PARA VER OQUE MUDOU NESSA ATUALIZCAO...!"
+
+nome=$RANDOM.sh
+
+echo "$atualizar" > /tmp/$nome
+
+sudo bash /tmp/$nome
+
+exit 0
