@@ -132,6 +132,16 @@ chmod +x /bin/removerporta
 #FIM DO MENU SQUID
 
 #MENU SISTEMA
+#01
+wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarsistema -O /bin/atualizarsistema
+chmod +x /bin/atualizarsistema
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/atualiza -O /bin/atualiza
+chmod +x /bin/atualiza
+#04
+#05
+#06
+#07
 
 
 
