@@ -1,0 +1,67 @@
+#!/bin/bash
+
+FILE="/etc/squid3/squid.conf"
+
+clear
+echo -e "\033[01;36mLISTA DE PORTAS PERMITIDAS:\033[01;32m 0: RETORNAR AO MENU."
+echo ""
+NUMBER=$(cat $FILE | grep "http_port" | cut -d " " -f2 | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33mVocê não possui nenhuma porta adicionanda no momento!"
+  echo ""
+  echo -e "\033[01;33mÉ necessário adicionar uma porta para prosseguir com esta função!"
+  echo ""
+  echo -e "\033[01;36mAPERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  removerporta
+  exit
+else
+  echo -ne "\033[01;33m"; cat $FILE | grep "http_port" | cut -d " " -f2; echo ""
+fi
+echo -ne "\033[01;36mDigite a porta que deseja remover da lista acima:\033[01;37m "; read REMOVE
+if [ -z $REMOVE ]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou uma porta vazia. Tente novamente!\033[0m"
+  sleep 3s
+  removerporta
+  exit
+else
+if [ "$REMOVE" = "0" ]; then
+  removerporta
+  exit
+else
+if echo "$REMOVE" | grep -q '[^0-9]'; then
+  echo ""
+  echo -e "\033[01;37;41mPorta inválida. Tente novamente!\033[0m"
+  sleep 3s
+  removerporta
+  exit
+else
+  NUMBER=$(cat $FILE | sort | grep -cx "http_port $REMOVE")
+if [ "$NUMBER" = "0" ]; then
+  echo ""
+  echo -e "\033[01;37;41mPorta inválida. Tente novamente!\033[0m"
+  sleep 3s
+  removerporta
+  exit
+else
+  cat $FILE | grep -xv "http_port $REMOVE" > ports.txt
+  cat ports.txt > $FILE
+  rm p*
+  service squid3 restart 1> /dev/null 2> /dev/null
+  clear
+  echo -e "\033[01;36mLISTA DE PORTAS PERMITIDAS:"
+  echo ""
+  echo -ne "\033[01;33m"; cat $FILE | grep "http_port" | cut -d " " -f2
+  echo ""
+  echo -e "\033[01;32mPorta removida com sucesso!"
+  echo -e "\033[01;32mPorta: $REMOVE"
+fi
+fi
+fi
+fi
+echo ""
+echo -ne "\033[01;36mAPERTE A TECLA ENTER..."
+read ENTER
+vpn
+exit
