@@ -3,7 +3,7 @@
 
 echo -e "\033[47;30m     ATUALIZANDO SCRIPT VPN     \033[0m" 
 
-rm InstallerPackSSH
+rm instalador
 wget raw.githubusercontent.com/fuzileiros/vpn/master/instalador
 clear
 bash instalador
