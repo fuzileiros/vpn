@@ -139,6 +139,8 @@ chmod +x /bin/atualizarsistema
 wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarscript -O /bin/atualizarscript
 chmod +x /bin/atualizarscript
 #04
+wget raw.githubusercontent.com/fuzileiros/vpn/master/alterarroot -O /bin/alterarroot
+chmod +x /bin/alterarroot
 #05
 #06
 #07
