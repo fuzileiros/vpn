@@ -1,0 +1,63 @@
+#!/bin/bash
+
+BACKUPS="/home/DATABASE/Backups"
+DATABASE="/home/DATABASE"
+
+clear
+echo -e "\033[01;36m Lista de backups criados:\033[01;32m 0: RETORNAR AO MENU."
+echo ""
+NUMBER=$(ls $BACKUPS | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33mVocê não possui nenhum backup criado no momento!"
+else
+  for BACKUP in `ls $BACKUPS | sort | sed "s/.zip//g"`; do
+    echo -ne "\033[01;33m"; echo $BACKUP
+  done
+fi
+echo ""
+echo -ne "\033[01;36mDigite um nome para o backup:\033[01;37m "; read NAME
+if [ -z $NAME ]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de backup vazio. Tente novamente!\033[0m"
+  sleep 3s
+  backupsmanager-export
+  exit
+else
+if [ "$NAME" = "0" ]; then
+  backupsmanager-menu
+  exit
+else
+if ls $BACKUPS | grep -xq "$NAME.zip"; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de backup já existente. Digite um nome de\033[0m"; echo -e "\033[01;37;41mbackup que não seja existente na lista acima. Tente novamente!\033[0m"
+  sleep 7s
+  backupsmanager-export
+  exit
+else
+  echo ""
+  echo -e "\033[01;37mAguarde..."
+  sleep 3s
+  cd $BACKUPS
+  tar -cvf $NAME.zip $DATABASE /etc/passwd /etc/shadow 1> /dev/null 2> /dev/null
+  clear
+  echo -e "\033[01;36mLista de backups criados:"; echo ""
+  for BACKUP in `ls $BACKUPS | sort | sed "s/.zip//g"`; do
+    echo -ne "\033[01;33m"; echo $BACKUP
+  done
+  echo ""
+  echo -e "\033[01;32mBackup criado com sucesso! Verifique as informações abaixo:"
+  echo ""
+  echo -e "\033[01;32mNome do backup: $NAME"
+  echo -e "\033[01;32mLocalização: $BACKUPS/$NAME.zip"
+  echo ""
+  echo -e "\033[01;32m→ Backup completo de usuários SSH."
+  echo -e "\033[01;32m→ Backup completo do banco de dados do VPN."
+  echo -e "\033[01;32m→ Backup de senha de usuário ROOT (NÃO se esqueça da mesma!)."
+fi
+fi
+fi
+echo ""
+echo -ne "\033[01;36mAPERTE A TECLA ENTER..."
+read ENTER
+vpn
+exit

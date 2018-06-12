@@ -1,0 +1,76 @@
+#!/bin/bash
+
+BACKUPS="/home/DATABASE/Backups"
+
+clear
+echo -e "\033[01;36mLista de backups criados:\033[01;32m 0: RETORNAR AO MENU."
+echo ""
+NUMBER=$(ls $BACKUPS | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33mVocê não possui nenhum backup criado no momento!"
+  echo ""
+  echo -e "\033[01;33mPara prosseguir com esta opção será necessário criar um backup!"
+  echo ""
+  echo -e "\033[01;36mAPERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  backupsmanager-menu
+  exit
+else
+  for BACKUP in `ls $BACKUPS | sort | sed "s/.zip//g"`; do
+    echo -ne "\033[01;33m"; echo $BACKUP
+  done
+fi
+echo ""  
+echo -ne "\033[01;36mNome do backup para remover:\033[01;37m "; read NAME
+if [ -z $NAME ]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de backup vazio. Tente novamente!\033[0m"
+  sleep 3s
+  backupsmanager-remove
+  exit
+else
+if [ "$NAME" = "0" ]; then
+  backupsmanager-menu
+  exit
+else
+if [[ `ls $BACKUPS | grep -cx "$NAME.zip"` -ne 1 ]]; then
+  echo ""
+  echo -e "\033[01;37;41mVocê digitou um nome de backup inexistente. Digite um nome de\033[0m"; echo -e "\033[01;37;41mbackup que seja existente na lista acima. Tente novamente!   \033[0m"
+  sleep 7s
+  backupsmanager-remove
+  exit
+else
+  echo ""
+  echo -e "\033[01;37mAguarde..."
+  sleep 3s
+  cd $BACKUPS
+  rm -rf $NAME.zip
+  clear
+  echo -e "\033[01;36mLista de backups criados:"; echo ""
+  NUMBER=$(ls $BACKUPS | wc -l)
+  if [ $NUMBER = "0" ]; then
+    echo -e "\033[01;33mVocê não possui nenhum backup criado no momento!"
+  else
+    for BACKUP in `ls $BACKUPS | sort | sed "s/.zip//g"`; do
+      echo -ne "\033[01;33m"; echo $BACKUP
+    done
+  fi
+  echo ""
+  echo -e "\033[01;32mBackup removido com sucesso!"
+  echo -e "\033[01;32mNome do backup: $NAME"
+fi
+fi
+fi
+echo ""
+echo -ne "\033[01;36mAPERTE A TECLA ENTER..."
+read ENTER
+vpn
+exit
+  
+  
+  
+  
+  
+  
+  
+  
