@@ -20,7 +20,6 @@ clear
 ip=127.0.0.1
 echo ""
 echo -e "\033[0;31;40m    •\033[0m\033[0;36;40m  Qual\033[0m \033[7;30;41mHOST\033[0m\033[0m \033[0;36;40mdeseja adicionar?\033[0m"
-echo "  Qual host deseja adicionar ?"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 read -p ": " host
 echo "$ip $host" >> /etc/hosts
