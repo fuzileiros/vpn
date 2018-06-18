@@ -161,6 +161,13 @@ chmod +x /bin/backupsmanager-export
 
 #MENU INSTALAÇÃO
 
+#01
+
+
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5 -O /bin/socks5
+chmod +x /bin/socks5
+
 
 
 #FIM DO MENU INSTALAÇÃO
@@ -178,6 +185,18 @@ chmod +x /bin/limiter-messages
 
 wget raw.githubusercontent.com/fuzileiros/vpn/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
+
+#SOCKS MENU
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socksmenu -O /bin/socksmenu
+chmod +x /bin/socksmenu
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5changeport -O /bin/socks5changeport
+chmod +x /bin/socks5changeport
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5banner -O /bin/socks5banner
+chmod +x /bin/socks5banner
+
 
 
 
