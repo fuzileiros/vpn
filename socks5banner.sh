@@ -16,7 +16,7 @@ if [ -z $BANNER ]; then
   exit
 else
 if [ "$BANNER" = "0" ]; then
-  socks5menu
+  vpn
   exit
 else
   NUMBER=$(ps -x | grep -c "socks5.py")
