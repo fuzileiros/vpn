@@ -17,7 +17,7 @@ sleep 3
 echo " "
 echo -e "\033[1;31mNova Senha:\033[1;32m $senha"
 sleep 4
-sudo MenuVPS
+sudo vpspack
 echo ""
 echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
 read ENTER
