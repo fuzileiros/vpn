@@ -45,9 +45,12 @@ chmod +x /bin/gerenciarsistema
 #06
 wget raw.githubusercontent.com/fuzileiros/vpn/master/menuinstalacao -O /bin/menuinstalacao
 chmod +x /bin/menuinstalacao
-#07
+#08
 wget raw.githubusercontent.com/fuzileiros/vpn/master/sobre -O /bin/sobre
 chmod +x /bin/sobre
+#09
+wget raw.githubusercontent.com/fuzileiros/vpn/master/mais -O /bin/mais
+chmod +x /bin/mais
 
 
 #Fim de submenus
