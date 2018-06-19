@@ -1,7 +1,8 @@
 clear
-ip=$(wget -qO- ipv4.icanhazip.com)
-
-read -p "Confirme seu IP: " $ip
+IP=$(wget -4qO- "http://whatismyip.akamai.com/")
+	echo ""
+	echo "Primeiro precisaremos do IP de sua maquina, este IP está correto?"
+	read -p "Endereço de IP da máquina: " -e -i $IP IP
 echo Configurando...
 sleep 1
 iptables -P INPUT DROP
