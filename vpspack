@@ -104,7 +104,7 @@ case $opcao in
   5 | 05 )
    gerenciarsistema;;
   6 | 06 )
-   menuinstalação;;
+   menuinstalacao;;
   7 | 07 )
    limiter-menu;;
   8 | 08 )
