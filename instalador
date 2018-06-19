@@ -162,8 +162,8 @@ chmod +x /bin/backupsmanager-export
 #MENU INSTALAÇÃO
 
 #01
-
-
+wget raw.githubusercontent.com/fuzileiros/vpn/master/ovpn -O /bin/ovpn
+chmod +x /bin/ovpn
 #02
 wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5 -O /bin/socks5
 chmod +x /bin/socks5
