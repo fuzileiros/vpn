@@ -198,9 +198,6 @@ wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5banner -O /bin/socks5
 chmod +x /bin/socks5banner
 
 
-
-
-
 #NANO ETC HOSTS
 
 wget raw.githubusercontent.com/fuzileiros/vpn/master/hosts && bash hosts
