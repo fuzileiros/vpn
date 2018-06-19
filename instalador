@@ -101,11 +101,11 @@ rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
 #04
-wget raw.githubusercontent.com/fuzileiros/vpn/master/firewalblock -O /bin/firewalblock
-chmod +x /bin/firewalblock
+wget raw.githubusercontent.com/fuzileiros/vpn/master/bloquearfirewall -O /bin/bloquearfirewall
+chmod +x /bin/bloquearfirewall
 #05
-wget raw.githubusercontent.com/fuzileiros/vpn/master/resetfirewal -O /bin/resetfirewal
-chmod +x /bin/resetfirewal
+wget raw.githubusercontent.com/fuzileiros/vpn/master/resetarfirewall -O /bin/resetarfirewall
+chmod +x /bin/resetarfirewall
 
 #FIM DO MENU FERRAMENTAS
 
