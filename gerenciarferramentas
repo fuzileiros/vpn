@@ -66,8 +66,28 @@ case $opcao in
   0 | 00 )
    vpn;;
   1 | 01 )
+  clear
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "INICIAR BADVPN" ; tput sgr0
+echo ""
+echo "        Edited @ColtSeals"
+echo "        NERDOLOGIA VPS"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
+echo ""
+read -p "De enter para continuar..."
+clear
    badvpn start;;
   2 | 02 )
+    clear
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "PARAR BADVPN" ; tput sgr0
+echo ""
+echo "        Edited @ColtSeals"
+echo "        NERDOLOGIA VPS"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
+echo ""
+read -p "De enter para continuar..."
+clear
    badvpn stop;;
   3 | 03 )
   clear
