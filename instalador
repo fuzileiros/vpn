@@ -188,8 +188,8 @@ chmod +x /bin/openvpn
 
 #SOCKS MENU
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/socksmenu -O /bin/socksmenu
-chmod +x /bin/socksmenu
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5menu -O /bin/socks5menu
+chmod +x /bin/socks5menu
 
 wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5changeport -O /bin/socks5changeport
 chmod +x /bin/socks5changeport
