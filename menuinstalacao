@@ -1,5 +1,12 @@
 #!/bin/bash
 
+function proxy() 
+{
+wget https://raw.githubusercontent.com/fuzileiros/vpn/master/proxy.py
+apt-get install screen
+screen python proxy.py
+}
+
 ip=$(wget -qO- ipv4.icanhazip.com)
 clear
 if [[ $1 == "" ]]
@@ -56,7 +63,9 @@ echo -e "\033[01;36m║\033[1;37m02\033[1;36m║\033[5;31;40m•\033[0m\033[01;3
 echo -e "\033[01;36m║\033[1;37m03\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m INSTALAR DROPBEAR \033[5;31;40m=\033[0m \033[7;36;40m Intalação Dropbear \033[0m"
 echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m INSTALAR SQUID3 \033[5;31;40m=\033[0m \033[7;36;40m Intalação Dropbear \033[0m"
 echo -e "\033[01;36m║\033[1;37m05\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m INSTALAR PROXY PY \033[5;31;40m=\033[0m \033[7;36;40m Se não rodar Squid3 \033[0m"
-echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[5;31;40m•\033[0m\033[0;31;40m SAIR \033[5;31;40m=\033[0m \033[1;30;41m Sair do Menu VPN. \033[0m"
+echo -e "\033[01;36m║\033[1;37m06\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m INSTALAR BADVPN \033[5;31;40m=\033[0m \033[7;36;40m Se não rodar Squid3 \033[0m"
+echo -e "\033[01;36m║\033[1;37m07\033[1;36m║\033[5;31;40m•\033[0m\033[01;37m INSTALAR TCP TWEAKER \033[5;31;40m=\033[0m \033[7;36;40m Se não rodar Squid3 \033[0m"
+echo -e "\033[01;36m║\033[1;37m08\033[1;36m║\033[5;31;40m•\033[0m\033[0;31;40m SAIR \033[5;31;40m=\033[0m \033[1;30;41m Sair do Menu VPN. \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[5;31;40m    •\033[0m\033[01;37m Digite uma Opção:\033[0;37m"; read -p " " opcao
 else
@@ -76,6 +85,10 @@ case $opcao in
   5 | 05 )
    proxy;;
   6 | 06 )
+   badvpn;;
+  7 | 07 )
+   tcp;;
+  8 | 08 )
    exit;;
    *) menuinstalacao;;
 esac
