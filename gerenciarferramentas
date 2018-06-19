@@ -98,9 +98,9 @@ clear
   vpspack
   exit;;
   4 | 04 )
-   firewalblock;;
+   bloquearfirewall;;
   5 | 05 )
-   resetfirewal;;
+   resetarfirewall;;
   6 | 06 )
    exit;;
    *) gerenciarferramentas;;
