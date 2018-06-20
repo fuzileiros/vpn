@@ -37,7 +37,7 @@ if [ -z $USER ]; then
   exit
 else
 if [ "$USER" = "0" ]; then
-  h
+  vpn
   exit
 else
 if [ "$USER" = "R" ]; then
