@@ -4,7 +4,7 @@ checkdatabase
 
 clear
 echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Ferramentas \033[0m"
+echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Limitador \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo ""
 NUMBER=$(ps -x | grep -c "sleep")
