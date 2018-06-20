@@ -169,8 +169,8 @@ chmod +x /bin/dropbear
 #FIM DO MENU INSTALAÇÃO
 
 #LIMITE MENU
-wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-menu.sh -O /bin/limiter-menu.sh
-chmod +x /bin/limiter-menu.sh
+wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-menu -O /bin/limiter-menu
+chmod +x /bin/limiter-menu
 
 wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-start -O /bin/limiter-start
 chmod +x /bin/limiter-start
