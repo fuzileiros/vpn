@@ -76,7 +76,12 @@ echo "        Nome: MenuVPS 1.0"
 echo ""
 read -p "De enter para continuar..."
 clear
-   badvpn start;;
+   badvpn start
+     echo ""
+  echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  vpspack
+  exit;;
   2 | 02 )
     clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "PARAR BADVPN" ; tput sgr0
@@ -88,7 +93,12 @@ echo "        Nome: MenuVPS 1.0"
 echo ""
 read -p "De enter para continuar..."
 clear
-   badvpn stop;;
+   badvpn stop
+     echo ""
+  echo -ne "\033[01;36mENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  vpspack
+  exit;;
   3 | 03 )
   clear
   speedtest.py --share
