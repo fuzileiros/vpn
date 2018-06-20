@@ -1,52 +1,7 @@
 #!/bin/bash
 
 function about1 () {
-ip=$(wget -qO- ipv4.icanhazip.com)
 clear
-if [[ $1 == "" ]]
-then
-dia=$(date | awk {'print $3'})
-mes=$(date | awk {'print $2'})
-ano=$(date | awk {'print $6'})
-if [[ "$mes" = "Jan" || "$mes" = "Jan" ]]; then
-mes=01
-elif [[ "$mes" = "Feb" || "$mes" = "Fev" ]]; then
-mes=02
-elif [[ "$mes" = "Mar" || "$mes" = "Mar" ]]; then
-mes=03
-elif [[ "$mes" = "Apr" || "$mes" = "Abr" ]]; then
-mes=04
-elif [[ "$mes" = "May" || "$mes" = "Mai" ]]; then
-mes=05
-elif [[ "$mes" = "Jun" || "$mes" = "Jun" ]]; then
-mes=06
-elif [[ "$mes" = "Jul" || "$mes" = "Jul" ]]; then
-mes=07
-elif [[ "$mes" = "Ago" || "$mes" = "Ago" ]]; then
-mes=08
-elif [[ "$mes" = "Set" || "$mes" = "Sep" ]]; then
-mes=09
-elif [[ "$mes" = "Out" || "$mes" = "Oct" ]]; then
-mes=10
-elif [[ "$mes" = "Nov" || "$mes" = "Nov" ]]; then
-mes=11
-elif [[ "$mes" = "Dec" || "$mes" = "Dez" ]]; then
-mes=12
-fi
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  DATA:\033[0m\033[7;30;41m $dia/$mes/$ano\033[0m"
-echo -e "\033[7;30;47m  IP da VPS:\033[0m\033[7;30;41m $ip\033[0m"
-system=$(cat /etc/issue.net)
-if [ "$system" ]
-then
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41m $system\033[0m"
-else
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41mNot Available\033[0m"
-fi
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
-echo -e "\033[7;30;47m  ®TELEGRAM\033[0m \033[7;30;41mCANAL:\033[0m \033[0m \033[0;36;40m@Vps\033[5;37;40mNerdologia\033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[7;30;46m  Para Acessar o menu Principal:\033[5;37;40m VPN \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Sobre \033[0m"
@@ -62,38 +17,7 @@ exit
 }
 
 function about2 () {
-ip=$(wget -qO- ipv4.icanhazip.com)
 clear
-if [[ $1 == "" ]]
-then
-dia=$(date | awk {'print $3'})
-mes=$(date | awk {'print $2'})
-ano=$(date | awk {'print $6'})
-if [[ "$mes" = "Jan" || "$mes" = "Jan" ]]; then
-mes=01
-elif [[ "$mes" = "Feb" || "$mes" = "Fev" ]]; then
-mes=02
-elif [[ "$mes" = "Mar" || "$mes" = "Mar" ]]; then
-mes=03
-elif [[ "$mes" = "Apr" || "$mes" = "Abr" ]]; then
-mes=04
-elif [[ "$mes" = "May" || "$mes" = "Mai" ]]; then
-mes=05
-elif [[ "$mes" = "Jun" || "$mes" = "Jun" ]]; then
-mes=06
-elif [[ "$mes" = "Jul" || "$mes" = "Jul" ]]; then
-mes=07
-elif [[ "$mes" = "Ago" || "$mes" = "Ago" ]]; then
-mes=08
-elif [[ "$mes" = "Set" || "$mes" = "Sep" ]]; then
-mes=09
-elif [[ "$mes" = "Out" || "$mes" = "Oct" ]]; then
-mes=10
-elif [[ "$mes" = "Nov" || "$mes" = "Nov" ]]; then
-mes=11
-elif [[ "$mes" = "Dec" || "$mes" = "Dez" ]]; then
-mes=12
-fi
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[7;30;47m  DATA:\033[0m\033[7;30;41m $dia/$mes/$ano\033[0m"
 echo -e "\033[7;30;47m  IP da VPS:\033[0m\033[7;30;41m $ip\033[0m"
@@ -108,18 +32,22 @@ echo -e "\033[7;30;46m =========================================================
 echo -e "\033[7;30;47m  ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
 echo -e "\033[7;30;47m  ®TELEGRAM\033[0m \033[7;30;41mCANAL:\033[0m \033[0m \033[0;36;40m@Vps\033[5;37;40mNerdologia\033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar o menu Principal:\033[5;37;40m VPN \033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Sobre \033[0m"
+echo -e "\033[5;37;40m                        VPN PROJECT                        \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo ""
 echo -e "\033[01;36m Nome:\033[01;37m VPN"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;36m Versão:\033[01;37m 1.0"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;36m Desenvolvedor:\033[01;37m ColtSeals TecnologY"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;36m Linguagem:\033[01;37m Shell Script"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;36m Criado em:\033[01;37m 30/05/2018"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;36m Última atualização:\033[01;37m 18/06/2018"
 echo ""
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;37mAPERTE A TECLA ENTER PARA VOLTAR AO MENU..."
 read ENTER
 vpn
@@ -127,69 +55,23 @@ exit
 }
 
 function about3 () {
-ip=$(wget -qO- ipv4.icanhazip.com)
 clear
-if [[ $1 == "" ]]
-then
-dia=$(date | awk {'print $3'})
-mes=$(date | awk {'print $2'})
-ano=$(date | awk {'print $6'})
-if [[ "$mes" = "Jan" || "$mes" = "Jan" ]]; then
-mes=01
-elif [[ "$mes" = "Feb" || "$mes" = "Fev" ]]; then
-mes=02
-elif [[ "$mes" = "Mar" || "$mes" = "Mar" ]]; then
-mes=03
-elif [[ "$mes" = "Apr" || "$mes" = "Abr" ]]; then
-mes=04
-elif [[ "$mes" = "May" || "$mes" = "Mai" ]]; then
-mes=05
-elif [[ "$mes" = "Jun" || "$mes" = "Jun" ]]; then
-mes=06
-elif [[ "$mes" = "Jul" || "$mes" = "Jul" ]]; then
-mes=07
-elif [[ "$mes" = "Ago" || "$mes" = "Ago" ]]; then
-mes=08
-elif [[ "$mes" = "Set" || "$mes" = "Sep" ]]; then
-mes=09
-elif [[ "$mes" = "Out" || "$mes" = "Oct" ]]; then
-mes=10
-elif [[ "$mes" = "Nov" || "$mes" = "Nov" ]]; then
-mes=11
-elif [[ "$mes" = "Dec" || "$mes" = "Dez" ]]; then
-mes=12
-fi
 echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  DATA:\033[0m\033[7;30;41m $dia/$mes/$ano\033[0m"
-echo -e "\033[7;30;47m  IP da VPS:\033[0m\033[7;30;41m $ip\033[0m"
-system=$(cat /etc/issue.net)
-if [ "$system" ]
-then
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41m $system\033[0m"
-else
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41mNot Available\033[0m"
-fi
+echo -e "\033[5;37;40m                     TERMOS DE USO (!):                    \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
-echo -e "\033[7;30;47m  ®TELEGRAM\033[0m \033[7;30;41mCANAL:\033[0m \033[0m \033[0;36;40m@Vps\033[5;37;40mNerdologia\033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar o menu Principal:\033[5;37;40m VPN \033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Sobre \033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo ""
-echo -e "\033[01;37m TERMOS DE USO (!):"
 echo ""
 echo -e "\033[01;37m Você concorda que:"
 echo -e "\033[01;36m ● O utilizador deste conjunto de scripts é o único responsável por"
 echo -e "\033[01;36m executar as funções do mesmo."
 echo ""
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -ne "\033[01;37m APERTE A TECLA ENTER PARA PROSSEGUIR..."; read ENTER
 echo ""
 echo -e "\033[01;37m Você não pode:"
 echo -e "\033[01;36m ● Editar ou modificar o conjunto de scripts para fins lucrativos."
 echo -e "\033[01;36m ● Vender ou alugar o conjunto de scripts."
 echo ""
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -ne "\033[01;37m APERTE A TECLA ENTER PARA PROSSEGUIR..."; read ENTER
 echo ""
 echo -e "\033[01;37m Você pode:"
@@ -197,6 +79,7 @@ echo -e "\033[01;36m ● Editar ou modificar o conjunto de scripts ao seu gosto 
 echo -e "\033[01;36m mas nunca vender ou alugar o mesmo! Tenha bom senso de sempre deixa"
 echo -e "\033[01;36m r o nome do criador como referência."
 echo ""
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -ne "\033[01;37m APERTE A TECLA ENTER PARA PROSSEGUIR..."; read ENTER
 echo ""
 echo -e "\033[01;37m Você concorda que o desenvolvedor não se responsabilizará pelos:"
@@ -208,6 +91,7 @@ echo -e "\033[01;36m ● Problemas causados por modificações no sistema do ser
 echo -e "\033[01;36m ● Problemas que possam ocorrer ao usar este conjunto de scripts em"
 echo -e "\033[01;36m sistemas que não estão na lista de sistemas testados."
 echo ""
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -ne "\033[01;37m APERTE A TECLA ENTER PARA VOLTAR AO MENU..."; read ENTER
 vpn
 exit
@@ -269,8 +153,12 @@ echo -e "\033[01;36m║\033[1;37m02\033[1;36m║\033[0;31;40m•\033[0m\033[01;3
 echo -e "\033[01;36m║\033[1;37m03\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m TERMOS DE USO \033[0;31;40m=\033[0m \033[7;36;40m Teste de conexão velocidade de banda \033[0m"
 echo -e "\033[01;36m║\033[1;37m04\033[1;36m║\033[0;31;40m•\033[0m\033[0;31;40m SAIR \033[0;31;40m=\033[0m \033[1;30;41m Sair do Menu VPN. \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[0;31;40m    •\033[0m\033[01;37m Digite uma Opção:\033[0;37m"; read NUMBERS
-case $NUMBERS in
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo -e "\033[0;31;40m    •\033[0m\033[01;37m Digite uma Opção:\033[0;37m"; read -p " " opcao
+else
+opcao=$1
+fi
+case $opcao in
   0 | 00 )
   vpn;;
   1 | 01 )
