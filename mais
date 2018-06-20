@@ -67,8 +67,6 @@ case $opcao in
   2 | 02 )
    socks5menu;;
   3 | 03 )
-  socks5menu;;
-  4 | 04 )
    exit;;
    *) 
    mais;;
