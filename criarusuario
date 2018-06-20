@@ -10,7 +10,7 @@ if [ $NUMBER = "0" ]; then
   echo -e "\033[01;33m Você não possui nenhum usuário criado no momento!"
 else
   for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
-    echo -ne "\033[01;33m"; echo $USERS
+    echo -ne "\033[01;33m"; echo  $USERS
   done
 fi
 echo ""
@@ -141,7 +141,7 @@ else
   echo ""
   echo -e "\033[01;36mLista de usuários criados:"; echo ""
   for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
-    echo -ne "\033[01;33m"; echo $USERS
+    echo -ne "\033[01;33m"; echo  $USERS
   done
 fi
 fi
