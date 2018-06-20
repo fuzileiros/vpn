@@ -1,9 +1,10 @@
 #!/bin/bash
 clear
+checkdatabase
 
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e " \033[7;30;46m\033[5;37;40m                VPN DROPBEAR                 \033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo -e "\033[01;35m -------------------------------------------------"
+echo -e "\033[01;35m|                  \033[01;33m    ADM VPS\033[01;35m                   |"
+echo -e "\033[01;35m -------------------------------------------------"
 
 # cores
 b="\033[1;37m"
@@ -75,8 +76,9 @@ if [[ "$porta" = '80' ]]; then
     fi 
     if [[ "$re" = 'n' ]]; then
                echo -e ""$Ver"Saindo..."
-               sleep 1
-               exit 69
+               sleep 3s
+               vpn
+               exit
     fi
     fi
  else
@@ -126,8 +128,9 @@ if [[ "$porta" = '80' ]]; then
     fi
     if [[ "$rees" = 'n' ]]; then
                echo -e ""$Ver"Saindo..."
-               sleep 1
-               exit 69
+               sleep 3s
+               vpn
+               exit
     fi
     fi
 fi
@@ -181,8 +184,9 @@ echo "DROPBEAR_PORT=443" >> /etc/default/dropbear
     fi
     if [[ "$ss" = 'n' ]]; then
     	echo -e ""$Ver"Saindo..."
-        sleep 1
-    	exit 69
+               sleep 3s
+               vpn
+               exit
     fi
 fi
 fi
