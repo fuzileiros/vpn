@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo apt-get install python
 cd
 if [ $(id -u) != 0 ]
 then
@@ -231,9 +230,10 @@ echo vpspack >> ~/.bashrc
 clear
 rm -rf install
 clear
+sudo apt-get install python
 	echo ""
 sleep 1s
 echo -e "\033[0m"
-openvpn
+vpn
 exit
 fi
