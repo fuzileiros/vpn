@@ -1,23 +1,25 @@
 #!/bin/bash
-
+MYIP=$(wget -qO- ipv4.icanhazip.com)
 DATABASE="/home/DATABASE/users.db"
 
 clear
 echo -e "\033[01;36m Lista de usuários criados:"
-echo ""
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+  echo " "
 NUMBER=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
 if [ $NUMBER = "0" ]; then
   echo -e "\033[01;33m Você não possui nenhum usuário criado no momento!"
 else
   for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
-    echo -ne "\033[01;33m"; echo  $USERS
+    echo -ne "\033[01;33m";echo -e "\033[01;33m  $USERS \033[0"
   done
 fi
 echo ""
-echo -e "\033[01;31m•\033[01;33m 0:\033[01;36m RETORNAR AO MENU."
-echo -e "\033[01;31m•\033[01;33m R:\033[01;36m RESETAR."
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo -e "\033[01;31m •\033[01;33m 0:\033[01;36m RETORNAR AO MENU."
+echo -e "\033[01;31m •\033[01;33m R:\033[01;36m RESETAR."
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo ""
-echo -e "\033[01;35m---------------------------------------"
 echo -ne "\033[01;32mNOME DO USUÁRIO:\033[01;33m"; read USER
 if [ -z $USER ]; then
   echo ""
@@ -43,7 +45,7 @@ if [ "$USER" = "R" ]; then
 else
 if echo $USER | grep -q '[^a-z A-Z 0-9 ._-]'; then
   echo ""
-  echo -e "\033[01;37;41mVocê digitou um nome de usuário invaldoo. Use apenas letras, números\033[0m"; echo -e "\033[01;37;41mpontos e traços. Não use espaços, acentos ou caracteres especiais. T\033[0m"; echo -e "\033[01;37;41mente novamente!                                                     \033[0m"
+  echo -e "\033[01;37;41mVocê digitou um nome de usuário invalido. Use apenas letras, números\033[0m"; echo -e "\033[01;37;41mpontos e traços. Não use espaços, acentos ou caracteres especiais. T\033[0m"; echo -e "\033[01;37;41mente novamente!                                                     \033[0m"
   sleep 3s
   criarusuario
   exit
@@ -126,23 +128,22 @@ if [ "$CONNECTIONS" = "R" ]; then
   criarusuario
   exit
 else
-  echo -e "\033[01;35m---------------------------------------"
+clear
+ echo -e "\033[7;30;46m ==========================================================\033[0m"
   VALIDITY1=$(date "+%Y-%m-%d" -d "+ $DAYS days")
   VALIDITY2=$(date "+%d/%m/%Y" -d "+ $DAYS days")
   useradd -e $VALIDITY1 -M -s /bin/false $USER
   (echo $PASSWORD; echo $PASSWORD) | passwd $USER 1> /dev/null 2> /dev/null
   echo "$USER $PASSWORD $CONNECTIONS" >> $DATABASE
-  echo -e "\033[01;31m      USÚARIO CRIADO COM SUCESSO!"
-  echo -e "\033[01;35m---------------------------------------"
-  echo -e "\033[01;32mNome do usuário:\033[01;33m $USER"
-  echo -e "\033[01;32mData de validade:\033[01;33m $VALIDITY2 às \033[01;31m00:00:00"
-  echo -e "\033[01;32mN° de conexões permitidas:\033[01;33m $CONNECTIONS"
-  echo -e "\033[01;35m---------------------------------------"
-  echo ""
-  echo -e "\033[01;36mLista de usuários criados:"; echo ""
-  for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
-    echo -ne "\033[01;33m"; echo  $USERS
-  done
+  echo -e "\033[01;31m               USÚARIO CRIADO COM SUCESSO!"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
+  echo -e "\033[01;32m   Host            :\033[01;33m $MYIP"
+  echo -e "\033[01;32m   Nome            :\033[01;33m $USER"
+  echo -e "\033[01;32m   Senha           :\033[01;33m $PASSWORD"
+  echo -e "\033[01;32m   Limite          :\033[01;33m $CONNECTIONS"
+  echo -e "\033[01;32m   Validade        :\033[01;33m $VALIDITY2 às \033[01;31m00:00:00"
+  echo -e "\033[01;32m   Porta           :\033[01;33m 80,8080,8799,443,22,3128"
+echo -e "\033[7;30;46m ==========================================================\033[0m"
 fi
 fi
 fi
