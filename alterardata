@@ -1,7 +1,8 @@
 #!/bin/bash
 
 clear
-echo -e "\033[01;36mLista de usuários e data de expiração do mesmo:"; echo ""
+echo -e "\033[01;30m -------------------------------------------------------------------------------"
+echo -e " \033[01;37;44m USUARIO                                           VALIDADE        STATUS  \033[0m"
 NUMBER=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
 if [ $NUMBER = "0" ]; then
   echo -e "\033[01;33mVocê não possui nenhum usuário SSH criado no momento!"
@@ -117,6 +118,130 @@ else
   echo ""
   echo -e "\033[01;32mNome do usuário: $USER"
   echo -e "\033[01;32mData de expiração do usuário alterada para: $VALIDITY"
+#!/bin/bash
+
+clear
+echo -e " \033[01;37;44m USUARIO                            VALIDADE  STATUS     \033[0m"
+echo -e "\033[01;30m ----------------------------------------------------------"
+NUMBER=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33m Você não possui nenhum usuário SSH criado no momento!"
+  echo ""
+  echo -e "\033[01;33m Crie um usuário SSH para prosseguir com esta função!"
+  echo ""
+  echo -e "\033[01;36m APERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  vpn
+  exit
+else
+  for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
+    EXPIRE=$(chage -l $USERS | grep -E "Account expires" | cut -d " " -f3-)
+    if [[ $EXPIRE = "never" ]]; then
+      echo -ne "\033[01;33m$(printf '%-36s%s\n' "  $USERS" "Nunca")"; echo -e "\033[01;32m      (ATIVO)"
+    else
+      DATEBR=$(date -d "$EXPIRE" '+%Y%m%d')
+      TODAY=$(date -d today '+%Y%m%d')
+    if [ $TODAY -ge $DATEBR ]; then
+      DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne "\033[01;33m$(printf '%-36s%s\n' "  $USERS" "$DATE")"; echo -e "\033[01;31m (EXPIRADO)"
+    else
+      DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne "\033[01;33m$(printf '%-36s%s\n' "  $USERS" "$DATE")"; echo -e "\033[01;32m (ATIVO)"
+    fi
+    fi
+  done
+fi
+echo ""
+  echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo -e "\033[01;32m  0: RETORNAR AO MENU."
+echo -e "\033[01;32m  R: RESETAR."
+  echo -e "\033[7;30;46m ==========================================================\033[0m"
+echo ""
+echo -ne "\033[01;36m Nome do usuário:\033[01;37m "; read USER
+if [ -z $USER ]; then
+  echo ""
+  echo -e "\033[01;37;41m Você digitou um nome de usuário vazio. Tente novamente!\033[0m"
+  sleep 3s
+  alterardata
+  exit
+else
+if [ "$USER" = "0" ]; then
+  vpn
+  exit
+else
+if [ "$USER" = "R" ]; then
+  alterardata
+  exit
+else
+  awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort > /tmp/users.txt
+if [[ `grep -cx "$USER" /tmp/users.txt` -ne 1 ]]; then
+  echo ""
+  echo -e "\033[01;37;41m Você digitou um nome de usuário inexistente. Digite um nome de\033[0m"; echo -e "\033[01;37;41musuário que seja existente na lista acima. Tente novamente!   \033[0m"
+  sleep 7s
+  alterardata
+  exit
+else
+clear
+echo ""
+  echo -ne "\033[01;36m Qual Nova data de expiração para \033[01;31m$USER\033[0\033[01;36m (ANO/MÊS/DIA):\033[01;37m "; read NEWDATE
+if [ -z $NEWDATE ]; then
+  echo ""
+  echo -e "\033[01;37;41m Você digitou uma data vazia. Tente novamente!\033[0m"
+  sleep 3s
+  alterardata
+  exit
+else
+if echo "$NEWDATE" | grep -q '[^0-9/R]'; then
+  echo ""
+  echo -e "\033[01;37;41m Você digitou uma data inválida. Tente novamente!\033[0m"
+  sleep 3s
+  alterardata
+  exit
+else
+if [ "$NEWDATE" = "0" ]; then
+  usersmanager-menu
+  exit
+else
+if [ "$NEWDATE" = "R" ]; then
+  alterardata
+  exit
+else
+  TODAY=$(date -d today '+%Y%m%d')
+  TEMP=$(date -d "$NEWDATE" '+%Y%m%d')
+if [[ $TODAY -ge $TEMP ]]; then
+  echo ""
+  echo -e "\033[01;37;41m Você digitou uma data inválida. Digite uma data futura no form\033[0m"; echo -e "\033[01;37;41mato: ANO/MÊS/DIA, por exemplo: 2019/01/01. Tente novamente!   \033[0m"
+  sleep 7s
+  alterardata
+  exit
+else
+  chage -E $NEWDATE $USER
+  VALIDITY=$(date -d "$NEWDATE" "+%d/%m/%Y")
+  clear
+echo -e " \033[01;37;44m USUARIO                            VALIDADE  STATUS     \033[0m"
+echo -e "\033[01;30m ----------------------------------------------------------"
+  for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
+    EXPIRE=$(chage -l $USERS | grep -E "Account expires" | cut -d " " -f3-)
+    if [[ $EXPIRE = "never" ]]; then
+      echo -ne "\033[01;33m$(printf '%-36s%s\n' "  $USERS" "Nunca")"; echo -e "\033[01;32m      (ATIVO)"
+    else
+      DATEBR=$(date -d "$EXPIRE" '+%Y%m%d')
+      TODAY=$(date -d today '+%Y%m%d')
+    if [ $TODAY -ge $DATEBR ]; then
+      DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne "\033[01;33m$(printf '%-36s%s\n' "  $USERS" "$DATE")"; echo -e "\033[01;31m (EXPIRADO)"
+    else
+      DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne "\033[01;33m$(printf '%-36s%s\n' "  $USERS" "$DATE")"; echo -e "\033[01;32m (ATIVO)"
+    fi
+    fi
+  done
+  echo ""
+  echo -e "\033[01;32m  Data de expiração do usuário alterada com sucesso!"
+  echo -e "\033[7;30;46m ==========================================================\033[0m"
+  echo -e "\033[01;32m  Nome do usuário   : $USER"
+  echo -e "\033[01;32m  Data de expiração : $VALIDITY"
+  echo -e "\033[7;30;46m ==========================================================\033[0m"
 fi
 fi
 fi
@@ -129,5 +254,5 @@ fi
 echo ""
 echo -ne "\033[01;36mAPERTE A TECLA ENTER..."
 read ENTER
-alterardata
+vpn
 exit
