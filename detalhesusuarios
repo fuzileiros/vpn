@@ -19,8 +19,8 @@ DATABASE="/home/DATABASE/users.db"
 clear
 echo ""
 echo -e "\033[01;30m -------------------------------------------------------------------------------"
-echo -e " \033[01;37;44m                              Users Detalhes                                  \033[0m"
--echo -e "\033[01;30m ------------------------------------------------------------------------------"
+echo -e " \033[0;30;46m                             Detalhes  Usuarios                             \033[0m"
+echo -e "\033[01;30m -------------------------------------------------------------------------------"
 echo -e " \033[01;37;44m USUARIO             SENHA             LIMITE         VALIDADE        STATUS  \033[0m"
 echo ""
 cat $DATABASE | sort | while read DB; do
