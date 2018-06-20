@@ -67,7 +67,7 @@ case $opcao in
   2 | 02 )
    
   3 | 03 )
-  socksmenu;;
+  socks5menu;;
   4 | 04 )
    exit;;
    *) 
