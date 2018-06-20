@@ -31,7 +31,7 @@ echo -e "\033[7;30;46m =========================================================
           limiter-menu
           exit;;
     2) limiter-messages;;
-    0) h;;
+    0) vpn;;
       *) limiter-menu;;
   esac
 else
@@ -57,7 +57,7 @@ echo -e "\033[7;30;46m =========================================================
           limiter-menu
           exit;;
     2) limiter-messages;;
-    0) h;;
+    0) vpn;;
       *) limiter-menu;;
   esac
 fi
