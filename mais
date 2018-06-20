@@ -65,7 +65,7 @@ case $opcao in
   1 | 01 )
    ovpn;;
   2 | 02 )
-   
+   socks5menu;;
   3 | 03 )
   socks5menu;;
   4 | 04 )
