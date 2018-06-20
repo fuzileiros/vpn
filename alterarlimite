@@ -106,5 +106,5 @@ fi
 echo ""
 echo -ne "\033[01;36mAPERTE A TECLA ENTER..."
 read ENTER
-alterarlimite
+vpn
 exit
