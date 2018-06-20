@@ -28,7 +28,7 @@ echo -e "\033[7;30;46m =========================================================
           pkill -f limiter-start
           sleep 3s
           clear
-          limiter-menu.sh
+          limiter-menu
           exit;;
     2) limiter-messages;;
     0) h;;
@@ -54,10 +54,10 @@ echo -e "\033[7;30;46m =========================================================
           screen -dmS screen limiter-start
           sleep 3s
           clear
-          limi
+          limiter-menu
           exit;;
     2) limiter-messages;;
     0) h;;
-      *) limi;;
+      *) limiter-menu;;
   esac
 fi
