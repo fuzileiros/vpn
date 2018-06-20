@@ -1,6 +1,5 @@
  #!/bin/bash
 
-checkdatabase
 ip=$(wget -qO- ipv4.icanhazip.com)
 if [ $(id -u) -eq 0 ]
 then
