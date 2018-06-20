@@ -43,35 +43,6 @@ cat $DATABASE | sort | while read DB; do
     fi
       echo -e "\033[01;30m ------------------------------------------------------------------------------"
   done
-  echo ""
-  NUMBER1=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | wc -l)
-
-touch number2.txt
-for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
-  EXPIRE=$(chage -l $USERS | grep -E "Account expires" | cut -d " " -f3-)
-  if [[ $EXPIRE = "never" ]]; then
-    echo "" > /dev/null
-  else
-    DATEBR=$(date -d "$EXPIRE" '+%Y%m%d')
-    TODAY=$(date -d today '+%Y%m%d')
-  if [ $TODAY -ge $DATEBR ]; then
-    echo "$USERS" >> number2.txt
-  else
-    echo "" > /dev/null
-  fi
-  fi
-done
-NUMBER2=$(awk 'END{print NR}' number2.txt)
-   if [ $NUMBER1 = "0" ]; then
-  echo -e "\033[01;32m TOTAL DE USUARIOS:\033[01;37m 0"
-else
-  echo -e "\033[01;32m TOTAL DE USUARIOS:\033[01;37m $NUMBER1"
-fi
-if [ $NUMBER2 = "0" ]; then
-  echo -e "\033[01;32m EXPIRADDS:\033[01;37m 0"
-else
-  echo -e "\033[01;32m EXPIRADOS:\033[01;37m $NUMBER2"                      
-fi
 echo ""
 echo -ne "\033[01;36m APERTE A TECLA ENTER PARA VOLTAR AO MENU..."
 read ENTER
