@@ -45,7 +45,6 @@ cat $DATABASE | sort | while read DB; do
     done
   echo ""
   NUMBER1=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | wc -l)
-NUMBER2=$(awk 'END{print NR}' number2.txt)
    if [ $NUMBER1 = "0" ]; then
   echo -e "\033[01;32m TOTAL DE USUARIOS:\033[01;37m 0"
 else
