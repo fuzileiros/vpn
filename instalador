@@ -161,7 +161,9 @@ chmod +x /bin/ovpn
 #02
 wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5 -O /bin/socks5
 chmod +x /bin/socks5
-
+#03
+wget raw.githubusercontent.com/fuzileiros/vpn/master/dropbear -O /bin/dropbear
+chmod +x /bin/dropbear
 
 
 #FIM DO MENU INSTALAÇÃO
