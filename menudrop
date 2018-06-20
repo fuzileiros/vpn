@@ -1,54 +1,6 @@
 #!/bin/bash
 
-ip=$(wget -qO- ipv4.icanhazip.com)
-clear
-if [[ $1 == "" ]]
-then
-dia=$(date | awk {'print $3'})
-mes=$(date | awk {'print $2'})
-ano=$(date | awk {'print $6'})
-if [[ "$mes" = "Jan" || "$mes" = "Jan" ]]; then
-mes=01
-elif [[ "$mes" = "Feb" || "$mes" = "Fev" ]]; then
-mes=02
-elif [[ "$mes" = "Mar" || "$mes" = "Mar" ]]; then
-mes=03
-elif [[ "$mes" = "Apr" || "$mes" = "Abr" ]]; then
-mes=04
-elif [[ "$mes" = "May" || "$mes" = "Mai" ]]; then
-mes=05
-elif [[ "$mes" = "Jun" || "$mes" = "Jun" ]]; then
-mes=06
-elif [[ "$mes" = "Jul" || "$mes" = "Jul" ]]; then
-mes=07
-elif [[ "$mes" = "Ago" || "$mes" = "Ago" ]]; then
-mes=08
-elif [[ "$mes" = "Set" || "$mes" = "Sep" ]]; then
-mes=09
-elif [[ "$mes" = "Out" || "$mes" = "Oct" ]]; then
-mes=10
-elif [[ "$mes" = "Nov" || "$mes" = "Nov" ]]; then
-mes=11
-elif [[ "$mes" = "Dec" || "$mes" = "Dez" ]]; then
-mes=12
-fi
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  DATA:\033[0m\033[7;30;41m $dia/$mes/$ano\033[0m"
-echo -e "\033[7;30;47m  IP da VPS:\033[0m\033[7;30;41m $ip\033[0m"
-system=$(cat /etc/issue.net)
-if [ "$system" ]
-then
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41m $system\033[0m"
-else
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41mNot Available\033[0m"
-fi
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
-echo -e "\033[7;30;47m  ®TELEGRAM\033[0m \033[7;30;41mCANAL:\033[0m \033[0m \033[0;36;40m@Vps\033[5;37;40mNerdologia\033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar o menu Principal:\033[5;37;40m VPN \033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Dropbear-Menu \033[0m"
+
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;36m║\033[1;37m00\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m VOLTAR \033[0;31;40m=\033[0m \033[7;36;40m Voltar ao Menu Principal \033[0m"
 echo -e "\033[01;36m║\033[1;37m01\033[1;36m║\033[0;31;40m•\033[01;32m INSTALAR \033[01;37mDROPBEAR \033[0;31;40m=\033[0m \033[7;36;40m Instala Dropbear \033[0m"
@@ -68,25 +20,6 @@ case $opcao in
    *) menudrop;;
   esac
 else
-
-
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  DATA:\033[0m\033[7;30;41m $dia/$mes/$ano\033[0m"
-echo -e "\033[7;30;47m  IP da VPS:\033[0m\033[7;30;41m $ip\033[0m"
-system=$(cat /etc/issue.net)
-if [ "$system" ]
-then
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41m $system\033[0m"
-else
-echo -e "\033[7;30;47m  Sistema Operacional:\033[0m\033[7;30;41mNot Available\033[0m"
-fi
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;47m  ®Script\033[0m \033[7;30;41mEdited:\033[0m \033[0m \033[0;36;40m@Colt\033[5;37;40mSeals\033[0m"
-echo -e "\033[7;30;47m  ®TELEGRAM\033[0m \033[7;30;41mCANAL:\033[0m \033[0m \033[0;36;40m@Vps\033[5;37;40mNerdologia\033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar o menu Principal:\033[5;37;40m VPN \033[0m"
-echo -e "\033[7;30;46m ==========================================================\033[0m"
-echo -e "\033[7;30;46m  Para Acessar este menu digite:\033[5;37;40m Dropbear-Menu \033[0m"
 echo -e "\033[7;30;46m ==========================================================\033[0m"
 echo -e "\033[01;36m║\033[1;37m00\033[1;36m║\033[0;31;40m•\033[0m\033[01;37m VOLTAR \033[0;31;40m=\033[0m \033[7;36;40m Voltar ao Menu Principal \033[0m"
 echo -e "\033[01;36m║\033[1;37m02\033[1;36m║\033[0;31;40m•\033[01;31m DESINSTALAR \033[0m\033[01;37mDROPBEAR \033[0;31;40m=\033[0m \033[7;36;40m Desinstala Dropbear \033[0m"
