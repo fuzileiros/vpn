@@ -1,35 +1,6 @@
  #!/bin/bash
 
 ip=$(wget -qO- ipv4.icanhazip.com)
-if [ $(id -u) -eq 0 ]
-then
-clear
-else
-echo -e "Execute o script como usuario \033[1;32mroot\033[0m"
-exit
-fi
-if [ -d /etc/VpsPackdir ]
-then
-true
-else
-mkdir /etc/VpsPackdir
-fi
-if [ -d /etc/VpsPackdir/senha ]
-then
-true
-else
-mkdir /etc/VpsPackdir/senha
-fi
-if [ -d /etc/VpsPackdir/limite ]
-then
-true
-else
-mkdir /etc/VpsPackdir/limite
-fi
-
-clear
-if [[ $1 == "" ]]
-then
 clear
 dia=$(date | awk {'print $3'})
 mes=$(date | awk {'print $2'})
