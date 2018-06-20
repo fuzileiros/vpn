@@ -3,7 +3,8 @@
 DATABASE="/home/DATABASE/users.db"
 
 clear
-echo -e "\033[01;36mLista de usuários e limite de conexões simultâneas do mesmo:"; echo ""
+echo -e " \033[01;30m ---------------------------------------------------"
+echo -e " \033[01;37;44m   USUARIO                           LIMITE       \033[0m"
 NUMBER=$(awk 'END{print NR}' $DATABASE)
 if [ $NUMBER = "0" ]; then
   echo -e "\033[01;33mVocê não possui nenhum usuário SSH criado no momento!"
@@ -18,17 +19,19 @@ else
   cat $DATABASE | sort | while read DB; do
     LIMIT1=$(echo $DB | cut -d " " -f1)
     LIMIT2=$(echo $DB | cut -d " " -f3)
-    echo -ne "\033[01;33m"; printf '%-36s%s\n' " $LIMIT1" "$LIMIT2"
+    echo -ne "\033[01;33m"; printf '%-36s%s\n' "    $LIMIT1" "  $LIMIT2"
   done
 fi
 echo ""
-echo -e "\033[01;32m0: RETORNAR AO MENU."
-echo -e "\033[01;32mR: RESETAR."
+echo -e "\033[7;30;46m ===================================================\033[0m"
+echo -e "\033[01;32m  0: RETORNAR AO MENU."
+echo -e "\033[01;32m  R: RESETAR."
+echo -e "\033[7;30;46m ===================================================\033[0m"
 echo ""
-echo -ne "\033[01;36mNome do usuário para alterar o limite:\033[01;37m "; read USER
+echo -ne "\033[01;36m Nome do usuário para alterar o limite:\033[01;37m "; read USER
 if [ -z $USER ]; then
   echo ""
-  echo -e "\033[01;37;41mVocê digitou um nome de usuário vazio. Tente novamente!\033[0m"
+  echo -e "\033[01;37;41m Você digitou um nome de usuário vazio. Tente novamente!\033[0m"
   sleep 3s
   alterarlimite
   exit
@@ -44,22 +47,24 @@ else
   awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort > /tmp/users.txt
 if [[ `grep -cx "$USER" /tmp/users.txt` -ne 1 ]]; then
   echo ""
-  echo -e "\033[01;37;41mVocê digitou um nome de usuário inexistente. Digite um nome de\033[0m"; echo -e "\033[01;37;41musuário que seja existente na lista acima. Tente novamente!   \033[0m"
+  echo -e "\033[01;37;41m Você digitou um nome de usuário inexistente. Digite um nome de\033[0m"; echo -e "\033[01;37;41musuário que seja existente na lista acima. Tente novamente!   \033[0m"
   sleep 7s
   alterarlimite
   exit
 else
-  echo -ne "\033[01;36mNovo N° de conexões simultâneas permitidas para o usuário:\033[01;37m "; read NUMBER
+clear
+  echo ""
+  echo -ne "\033[01;36m Novo N° de conexões simultâneas permitidas para \033[01;31m$USER:\033[01;37m "; read NUMBER
 if echo $NUMBER | grep -q '[^0-9R]'; then
   echo ""
-  echo -e "\033[01;37;41mVocê digitou um número inválido. Tente novamente!\033[0m"
+  echo -e "\033[01;37;41m Você digitou um número inválido. Tente novamente!\033[0m"
   sleep 3s
   alterarlimite
   exit
 else
 if [ -z $NUMBER ]; then
   echo ""
-  echo -e "\033[1;37;41mVocê digitou um número vazio. Tente novamente!\033[0m"
+  echo -e "\033[1;37;41m Você digitou um número vazio. Tente novamente!\033[0m"
   sleep 3s
   alterarlimite
   exit
@@ -77,19 +82,19 @@ else
   cat $DATABASE | grep -wv "$USER" > limit.txt
   mv limit.txt $DATABASE
   echo "$USER $(cat password.txt; rm password.txt) $NUMBER" >> $DATABASE
-  echo -e "\033[01;36mLista de usuários e limite de conexões do mesmo:"; echo ""
+echo -e " \033[01;30m ---------------------------------------------------"
+echo -e " \033[01;37;44m   USUARIO                           LIMITE       \033[0m"
   cat $DATABASE | sort | while read DB; do
     LIMIT1=$(echo $DB | cut -d " " -f1)
     LIMIT2=$(echo $DB | cut -d " " -f3)
-    echo -ne "\033[01;33m"; printf '%-36s%s\n' " $LIMIT1" "$LIMIT2"
+    echo -ne "\033[01;33m"; printf '%-36s%s\n' "    $LIMIT1" "  $LIMIT2"
   done
   echo ""
-  echo -e "\033[01;32mLimite de conexões simultâneas do usuário alterado com sucesso!"
-  echo ""
-  echo -e "\033[01;32mVerifique as informações abaixo:"
-  echo ""
-  echo -e "\033[01;32mNome do usuário: $USER"
-  echo -e "\033[01;32mN° de conexões simultâneas permitidas alterado para: $NUMBER"
+    echo -e "\033[01;32m   Limite de conexões alterado com sucesso!"
+echo -e "\033[7;30;46m ===================================================\033[0m"
+  echo -e "\033[01;32m  Nome do usuário  : $USER"
+  echo -e "\033[01;32m  Novo Limite      : $NUMBER"
+echo -e "\033[7;30;46m ===================================================\033[0m"
 fi
 fi
 fi
