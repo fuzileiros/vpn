@@ -80,7 +80,7 @@ case $opcao in
   2 | 02 )
    socks5;;
   3 | 03 )
-   get.py
+   bash get.py
    nohup python get.py > get.txt &;;
   4 | 04 )
    dropbear;;
