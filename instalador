@@ -101,6 +101,10 @@ rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
 
+rm -rf /bin/proo.py 2>/dev/null
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/proo.py > /bin/proo.py
+chmod +x /bin/sproo.py
+
 #FIM DO MENU FERRAMENTAS
 
 
