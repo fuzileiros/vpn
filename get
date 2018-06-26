@@ -31,9 +31,9 @@ clear
 	read -p "PASS do Get Tunnel: " -e -i SENHA
 
 
-sed -i 's/IP-PORTA/$IP:$PORTA/' get.py
+sed -i 's/IP-PORTA/$IP:$PORTA/' /bin/get.py
 
-sed -i 's/SENHA-PASS/$SENHA/' get.py
+sed -i 's/SENHA-PASS/$SENHA/' /bin/get.py
 
    clear
    nohup python get.py > get.txt &
