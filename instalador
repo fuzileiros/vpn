@@ -100,9 +100,6 @@ chmod +x /bin/deletartodos
 rm -rf /bin/speedtest.py 2>/dev/null
 wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
-#02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/get.py -O /bin/get.py
-chmod +x /bin/get.py
 
 #FIM DO MENU FERRAMENTAS
 
