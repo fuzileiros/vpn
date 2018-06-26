@@ -165,6 +165,7 @@ chmod +x /bin/socks5
 wget raw.githubusercontent.com/fuzileiros/vpn/master/dropbear -O /bin/dropbear
 chmod +x /bin/dropbear
 
+wget raw.githubusercontent.com/fuzileiros/vpn/master/get.py
 
 #FIM DO MENU INSTALAÇÃO
 
@@ -196,7 +197,7 @@ chmod +x /bin/socks5banner
 
 #NANO ETC HOSTS
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/hosts && bash hosts
+wget raw.githubusercontent.com/fuzileiros/vpn/master/hosts
 
 
 
