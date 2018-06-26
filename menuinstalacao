@@ -83,8 +83,12 @@ case $opcao in
    clear
    nohup python get.py > get.txt &
    clear
+   echo ""
    echo -e "\033[7;30;46m ==========================================================\033[0m"
-   echo "\033[01;36m           Get Tunnel Instalado com SUCESSO"
+   echo ""
+   clear
+   echo -e "\033[7;30;46m ==========================================================\033[0m"
+   echo -e "\033[7;30;47m           Get Tunnel\033[0m \033[7;30;41mIniciado com SUCESSO\033[0m"
    echo -e "\033[7;30;46m ==========================================================\033[0m"
    echo ""
    echo -ne "\033[01;36m  ENTER PARA VOLTAR AO MENU..."
