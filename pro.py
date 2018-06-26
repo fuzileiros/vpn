@@ -2,8 +2,9 @@ import sys, time, getopt, socket, threading, base64
 
 
 # CONFIG
-CONFIG_LISTENING = input ('Digite o ip:porta')
-CONFIG_PASS = input ('Digite sua senha')
+CONFIG_LISTENING = str(input ('Digite o ip:porta'))
+
+CONFIG_PASS = str(input ('Digite sua senha'))
 
 
 class Logger:
