@@ -24,7 +24,7 @@ IP=$(wget -qO- ipv4.icanhazip.com)
 	echo "Primeiro precisaremos do IP de sua maquina, este IP está correto?"
 	read -p "Endereço de IP da máquina: " -e -i $IP IP
 clear
-  echo "Em qual porta deseja Utilizar?"
+  echo "Em qual porta deseja Utilizar o Get Tunnel?"
 	read -p "Porta do Get Tunnel: " -e -i PORTA
 clear
   echo "Qual PASS deseja usar para o Get Tunnel?"
