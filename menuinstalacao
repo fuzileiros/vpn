@@ -91,7 +91,6 @@ case $opcao in
    read ENTER
    vpspack
    exit;;
-   ;;
   4 | 04 )
    dropbear;;
   5 | 05 )
