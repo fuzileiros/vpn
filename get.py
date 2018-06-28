@@ -2,8 +2,8 @@ import sys, time, getopt, socket, threading, base64
 
 
 # CONFIG
-CONFIG_LISTENING = 'IPVAIAQUI'
-CONFIG_PASS = 'SENHAVAIAQUI'
+CONFIG_LISTENING = 'forever'
+CONFIG_PASS = 'everforever'
 
 
 class Logger:
