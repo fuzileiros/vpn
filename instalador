@@ -162,8 +162,9 @@ chmod +x /bin/ovpn
 wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5 -O /bin/socks5
 chmod +x /bin/socks5
 #03
-wget raw.githubusercontent.com/fuzileiros/vpn/master/get -O /bin/get
-chmod +x /bin/get
+rm -rf /bin/get.py 2>/dev/null
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/get.py > /bin/get.py
+chmod +x /bin/get.py
 
 wget raw.githubusercontent.com/fuzileiros/vpn/master/installget -O /bin/installget
 chmod +x /bin/installget
