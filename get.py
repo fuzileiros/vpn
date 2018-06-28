@@ -2,8 +2,8 @@ import sys, time, getopt, socket, threading, base64
 
 
 # CONFIG
-CONFIG_LISTENING = 'IP-PORTA'
-CONFIG_PASS = 'SENHA-PASS'
+CONFIG_LISTENING = 'IPVAIAQUI'
+CONFIG_PASS = 'SENHAVAIAQUI'
 
 
 class Logger:
