@@ -24,7 +24,7 @@ IP=$(wget -qO- ipv4.icanhazip.com)
    echo "Em qual porta deseja Utilizar o Get Tunnel?"      
 read -p "Porta do Get Tunnel: " -e -i 8080 PORTA
 
-sed "s/fuzileiro/$IP:$PORTA/" /bin/get.py > /etc/get.py 
+sed "s/fuzileiro/$IP:$PORTA/" /root/get.py > /bin/get.py 
 
 clear
    echo ""
@@ -33,10 +33,11 @@ clear
 read -p "PASS do Get Tunnel:" SENHA
 
 
-sed "s/naval/$SENHA/" /etc/get.py > /root/get.py
+sed "s/naval/$SENHA/" /bin/get.py > /root/get.py
 
 clear
-
+rm /bin/get.py
+clear
 echo "Iniciando..."
 sleep 3
 clear
