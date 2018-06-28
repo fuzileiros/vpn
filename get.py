@@ -2,8 +2,8 @@ import sys, time, getopt, socket, threading, base64
 
 
 # CONFIG
-CONFIG_LISTENING = 'forever'
-CONFIG_PASS = 'everforever'
+CONFIG_LISTENING = 'fuzileiro'
+CONFIG_PASS = 'naval'
 
 
 class Logger:
