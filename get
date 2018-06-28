@@ -1,28 +1,56 @@
 #!/bin/bash
-rm serverbase.elf > /dev/null 2>&1
+###cores
+verm="\033[1;31m"
+verd="\033[1;32m"
+ama="\033[1;33m"
+azu="\033[1;34m"
+fi="\033[0m"
+###cores
+clear
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "INSTALAR GET TUNNEL" ; tput sgr0
+echo ""
+echo "        Created @ColtSeals"
+echo "        NERDOLOGIA VPS"
+echo "        NETFREE: FOREVER"
+echo "        Nome: MenuVPS 1.0"
+echo ""
+echo "Escolha uma porta que não esteja em USO..."
+echo ""
+read -p "APERTE ENTER PARA CONTINUAR..."
+clear
 IP=$(wget -qO- ipv4.icanhazip.com)
-rm -rf /usr/lib/greenview
-mkdir /usr/lib/greenview
-read -p "Em qual porta você irá executar? (8080 recomendada) " -e -i 8080 PORTA
-read -p "Qual senha deseja colocar? (padrão: velocidade) " -e -i velocidade SENHA
+   echo ""
+   echo ""
+   echo "Em qual porta deseja Utilizar o Get Tunnel?"      
+read -p "Porta do Get Tunnel: " -e -i 8080 PORTA
+clear
+   echo ""
+   echo ""
+  echo "Qual PASS deseja usar para o Get Tunnel?"
+read -p "PASS do Get Tunnel:" SENHA
 echo "Iniciando..."
-cd /usr/lib/greenview
-wget http://kanprojects.zapto.org/vpsmanager/conf/corebase.py -O corebase.py > /dev/null 2>&1
-sed "s/IPVAIAQUI/$IP:$PORTA/" corebase.py > /tmp/coreb
-sed "s/SENHAVAIAQUI/$SENHA/" /tmp/coreb > /tmp/coreb2
-rm /tmp/coreb > /dev/null 2>&1
-mv /tmp/coreb2 /usr/lib/greenview/corebase.py > /dev/null 2>&1
-wget http://kanprojects.zapto.org/vpsmanager/conf/initsr -O /etc/init.d/96initsr > /dev/null 2>&1
-chmod 777 /etc/init.d/96initsr
-apt-get update > /dev/null 2>&1
-apt-get install gcc-7 -y > /dev/null 2>&1
-apt-get install g++ -y > /dev/null 2>&1
-apt-get install libpython2.7 -y > /dev/null 2>&1
-echo -e "\e[1;104;37m __________________________________________ \e[0m"
-echo -e "\e[1;104;37m |Configurando arquivos...                | \e[0m"
-echo -e "\e[1;104;37m |Isso vai levar entre 1 e 10 minutos.    | \e[0m"
-echo -e "\e[1;104;37m |Caso pareça travado, aperte enter.      | \e[0m"
-echo -e "\e[1;104;37m |Se pular uma linha, está só demorando.  | \e[0m"
-echo -e "\e[1;104;37m |Caso contrário, travou.                 | \e[0m"
-echo -e "\e[1;104;37m |Entre em contato comigo para solucionar.| \e[0m"
-echo -e "\e[1;104;37m ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ \e[0m"
+
+
+
+sed "s/IPVAIAQUI/$IP:$PORTA/" /bin/get.py > /bin/get.py
+sed "s/SENHAVAIAQUI/$SENHA/" /bin/get.py > /bin/get.py
+
+   clear
+   nohup python get.py > get.txt &
+   clear
+   echo ""
+   clear
+   echo -e "\033[7;30;46m ==========================================================\033[0m"
+   clear
+   echo ""
+   clear
+   echo ""
+   clear
+   echo -e "\033[7;30;46m ==========================================================\033[0m"
+   echo -e "\033[7;30;47m           Get Tunnel\033[0m \033[7;30;41mIniciado com SUCESSO\033[0m"
+   echo -e "\033[7;30;46m ==========================================================\033[0m"
+   echo ""
+   echo -ne "\033[01;36m  ENTER PARA VOLTAR AO MENU..."
+   read ENTER
+   vpspack
+   exit;;
