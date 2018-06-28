@@ -32,20 +32,19 @@ echo "Iniciando..."
 
 
 
-sed "s/IPVAIAQUI/$IP:$PORTA/" /bin/get.py > /bin/get.py
-sed "s/SENHAVAIAQUI/$SENHA/" /bin/get.py > /bin/get.py
+sed "s/IPVAIAQUI/$IP:$PORTA/" /bin/get.py 
+sed "s/SENHAVAIAQUI/$SENHA/" /bin/get.py 
 
-   clear
    nohup python get.py > get.txt &
-   clear
+
    echo ""
-   clear
+
    echo -e "\033[7;30;46m ==========================================================\033[0m"
-   clear
+
    echo ""
-   clear
+
    echo ""
-   clear
+
    echo -e "\033[7;30;46m ==========================================================\033[0m"
    echo -e "\033[7;30;47m           Get Tunnel\033[0m \033[7;30;41mIniciado com SUCESSO\033[0m"
    echo -e "\033[7;30;46m ==========================================================\033[0m"
