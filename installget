@@ -6,12 +6,6 @@ ama="\033[1;33m"
 azu="\033[1;34m"
 fi="\033[0m"
 ###cores
-
-function get.py()
-{wget raw.githubusercontent.com/fuzileiros/vpn/master/get.py 
-chmod a+x get.py
-}
-
 clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "INSTALAR GET TUNNEL" ; tput sgr0
 echo ""
