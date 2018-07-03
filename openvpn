@@ -186,60 +186,6 @@ else
 sleep 3
 clear
 	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m  Estamos iniciando a instalação do OPenVPN...\033[0m"
-sleep 3
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m  Porém se quiser Cancelar a Instalação...\033[0m"
-sleep 3
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m  Aperte CTRL + C a qualquer momento...\033[0m"
-sleep 3
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m  Se optar sair digite para entrar no Menu principal: \033[5;37;40m VPN \033[0m"
-sleep 3
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m  Obrigado por aguardar estamos iniciando a Instalação em \033[0m"
-sleep 3
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m        3 \033[0m"
-sleep 1
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m        2 \033[0m"
-sleep 1
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m        1 \033[0m"
-sleep 1
-clear
-	echo ""
-	echo ""
-	echo ""
-	echo -e "\033[5;32;40m        0 \033[0m"
-sleep 1
-clear
-	echo ""
 	echo "Primeiro precisaremos do IP de sua maquina, este IP está correto?"
 	read -p "Endereço de IP da máquina: " -e -i $IP IP
 	echo ""
@@ -498,7 +444,6 @@ auth-user-pass" > /etc/openvpn/client-common.txt
 	echo ""
 	echo "Concluido!"
 	echo ""
-	echo "Seu arquivo estÃ¡ disponivel em" ~/"$CLIENT.ovpn"
+	echo "Seu arquivo está disponivel em" ~/"$CLIENT.ovpn"
 	echo "é recomendável que use um software do tipo SFTP para download"
-	echo "Para mais opções digite (bash openvivoPWD.sh)!"
 fi
