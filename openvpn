@@ -424,7 +424,7 @@ setenv opt method GET
 remote Nerdologia 9999 udp
 </connection>
 <connection>
-remote /chat 443 tcp
+remote /chat 443 $PROTOCOL
 </connection>
 http-proxy-option CUSTOM-HEADER Host c.whatsapp.net
 http-proxy $IP 443
