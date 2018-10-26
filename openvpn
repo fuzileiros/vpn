@@ -417,7 +417,6 @@ exit 0' > $RCLOCAL
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
 dev tun
-proto $PROTOCOL
 keepalive 10 120
 sndbuf 0
 rcvbuf 0
@@ -425,9 +424,10 @@ setenv opt method GET
 remote Nerdologia 9999 udp
 </connection>
 <connection>
-remote portalrecarga.vivo.com.br/recarga $PORT
+remote /chat 443 tcp
 </connection>
-http-proxy $IP 80
+http-proxy-option CUSTOM-HEADER Host c.whatsapp.net
+http-proxy $IP 443
 resolv-retry infinite
 nobind
 persist-key
